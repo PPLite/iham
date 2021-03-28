@@ -1,0 +1,143 @@
+<html>
+  <head>
+      <!-- Ini Judul, yang diatas itu loh -->
+      <title>RFIDB Smart Hospital RFID Database - Surabaya</title>
+
+<!-- Kalau yang ini, buat bootstrapnya, inisialisasi script awalnya -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <!-- Mulai koding buat isinya -->
+  <body>
+      <!-- Yang ini buat Navigation bar, yang diatas biasanya tempatnya -->
+      <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"><img src="images/logo.png" alt=""></a>
+            <!--Mengganti navbar menjadi custom navbar. sumber dari fontawesome.com-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <!-- Yang ini untuk macam-macam navbarnya -->
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#top">Beranda</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#fitur">Fitur Smart Hospital</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#layanan-kami">Layanan Kami</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin">Masuk </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+      </section>
+      <!---Bagian untuk banner Banner--->
+      <section id="banner">
+          <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <!--buat tulisan yang atas-->
+                    <p class="promo-title">Smart Hospital Database</p>
+                    <p>Sistem RFID pada rumah sakit untuk mempermudah pelacakan alat dan pelayanan yang lebih baik </p>
+                    <!--Buat objek gambar/tombol dibawahnya-->
+                    <a href="#"><img src="images/play-button.png" class="play-btn">Pelajari Lebih Lanjut</a> 
+                </div>
+
+            <!--Bikin kolom baru, buat teks/objek di sebelah kanan-->
+                <div class="col-md6 text-center">
+                    <img src="images/banner.png" class="img-banner">
+                </div>
+            </div>
+          </div>
+          <!--Efek gambar ombak? yg ada di depan-->
+          <img src="images/wave.svg" class="ombak">
+        </section>
+    
+      <!---Teks Bagian fitur--->
+      <section id="fitur">
+        <div class="container text-center">
+          <h1 class="judul">Fitur Unggulan Kami</h1>
+          <div class="row text-center">
+            <div class="col-md-4 fitur">
+              <img src="images/fast-delivery.svg" class="img-fitur">
+              <h4>Penanganan Tercepat</h4>
+              <p>Jaminan pasien ditangani dengan cepat dan baik karena semua peralatan rumah sakit terdaftar pada database dan diawasi menggunakan sistem AI </p>
+            </div>
+            <div class="col-md-4 fitur">
+              <img src="images/service.svg" class="img-fitur">
+              <h4>Pelayanan Terbaik</h4>
+              <p>Kami akan memberikan pelayanan terbaik mulai dari pasien masuk hingga sehat</p>
+            </div>
+            <div class="col-md-4 fitur">
+              <img src="images/safe.svg" class="img-fitur">
+              <h4>Keamanan Terjamin</h4>
+              <p>Jaminan kemanan pada semua alat dan pasien karena semua data telah disimpan pada Database</p>
+            </div>
+          </div>
+              <button type="button"class="btn btn-primary">Pelajari Lebih Lanjut</button>
+        </div>
+      </section>
+
+<!----Teks bagian Layanan Kami----->
+<section id="layanan-kami">
+  <div class="container">
+    <h1 class="judul text-center"> Layanan Kami</h1>
+    <div class="row">
+      <div class="=col-md-6 layanan-kami">
+        <p class="judul-layanan-kami">Layanan Smart Hospital Kami</p>
+        <ul>
+          <li> Pemesanan/Antri Berobat Secara Online</li>
+          <li> Proses pendaftaran hingga perawatan terintregasi Web</li>
+          <li> Pemantauan kondisi dapat dilihat secara Realtime</li>
+          <li> Penanganan peralatan pertama untuk pasien prioritas</li>
+          <li> Tracking setiap perangkat dan pasien pada Rumah Sakit</li>
+        </ul>
+      </div>
+    <div class="col-md-6">
+      <div><img src="images/layanankami.png" width="500" class="img-fluid"></div>
+      </div>   
+    </div>
+    </div>
+  </div>
+</section>
+
+<!---Bagian Bawah sendiri / Footer-->
+
+<section id="footer">
+  <img src="images/wave2.svg" class="footer-img">
+    <div class="container">
+      <div class="row">
+        <!--bagian icon pojok kanan bawah-->
+        <div class="col-md-4 footer-box">
+          <img src="images/logo.png">
+            <p>RFIDB (Radio-frequency identification Database) untuk Sistem Smart Hospital</p>
+        </div>
+        <!--bagian footer tengah-->
+        <div class="col-md-4 footer-box">
+            <p><b>Hubungi Kami</b></p>
+            <p><i class="fa fa-map-marker"></i>  Departemen Teknik Elektro Otomasi ITS</p>
+            <p><i class="fa fa-phone"></i>  (+62)82230759381</p>
+            <p><i class="fa fa-envelope-o"></i>  bagus.atmaja15@mhs.ee.its.ac.id</p>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!--Scroll Alus Otomatis-->
+<script src="smooth-scroll.js"></script>
+<script>
+	var scroll = new SmoothScroll('a[href*="#"]');
+</script>
+
+  </body>  
+</html>

@@ -1,0 +1,230 @@
+*
+/* Buat Batas atas navbar */
+{
+    margin: 0;
+    padding: 0;
+}
+body
+/* Font yang dipakai di Navbar*/
+{
+    font-family:sans-serif;
+}
+/* Batas bawah dari navbar*/
+#nav-bar
+{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+/* Ini buat ngganti warna navigation barnya */
+.navbar
+{
+    /* linear-gradient dipakai untuk warna gradien dari suatu warna ke warna yang lain*/
+    background-image: linear-gradient(to right, #a517ba,#5f1782);
+    padding: 0 !important;
+}
+
+/* Ini buat ngatur ukuran dari gambar di navigation bar*/
+.navbar-brand img
+{
+    height: 70px;
+    padding-left: 20px;
+}
+
+/* Yang ini buat ngatur jarak spasi antar font navigation bar */
+.navbar-nav li
+{
+    padding: 0 10px;
+}
+/* Yang ini buat ngatur warna ukuran dan posisi font navigation bar */
+.navbar-nav li a
+{
+    color: white !important;
+    font-weight: 700;
+    float: right;
+    text-align: left;
+}
+/* Untuk ganti warna dan ukuran 3 bar di pojok kanan atas*/
+.fa-bars
+{
+    color: white;
+    font-size: 30px !important;
+}
+/* Untuk hapus atau ganti border toggler (menu) di pojok kanan atas*/
+.navbar-toggler
+{
+    outline: none !important;
+}
+
+/* Untuk kustomisasi background warna dari banner (teks yg atas)*/
+#banner
+{
+    background-image: linear-gradient(to right, #a517ba,#5f1782);
+    color: white;
+    padding-top: 5%;
+}
+
+/* Buat edit font bagian banner (teks atas)*/
+.promo-title
+{
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 100px;
+}
+
+/*Buat ngatur ukuran tombol*/
+.play-btn
+{
+    width: 45px;
+    margin: 20px;
+}
+
+/*Buat ngatur banner teks di sebelah tombol*/
+#banner a
+{
+    color:white;
+    text-decoration: none;
+}
+
+/*Buat ngatur wave/efek gelombang yg ada dibawah menu*/
+.bottom-img
+{
+    width: 100%;
+}
+/*Animasi Ombak ketika dibuka pertama*/
+@keyframes animateWave {
+    0% {
+      transform: scale(1,0);
+    }
+    100% {
+      transform: scale(1,1);
+    }
+  }
+  .ombak
+  {
+    display: block;
+    transform-origin: bottom;
+    animation: animateWave 1000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  }
+
+  /*-------Ini bagian Fitur------*/
+#fitur
+{
+    padding: 80px 0;
+}
+.img-fitur
+{
+    width: 100px;
+    margin-top: 20px;
+}
+.fitur
+{
+    padding: 20px;
+}
+.fitur h4
+{
+    padding: 5px;
+    margin-top: 25px;
+    text-transform: uppercase;
+}
+
+/*Bikin garis di bawah "CLASS" judul*/
+.judul::before
+{
+    content: '';
+    background:#7b1798;
+    height: 5px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    transform: translateY(63px);
+}
+.judul::after
+{
+    content: '';
+    background:#7b1798;
+    height: 10px;
+    width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    display: block;
+    transform: translateY(8px);
+}
+
+/*Layanan Kami*/
+#fitur .btn-primary
+{
+    box-shadow: none;
+    padding: 8px 25px;
+    border: none;
+    border-radius: 20px;
+    background-image: linear-gradient(to right,#a517ba,#5f1782);
+}
+
+/*---Bagian layanan kami---*/
+#layanan-kami
+{
+    background: #f8f0fa;
+    padding-bottom: 50px;
+    padding-top: 50px; 
+}
+.judul-layanan-kami
+{
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 8%;
+}
+
+/*--Buat ngatur peletakkan dan spasi dari menu layanan kami-*/
+#layanan-kami ul li
+{
+    margin: 10px 0;
+}
+
+#layanan-kami ul
+{
+    margin-left: 20px;
+}
+
+.img-fluid
+{
+    margin-top: 10px;
+    margin-left:10%;
+}
+
+/*--Buat ngatur footer yg bawah-*/
+#footer
+{
+    background-image: linear-gradient(to right, #a517ba,#5f1782);
+    color: #ffff;    
+}
+.footer-img
+{
+    width: 100%;
+}
+
+/*Buat ngatur gambar yg bawah*/
+.footer-box
+{
+    padding: 20px;
+}
+.footer-box img
+{
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+/*Buat ngatur gambar yg bawah*/
+.footer-box .fa
+{
+    margin-right: 8px;
+    font-size: 25px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    padding-top: 7px;
+    border-radius: 2px;
+    background-image: linear-gradient(to right, #a517ba,#5f1782);
+}
