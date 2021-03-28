@@ -6,7 +6,7 @@
   <div class="sidebar-brand-icon rotate-n-15">
     <i class="fas fa-laugh-wink"></i>
   </div>
-  <div class="sidebar-brand-text mx-3">FUNDA <sup>WEB IT</sup></div>
+  <div class="sidebar-brand-text mx-3">RFIDB Dashboard</div>
 </a>
 
 <!-- Divider -->
@@ -48,7 +48,7 @@
 <li class="nav-item">
   <a class="nav-link" href="register.php">
     <i class="fas fa-fw fa-chart-area"></i>
-    <span>Admin Profile</span></a>
+    <span>Pengaturan Pengguna</span></a>
 </li>
 
 
