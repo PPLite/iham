@@ -4,6 +4,7 @@
 Integrated Hospital Asset Management
 
 Web Based tracking for hospital assets with RFiD Tags
+
 Features
 - Responsive bootstrap landing page (Done)
 - Multi user login system (WIP)
@@ -14,10 +15,11 @@ Features
 ## Warning ##
 For Educational Purposes Only
 This code may contains a lot of bugs. Don't deploy on real system yet. it could cause problem
+
 IHAM is Created to fullfill Final Projects 
 
 ## License ##
-This Repository is forked from various repo and fully opensource. every code written is not copyrighted and can be used freely
+This Repository is forked from various repo
 
 Created By
 - MojoGantz
