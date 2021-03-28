@@ -7,6 +7,7 @@ Web Based tracking for hospital assets with RFiD Tags
 Features
 - Responsive bootstrap landing page (Done)
 - Multi user login system (WIP)
+- Multi user management syste (Comming Soon)
 - RFID tagging (Comming Soon)
 - Notification system when asset out of range (Comming Soon)
 
