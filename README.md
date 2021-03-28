@@ -3,11 +3,18 @@
 # iham
 Integrated Hospital Asset Management
 
-Web Based tracking for hospital assets with RFiD Tags 
+Web Based tracking for hospital assets with RFiD Tags
+Features
+- Responsive bootstrap landing page (Done)
+- Multi user login system (WIP)
+- RFID tagging (Comming Soon)
+- Notification system when asset out of range (Comming Soon)
 
 ## Warning ##
 For Educational Purposes Only
-This code may contoains bugs. Don't deploy on real system yet. it could cause problem
+This code may contains a lot of bugs. Don't deploy on real system yet. it could cause problem
+IHAM is Created to fullfill Final Projects 
+
 
 Created By
 - MojoGantz
