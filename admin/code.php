@@ -1,6 +1,6 @@
 <?php
 session_start();
-$connection = mysqli_connect("localhost","root","adminpanel");
+$connection = mysqli_connect("localhost:3306","mjdr3247_admin","Ah-9]yg$!?eAquF^{u","");
 
 if(isset($_POST['registerbtn']))
 {

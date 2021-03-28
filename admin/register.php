@@ -3,12 +3,14 @@ include('includes/header.php');
 include('includes/navbar.php'); 
 ?>
 
+<!----Mulai Modal buat pengguna baru. kotak yang ngawang ditengah-->
+<!----Diambil dari https://getbootstrap.com/docs/4.0/components/modal/-->
 
 <div class="modal fade" id="addadminprofile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Admin Data</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Tambahkan data Pengguna</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -18,7 +20,7 @@ include('includes/navbar.php');
         <div class="modal-body">
 
             <div class="form-group">
-                <label> Username </label>
+                <label> Nama Pengguna </label>
                 <input type="text" name="username" class="form-control" placeholder="Enter Username">
             </div>
             <div class="form-group">
@@ -26,11 +28,11 @@ include('includes/navbar.php');
                 <input type="email" name="email" class="form-control" placeholder="Enter Email">
             </div>
             <div class="form-group">
-                <label>Password</label>
+                <label>Kata Sandi</label>
                 <input type="password" name="password" class="form-control" placeholder="Enter Password">
             </div>
             <div class="form-group">
-                <label>Confirm Password</label>
+                <label>Ulangi Katasandi</label>
                 <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password">
             </div>
         
@@ -47,13 +49,15 @@ include('includes/navbar.php');
 
 
 <div class="container-fluid">
+<!------Akhir dari Modal------->
+
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary">Admin Profile 
+    <h6 class="m-0 font-weight-bold text-primary">Profil Admin 
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
-              Add Admin Profile 
+              Tambahkan data Pengguna 
             </button>
     </h6>
   </div>
