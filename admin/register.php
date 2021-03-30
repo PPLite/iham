@@ -69,8 +69,8 @@ include('includes/navbar.php');
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th> ID </th>
-            <th> Username </th>
+            <th>ID </th>
+            <th>Username </th>
             <th>Email </th>
             <th>Password</th>
             <th>EDIT </th>
@@ -81,8 +81,8 @@ include('includes/navbar.php');
      
           <tr>
             <td> 1 </td>
-            <td> Funda of WEb IT</td>
-            <td> funda@example.com</td>
+            <td>MojoNetworks</td>
+            <td> admin@mjdb.my.id</td>
             <td> *** </td>
             <td>
                 <form action="" method="post">

@@ -3,17 +3,20 @@ session_start();
 $connection = mysqli_connect("localhost:3306","mjdr3247_admin","Ah-9]yg$!?eAquF^{u","");
 
 if(isset($_POST['registerbtn']))
+//Jika tombol register'registerbtn' ditekan, maka akan memberikan data ke database berupa...
 {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $cpassword = $_POST['confirmpassword'];
-
-    if($password === $cpassword)
-    {
+    //data yang akan dikirim ke database berupa username, email, password
+    //cpassword digunakan untuk melakukan pengulangan password
         $query = "INSERT INTO register (username,email,password) VALUES ('$username','$email','$password')";
         $query_run = mysqli_query($connection, $querry);
-    
+
+        
+    if($password === $cpassword)
+    {  
         if($query_run)
         {
             //echo "Disimpan";
