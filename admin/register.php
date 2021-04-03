@@ -32,7 +32,7 @@ include('includes/navbar.php');
                 <input type="password" name="password" class="form-control" placeholder="Enter Password">
             </div>
             <div class="form-group">
-                <label>Ulangi Katasandi</label>
+                <label>Ulangi Kata sandi</label>
                 <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password">
             </div>
         
@@ -52,7 +52,7 @@ include('includes/navbar.php');
 <!------Akhir dari Modal------->
 
 
-<!-- DataTales Example -->
+<!---- Untuk tombol "tambah admin"--->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <h6 class="m-0 font-weight-bold text-primary">Profil Admin 
