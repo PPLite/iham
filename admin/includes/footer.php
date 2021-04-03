@@ -4,7 +4,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Hak Cipta &copy; Departemen Teknil Elektro Otomasi 2021</span>
+            <span>Hak Cipta &copy; Departemen Teknik Elektro Otomasi 2021</span>
           </div>
         </div>
       </footer>
