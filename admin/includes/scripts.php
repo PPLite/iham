@@ -18,7 +18,7 @@
 
   <?php
 
-$connection = mysqli_connect('localhost','mjdr3247_admin','mjdr3247_admin','mjdr3247_adminpanel');
+$connection = mysqli_connect('localhost:3306','mjdr3247_admin','mjdr3247_admin','mjdr3247_adminpanel');
 
 if(isset($_POST['registerbtn']))
 {
