@@ -34,21 +34,21 @@ if(isset($_POST['registerbtn']))
     
         if($query_run)
         {
-            echo "done";
-            $_SESSION['success'] =  "Admin is Added Successfully";
+            //echo "done";
+            $_SESSION['success'] =  "Profil berhasil disimpan";
             header('Location: register.php');
         }
         else 
         {
-            echo "not done";
-            $_SESSION['status'] =  "Admin is Not Added";
+            //echo "not done";
+            $_SESSION['status'] =  "Profil gagal disimpan";
             header('Location: register.php');
         }
     }
     else 
     {
-        echo "pass no match";
-        $_SESSION['status'] =  "Password and Confirm Password Does not Match";
+        //echo "pass no match";
+        $_SESSION['status'] =  "Password tidak sesuai";
         header('Location: register.php');
     }
 
