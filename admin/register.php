@@ -83,24 +83,34 @@ include('includes/navbar.php');
 
     <div class="table-responsive">
 
+<!---Buat ngambil data--->
+    <?php
+    //Nyambungin dulu ke database, untuk ngambil data username dan password
+    $connection = mysqli_connect("localhost","mjdr3247_admin","semogacepatlulus2021","mjdr3247_adminpanel");
+    //dari database, dipilih semua (bintang = semuanya) dari tabel register
+    $query = "SELECT * FROM register";
+    $query_run = mysqli_query($connection, $query);
+    ?>
+
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
             <th>ID </th>
-            <th>Username </th>
-            <th>Email </th>
+            <th>Username</th>
+            <th>Email</th>
             <th>Password</th>
-            <th>EDIT </th>
-            <th>DELETE </th>
+            <th>Ubah</th>
+            <th>Hapus</th>
           </tr>
         </thead>
         <tbody>
      
+     
           <tr>
-            <td> 1 </td>
-            <td>MojoNetworks</td>
-            <td> admin@mjdb.my.id</td>
-            <td> *** </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
             <td>
                 <form action="" method="post">
                     <input type="hidden" name="edit_id" value="">
