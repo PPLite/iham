@@ -19,7 +19,8 @@
   <?php
 
 $connection = mysqli_connect("localhost:3306","mjdr3247_admin","Ah-9]yg$!?eAquF^{u","mjdr3247_adminpanel"
-if(isset($_POST['registerbtn']))
+
+if(isset($post['registerbtn']))
 {
     $username = $_POST['username'];
     $email = $_POST['email'];
