@@ -63,23 +63,24 @@ include('includes/navbar.php');
     </h6>
   </div>
 
-  <div class="card-body">
+<div class="card-body">
   <!----Untuk nambahin status---->
   <?php
   //Status berhasil ditambahkan
-  if(isset($_SESSION['success']) && $_SESSION['success'] !='')
-  {
-    echo '<h2>'.$_SESSION['success'].' </h2>';
-    unset($_SESSION['success']);
-  }
+    if(isset($_SESSION['success']) && $_SESSION['success'] !='')
+    {
+      echo '<h2>'.$_SESSION['success'].' </h2>';
+      unset($_SESSION['success']);
+    }
+
     //Status gagal ditambahkan
     if(isset($_SESSION['status']) && $_SESSION['status'] !='')
     {
       echo '<h2 class="bg-info">'.$_SESSION['status'].' </h2>';
       unset($_SESSION['status']);
     }
-
   ?>
+
     <div class="table-responsive">
 
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
