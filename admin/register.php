@@ -87,8 +87,8 @@ include('includes/navbar.php');
     <?php
     //Nyambungin dulu ke database, untuk ngambil data username dan password
     $connection = mysqli_connect("localhost","mjdr3247_admin","semogacepatlulus2021","mjdr3247_adminpanel");
-    //dari database, dipilih semua (bintang = semuanya) dari tabel register
-    $query = "SELECT * FROM register";
+    //dari database, dipilih semua (bintang = semuanya) dari tabel "register"
+    $query = "SELECT * FROM register"; 
     $query_run = mysqli_query($connection, $query);
     ?>
 
@@ -104,14 +104,26 @@ include('includes/navbar.php');
           </tr>
         </thead>
         <tbody>
-     
-     
+        <?php
+        //mengambil data dari database
+        //tipe kolom yang nantinya akan diambil
+        if(mysqli_num_rows($query_run) >0 )
+        {
+          while($row = mysqli_fetch_assoc($query_run))
+          {
+            ?>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
+          <td><?php echo $row['id']; ?></td>
+            <td><?php echo $row['username']; ?></td>
+            <td><?php echo $row['email']; ?></td>
+            <td><?php echo $row['password']; ?></td>
+          <?php
+          }
+        }
+        else {
+          echo "Data tidak ditemukan";   
+        }
+        ?>
                 <form action="" method="post">
                     <input type="hidden" name="edit_id" value="">
                     <button  type="submit" name="edit_btn" class="btn btn-success"> EDIT</button>
