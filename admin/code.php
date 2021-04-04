@@ -1,38 +1,40 @@
 <?php
-session_start();
+//inisialisasi sambungan ke database
 $connection = mysqli_connect('localhost','mjdr3247_admin','semogacepatlulus2021','mjdr3247_adminpanel');
+
+//registerbtn ditombol
 if(isset($_POST['registerbtn']))
-//Jika tombol register'registerbtn' ditekan, maka akan memberikan data ke database berupa...
+
+//jika sudah ditombol kemudian
 {
+    //input data
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $cpassword = $_POST['confirmpassword'];
-    //data yang akan dikirim ke database berupa username, email, password
-    //cpassword digunakan untuk melakukan pengulangan password
-        
-    if($password === $cpassword)
-    {  
-        $query = "INSERT INTO register (username,email,password) VALUES ('$username','$email','$password')";
-        $query_run = mysqli_query($connection, $querry);
 
+    if($password === $cpassword)
+    {
+         //data yang tadi, dikumpulkan 'query' dan dimasukkan ke database
+        $query = "INSERT INTO register (username,email,password,) VALUES ('$username','$email','$password')";
+        $query_run = mysqli_query($connection,$query);
+    
         if($query_run)
         {
-            //echo "Disimpan";
-            $_SESSION['success'] = "Admin Profile Added";
-            header('Location: register.php');
+        echo "saved";
+        $_SESSION['sucess'] = "admin profile added";
+        header('location: register.php');
         }
         else
         {
-            $_SESSION['status'] = "Admin Profile not Added";
-            header('Location: register.php');
+        $_SESSION['status'] = "admin profile not added";
+        header('location: register.php');
         }
     }
-    else
+    else 
     {
-        $_SESSION['status'] = "Password dan Konfirmasi Password tidak sesuai";
+        $_SESSION['status'] = "Password not Match";
         header('location: register.php');
     }
 }
-
 ?>
