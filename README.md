@@ -1,4 +1,5 @@
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/PPLite/iham)
+[![Travis](https://travis-ci.com/PPLite/iham.svg?branch=main)](https://travis-ci.com/github/PPLite/iham)
 
 # iham
 Integrated Hospital Asset Management
