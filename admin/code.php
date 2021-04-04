@@ -16,7 +16,7 @@ if(isset($_POST['registerbtn']))
     if($password === $cpassword)
     {
          //data yang tadi, dikumpulkan 'query' dan dimasukkan ke database
-        $query = "INSERT INTO register (username,email,password,) VALUES ('$username','$email','$password')";
+        $query = "INSERT INTO register (username,email,password) VALUES ('$username','$email','$password')";
         $query_run = mysqli_query($connection,$query);
     
         if($query_run)
