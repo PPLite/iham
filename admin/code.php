@@ -1,6 +1,6 @@
 <?php
 session_start();
-$connection = mysqli_connect("localhost","mjdr3247_admin","Ah-9]yg$!?eAquF^{u","mjdr3247_adminpane");
+$connection = mysqli_connect('localhost','mjdr3247_admin','mjdr3247_admin','mjdr3247_adminpanel');
 if(isset($_POST['registerbtn']))
 //Jika tombol register'registerbtn' ditekan, maka akan memberikan data ke database berupa...
 {
