@@ -35,13 +35,13 @@ if(isset($_POST['registerbtn']))
         if($query_run)
         {
             //echo "done";
-            $_SESSION['success'] =  "Profil berhasil disimpan";
+            $_SESSION['success'] =  "Pengguna berhasil disimpan";
             header('Location: register.php');
         }
         else 
         {
             //echo "not done";
-            $_SESSION['status'] =  "Profil gagal disimpan";
+            $_SESSION['status'] =  "Pengguna gagal disimpan";
             header('Location: register.php');
         }
     }

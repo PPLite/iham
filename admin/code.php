@@ -22,18 +22,18 @@ if(isset($_POST['registerbtn']))
         if($query_run)
         {
         echo "saved";
-        $_SESSION['sucess'] = "admin profile added";
+        $_SESSION['sucess'] = "Pengguna berhasil ditambahkan";
         header('location: register.php');
         }
         else
         {
-        $_SESSION['status'] = "admin profile not added";
+        $_SESSION['status'] = "Pengguna gagal ditambahkan";
         header('location: register.php');
         }
     }
     else 
     {
-        $_SESSION['status'] = "Password not Match";
+        $_SESSION['status'] = "Password tidak sesuai";
         header('location: register.php');
     }
 }
