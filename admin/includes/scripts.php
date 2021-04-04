@@ -35,20 +35,20 @@ if(isset($_POST['registerbtn']))
         if($query_run)
         {
             //echo "done";
-            $_SESSION['success'] =  "Pengguna berhasil disimpan";
+            $_SESSION['sukses'] =  "Pengguna berhasil disimpan";
             header('Location: register.php');
         }
         else 
         {
             //echo "not done";
-            $_SESSION['status'] =  "Pengguna gagal disimpan";
+            $_SESSION['perhatian'] =  "Pengguna gagal disimpan";
             header('Location: register.php');
         }
     }
     else 
     {
         //echo "pass no match";
-        $_SESSION['status'] =  "Password tidak sesuai";
+        $_SESSION['perhatian'] =  "Password tidak sesuai";
         header('Location: register.php');
     }
 

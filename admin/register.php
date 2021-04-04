@@ -66,11 +66,18 @@ include('includes/navbar.php');
   <div class="card-body">
   <!----Untuk nambahin status---->
   <?php
-  if(isset($_SESSION['success']) && $_SESSION['success'!=''])
+  //Status berhasil ditambahkan
+  if(isset($_SESSION['sukses']) && $_SESSION['sukses'!=''])
   {
-    echo '<h2>'.$_SESSION['success'].' </h2>';
-    unset($_SESSION['success']);
+    echo '<h2>'.$_SESSION['sukses'].' </h2>';
+    unset($_SESSION['sukses']);
   }
+    //Status gagal ditambahkan
+    if(isset($_SESSION['perhatian']) && $_SESSION['perhatian'!=''])
+    {
+      echo '<h2 class="bg-info">'.$_SESSION['perhatian'].' </h2>';
+      unset($_SESSION['perhatian']);
+    }
 
   ?>
     <div class="table-responsive">
