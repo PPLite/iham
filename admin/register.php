@@ -67,16 +67,16 @@ include('includes/navbar.php');
   <!----Untuk nambahin status---->
   <?php
   //Status berhasil ditambahkan
-  if(isset($_SESSION['sukses']) && $_SESSION['sukses'!=''])
+  if(isset($_SESSION['success']) && $_SESSION['success'!=''])
   {
-    echo '<h2>'.$_SESSION['sukses'].' </h2>';
-    unset($_SESSION['sukses']);
+    echo '<h2>'.$_SESSION['success'].' </h2>';
+    unset($_SESSION['success']);
   }
     //Status gagal ditambahkan
-    if(isset($_SESSION['perhatian']) && $_SESSION['perhatian'!=''])
+    if(isset($_SESSION['status']) && $_SESSION['status'!=''])
     {
-      echo '<h2 class="bg-info">'.$_SESSION['perhatian'].' </h2>';
-      unset($_SESSION['perhatian']);
+      echo '<h2 class="bg-info">'.$_SESSION['status'].' </h2>';
+      unset($_SESSION['status']);
     }
 
   ?>
