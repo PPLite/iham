@@ -21,7 +21,7 @@ if(isset($_POST['registerbtn']))
     
         if($query_run)
         {
-        echo "saved";
+        //echo "saved";
         $_SESSION['success'] = "Pengguna berhasil ditambahkan";
         header('location: register.php');
         }
