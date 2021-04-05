@@ -118,6 +118,15 @@ include('includes/navbar.php');
             <td><?php echo $row['username']; ?></td>
             <td><?php echo $row['email']; ?></td>
             <td><?php echo $row['password']; ?></td>
+            
+            <td>
+            <button type="submit" class="btn btn-success">Ubah</button>
+            </td>
+            <td>
+            <button type="submit" class="btn btn-danger">Hapus</button>
+            </td>
+
+            </tr>
           <?php
           }
         }
@@ -125,12 +134,7 @@ include('includes/navbar.php');
         else {
           echo "Data tidak ditemukan";   
         }
-        ?>
-            <td>
-            </td>
-            <td></td>
-          </tr>
-        
+        ?>        
         </tbody>
       </table>
 
