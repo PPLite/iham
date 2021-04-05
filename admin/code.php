@@ -38,4 +38,9 @@ if(isset($_POST['registerbtn']))
         header('location: register.php');
     }
 }
+if (isset($_POST['edit_btn']))
+{
+    $id = $_POST['edit_id'];
+    echo $id;
+}
 ?>
