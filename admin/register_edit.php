@@ -14,23 +14,46 @@ include('includes/navbar.php');
 <div class="card-body">
 <!---Akhir bagian atas---->
 
+
+<?php
+//inisialisasi sambungan ke database
+$connection = mysqli_connect("localhost","mjdr3247_admin","semogacepatlulus2021","mjdr3247_adminpanel");
+//Ngambil data dari database----->
+// Pakai kodingan PHP----->
+if (isset($_POST['edit_btn']))
+{
+    $id = $_POST['edit_id'];
+    $query = "SELECT * FROM register WHERE id='$id";
+    $query_run = mysqli_query($connection, $query);
+
+    foreach($query_run as $row)
+    {
+        ?>
+        
 <!---Mulai untuk form---->
+<!---Mengambil data spesifik dari database---->
     <div class="form-group">
         <label> Nama Pengguna </label>
-        <input type="text" name="username" class="form-control" placeholder="Enter Username">
+        <input type="text" name="username" value="<?php echo $row['username'] ?>" class="form-control" placeholder="Enter Username">
     </div>
-        <div class="form-group">
-            <label>Email</label>
-            <input type="email" name="email" class="form-control" placeholder="Enter Email">
-        </div>
-        <div class="form-group">
-            <label>Kata Sandi</label>
-            <input type="password" name="password" class="form-control" placeholder="Enter Password">
-        </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" value="<?php echo $row['email'] ?>" class="form-control" placeholder="Enter Email">
+    </div>
+    <div class="form-group">
+        <label>Kata Sandi</label>
+        <input type="password" name="password" value="<?php echo $row['password'] ?>" class="form-control" placeholder="Enter Password">
+    </div>
 
+  </div>
+  </div>
 </div>
-</div>
-</div>
+
+<?php 
+    }
+}
+?>
+
 
 <?php
 include('includes/scripts.php');
