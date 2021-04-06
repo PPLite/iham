@@ -28,21 +28,21 @@ if (isset($_POST['edit_btn']))
 
     foreach($query_run as $row)
     {
-        ?>
+?>
         
 <!---Mulai untuk form---->
 <!---Mengambil data spesifik dari database---->
     <div class="form-group">
         <label> Nama Pengguna </label>
-        <input type="text" name="username" value="<?php echo $row['username'] ?>" class="form-control" placeholder="Enter Username">
+        <input type="text" name="username" value="<?php echo $row['username']?>" class="form-control" placeholder="Enter Username">
     </div>
     <div class="form-group">
         <label>Email</label>
-        <input type="email" name="email" value="<?php echo $row['email'] ?>" class="form-control" placeholder="Enter Email">
+        <input type="email" name="email" value="<?php echo $row['email']?>" class="form-control" placeholder="Enter Email">
     </div>
     <div class="form-group">
         <label>Kata Sandi</label>
-        <input type="password" name="password" value="<?php echo $row['password'] ?>" class="form-control" placeholder="Enter Password">
+        <input type="password" name="password" value="<?php echo $row['password']?>" class="form-control" placeholder="Enter Password">
     </div>
 
   </div>
