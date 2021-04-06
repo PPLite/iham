@@ -30,7 +30,7 @@ if (isset($_POST['edit_btn']))
     {
 ?>
         
-<!---Mulai untuk form---->
+<!---Form untuk editing pengguna---->
 <!---Mengambil data spesifik dari database---->
     <div class="form-group">
         <label> Nama Pengguna </label>
@@ -45,9 +45,14 @@ if (isset($_POST['edit_btn']))
         <input type="password" name="password" value="<?php echo $row['password']?>" class="form-control" placeholder="Enter Password">
     </div>
 
+<!---Tombol untuk hapus dan simpan perubahan editing pengguna-->
+<a href="register.php" class="btn btn-danger"> Batalkan</a>
+<button class="btn btn-primary"> Perbarui </button>
+
   </div>
   </div>
 </div>
+
 
 <?php 
     }
