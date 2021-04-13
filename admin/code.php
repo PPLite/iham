@@ -39,4 +39,27 @@ if(isset($_POST['registerbtn']))
     }
 }
 
+//Untuk modif data pada pengguna
+if(isset($_POST['updatebtn']))
+{
+    $id = $_POST['edit_id'];
+    $username = $_POST['edit_username'];
+    $email = $_POST['edit_email'];
+    $password = $_POST['edit_password'];
+
+    $query = "UPDATE register SET username='$username', email='$email', password='$password' WHERE id='$id' ";
+    $querry_run = mysqli_query($connection, $query);
+
+    if($querry_run)
+    {
+        $_SESSION['success'] = "Data Berhasil diperbarui";
+        header('location: register.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Data Gagal diperbarui";
+        header('location: register.php');
+    }
+}
+
 ?>
