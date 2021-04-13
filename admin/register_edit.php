@@ -42,11 +42,11 @@ if (isset($_POST['edit_btn']))
     </div>
     <div class="form-group">
         <label>Email</label>
-        <input type="edit_email" name="email" value="<?php echo $row['email']?>" class="form-control" placeholder="Enter Email">
+        <input type="email" name="edit_email" value="<?php echo $row['email']?>" class="form-control" placeholder="Enter Email">
     </div>
     <div class="form-group">
         <label>Kata Sandi</label>
-        <input type="edit_password" name="password" value="<?php echo $row['password']?>" class="form-control" placeholder="Enter Password">
+        <input type="password" name="edit_password" value="<?php echo $row['password']?>" class="form-control" placeholder="Enter Password">
     </div>
 
 <!---Tombol untuk hapus dan simpan perubahan editing pengguna-->
