@@ -119,14 +119,22 @@ include('includes/navbar.php');
             <td><?php echo $row['email']; ?></td>
             <td><?php echo $row['password']; ?></td>
             
+            <!--Tombol buat edit pengguna-->
+            <!--Kodingan full dialihkan ke register_edit.php-->
             <td>
                   <form action="register_edit.php" method="post">
                       <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
                       <button type="submit" name="edit_btn" class="btn btn-success">Ubah</button>
                   </form>
             </td>
+
+            <!----Menu buat hapus data pengguna--->
+            <!--Kodingan full dialihkan ke register_edit.php-->
             <td>
-                  <button type="submit" class="btn btn-danger">Hapus</button>
+            <form action="code.php" method="post" >
+              <input type="text" name="delete_id" value="<?php echo $row['id']; ?>"
+              <button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button>
+              </form>
             </td>
 
             </tr>
