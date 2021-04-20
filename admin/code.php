@@ -16,7 +16,7 @@ if(isset($_POST['registerbtn']))
 
     if($password === $cpassword)
     {
-         //data yang tadi, dikumpulkan 'query' dan dimasukkan ke database
+         //data yang tadi, dimasukkan ke database dewngan perintah "insert into" karena data tersebut data baru, dan diletakkan ke tabel yang udah disediakan
         $query = "INSERT INTO register (username,email,password) VALUES ('$username','$email','$password')";
         $query_run = mysqli_query($connection,$query);
     
@@ -41,15 +41,19 @@ if(isset($_POST['registerbtn']))
 
 //Untuk modif data pada pengguna
 if(isset($_POST['updatebtn']))
+
+//data apa aja yang diambil dan dimodif
 {
     $id = $_POST['edit_id'];
     $username = $_POST['edit_username'];
     $email = $_POST['edit_email'];
     $password = $_POST['edit_password'];
 
+    //disini pakai $query = update. soalnya buat update data aja. dan apa yang akan diupdate dituliskan setelahnya
     $query = "UPDATE register SET username='$username', email='$email', password='$password' WHERE id='$id' ";
     $querry_run = mysqli_query($connection, $query);
 
+    //Tampilan status jika dilakukan perubahan data
     if($querry_run)
     {
         $_SESSION['success'] = "Data Berhasil diperbarui";
@@ -58,6 +62,27 @@ if(isset($_POST['updatebtn']))
     else
     {
         $_SESSION['status'] = "Data Gagal diperbarui";
+        header('location: register.php');
+    }
+}
+
+
+//Untuk hapus data pengguna
+if(isset($_POST['delete_btn']))
+{
+    //disini pakai $query=Delete, soalnya ya buat ngehapus data berdasarkan "ID" yang udah dipilih
+    $id = $_POST['delete_id'];
+    $query = "DELETE FROM register WHERE id='$id' ";
+    $querry_run = mysqli_query($connection, $query);
+
+    if ($querry_run)
+    {
+        $_SESSION['success'] = "Data berhasil dihapus"
+        header('location: register.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Data gagal dihapus"
         header('location: register.php');
     }
 }

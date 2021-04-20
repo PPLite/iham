@@ -121,6 +121,9 @@ include('includes/navbar.php');
             
             <!--Tombol buat edit pengguna-->
             <!--Kodingan full dialihkan ke register_edit.php-->
+            <!-- Pada input type="hidden". dibuat hidden untuk menyembunyikan target yang akan diedit/ diambil datanya-->
+            <!-- Jika ingin ditampilkan data yang akan diambil untuk diubah, "hidden" dapat diganti dengan "text"-->
+
             <td>
                   <form action="register_edit.php" method="post">
                       <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
@@ -132,7 +135,9 @@ include('includes/navbar.php');
             <!--Kodingan full dialihkan ke register_edit.php-->
             <td>
             <form action="code.php" method="post">
-              <input type="text" name="delete_id" value="<?php echo $row['id']; ?>">
+              
+              <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
+
               <button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button>
               </form>
             </td>
