@@ -77,12 +77,12 @@ if(isset($_POST['delete_btn']))
 
     if ($querry_run)
     {
-        $_SESSION['success'] = "Data berhasil dihapus"
+        $_SESSION['success'] = "Data berhasil dihapus";
         header('location: register.php');
     }
     else
     {
-        $_SESSION['status'] = "Data gagal dihapus"
+        $_SESSION['status'] = "Data gagal dihapus";
         header('location: register.php');
     }
 }
