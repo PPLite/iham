@@ -131,8 +131,8 @@ include('includes/navbar.php');
             <!----Menu buat hapus data pengguna--->
             <!--Kodingan full dialihkan ke register_edit.php-->
             <td>
-            <form action="code.php" method="post" >
-              <input type="text" name="delete_id" value="<?php echo $row['id']; ?>"
+            <form action="code.php" method="post">
+              <input type="text" name="delete_id" value="<?php echo $row['id']; ?>">
               <button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button>
               </form>
             </td>
