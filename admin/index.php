@@ -33,10 +33,8 @@ include('includes/navbar.php');
 
               $row = mysqli_num_rows($query_run);
 
-              echo $row;
+              echo '<h4>'.$row.'Pengguna</h4>';
               ?>
-               <h4>Pengguna</h4>
-
               </div>
             </div>
             <div class="col-auto">
