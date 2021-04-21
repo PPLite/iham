@@ -28,7 +28,7 @@ include('includes/navbar.php');
               <?php
               require 'dbconfig.php';
 
-              $query = "SELECT  id FROM register ORDER BY id";
+              $query = "SELECT id FROM register ORDER BY id";
               $query_run = mysql_query($connection, $query);
 
               $row = mysqli_num_rows($query_run);
