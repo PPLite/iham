@@ -23,10 +23,19 @@ include('includes/navbar.php');
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jumlah Pengguna Aktif</div>
+              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jumlah Pengguna Terdaftar</div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">
+              <?php
+              require 'dbconfig.php';
 
-               <h4>Aktif saat ini: 10</h4>
+              $querry = "SELECT  id FROM register ORDER BY id";
+              $querry_run = mysql_query($connection, $querry);
+
+              $row = mysqli_num_rows($querry_run);
+
+              echo'.$row.';
+              ?>
+               <h4>Pengguna</h4>
 
               </div>
             </div>
