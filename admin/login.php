@@ -1,7 +1,8 @@
 <?php
 include('includes/header.php'); 
 ?>
-
+<html>
+<body>
 <body class="bg-gradient-primary">
 
     <div class="container">
@@ -70,6 +71,6 @@ include('includes/header.php');
 </body>
 
 <?php
-include('includes/scripts.php'); 
+include('includes/scripts.php');
 include('includes/footer.php');
 ?>
