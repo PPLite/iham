@@ -33,7 +33,7 @@ include('includes/navbar.php');
 
               $row = mysqli_num_rows($querry_run);
 
-              echo'.$row.';
+              echo $row;
               ?>
                <h4>Pengguna</h4>
 
