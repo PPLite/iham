@@ -4,7 +4,7 @@ include('includes/header.php');
 ?>
 
 
-
+<body class="bg-gradient-primary">
 <div class="container">
 
 <!-- Outer Row -->
@@ -55,7 +55,7 @@ include('includes/header.php');
 </div>
 
 </div>
-
+</body>
 
 <?php
 include('includes/scripts.php'); 
