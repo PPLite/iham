@@ -45,7 +45,7 @@ include('includes/header.php');
                     <!--- Baris kedua berfungsi untuk custom error ketika user salah memasukkan email/password---->
                     <input type="email" name=email class="form-control form-control-user" placeholder="Masukkan Email Anda"
                       oninvalid="this.setCustomValidity('Masukkan Email yang telah terdaftar')"
-                      oninput="this.setCustomValidity('MMasukkan alamat email yang sesuai @__.com')"/>
+                      oninput="this.setCustomValidity('Masukkan alamat email yang sesuai ____@__.com')"/>
 
                     </div>
                     <div class="form-group">
