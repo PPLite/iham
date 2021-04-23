@@ -104,12 +104,12 @@ if(isset($_POST['login_btn']))
     //fungsi untuk ngambil beberapa data "array" database 
     if(mysqli_fetch_array($query_run))
     {
-        $_SESSION['email']= $email_login;
+        $_SESSION['username']= $email_login;
         header('Location: index.php');
     }
     else
     {
-        $_SESSION['STATUS'] = 'Email/password anda tidak sesuai';
+        $_SESSION['status'] = 'Email/password anda tidak sesuai';
         header('Location: login.php');
     }
 

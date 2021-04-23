@@ -23,7 +23,7 @@ include('includes/header.php');
               <div class="text-center">
               <!--Bagian Judul----->
                 <h1 class="h4 text-gray-900 mb-4">Selamat Datang</h1>
-                <h3 class="h4 text-gray-900 mb-4">Silahkan Masukkan Email dan Password Anda</h3>
+                <h4 class="h4 text-gray-900 mb-4">Silahkan Masukkan Email dan Password Anda</h4>
 
                 <!--Mulai kode php--->
                 <?php
