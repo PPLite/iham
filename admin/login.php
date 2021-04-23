@@ -41,7 +41,19 @@ include('includes/header.php');
                 <form class="user" action="logincode.php" method="POST">
 
                     <div class="form-group">
-                    <input type="email" name="emaill" class="form-control form-control-user" placeholder="Masukkan Email Anda">
+                    <!--- <input type="email" name="emaill" class="form-control form-control-user" placeholder="Masukkan Email Anda"> ---->
+                    ---
+                    <input type="email" name=email class="form-control form-control-user" placeholder="Masukkan Email Anda"
+                      oninvalid="this.setCustomValidity('Masukkan Email yang telah terdaftar')"
+                      oninput="this.setCustomValidity('Mbuh iki opo')"/>
+                    ---
+
+                    <!---
+                    <input type="text" id="username" required placeholder="Enter Name"
+                      oninvalid="this.setCustomValidity('Enter User Name Here')"
+                      oninput="this.setCustomValidity('')"/>
+                    --->
+
                     </div>
                     <div class="form-group">
                     <input type="password" name="passwordd" class="form-control form-control-user" placeholder="Password">
