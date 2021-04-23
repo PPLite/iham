@@ -1,11 +1,12 @@
 <?php
 
-$server_name = "localhost:3306";
-$db_username = "admin";
-$db_password = "Ah-9]yg$!?eAquF^{u";
-$db_name = "mjdr3247_admin";
+$server_name = "localhost";
+$db_username = "mjdr3247_admin";
+$db_password = "semogacepatlulus2021";
+$db_name = "mjdr3247_adminpanel";
 
 $connection = mysqli_connect($server_name,$db_username,$db_password,$db_name);
+
 
 if(!$connection)
 {
