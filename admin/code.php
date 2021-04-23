@@ -16,7 +16,7 @@ if(isset($_POST['login_btn']))
     //fungsi untuk ngambil beberapa data "array" database 
     if(mysqli_fetch_array($query_run))
     {
-        $_SESSION['username'] = $email_login;
+        $_SESSION['email'] = $email_login;
         header('Location: index.php');
     }
     else

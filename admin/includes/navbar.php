@@ -286,7 +286,7 @@
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
 
               <!--- Untuk menampilkan pengguna yang sedang aktif saat itu--->
-              <?php echo $_SESSION['username']; ?>   
+              <?php echo $_SESSION['email']; ?>   
                 </span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
