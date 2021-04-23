@@ -41,21 +41,18 @@ include('includes/header.php');
                 <form class="user" action="logincode.php" method="POST">
 
                     <div class="form-group">
-                    <!--- <input type="email" name="emaill" class="form-control form-control-user" placeholder="Masukkan Email Anda"> ---->
-                    
+                    <!--- Form untuk memasukkan email dan password ---->
+                    <!--- Baris kedua berfungsi untuk custom error ketika user salah memasukkan email/password---->
                     <input type="email" name=email class="form-control form-control-user" placeholder="Masukkan Email Anda"
                       oninvalid="this.setCustomValidity('Masukkan Email yang telah terdaftar')"
-                      oninput="this.setCustomValidity('Mbuh iki opo')"/>
-
-                    <!---
-                    <input type="text" id="username" required placeholder="Enter Name"
-                      oninvalid="this.setCustomValidity('Enter User Name Here')"
-                      oninput="this.setCustomValidity('')"/>
-                    --->
+                      oninput="this.setCustomValidity('MMasukkan alamat email yang sesuai @__.com')"/>
 
                     </div>
                     <div class="form-group">
-                    <input type="password" name="passwordd" class="form-control form-control-user" placeholder="Password">
+                    <input type="password" name="passwordd" class="form-control form-control-user" placeholder="Password"
+                      oninvalid="this.setCustomValidity('Password anda Salah')"
+                      oninput="this.setCustomValidity('Masukkan password yang sesuai')"/>
+
                     </div>
             
                     <button type="submit" name="login_btn" class="btn btn-primary btn-user btn-block"> Login </button>
