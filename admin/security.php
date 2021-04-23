@@ -2,7 +2,7 @@
 session_start();
 include('database/dbconfig.php');
 
-if($dbconfig)
+if($connection)
 {
     //Echo "Database tersambung"
 }
@@ -15,5 +15,5 @@ else
 //tanpa login dahulu
 if(!$_SESSION['email']);
 {
-    header('Location: login.php');
+    header('Location: index.php');
 }
