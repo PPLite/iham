@@ -43,16 +43,11 @@ include('includes/header.php');
 
                     <div class="form-group">
                     <!--- Form untuk memasukkan email dan password ---->
-                    <!--- Baris kedua berfungsi untuk custom error ketika user salah memasukkan email/password---->
-                    <input type="email" name="email" class="form-control form-control-user" placeholder="Masukkan Email Anda"
-                      oninvalid="this.setCustomValidity('Masukkan Email yang telah terdaftar')"
-                      oninput="this.setCustomValidity('Masukkan alamat email yang sesuai ____@__.com')"/>
+                    <input type="email" name="email" class="form-control form-control-user" placeholder="Masukkan Email Anda">
 
                     </div>
                     <div class="form-group">
-                    <input type="password" name="password" class="form-control form-control-user" placeholder="Password"
-                      oninvalid="this.setCustomValidity('Password anda Salah')"
-                      oninput="this.setCustomValidity('Masukkan password yang sesuai')"/>
+                    <input type="password" name="password" class="form-control form-control-user" placeholder="Password">
                     </div>
                     <button type="submit" name="login_btn" class="btn btn-primary btn-user btn-block"> Masuk </button>
                     <hr>
