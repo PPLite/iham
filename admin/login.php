@@ -41,11 +41,11 @@ include('includes/header.php');
               <!---Mulai untuk login-->
                 <form class="user" action="code.php" method="POST">
 
-                    <div class="form-group">
                     <!--- Form untuk memasukkan email dan password ---->
+                    <div class="form-group">
                     <input type="email" name="email" class="form-control form-control-user" placeholder="Masukkan Email Anda">
-
                     </div>
+                    
                     <div class="form-group">
                     <input type="password" name="password" class="form-control form-control-user" placeholder="Password">
                     </div>
