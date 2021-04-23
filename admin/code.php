@@ -93,7 +93,7 @@ if(isset($_POST['delete_btn']))
 if(isset($_POST['login_btn']))
 {
     $email_login = $_POST['email'];
-    $email_login = $_POST['password'];
+    $password_login = $_POST['password'];
 
     //untuk nyari "select" dari semua data"* dari tabel "register" dan, cocokin dari tambel kolom "email"
     //terus cocokin dengan form "email" sama juga dengan password
