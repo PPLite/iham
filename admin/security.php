@@ -15,5 +15,5 @@ else
 //tanpa login dahulu
 if(!$_SESSION['username']);
 {
-    header('location: login.php');
+    header('Location: login.php');
 }
