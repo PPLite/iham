@@ -23,6 +23,7 @@ include('includes/header.php');
               <div class="text-center">
               <!--Bagian Judul----->
                 <h1 class="h4 text-gray-900 mb-4">Selamat Datang</h1>
+                <h1 class="h4 text-gray-900 mb-4">Silahkan Masukkan Email dan Password Anda</h1>
 
                 <!--Mulai kode php--->
                 <?php
@@ -38,24 +39,22 @@ include('includes/header.php');
               </div>
 
               <!---Mulai untuk login-->
-                <form class="user" action="logincode.php" method="POST">
+                <form class="user" action="code.php" method="POST">
 
                     <div class="form-group">
                     <!--- Form untuk memasukkan email dan password ---->
                     <!--- Baris kedua berfungsi untuk custom error ketika user salah memasukkan email/password---->
-                    <input type="email" name=email class="form-control form-control-user" placeholder="Masukkan Email Anda"
+                    <input type="email" name="email" class="form-control form-control-user" placeholder="Masukkan Email Anda"
                       oninvalid="this.setCustomValidity('Masukkan Email yang telah terdaftar')"
                       oninput="this.setCustomValidity('Masukkan alamat email yang sesuai ____@__.com')"/>
 
                     </div>
                     <div class="form-group">
-                    <input type="password" name="passwordd" class="form-control form-control-user" placeholder="Password"
+                    <input type="password" name="password" class="form-control form-control-user" placeholder="Password"
                       oninvalid="this.setCustomValidity('Password anda Salah')"
                       oninput="this.setCustomValidity('Masukkan password yang sesuai')"/>
-
                     </div>
-            
-                    <button type="submit" name="login_btn" class="btn btn-primary btn-user btn-block"> Login </button>
+                    <button type="submit" name="login_btn" class="btn btn-primary btn-user btn-block"> Masuk </button>
                     <hr>
                 </form>
 

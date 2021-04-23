@@ -51,10 +51,10 @@ if(isset($_POST['updatebtn']))
 
     //disini pakai $query = update. soalnya buat update data aja. dan apa yang akan diupdate dituliskan setelahnya
     $query = "UPDATE register SET username='$username', email='$email', password='$password' WHERE id='$id' ";
-    $querry_run = mysqli_query($connection, $query);
+    $query_run = mysqli_query($connection, $query);
 
     //Tampilan status jika dilakukan perubahan data
-    if($querry_run)
+    if($query_run)
     {
         $_SESSION['success'] = "Data Berhasil diperbarui";
         header('location: register.php');
@@ -68,14 +68,15 @@ if(isset($_POST['updatebtn']))
 
 
 //Untuk hapus data pengguna
+//fungsi ini akan aktif ketika "delete_btn" dipanggil
 if(isset($_POST['delete_btn']))
 {
-    //disini pakai $query=Delete, soalnya ya buat ngehapus data berdasarkan "ID" yang udah dipilih
+    //disini pakai $query=Delete_id, soalnya ya buat ngehapus data berdasarkan "ID" yang udah dipilih
     $id = $_POST['delete_id'];
     $query = "DELETE FROM register WHERE id='$id' ";
-    $querry_run = mysqli_query($connection, $query);
+    $query_run = mysqli_query($connection, $query);
 
-    if ($querry_run)
+    if ($query_run)
     {
         $_SESSION['success'] = "Data berhasil dihapus";
         header('location: register.php');
@@ -85,6 +86,35 @@ if(isset($_POST['delete_btn']))
         $_SESSION['status'] = "Data gagal dihapus";
         header('location: register.php');
     }
+}
+
+//Fungsi login form
+//fungsi akan aktif jika tombol login dipencet
+if(isset($_POST['login_btn']))
+{
+    $email_login = $_POST['email'];
+    $email_login = $_POST['password'];
+
+    //untuk nyari "select" dari semua data"* dari tabel "register" dan, cocokin dari tambel kolom "email"
+    //terus cocokin dengan form "email" sama juga dengan password
+    $query = "SELECT * FROM  register WHERE email='$email_login' AND password='$password_login' ";
+    $query_run = mysql_query($connection, $query);
+    //seperti biasa, logika if else
+
+    //fungsi untuk ngambil beberapa data "array" database 
+    if(mysqli_fetch_array($query_run))
+    {
+        $_SESSION['username']= $email_login;
+        header('Location: index.php');
+    }
+    else
+    {
+        $_SESSION['STATUS'] = 'Email/password anda tidak sesuai';
+        header('Location: login.php');
+    }
+
+
+
 }
 
 ?>
