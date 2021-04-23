@@ -42,11 +42,10 @@ include('includes/header.php');
 
                     <div class="form-group">
                     <!--- <input type="email" name="emaill" class="form-control form-control-user" placeholder="Masukkan Email Anda"> ---->
-                    ---
+                    
                     <input type="email" name=email class="form-control form-control-user" placeholder="Masukkan Email Anda"
                       oninvalid="this.setCustomValidity('Masukkan Email yang telah terdaftar')"
                       oninput="this.setCustomValidity('Mbuh iki opo')"/>
-                    ---
 
                     <!---
                     <input type="text" id="username" required placeholder="Enter Name"
