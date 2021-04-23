@@ -1,5 +1,8 @@
 <?php
 session_start();
+include('security.php');
+
+
 //inisialisasi sambungan ke database
 $connection = mysqli_connect("localhost","mjdr3247_admin","semogacepatlulus2021","mjdr3247_adminpanel");
 
