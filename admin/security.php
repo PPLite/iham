@@ -13,7 +13,7 @@ else
 
 //berfungsi untuk pengaman, biar gak bisa diakses direct ke index pp
 //tanpa login dahulu
-if(!$_SESSION['email']);
+if(!$_SESSION['username']);
 {
-    header('Location: index.php');
+    header('Location: login.php');
 }

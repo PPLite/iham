@@ -1,5 +1,10 @@
 <?php
 include('security.php');
+session_start();
+//inisialisasi sambungan ke database
+$connection = mysqli_connect("localhost","mjdr3247_admin","semogacepatlulus2021","mjdr3247_adminpanel");
+
+
 //Fungsi login form
 //fungsi akan aktif jika tombol login dipencet
 if(isset($_POST['login_btn']))
@@ -9,14 +14,14 @@ if(isset($_POST['login_btn']))
 
     //untuk nyari "select" dari semua data"* dari tabel "register" dan, cocokin dari tambel kolom "email"
     //terus cocokin dengan form "email" sama juga dengan password
-    $query = "SELECT * FROM  register WHERE email='$email_login' AND password='$password_login' ";
+    $query = "SELECT * FROM  register WHERE email='$email_login' AND password='$password_login' LIMIT 1";
     $query_run = mysqli_query($connection, $query);
     //seperti biasa, logika if else
 
     //fungsi untuk ngambil beberapa data "array" database 
     if(mysqli_fetch_array($query_run))
     {
-        $_SESSION['email'] = $email_login;
+        $_SESSION['username'] = $email_login;
         header('Location: index.php');
     }
     else
@@ -24,11 +29,6 @@ if(isset($_POST['login_btn']))
         $_SESSION['status'] = 'Email/password anda tidak sesuai';
         header('Location: login.php');
     }
-
-
-    session_start();
-//inisialisasi sambungan ke database
-$connection = mysqli_connect("localhost","mjdr3247_admin","semogacepatlulus2021","mjdr3247_adminpanel");
 
 //registerbtn ditombol
 if(isset($_POST['registerbtn']))
