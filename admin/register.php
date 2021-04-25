@@ -1,7 +1,8 @@
 <?php
 session_start();
 include('includes/header.php'); 
-include('includes/navbar.php'); 
+include('includes/navbar.php');
+include('security.php'); 
 ?>
 
 <!----Mulai Modal buat pengguna baru. kotak yang ngawang ditengah-->

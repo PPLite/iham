@@ -1,11 +1,12 @@
 <?php
 session_start();
+include('security.php');
+
 //inisialisasi sambungan ke database
 $connection = mysqli_connect("localhost","mjdr3247_admin","semogacepatlulus2021","mjdr3247_adminpanel");
 
 //Fungsi login form
 //fungsi akan aktif jika tombol login dipencet
-include('security.php');
 if(isset($_POST['login_btn']))
 {
     $email_login = $_POST['email'];

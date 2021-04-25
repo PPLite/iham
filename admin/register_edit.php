@@ -2,6 +2,7 @@
 session_start();
 include('includes/header.php'); 
 include('includes/navbar.php'); 
+include('security.php');
 ?>
 
 <div class="container-fluid">
@@ -38,15 +39,15 @@ if (isset($_POST['edit_btn']))
 <!---Mengambil data spesifik dari database---->
     <div class="form-group">
         <label> Nama Pengguna </label>
-        <input type="text" name="edit_username" value="<?php echo $row['username']?>" class="form-control" placeholder="Enter Username">
+        <input type="text" name="edit_username" value="<?php echo $row['username']?>" class="form-control" placeholder="Masukkan Username">
     </div>
     <div class="form-group">
         <label>Email</label>
-        <input type="email" name="edit_email" value="<?php echo $row['email']?>" class="form-control" placeholder="Enter Email">
+        <input type="email" name="edit_email" value="<?php echo $row['email']?>" class="form-control" placeholder="Masukkan Email">
     </div>
     <div class="form-group">
         <label>Kata Sandi</label>
-        <input type="password" name="edit_password" value="<?php echo $row['password']?>" class="form-control" placeholder="Enter Password">
+        <input type="password" name="edit_password" value="<?php echo $row['password']?>" class="form-control" placeholder="Masukkan Password">
     </div>
 
 <!---Tombol untuk hapus dan simpan perubahan editing pengguna-->

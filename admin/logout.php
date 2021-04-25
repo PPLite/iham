@@ -6,5 +6,6 @@ if(isset($_POST['logout_btn']))
     //Berfungsi untuk mengakhiri sesi ketika sudah login
     session_destroy();
     unset($_SESSION['username']);
+    header('location: login.php');
 }
 ?>
