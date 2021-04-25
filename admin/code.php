@@ -116,5 +116,4 @@ if(isset($_POST['delete_btn']))
         header('location: register.php');
     }
 }
-
 ?>

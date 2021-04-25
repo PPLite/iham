@@ -22,25 +22,25 @@ include('includes/navbar.php');
 
             <div class="form-group">
                 <label> Nama Pengguna </label>
-                <input type="text" name="username" class="form-control" placeholder="Enter Username">
+                <input type="text" name="username" class="form-control" placeholder="Masukkan Nama">
             </div>
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" name="email" class="form-control" placeholder="Enter Email">
+                <input type="email" name="email" class="form-control" placeholder="Email">
             </div>
             <div class="form-group">
                 <label>Kata Sandi</label>
-                <input type="password" name="password" class="form-control" placeholder="Enter Password">
+                <input type="password" name="password" class="form-control" placeholder="Kata Sandi">
             </div>
             <div class="form-group">
                 <label>Ulangi Kata sandi</label>
-                <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password">
+                <input type="password" name="confirmpassword" class="form-control" placeholder="Ulangi Kata Sandi">
             </div>
         
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" name="registerbtn" class="btn btn-primary">Save</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+            <button type="submit" name="registerbtn" class="btn btn-primary">Simpan</button>
         </div>
       </form>
 
