@@ -1,5 +1,4 @@
 <?php
-session_start();
 include('security.php');
 
 //inisialisasi sambungan ke database
@@ -30,7 +29,6 @@ if(isset($_POST['login_btn']))
         header('Location: login.php');
     }
 }
-
 
 //Funsi Penambahan Pengguna di halaman pengaturan pengguna
 //Jika tambah pengguna "registerbtn" ditombol
@@ -95,7 +93,6 @@ if(isset($_POST['updatebtn']))
         header('location: register.php');
     }
 }
-
 
 //Untuk hapus data pengguna
 //fungsi ini akan aktif ketika "delete_btn" ditombol
