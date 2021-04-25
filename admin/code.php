@@ -3,10 +3,6 @@ session_start();
 //inisialisasi sambungan ke database
 $connection = mysqli_connect("localhost","mjdr3247_admin","semogacepatlulus2021","mjdr3247_adminpanel");
 
-
-
-
-
 //Fungsi login form
 //fungsi akan aktif jika tombol login dipencet
 include('security.php');
@@ -35,17 +31,8 @@ if(isset($_POST['login_btn']))
 }
 
 
-
-
-
-
-
-
-
-
-
-
-//registerbtn ditombol
+//Funsi Penambahan Pengguna di halaman pengaturan pengguna
+//Jika tambah pengguna "registerbtn" ditombol
 if(isset($_POST['registerbtn']))
 
 //jika sudah ditombol kemudian
@@ -110,7 +97,7 @@ if(isset($_POST['updatebtn']))
 
 
 //Untuk hapus data pengguna
-//fungsi ini akan aktif ketika "delete_btn" dipanggil
+//fungsi ini akan aktif ketika "delete_btn" ditombol
 if(isset($_POST['delete_btn']))
 {
     //disini pakai $query=Delete_id, soalnya ya buat ngehapus data berdasarkan "ID" yang udah dipilih
