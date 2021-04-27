@@ -76,7 +76,7 @@ include('includes/navbar.php');
     //Status gagal ditambahkan
     if(isset($_SESSION['status']) && $_SESSION['status'] !='')
     {
-      echo '<h2 class="bg-info">'.$_SESSION['status'].' </h2>';
+      echo '<h2>'.$_SESSION['status'].' </h2>';
       unset($_SESSION['status']);
     }
   ?>
