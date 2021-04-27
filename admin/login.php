@@ -31,7 +31,7 @@ include('includes/header.php');
                 //Menampilkan status jika login berhasil atau salah
                     if(isset($_SESSION['status']) && $_SESSION['status'] !='') 
                     {
-                        echo '<h2 class="bg-danger text-white"> '.$_SESSION['status'].' </h2>';
+                        echo '<h2 class="bg-info"> '.$_SESSION['status'].' </h2>';
                         unset($_SESSION['status']);
                     }
                 ?>

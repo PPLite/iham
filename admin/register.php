@@ -64,7 +64,7 @@ include('includes/navbar.php');
   </div>
 
 <div class="card-body">
-  <!----Untuk nambahin status---->
+  <!----Untuk nambahin status----->
   <?php
   //Status berhasil ditambahkan
     if(isset($_SESSION['success']) && $_SESSION['success'] !='')
