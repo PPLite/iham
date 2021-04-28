@@ -1,7 +1,3 @@
-<?php
-include('security.php'); 
-?>
-
    <!-- Sidebar -->
    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -287,7 +283,7 @@ include('security.php');
             <span class="mr-2 d-none d-lg-inline text-gray-600 small">
 
                   <!--- Untuk menampilkan hak akses pengguna--->
-                      Anda Login Sebagai <?php echo $_SESSION['usertype']; ?> 
+                      Anda Login Sebagai <?php echo $_SESSION['username']; ?>
                       </span>
 
             <div class="topbar-divider d-none d-sm-block"></div>
