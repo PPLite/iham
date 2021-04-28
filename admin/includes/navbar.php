@@ -1,3 +1,4 @@
+
    <!-- Sidebar -->
    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -283,7 +284,7 @@
             <span class="mr-2 d-none d-lg-inline text-gray-600 small">
 
                   <!--- Untuk menampilkan hak akses pengguna--->
-                      Anda Login Sebagai <?php echo $_SESSION['usertype']; ?>
+                  <?php echo $_SESSION['usertype']; ?> 
                       </span>
 
             <div class="topbar-divider d-none d-sm-block"></div>
