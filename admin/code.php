@@ -2,7 +2,7 @@
 include('security.php');
 //inisialisasi sambungan ke database
 $connection = mysqli_connect("localhost","mjdr3247_admin","semogacepatlulus2021","mjdr3247_adminpanel");
-sesion_start();
+//sesion_start();
 //Fungsi login form
 //fungsi akan aktif jika tombol login dipencet
 if(isset($_POST['login_btn']))
