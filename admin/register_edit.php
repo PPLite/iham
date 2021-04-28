@@ -50,10 +50,11 @@ if (isset($_POST['edit_btn']))
     </div>
     <div class="form-group">
         <label>Hak Wewenang</label>
-        <select name="update_usertype">
+        <select name="update_usertype" class="form control"> 
             <option value="admin"> Admin </option>
             <option value="pengelola"> Pengelola </option>
             <option value="pengguna"> Pengguna </option>
+        </select>
     </div>
 
 <!---Tombol untuk hapus dan simpan perubahan editing pengguna-->
