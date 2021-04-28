@@ -279,14 +279,7 @@
                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
               </div>
             </li>
-
-            <div class="topbar-divider d-none d-sm-block"></div>
-            <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-
-                  <!--- Untuk menampilkan hak akses pengguna--->
-                  <?php echo $_SESSION['usertype']; ?> 
-                      </span>
-
+            
             <div class="topbar-divider d-none d-sm-block"></div>
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
