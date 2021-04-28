@@ -1,8 +1,8 @@
 <?php
 include('security.php');
-
+include('database/dbconfig.php');
 //inisialisasi sambungan ke database
-$connection = mysqli_connect("localhost","mjdr3247_admin","semogacepatlulus2021","mjdr3247_adminpanel");
+//$connection = mysqli_connect("localhost","mjdr3247_admin","semogacepatlulus2021","mjdr3247_adminpanel");
 
 //Fungsi login form
 //fungsi akan aktif jika tombol login dipencet
@@ -15,22 +15,61 @@ if(isset($_POST['login_btn']))
     //terus cocokin dengan form "email" sama juga dengan password
     $query = "SELECT * FROM  register WHERE email='$email_login' AND password='$password_login' ";
     $query_run = mysqli_query($connection, $query);
+    $usertypes = mysqli_fetch_array($query_run);
     //seperti biasa, logika if else
-
-    //fungsi untuk ngambil beberapa data "array" database 
-    if(mysqli_fetch_array($query_run))
+    if($usertypes['usertype'] == "admin")
     {
         $_SESSION['username'] = $email_login;
-        header('Location: index.php');
+        header('Loccation: index.php');
+    }
+
+    else if ($usertypes ['usertype'] == "pengelola")
+    {
+        $_SESSION['username']  = $email_login;
+        header('Loccation: ../index.html');
+    }
+
+    else if ($usertypes ['usertype'] == "pengguna")
+    {
+        $_SESSION['username']  = $email_login;
+        header('Loccation: ../login.php');
     }
     else
     {
-        $_SESSION['status'] = 'Email/password anda tidak sesuai';
-        header('Location: login.php');
+        $_SESSION['status'] = "Email / Password anda Salah";
+        header('Loccation: login.php');
     }
+
 }
 
-//Funsi Penambahan Pengguna di halaman pengaturan pengguna
+
+
+
+//    //fungsi untuk ngambil beberapa data "array" database 
+//    if(mysqli_fetch_array($query_run))
+//    {
+//        $_SESSION['username'] = $email_login;
+//        header('Location: index.php');
+//    }
+//    else
+//    {
+//        $_SESSION['status'] = 'Email/password anda tidak sesuai';
+//        header('Location: login.php');
+//    }
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+//Fungsi Penambahan Pengguna di halaman pengaturan pengguna
 //Jika tambah pengguna "registerbtn" ditombol
 if(isset($_POST['registerbtn']))
 
