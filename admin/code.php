@@ -31,12 +31,12 @@ if(isset($_POST['login_btn']))
     else if ($usertypes ['usertype'] == "pengguna")
     {
         $_SESSION['username'] = $email_login;
-        header('Location: index.php');
+        header('Location: register.php');
     }
     else
     {
         $_SESSION['status'] = "Email / Password anda Salah";
-        header('Location: login.php');
+        header('Location: register_edit.php');
     }
 
 }
