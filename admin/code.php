@@ -41,16 +41,16 @@ if(isset($_POST['registerbtn']))
     $email = $_POST['email'];
     $password = $_POST['password'];
     $cpassword = $_POST['confirmpassword'];
+    $usertype = $_POST['usertype'];
 
     if($password === $cpassword)
     {
          //data yang tadi, dimasukkan ke database dewngan perintah "insert into" karena data tersebut data baru, dan diletakkan ke tabel yang udah disediakan
-        $query = "INSERT INTO register (username,email,password) VALUES ('$username','$email','$password')";
+        $query = "INSERT INTO register (username,email,password,usertype) VALUES ('$username','$email','$password','$usertype')";
         $query_run = mysqli_query($connection,$query);
     
         if($query_run)
         {
-        //echo "saved";
         $_SESSION['success'] = "Pengguna berhasil ditambahkan";
         header('location: register.php');
         }

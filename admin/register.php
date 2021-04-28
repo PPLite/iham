@@ -36,6 +36,8 @@ include('includes/navbar.php');
                 <label>Ulangi Kata sandi</label>
                 <input type="password" name="confirmpassword" class="form-control" placeholder="Ulangi Kata Sandi">
             </div>
+
+            <input type="text" name="usertype" value="admin">
         
         </div>
         <div class="modal-footer">
