@@ -1,5 +1,4 @@
 <?php
-include('logincode.php');
 include('includes/header.php'); 
 ?>
 
