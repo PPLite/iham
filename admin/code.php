@@ -24,14 +24,14 @@ if(isset($_POST['login_btn']))
 
     else if ($usertypes ['usertype'] == "pengelola")
     {
-        $_SESSION['username']  = $email_login;
-        header('Loccation: ../index.html');
+        $_SESSION['username'] = $email_login;
+        header('Loccation: index.php');
     }
 
     else if ($usertypes ['usertype'] == "pengguna")
     {
-        $_SESSION['username']  = $email_login;
-        header('Loccation: ../login.php');
+        $_SESSION['username'] = $email_login;
+        header('Loccation: index.php');
     }
     else
     {
