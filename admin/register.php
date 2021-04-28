@@ -2,6 +2,7 @@
 include('security.php'); 
 include('includes/header.php'); 
 include('includes/navbar.php');
+include('database/dbconfig.php')
 ?>
 
 <!----Mulai Modal buat pengguna baru. kotak yang ngawang ditengah-->
@@ -87,8 +88,6 @@ include('includes/navbar.php');
 
 <!---Buat ngambil data--->
     <?php
-    //Nyambungin dulu ke database, untuk ngambil data username dan password
-    $connection = mysqli_connect("localhost","mjdr3247_admin","semogacepatlulus2021","mjdr3247_adminpanel");
     //dari database, dipilih semua (bintang = semuanya) dari tabel "register"
     $query = "SELECT * FROM register"; 
     $query_run = mysqli_query($connection, $query);
