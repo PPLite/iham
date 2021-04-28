@@ -1,7 +1,8 @@
 <?php
 include('security.php');
+include('database/dbconfig.php');
 //inisialisasi sambungan ke database
-$connection = mysqli_connect("localhost","mjdr3247_admin","semogacepatlulus2021","mjdr3247_adminpanel");
+//$connection = mysqli_connect("localhost","mjdr3247_admin","semogacepatlulus2021","mjdr3247_adminpanel");
 //sesion_start();
 //Fungsi login form
 //fungsi akan aktif jika tombol login dipencet
