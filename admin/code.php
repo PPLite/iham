@@ -76,9 +76,12 @@ if(isset($_POST['updatebtn']))
     $username = $_POST['edit_username'];
     $email = $_POST['edit_email'];
     $password = $_POST['edit_password'];
+    $usertype = $_POST['edit_usertype'];
+    $usertypeupdate = $_POST['update_usertype'];
+
 
     //disini pakai $query = update. soalnya buat update data aja. dan apa yang akan diupdate dituliskan setelahnya
-    $query = "UPDATE register SET username='$username', email='$email', password='$password' WHERE id='$id' ";
+    $query = "UPDATE register SET username='$username', email='$email', password='$password',usertype='$usertypeupdate' WHERE id='$id' ";
     $query_run = mysqli_query($connection, $query);
 
     //Tampilan status jika dilakukan perubahan data

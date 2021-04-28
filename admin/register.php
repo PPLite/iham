@@ -37,7 +37,7 @@ include('includes/navbar.php');
                 <input type="password" name="confirmpassword" class="form-control" placeholder="Ulangi Kata Sandi">
             </div>
 
-            <input type="text" name="usertype" value="admin">
+            <input type="hidden" name="usertype" value="admin">
         
         </div>
         <div class="modal-footer">
@@ -101,6 +101,7 @@ include('includes/navbar.php');
             <th>Username</th>
             <th>Email</th>
             <th>Password</th>
+            <th>Hak Akses</th>
             <th>Ubah</th>
             <th>Hapus</th>
           </tr>
@@ -115,11 +116,12 @@ include('includes/navbar.php');
           {
             ?>
           <tr>
-          <!---Mengambil data dari database kemudian menampilkan ke tabel, serta menentukan kolom mana saja-->
+          <!---Mengambil data dari database kemudian menampilkan ke tabel, serta menentukan kolom mana saja yang akan diambil datanya-->
           <td><?php echo $row['id']; ?></td>
             <td><?php echo $row['username']; ?></td>
             <td><?php echo $row['email']; ?></td>
             <td><?php echo $row['password']; ?></td>
+            <td><?php echo $row['usertype']; ?></td>
             
             <!--Tombol buat edit pengguna-->
             <!--Kodingan full dialihkan ke register_edit.php-->

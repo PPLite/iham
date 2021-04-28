@@ -48,6 +48,13 @@ if (isset($_POST['edit_btn']))
         <label>Kata Sandi</label>
         <input type="password" name="edit_password" value="<?php echo $row['password']?>" class="form-control" placeholder="Masukkan Password">
     </div>
+    <div class="form-group">
+        <label>Hak Wewenang</label>
+        <select name="update_usertype">
+            <option value="admin"> Admin </option>
+            <option value="pengelola"> Pengelola </option>
+            <option value="pengguna"> Pengguna </option>
+    </div>
 
 <!---Tombol untuk hapus dan simpan perubahan editing pengguna-->
 <a href="register.php" class="btn btn-danger"> Batalkan</a>
