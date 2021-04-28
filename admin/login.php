@@ -1,6 +1,7 @@
 <?php
 include('security.php');
 include('logincode.php');
+include('database/dbconfig.php');
 include('includes/header.php'); 
 ?>
 
