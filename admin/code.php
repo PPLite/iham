@@ -19,24 +19,24 @@ if(isset($_POST['login_btn']))
     if($usertypes['usertype'] == "admin")
     {
         $_SESSION['username'] = $email_login;
-        header('Loccation: index.php');
+        header('Location: index.php');
     }
 
     else if ($usertypes ['usertype'] == "pengelola")
     {
         $_SESSION['username'] = $email_login;
-        header('Loccation: index.php');
+        header('Location: index.php');
     }
 
     else if ($usertypes ['usertype'] == "pengguna")
     {
         $_SESSION['username'] = $email_login;
-        header('Loccation: index.php');
+        header('Location: index.php');
     }
     else
     {
         $_SESSION['status'] = "Email / Password anda Salah";
-        header('Loccation: login.php');
+        header('Location: login.php');
     }
 
 }
