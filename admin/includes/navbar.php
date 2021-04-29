@@ -286,12 +286,8 @@
 
               <!--- Untuk menampilkan pengguna yang sedang aktif saat itu--->
               <?php
-                            $query = "SELECT id FROM register ORDER BY id";
-                            $query_run = mysqli_query($connection, $query);
-              
-                            $row = mysqli_num_rows($query_run);
-              
-                            echo '<h4>'.$row.'&nbsp Pengguna</h4>';
+                            $query_run = mysqli_query($connection, $query);     
+                            echo ['usertype'];
               ?> 
               </span>
 
