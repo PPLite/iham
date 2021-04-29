@@ -19,25 +19,29 @@ if(isset($_POST['login_btn']))
     //seperti biasa, logika if else
     if($usertypes['usertype'] == "admin")
     {
+        $_SESSION['usertype'];
         $_SESSION['username'] = $email_login;
         header('Location: index.php');
     }
 
     else if ($usertypes ['usertype'] == "pengelola")
     {
+        $_SESSION['usertype'];
         $_SESSION['username'] = $email_login;
         header('Location: index.php');
     }
 
     else if ($usertypes ['usertype'] == "pengguna")
     {
+        $_SESSION['usertype'];
         $_SESSION['username'] = $email_login;
         header('Location: register.php');
     }
     else
     {
+        $_SESSION['usertype'];
         $_SESSION['status'] = "Email / Password anda Salah";
-        header('Location: register_edit.php');
+        header('Location: login.php');
     }
 
 }
