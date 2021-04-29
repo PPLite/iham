@@ -67,8 +67,8 @@ include('database/dbconfig.php');
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Jumlah Asset Terdaftar</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">30 Asset</div>
+              <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Jumlah Asset Terpakai</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">15 Asset</div>
             </div>
             <div class="col-auto">
             </div>
@@ -83,8 +83,8 @@ include('database/dbconfig.php');
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Jumlah Asset Terdaftar</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">30 Asset</div>
+              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Jumlah Asset Dipesan</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">2 Asset</div>
             </div>
             <div class="col-auto">
             </div>
