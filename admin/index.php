@@ -39,7 +39,7 @@ include('database/dbconfig.php');
               </div>
             </div>
             <div class="col-auto">
-             <i class="far fa-address-card -300"></i>
+             <i class="far fa-address-card-2x -300"></i>
             </div>
           </div>
         </div>
