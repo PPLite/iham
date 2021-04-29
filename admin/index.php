@@ -45,7 +45,7 @@ include('database/dbconfig.php');
       </div>
     </div>
 
-    <!-- Earnings (Monthly) Card Example -->
+    <!-- Kartu 2 -->
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-left-success shadow h-100 py-2">
         <div class="card-body">
@@ -60,6 +60,41 @@ include('database/dbconfig.php');
         </div>
       </div>
     </div>
+
+    <!-- Kartu 3 -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Jumlah Asset Terdaftar</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">30 Asset</div>
+            </div>
+            <div class="col-auto">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kartu 4 -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Jumlah Asset Terdaftar</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">30 Asset</div>
+            </div>
+            <div class="col-auto">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
   </div>
 
   <!-- Content Row -->
