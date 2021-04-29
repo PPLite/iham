@@ -10,7 +10,7 @@ if(isset($_POST['login_btn']))
 {
     $email_login = $_POST['email'];
     $password_login = $_POST['password'];
-    $usertypes = $_SPOST['usertype'];
+    $usertypes = $_POST['usertype'];
 
     //untuk nyari "select" dari semua data"* dari tabel "register" dan, cocokin dari tambel kolom "email"
     //terus cocokin dengan form "email" sama juga dengan password
