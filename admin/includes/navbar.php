@@ -286,8 +286,9 @@
 
               <!--- Untuk menampilkan pengguna yang sedang aktif saat itu--->
               <?php
-                            $query_run = mysqli_query($connection, $query);     
-                            echo ['usertype'];
+                            $query_run = mysqli_query($connection, $query);
+                            $usertypes = mysqli_fetch_array($query_run);    
+                            echo $_SESSION ['usertype'];
               ?> 
               </span>
 
