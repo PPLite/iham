@@ -285,7 +285,14 @@
             <span class="mr-2 d-none d-lg-inline text-gray-600 small">
 
               <!--- Untuk menampilkan pengguna yang sedang aktif saat itu--->
-              <?php echo $_SESSION['usertype']; ?> 
+              <?php
+                            $query = "SELECT id FROM register ORDER BY id";
+                            $query_run = mysqli_query($connection, $query);
+              
+                            $row = mysqli_num_rows($query_run);
+              
+                            echo '<h4>'.$row.'&nbsp Pengguna</h4>';
+              ?> 
               </span>
 
             <div class="topbar-divider d-none d-sm-block"></div>
