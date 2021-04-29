@@ -16,9 +16,7 @@ if(isset($_POST['login_btn']))
     $query = "SELECT * from register WHERE email='$email_login' AND password='$password_login' ";
     $query_run = mysqli_query($connection, $query);
     $usertypes = mysqli_fetch_array($query_run);
-    //seperti biasa, logika if else
-    isset($_SESSION['usertype']) && $_SESSION['usertype'] == '1';
-    
+    //seperti biasa, logika if else    
     if($usertypes['usertype'] == "admin")
     {
         $_SESSION['username'] = $email_login;
