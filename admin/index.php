@@ -38,6 +38,7 @@ include('database/dbconfig.php');
               ?>
               </div>
             </div>
+            <div class="col-auto">
             </div>
           </div>
         </div>
@@ -53,6 +54,7 @@ include('database/dbconfig.php');
               <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Jumlah Asset Terdaftar</div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">30 Asset</div>
             </div>
+            <div class="col-auto">
             </div>
           </div>
         </div>
@@ -67,10 +69,7 @@ include('database/dbconfig.php');
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Asset Terpakai</div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">21 Asset</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div class="col-auto">
             </div>
           </div>
         </div>
@@ -85,7 +84,7 @@ include('database/dbconfig.php');
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Aset Dipesan</div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">2</div>
-            </div>
+            <div class="col-auto">
             </div>
           </div>
         </div>
