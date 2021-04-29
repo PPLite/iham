@@ -17,7 +17,7 @@ if(isset($_POST['login_btn']))
     $query_run = mysqli_query($connection, $query);
     $usertypes = mysqli_fetch_array($query_run);
     //seperti biasa, logika if else
-    if(isset($_SESSION['usertype']) && $_SESSION['usertype'] == '1')
+    isset($_SESSION['usertype']) && $_SESSION['usertype'] == '1';
     
     if($usertypes['usertype'] == "admin")
     {
