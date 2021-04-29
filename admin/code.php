@@ -14,7 +14,7 @@ if(isset($_POST['login_btn']))
 
     //untuk nyari "select" dari semua data"* dari tabel "register" dan, cocokin dari tambel kolom "email"
     //terus cocokin dengan form "email" sama juga dengan password
-    $query = "SELECT * from register WHERE email='$email_login' AND password='$password_login' ";
+    $query = "SELECT * from register WHERE usertype='$usertypes', email='$email_login', password='$password_login' ";
     $query_run = mysqli_query($connection, $query);
     $usertypes = mysqli_fetch_array($query_run);
     //seperti biasa, logika if else    
