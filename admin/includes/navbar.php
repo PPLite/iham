@@ -285,9 +285,7 @@
             <span class="mr-2 d-none d-lg-inline text-gray-600 small">
 
               <!--- Untuk menampilkan pengguna yang sedang aktif saat itu--->
-              <?php
-                            $query_run = mysqli_query($connection, $query);
-                            $usertypes = mysqli_fetch_array($query_run);    
+              <?php 
                             echo $_SESSION ['usertype'];
               ?> 
               </span>
