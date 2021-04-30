@@ -15,25 +15,25 @@ if(isset($_POST['login_btn']))
     $query_run = mysqli_query($connection, $query);
     $usertypes = mysqli_fetch_array($query_run);
     //seperti biasa, logika if else    
-    
+
     if($usertypes['usertype'] == "admin")
     {
         $_SESSION['username'] = $email_login;
-        $_SESSION['usertype'] = $usertypes;
+        $_SESSION['usertype'] = $email_login;
         header('Location: index.php');
     }
 
     else if ($usertypes ['usertype'] == "pengelola")
     {
         $_SESSION['username'] = $email_login;
-        $_SESSION['usertype'] = $usertypes;
+        $_SESSION['usertype'] = $email_login;
         header('Location: index.php');
     }
 
     else if ($usertypes ['usertype'] == "pengguna")
     {
         $_SESSION['username'] = $email_login;
-        $_SESSION['usertype'] = $usertypes;
+        $_SESSION['usertype'] = $email_login;
         header('Location: register.php');
     }
     else
