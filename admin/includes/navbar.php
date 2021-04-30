@@ -286,7 +286,7 @@
 
               <!--- Untuk menampilkan pengguna yang sedang aktif saat itu--->
               <?php 
-                            echo $_SESSION ['usertype'];
+                            Tes bro $_SESSION ['usertype'];
               ?> 
               </span>
 
