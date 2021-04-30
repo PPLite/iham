@@ -19,21 +19,21 @@ if(isset($_POST['login_btn']))
     if($usertypes['usertype'] == "admin")
     {
         $_SESSION['username'] = $email_login;
-        $_SESSION['usertype'] = $email_login;
+        $_SESSION['username'] = $usertypes;
         header('Location: index.php');
     }
 
     else if ($usertypes ['usertype'] == "pengelola")
     {
         $_SESSION['username'] = $email_login;
-        $_SESSION['usertype'] = $email_login;
+        $_SESSION['usertype'] = $usertypes;
         header('Location: index.php');
     }
 
     else if ($usertypes ['usertype'] == "pengguna")
     {
         $_SESSION['username'] = $email_login;
-        $_SESSION['usertype'] = $email_login;
+        $_SESSION['usertype'] = $usertypes;
         header('Location: register.php');
     }
     else
