@@ -285,8 +285,9 @@
             <span class="mr-2 d-none d-lg-inline text-gray-600 small">
 
               <!--- Untuk menampilkan pengguna yang sedang aktif saat itu--->
+              Tes tes
               <?php 
-                            Tes bro $_SESSION ['usertype'];
+                           $_SESSION ['usertype'];
               ?> 
               </span>
 
