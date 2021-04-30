@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('includes/header.php'); 
+include_once('includes/header.php'); 
 ?>
 
 <!----Mulai <body> buat background---->

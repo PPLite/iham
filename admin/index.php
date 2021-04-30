@@ -2,7 +2,7 @@
 include('security.php');
 include('includes/header.php'); 
 include('includes/navbar.php');
-include('database/dbconfig.php'); 
+include_once('database/dbconfig.php'); 
 ?>
 
 <html>

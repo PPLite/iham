@@ -1,10 +1,7 @@
 <?php
-include('security.php');
-include('database/dbconfig.php');
-//inisialisasi sambungan ke database
-//$connection = mysqli_connect("localhost","mjdr3247_admin","semogacepatlulus2021","mjdr3247_adminpanel");
-//sesion_start();
-//Fungsi login form
+include_once('security.php');
+include_once('database/dbconfig.php');
+
 //fungsi akan aktif jika tombol login dipencet
 if(isset($_POST['login_btn']))
 {
@@ -21,18 +18,21 @@ if(isset($_POST['login_btn']))
     if($usertypes['usertype'] == "admin")
     {
         $_SESSION['username'] = $email_login;
+        $_SESSION['usertype'];
         header('Location: index.php');
     }
 
     else if ($usertypes ['usertype'] == "pengelola")
     {
         $_SESSION['username'] = $email_login;
+        $_SESSION['usertype'];
         header('Location: index.php');
     }
 
     else if ($usertypes ['usertype'] == "pengguna")
     {
         $_SESSION['username'] = $email_login;
+        $_SESSION['usertype'];
         header('Location: register.php');
     }
     else
@@ -42,33 +42,6 @@ if(isset($_POST['login_btn']))
     }
 
 }
-
-
-
-
-//    //fungsi untuk ngambil beberapa data "array" database 
-//    if(mysqli_fetch_array($query_run))
-//    {
-//        $_SESSION['username'] = $email_login;
-//        header('Location: index.php');
-//    }
-//    else
-//    {
-//        $_SESSION['status'] = 'Email/password anda tidak sesuai';
-//        header('Location: login.php');
-//    }
-//}
-
-
-
-
-
-
-
-
-
-
-
 
 //Fungsi Penambahan Pengguna di halaman pengaturan pengguna
 //Jika tambah pengguna "registerbtn" ditombol
@@ -157,4 +130,3 @@ if(isset($_POST['delete_btn']))
         header('location: register.php');
     }
 }
-?>
