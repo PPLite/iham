@@ -289,7 +289,7 @@
               <?php
               $query = "SELECT * FROM register"; 
               $query_run = mysqli_query($connection, $query);
-              
+              $usertype = $_POST['usertype'];
 
               if(mysqli_fetch_array($query_run))
               {
