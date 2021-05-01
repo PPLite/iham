@@ -1,4 +1,6 @@
-
+<?php
+include_once('code.php');
+?>
 
    <!-- Sidebar -->
    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -287,14 +289,7 @@
 
               <!--- Untuk menampilkan pengguna yang sedang aktif saat itu--->
               <?php
-              $query = "SELECT * FROM register"; 
-              $query_run = mysqli_query($connection, $query);
-              $usertype = $_POST['usertype'];
-
-              if(mysqli_fetch_array($query_run))
-              {
                 echo $_SESSION['usertype'];
-              }
                ?> 
               </span>
 
