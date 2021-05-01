@@ -285,7 +285,15 @@
             <span class="mr-2 d-none d-lg-inline text-gray-600 small">
 
               <!--- Untuk menampilkan pengguna yang sedang aktif saat itu--->
-              <?php echo $row['usertype']; ?> 
+              <?php 
+              if(mysqli_num_rows($query_run) >0 )
+              {
+                while($row = mysqli_fetch_assoc($query_run))
+                {
+                  echo $row['usertype'];
+                }
+              }
+               ?> 
               </span>
 
             <div class="topbar-divider d-none d-sm-block"></div>
