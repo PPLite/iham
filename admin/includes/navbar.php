@@ -1,4 +1,5 @@
 
+
    <!-- Sidebar -->
    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -285,13 +286,14 @@
             <span class="mr-2 d-none d-lg-inline text-gray-600 small">
 
               <!--- Untuk menampilkan pengguna yang sedang aktif saat itu--->
-              <?php 
-              if(mysqli_num_rows($query_run) > 0)
+              <?php
+              $query = "SELECT * FROM register"; 
+              $query_run = mysqli_query($connection, $query);
+              
+
+              if(mysqli_fetch_array($query_run))
               {
-                while($row = mysqli_fetch_array($query_run))
-                {
-                  echo $row['usertype'];
-                }
+                echo $_SESSION['usertype'];
               }
                ?> 
               </span>
