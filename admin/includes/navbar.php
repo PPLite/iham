@@ -286,9 +286,9 @@
 
               <!--- Untuk menampilkan pengguna yang sedang aktif saat itu--->
               <?php 
-              if(mysqli_num_rows($query_run) >1 )
+              if(mysqli_num_rows($query_run) > 0)
               {
-                while($row = mysqli_fetch_assoc($query_run))
+                while($row = mysqli_fetch_array($query_run))
                 {
                   echo $row['usertype'];
                 }
