@@ -27,7 +27,7 @@ if(isset($_POST['login_btn']))
     {
         $_SESSION['username'] = $email_login;
         $_SESSION['usertype'] = $usertype;
-        header('Location: index.php');
+        header('Location: register_edit.php');
     }
 
     else if ($usertype ['usertype'] == "pengguna")
@@ -43,12 +43,6 @@ if(isset($_POST['login_btn']))
     }
 
 }
-
-
-
-
-
-
 
 //Fungsi Penambahan Pengguna di halaman pengaturan pengguna
 //Jika tambah pengguna "registerbtn" ditombol
