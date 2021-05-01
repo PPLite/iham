@@ -16,6 +16,7 @@ if(isset($_POST['login_btn']))
     $usertype = mysqli_fetch_array($query_run);
     //seperti biasa, logika if else    
 
+    //jika admin maka masuk ke index.php
     if($usertype['usertype'] == "admin")
     {
         $_SESSION['username'] = $email_login;
@@ -23,6 +24,7 @@ if(isset($_POST['login_btn']))
         header('Location: index.php');
     }
 
+    //jika tipe pengguna pengelola maka masuk ke register_edit.php
     else if ($usertype ['usertype'] == "pengelola")
     {
         $_SESSION['username'] = $email_login;
@@ -30,6 +32,7 @@ if(isset($_POST['login_btn']))
         header('Location: register_edit.php');
     }
 
+    //jika tipe pengguna "pengguna" maka masuk ke register.php
     else if ($usertype ['usertype'] == "pengguna")
     {
         $_SESSION['username'] = $email_login;
