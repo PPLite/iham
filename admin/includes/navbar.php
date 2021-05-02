@@ -293,7 +293,9 @@ include_once('code.php');
 
           <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Anda terdaftar sebagai <?php echo $_SESSION['usertype']; ?></span>
+            <span span class="mr-2 d-none d-lg-inline text-gray-600 small">
+            Anda terdaftar sebagai <?php echo $_SESSION['usertype']; ?>
+            </span>
           </div>
         </div>
 <!-------- Pembatas----------------->
