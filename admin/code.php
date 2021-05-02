@@ -134,3 +134,35 @@ if(isset($_POST['delete_btn']))
         header('location: register.php');
     }
 }
+
+
+
+//Fungsi untuk menambahkan asset di menu epngaturan aset
+if(isset($_POST['daftaraset_btn']))
+
+//jika sudah ditombol kemudian
+{
+    //input data
+    $uid = $_POST['uid'];
+    $nama_alat = $_POST['nama_alat'];
+    $deskripsi = $_POST['deskripsi'];
+    $gambar = $_POST['gambar'];
+
+    if($querry_run)
+    {
+         //data yang tadi, dimasukkan ke database dewngan perintah "insert into" karena data tersebut data baru, dan diletakkan ke tabel yang udah disediakan
+        $query = "INSERT INTO tb_rfid (uid,nama_alat,deskripsi,gambar) VALUES ('$uid','$nama_alat','$deskripsi','$gambar')";
+        $query_run = mysqli_query($connection,$query);
+    
+        if($query_run)
+        {
+        $_SESSION['success'] = "Aset berhasil ditambahkan";
+        header('location: pengaturan-aset.php');
+        }
+        else
+        {
+        $_SESSION['status'] = "Aset gagal ditambahkan";
+        header('location: pengaturan-aset.php');
+        }
+    }
+}

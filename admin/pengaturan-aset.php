@@ -8,7 +8,7 @@ include('database/dbconfig.php')
 <!----Mulai Modal buat pengguna baru. kotak yang ngawang ditengah-->
 <!----Diambil dari https://getbootstrap.com/docs/4.0/components/modal/-->
 
-<div class="modal fade" id="addadminprofile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="tambahinaset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -20,33 +20,31 @@ include('database/dbconfig.php')
       <form action="code.php" method="POST">
 
         <div class="modal-body">
-
+ 
             <div class="form-group">
                 <label> Nama Aset </label>
-                <input type="text" name="username" class="form-control" placeholder="Masukkan Nama">
+                <input type="text" name="nama_alat" class="form-control" placeholder="Masukkan Nama" required>
             </div>
 
             <div class="form-group">
                 <label>Kode UID</label>
-                <input type="email" name="email" class="form-control" placeholder="Email">
+                <input type="text" name="uid" class="form-control" placeholder="Masukkan kode UID" required>
             </div>
 
             <div class="form-group">
-                <label>Nama Alat</label>
-                <input type="password" name="password" class="form-control" placeholder="Kata Sandi">
+                <label>Deskripsi</label>
+                <input type="text" name="deskripsi" class="form-control" placeholder="Masukkan deskripsi alat" required>
             </div>
 
             <div class="form-group">
-                <label>Deskripsi Alat</label>
-                <input type="password" name="confirmpassword" class="form-control" placeholder="Ulangi Kata Sandi">
+                <label>Gambar</label>
+                <input type="file" name="gambar" class="form-control" required>
             </div>
-
-            <input type="hidden" name="usertype" value="admin">
         
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-            <button type="submit" name="registerbtn" class="btn btn-primary">Simpan</button>
+            <button type="submit" name="daftaraset_btn" class="btn btn-primary">Simpan</button>
         </div>
       </form>
 
