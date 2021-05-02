@@ -287,15 +287,12 @@ include_once('code.php');
             <div class="topbar-divider d-none d-sm-block"></div>
 <!-------- Pembatas----------------->
             <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
 
               <?php
                echo $_SESSION['usertype']; 
               ?> 
-              
                 </span>
-              </div>
             </li>
 <!-------- Pembatas----------------->
             <div class="topbar-divider d-none d-sm-block"></div>
