@@ -89,8 +89,8 @@ include('database/dbconfig.php')
 
 <!---Buat ngambil data--->
     <?php
-    //dari database, dipilih semua (bintang = semuanya) dari tabel "register"
-    $query = "SELECT * FROM register"; 
+    //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_aset"
+    $query = "SELECT * FROM tb_aset"; 
     $query_run = mysqli_query($connection, $query);
     ?>
 
@@ -98,10 +98,10 @@ include('database/dbconfig.php')
         <thead>
           <tr>
             <th>ID </th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Password</th>
-            <th>Hak Akses</th>
+            <th>RFID UID</th>
+            <th>Nama Alat</th>
+            <th>Deskripsi Alat</th>
+            <th>Gambar</th>
             <th>Ubah</th>
             <th>Hapus</th>
           </tr>
