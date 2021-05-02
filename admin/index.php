@@ -56,7 +56,21 @@ include_once('database/dbconfig.php');
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Jumlah Asset Terdaftar</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">30 Asset</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">
+              <?php
+              $query = "SELECT id FROM tb_rfid ORDER BY id";
+              $query_run = mysqli_query($connection, $query);
+
+              $row = mysqli_num_rows($query_run);
+
+              echo '<h4>'.$row.'&nbsp Asset</h4>';
+              ?>
+              
+              
+              
+              
+              
+              </div>
             </div>
             <div class="col-auto">
             </div>
