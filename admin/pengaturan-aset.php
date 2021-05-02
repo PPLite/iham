@@ -8,7 +8,7 @@ include('database/dbconfig.php')
 <!----Mulai Modal buat pengguna baru. kotak yang ngawang ditengah-->
 <!----Diambil dari https://getbootstrap.com/docs/4.0/components/modal/-->
 
-<div class="modal fade" id="#tambahinaset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="tambahinaset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
