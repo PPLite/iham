@@ -142,15 +142,9 @@ include('database/dbconfig.php')
                       <button type="submit" name="edit_btn" class="btn btn-success">Ubah</button>
                   </form>
             </td>
-
-
-
-
-
-
-
 <!----Menu buat hapus data pengguna--->
-<form action="code.php" method="post">
+            <td>
+              <form action="code.php" method="post">
               
               <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
 
@@ -159,23 +153,14 @@ include('database/dbconfig.php')
             </td>
 
             </tr>
+   
 
 
-<!----Menu buat hapus data pengguna--->
 
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-            <button type="submit" name="registerbtn" class="btn btn-primary">Simpan</button>
-        </div>
-      </form>
 
-    </div>
-  </div>
-</div>
 
-            </td>
-            </tr>
+
+
           <?php
           }
         }
