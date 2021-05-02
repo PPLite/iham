@@ -73,8 +73,8 @@ include('database/dbconfig.php')
 
 <!---Buat ngambil data--->
     <?php
-    //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_aset"
-    $query = "SELECT * FROM tb_aset"; 
+    //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
+    $query = "SELECT * FROM tb_rfid"; 
     $query_run = mysqli_query($connection, $query);
     ?>
 
