@@ -286,14 +286,16 @@ include_once('code.php');
 <!-------- Area Editing ----------------->
             <div class="topbar-divider d-none d-sm-block"></div>
 <!-------- Pembatas----------------->
-            <li class="nav-item dropdown no-arrow">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+             
+             <!-- <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+              Anda Terdaftar sebagai  
+             </span> -->
 
-              <?php
-               echo $_SESSION['usertype']; 
-              ?> 
-                </span>
-            </li>
+          <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Anda terdaftar sebagai <?php echo $_SESSION['usertype']; ?></span>
+          </div>
+        </div>
 <!-------- Pembatas----------------->
             <div class="topbar-divider d-none d-sm-block"></div>
 <!-------- Area Editing ----------------->
