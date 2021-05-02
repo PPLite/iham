@@ -203,6 +203,8 @@ include('database/dbconfig.php')
   </div>
 </div>
 
+            </td>
+            </tr>
           <?php
           }
         }
