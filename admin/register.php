@@ -147,46 +147,49 @@ include('database/dbconfig.php')
 
 <!----Menu buat hapus data pengguna--->
             <td>
-            <button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button>
 
-            <div class="modal fade" id="delete_btn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Hapus Pengguna</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">×</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">Apakah anda yakin untuk menghapus pengguna ini?</div>
-                  <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+            <!--<button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button> -->
+            
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#addadminprofile">
+                        Tambahkan data Pengguna 
+                      </button>
+              </h6>
+            </div>
 
-                    <form action="code.php" method="POST"> 
 
-                      <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
-                      <button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button>
 
-                    </form>
-                  </div>
+
+            <div class="modal fade" id="addadminprofile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Tambahkan data Pengguna</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <form action="code.php" method="POST">
+
+        <div class="modal-body">
+
+            <div class="form-group">
+
+
+
+             </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                        <button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button>
+                    </div>
+                  </form>
+
                 </div>
               </div>
             </div>
 
-
 <div class="container-fluid">
-
-
-
-
-
-
-
-
-
-
-
-
 
             </td>
             </tr>
