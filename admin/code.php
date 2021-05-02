@@ -147,13 +147,12 @@ if(isset($_POST['daftaraset_btn']))
     $nama_alat = $_POST['nama_alat'];
     $deskripsi = $_POST['deskripsi'];
     $gambar = $_POST['gambar'];
+    $query = "INSERT INTO tb_rfid (uid,nama_alat,deskripsi,gambar) VALUES ('$uid','$nama_alat','$deskripsi','$gambar')";
+    $query_run = mysqli_query($connection,$query);
+
 
     if($querry_run)
     {
-         //data yang tadi, dimasukkan ke database dewngan perintah "insert into" karena data tersebut data baru, dan diletakkan ke tabel yang udah disediakan
-        $query = "INSERT INTO tb_rfid (uid,nama_alat,deskripsi,gambar) VALUES ('$uid','$nama_alat','$deskripsi','$gambar')";
-        $query_run = mysqli_query($connection,$query);
-    
         if($query_run)
         {
         $_SESSION['success'] = "Aset berhasil ditambahkan";
