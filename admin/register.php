@@ -142,17 +142,14 @@ include('database/dbconfig.php')
                       <button type="submit" name="edit_btn" class="btn btn-success">Ubah</button>
                   </form>
             </td>
+
+
+
 <!----Menu buat hapus data pengguna--->
             <td>
+            <button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button>
 
-            <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
-                        Hapus 
-                      </button>
-            </div>
-
-            <div class="modal fade" id="addadminprofile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="delete_btn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
