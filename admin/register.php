@@ -149,38 +149,29 @@ include('database/dbconfig.php')
             <td>
 
             <!--<button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button> -->
-            
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#addadminprofile">
-                        Tambahkan data Pengguna 
-                      </button>
+
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapuspengguna"> Hapus </button>
               </h6>
             </div>
-
-
-
-
-            <div class="modal fade" id="addadminprofile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="hapuspengguna" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Tambahkan data Pengguna</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Hapus data Pengguna</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <form action="code.php" method="POST">
-
-        <div class="modal-body">
-
+                Apakah anda yakin untuk menghapus data pengguna ini?
+                <div class="modal-body">
             <div class="form-group">
-
-
-
              </div>
 
+                  <form action="code.php" method="POST">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                        <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
                         <button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button>
                     </div>
                   </form>
