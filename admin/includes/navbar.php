@@ -40,9 +40,9 @@ include_once('code.php');
   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Fitur Aset:</h6>
-      <a class="collapse-item" href="buttons.html">Pesan Aset</a>
-      <a class="collapse-item" href="cards.html">Aset Aktif</a>
-      <a class="collapse-item" href="cards.html">Statistik Aset</a>
+      <a class="collapse-item" href="pengaturan-aset.php">Pengaturan Aset</a>
+      <a class="collapse-item" href="pesan-aset.php">Pesan Aset</a>
+      <a class="collapse-item" href="status-aset.php">Status Aset</a>
     </div>
   </div>
 </li>
