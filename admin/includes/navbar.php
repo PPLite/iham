@@ -285,15 +285,15 @@ include_once('code.php');
             
             <div class="topbar-divider d-none d-sm-block"></div>
 
-            <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
 
-              <!--- Untuk menampilkan pengguna yang sedang aktif saat itu--->
-              "Anda terdaftar sebagai"
+              <!--- Untuk menampilkan hak akses pengguna yang sedang aktif saat itu--->
               <?php
-                echo $_SESSION['usertype'];
-               ?> 
-              </span>
-
+               echo $_SESSION['usertype'];               
+              ?> 
+            </li>
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
