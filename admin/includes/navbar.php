@@ -302,15 +302,7 @@ include_once('code.php');
 
               <!--- Untuk menampilkan pengguna yang sedang aktif saat itu--->
               <?php
-              $_SESSION = array($email_login,$usertype); 
-              foreach($_SESSION as $email_login)
-              {
-                echo $_SESSION ['username'];
-              }
-
-
-
-              //echo $_SESSION['username']; 
+               echo $_SESSION['username']; 
               
               ?> 
               
