@@ -68,22 +68,6 @@ include('database/dbconfig.php')
   </div>
 
 <div class="card-body">
-  <!----Untuk nambahin status----->
-  <?php
-  //Status berhasil ditambahkan
-    if(isset($_SESSION['success']) && $_SESSION['success'] !='')
-    {
-      echo '<h2>'.$_SESSION['success'].' </h2>';
-      unset($_SESSION['success']);
-    }
-
-    //Status gagal ditambahkan
-    if(isset($_SESSION['status']) && $_SESSION['status'] !='')
-    {
-      echo '<h2>'.$_SESSION['status'].' </h2>';
-      unset($_SESSION['status']);
-    }
-  ?>
 
     <div class="table-responsive">
 
@@ -110,7 +94,7 @@ include('database/dbconfig.php')
         <?php
         //mengambil data dari database
         //tipe kolom yang nantinya akan diambil
-        if(mysqli_num_rows($query_run) >0 )
+        if(mysqli_num_rows($query_run) > 0 )
         {
           while($row = mysqli_fetch_assoc($query_run))
           {
@@ -118,10 +102,10 @@ include('database/dbconfig.php')
           <tr>
           <!---Mengambil data dari database kemudian menampilkan ke tabel, serta menentukan kolom mana saja yang akan diambil datanya-->
           <td><?php echo $row['id']; ?></td>
-            <td><?php echo $row['username']; ?></td>
-            <td><?php echo $row['email']; ?></td>
-            <td><?php echo $row['password']; ?></td>
-            <td><?php echo $row['usertype']; ?></td>
+            <td><?php echo $row['uid']; ?></td>
+            <td><?php echo $row['nama_alat']; ?></td>
+            <td><?php echo $row['deskripsi']; ?></td>
+            <td><?php echo $row['gambar']; ?></td>
             
             <!--Tombol buat edit pengguna-->
             <!--Kodingan full dialihkan ke register_edit.php-->
