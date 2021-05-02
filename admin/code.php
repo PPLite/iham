@@ -151,7 +151,7 @@ if(isset($_POST['daftaraset_btn']))
     $query_run = mysqli_query($connection,$query);
 
 
-    if($querry_run)
+    if($query_run)
     {
         if($query_run)
         {
