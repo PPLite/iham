@@ -162,15 +162,14 @@ include('database/dbconfig.php')
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                Apakah anda yakin untuk menghapus data pengguna ini?
-                <div class="modal-body">
+                <div class="modal-body">Apakah anda yakin untuk menghapus data pengguna ini?</div>
             <div class="form-group">
              </div>
 
                   <form action="code.php" method="POST">
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
                         <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
                         <button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button>
                     </div>
