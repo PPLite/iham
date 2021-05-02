@@ -8,9 +8,9 @@ Web Based tracking for hospital assets with RFiD Tags
 
 Features
 - Responsive bootstrap landing page (Done)
-- Multi user login system (WIP)
-- Multi user management system (Comming Soon)
-- Store RFiD data and asset inventory (Comming Soon)
+- Multi user login system (Done) 2 May
+- Multi user management system (WIP)
+- Store RFiD data and asset inventory (WIP)
 - Notification system when asset out of range (Comming Soon)
 
 ## Warning ##
