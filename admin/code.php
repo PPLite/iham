@@ -33,7 +33,7 @@ if(isset($_POST['login_btn']))
     //jika tipe pengguna "pengguna" maka masuk ke register.php
     else if ($usertype ['usertype'] == "pengguna")
     {
-        $_SESSION['username'] == $email_login;
+        $_SESSION['username'] = $email_login;
         header('Location: register.php');
     }
     else
