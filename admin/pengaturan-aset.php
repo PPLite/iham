@@ -12,7 +12,7 @@ include('database/dbconfig.php')
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Tambahkan data Pengguna</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Tambahkan Asset Baru</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -22,19 +22,22 @@ include('database/dbconfig.php')
         <div class="modal-body">
 
             <div class="form-group">
-                <label> Nama Pengguna </label>
+                <label> Nama Aset </label>
                 <input type="text" name="username" class="form-control" placeholder="Masukkan Nama">
             </div>
+
             <div class="form-group">
-                <label>Email</label>
+                <label>Kode UID</label>
                 <input type="email" name="email" class="form-control" placeholder="Email">
             </div>
+
             <div class="form-group">
-                <label>Kata Sandi</label>
+                <label>Nama Alat</label>
                 <input type="password" name="password" class="form-control" placeholder="Kata Sandi">
             </div>
+
             <div class="form-group">
-                <label>Ulangi Kata sandi</label>
+                <label>Deskripsi Alat</label>
                 <input type="password" name="confirmpassword" class="form-control" placeholder="Ulangi Kata Sandi">
             </div>
 

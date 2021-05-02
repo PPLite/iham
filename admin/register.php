@@ -37,8 +37,17 @@ include('database/dbconfig.php')
                 <label>Ulangi Kata sandi</label>
                 <input type="password" name="confirmpassword" class="form-control" placeholder="Ulangi Kata Sandi">
             </div>
+            <div class="form-group">
+                <label>Hak Akses</label>
+                <select name="usertype" class="form-control" > 
+                  <option value="admin"> Admin </option>
+                  <option value="pengelola"> Pengelola </option>
+                  <option value="pengguna"> Pengguna </option>
+                </select>
+             </div>
 
-            <input type="hidden" name="usertype" value="admin">
+            <!-- <input type="hidden" name="usertype" value="admin">
+            -->
         
         </div>
         <div class="modal-footer">
