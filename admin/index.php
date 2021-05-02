@@ -22,8 +22,8 @@ include_once('database/dbconfig.php');
 
     <!-- Earnings (Monthly) Card Example -->
     <div class="col-xl-3 col-md-6 mb-4">
+    <a href="register.php">
       <div class="card border-left-primary shadow h-100 py-2">
-      <a class="card border-left-primary shadow h-100 py-2" href="register.php"></a>
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
@@ -44,6 +44,7 @@ include_once('database/dbconfig.php');
           </div>
         </div>
       </div>
+      </a>
     </div>
 
 
