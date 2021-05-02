@@ -143,18 +143,66 @@ include('database/dbconfig.php')
                   </form>
             </td>
 
-            <!----Menu buat hapus data pengguna--->
-            <!--Kodingan full dialihkan ke register_edit.php-->
+
+
+
+
+
+
+<!----Menu buat hapus data pengguna--->
             <td>
-            <form action="code.php" method="post">
-              
-              <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
+            <div class="modal fade" id="addadminprofile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tambahkan data Pengguna</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="code.php" method="POST">
 
-              <button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button>
-              </form>
-            </td>
+        <div class="modal-body">
 
-            </tr>
+            <div class="form-group">
+                <label> Nama Pengguna </label>
+                <input type="text" name="username" class="form-control" placeholder="Masukkan Nama">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label>Kata Sandi</label>
+                <input type="password" name="password" class="form-control" placeholder="Kata Sandi">
+            </div>
+            <div class="form-group">
+                <label>Ulangi Kata sandi</label>
+                <input type="password" name="confirmpassword" class="form-control" placeholder="Ulangi Kata Sandi">
+            </div>
+            <div class="form-group">
+                <label>Hak Akses</label>
+                <select name="usertype" class="form-control" > 
+                  <option value="admin"> Admin </option>
+                  <option value="pengelola"> Pengelola </option>
+                  <option value="pengguna"> Pengguna </option>
+                </select>
+             </div>
+
+            <!-- <input type="hidden" name="usertype" value="admin">
+            -->
+        
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+            <button type="submit" name="registerbtn" class="btn btn-primary">Simpan</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
           <?php
           }
         }
