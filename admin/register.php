@@ -150,56 +150,28 @@ include('database/dbconfig.php')
             <button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button>
 
             <div class="modal fade" id="delete_btn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Tambahkan data Pengguna</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Hapus Pengguna</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">Apakah anda yakin untuk menghapus pengguna ini?</div>
+                  <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+
+                    <form action="code.php" method="POST"> 
+
+                      <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
+                      <button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button>
+
+                    </form>
+                  </div>
                 </div>
-        <form action="code.php" method="POST">
-
-        <div class="modal-body">
-
-            <div class="form-group">
-                <label> Nama Pengguna </label>
-                <input type="text" name="username" class="form-control" placeholder="Masukkan Nama">
+              </div>
             </div>
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" name="email" class="form-control" placeholder="Email">
-            </div>
-            <div class="form-group">
-                <label>Kata Sandi</label>
-                <input type="password" name="password" class="form-control" placeholder="Kata Sandi">
-            </div>
-            <div class="form-group">
-                <label>Ulangi Kata sandi</label>
-                <input type="password" name="confirmpassword" class="form-control" placeholder="Ulangi Kata Sandi">
-            </div>
-            <div class="form-group">
-                <label>Hak Akses</label>
-                <select name="usertype" class="form-control" > 
-                  <option value="admin"> Admin </option>
-                  <option value="pengelola"> Pengelola </option>
-                  <option value="pengguna"> Pengguna </option>
-                </select>
-             </div>
-
-            <!-- <input type="hidden" name="usertype" value="admin">
-            -->
-        
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-            <button type="submit" name="registerbtn" class="btn btn-primary">Simpan</button>
-        </div>
-      </form>
-
-    </div>
-  </div>
-</div>
 
 
 <div class="container-fluid">
