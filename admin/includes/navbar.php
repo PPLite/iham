@@ -283,13 +283,8 @@ include_once('code.php');
               </div>
             </li>
 
-<!-------- Area Editing ----------------->
+<!-------- Mengambil kelas pengguna dari database ----------------->
             <div class="topbar-divider d-none d-sm-block"></div>
-<!-------- Pembatas----------------->
-             
-             <!-- <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-              Anda Terdaftar sebagai  
-             </span> -->
 
           <div class="container my-auto">
           <div class="copyright text-center my-auto">
@@ -298,9 +293,8 @@ include_once('code.php');
             </span>
           </div>
         </div>
-<!-------- Pembatas----------------->
             <div class="topbar-divider d-none d-sm-block"></div>
-<!-------- Area Editing ----------------->
+<!-------- Mengambil kelas pengguna dari database ----------------->
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
