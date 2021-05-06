@@ -86,6 +86,7 @@ include('database/dbconfig.php')
             <th>Nama Alat</th>
             <th>Deskripsi Alat</th>
             <th>Ditambahkan Pada</th>
+            <th>Penanggung Jawab</th>
             <th>Gambar</th>
             <th>Ubah</th>
             <th>Hapus</th>
@@ -107,6 +108,7 @@ include('database/dbconfig.php')
             <td><?php echo $row['nama_alat']; ?></td>
             <td><?php echo $row['deskripsi']; ?></td>
             <td><?php echo $row['tanggal']; ?></td>
+            <td><?php echo $row['penanggung_jawab']; ?></td>
             <td><?php echo $row['gambar']; ?></td>
             
             <!--Tombol buat edit pengguna-->
