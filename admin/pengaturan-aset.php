@@ -38,7 +38,7 @@ include('database/dbconfig.php')
 
             <div class="form-group">
                 <label>Gambar</label>
-                <input type="file" name="gambar" class="form-control">
+                <input type="file" name="gambar_aset" id="gambar_aset" class="form-control">
             </div>
         
         </div>

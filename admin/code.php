@@ -165,3 +165,24 @@ if(isset($_POST['daftaraset_btn']))
         }
     }
 }
+
+//Untuk hapus data pengguna
+//fungsi ini akan aktif ketika "delete_btn" ditombol
+if(isset($_POST['delete_btn']))
+{
+    //disini pakai $query=Delete_id, soalnya ya buat ngehapus data berdasarkan "ID" yang udah dipilih
+    $id = $_POST['delete_id'];
+    $query = "DELETE FROM register WHERE id='$id' ";
+    $query_run = mysqli_query($connection, $query);
+
+    if ($query_run)
+    {
+        $_SESSION['success'] = "Data berhasil dihapus";
+        header('location: register.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Data gagal dihapus";
+        header('location: register.php');
+    }
+}
