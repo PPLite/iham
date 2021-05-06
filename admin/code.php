@@ -136,6 +136,28 @@ if(isset($_POST['delete_btn']))
 }
 
 
+//Untuk hapus data asset
+//fungsi ini akan aktif ketika "delete_btn_asset" ditombol
+if(isset($_POST['delete_btn_asset']))
+{
+    //disini pakai $query=Delete_id, soalnya ya buat ngehapus data berdasarkan "ID" yang udah dipilih
+    $id = $_POST['delete_id'];
+    $query = "DELETE FROM tb_rfid WHERE id='$id' ";
+    $query_run = mysqli_query($connection, $query);
+
+    if ($query_run)
+    {
+        $_SESSION['success'] = "Data berhasil dihapus";
+        header('location: pengaturan_aset.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Data gagal dihapus";
+        header('location: pengaturan_aset.php');
+    }
+}
+
+
 
 //Fungsi untuk menambahkan asset di menu epngaturan aset
 if(isset($_POST['daftaraset_btn']))

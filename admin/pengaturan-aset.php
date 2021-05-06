@@ -115,13 +115,7 @@ include('database/dbconfig.php')
             <td><?php echo $row['penanggung_jawab']; ?></td>
             <td><?php echo $row['gambar']; ?></td>
             
-            <!--Tombol buat edit aset-->
-            <td>
-                  <form action="register_edit.php" method="post">
-                      <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
-                      <button type="submit" name="edit_btn" class="btn btn-success">Ubah</button>
-                  </form>
-            </td>
+
 
             <td>
             <!--<button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button> -->
@@ -146,8 +140,8 @@ include('database/dbconfig.php')
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                        <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
-                        <button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button>
+                        <input type="hidden" name="delete_id_asset" value="<?php echo $row['id']; ?>">
+                        <button type="submit" name="delete_btn_asset" class="btn btn-danger">Hapus</button>
                     </div>
                   </form>
                 </div>
@@ -155,13 +149,6 @@ include('database/dbconfig.php')
             </div>
 
 <div class="container-fluid">
-
-
-
-
-
-
-
             </tr>
           <?php
           }
