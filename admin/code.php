@@ -165,13 +165,13 @@ if(isset($_POST['daftaraset_btn']))
 //jika sudah ditombol kemudian
 {
     //input data
-    $uid = $_POST['uid'];
     $nama_alat = $_POST['nama_alat'];
+    $uid = $_POST['uid'];
     $deskripsi = $_POST['deskripsi'];
     $penanggung_jawab = $_POST['penanggung_jawab'];
     $status_asset = $_POST['status_asset'];
     $gambar_asset = $_POST['gambar_asset'];
-    $query = "INSERT INTO tb_rfid (uid,nama_alat,deskripsi,gambar,penanggung_jawab,status_asset,gambar_asset) VALUES ('$uid','$nama_alat','$deskripsi','$penanggung_jawab','$status_asset','$gambar_asset')";
+    $query = "INSERT INTO tb_rfid (nama_alat,uid,deskripsi,penanggung_jawab,status_asset,gambar_asset) VALUES ('$nama_alat','$uid','$deskripsi','$penanggung_jawab','$status_asset','$gambar_asset')";
     $query_run = mysqli_query($connection,$query);
 
 
