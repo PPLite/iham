@@ -43,7 +43,7 @@ include_once('includes/header.php');
 
                     <!--- Form untuk memasukkan email dan password ---->
                     <div class="form-group">
-                    <input type="email" name="email" class="form-control form-control-user" placeholder="Masukkan Email Anda">
+                    <input type="text" name="username" class="form-control form-control-user" placeholder="Masukkan Username Anda">
                     </div>
                        
                     <div class="form-group">

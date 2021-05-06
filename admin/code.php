@@ -5,13 +5,13 @@ include_once('database/dbconfig.php');
 //fungsi akan aktif jika tombol login dipencet
 if(isset($_POST['login_btn']))
 {
-    $email_login = $_POST['email'];
+    $username_login = $_POST['username'];
     $password_login = $_POST['password'];
     $usertype = $_POST['usertype'];
 
     //untuk nyari "select" dari semua data"* dari tabel "register" dan, cocokin dari tambel kolom "email"
     //terus cocokin dengan form "email" sama juga dengan password
-    $query = "SELECT * from register WHERE email='$email_login' AND password='$password_login' ";
+    $query = "SELECT * from register WHERE username='$username_login' AND password='$password_login' ";
     $query_run = mysqli_query($connection, $query);
     $usertype = mysqli_fetch_array($query_run);
     //seperti biasa, logika if else    
@@ -19,7 +19,7 @@ if(isset($_POST['login_btn']))
     //jika admin maka masuk ke index.php
     if($usertype['usertype'] == "admin")
     {
-        $_SESSION['username'] = $email_login;
+        $_SESSION['username'] = $username_login;
         $_SESSION['usertype'] = "Admin";
         header('Location: index.php');
     }
@@ -27,7 +27,7 @@ if(isset($_POST['login_btn']))
     //jika tipe pengguna pengelola maka masuk ke register_edit.php
     else if ($usertype ['usertype'] == "pengelola")
     {
-        $_SESSION['username'] = $email_login;
+        $_SESSION['username'] = $username_login;
         $_SESSION['usertype'] = "pengelola";
         header('Location: register_edit.php');
     }
@@ -35,7 +35,7 @@ if(isset($_POST['login_btn']))
     //jika tipe pengguna "pengguna" maka masuk ke register.php
     else if ($usertype ['usertype'] == "pengguna")
     {
-        $_SESSION['username'] = $email_login;
+        $_SESSION['username'] = $username_login;
         $_SESSION['usertype'] = "Pengguna";
         header('Location: register.php');
     }
