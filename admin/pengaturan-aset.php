@@ -5,7 +5,7 @@ include('includes/navbar.php');
 include('database/dbconfig.php')
 ?>
 
-<!----Mulai Modal buat pengguna baru. kotak yang ngawang ditengah-->
+<!----Mulai Modal buat tambah aset baru. kotak yang ngawang ditengah-->
 <!----Diambil dari https://getbootstrap.com/docs/4.0/components/modal/-->
 
 <div class="modal fade" id="tambahinaset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -62,7 +62,7 @@ include('database/dbconfig.php')
 <!------Akhir dari Modal------->
 
 
-<!---- Untuk tombol "tambah admin"--->
+<!---- Untuk tombol "tambah aset"--->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <h6 class="m-0 font-weight-bold text-primary">Menu Pengelolaan Aset
@@ -94,7 +94,6 @@ include('database/dbconfig.php')
             <th>Penanggung Jawab</th>
             <th>Gambar</th>
             <th>Ubah</th>
-            <th>Hapus</th>
           </tr>
         </thead>
         <tbody>
@@ -116,7 +115,7 @@ include('database/dbconfig.php')
             <td><?php echo $row['penanggung_jawab']; ?></td>
             <td><?php echo $row['gambar']; ?></td>
             
-            <!--Tombol buat edit pengguna-->
+            <!--Tombol buat edit aset-->
             <td>
                   <form action="register_edit.php" method="post">
                       <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
@@ -124,16 +123,44 @@ include('database/dbconfig.php')
                   </form>
             </td>
 
-            <!----Menu buat hapus data pengguna--->
-            <!--Kodingan full dialihkan ke register_edit.php-->
             <td>
-            <form action="code.php" method="post">
-              
-              <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
+            <!--<button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button> -->
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusasset"> Hapus </button>
+              </h6>
+            </div>
+            <div class="modal fade" id="hapusasset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Hapus data Asset</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">Apakah anda yakin untuk menghapus pengguna ini?</div>
 
-              <button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button>
-              </form>
-            </td>
+            <div class="modal-body">
+              <div class="form-group">
+                </div>
+                  <form action="code.php" method="POST">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                        <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
+                        <button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+<div class="container-fluid">
+
+
+
+
+
+
 
             </tr>
           <?php

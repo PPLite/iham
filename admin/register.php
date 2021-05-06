@@ -148,9 +148,7 @@ include('database/dbconfig.php')
 
 <!----Menu buat hapus data pengguna--->
             <td>
-
             <!--<button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button> -->
-
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapuspengguna"> Hapus </button>
               </h6>
             </div>
