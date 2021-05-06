@@ -138,7 +138,7 @@ include('database/dbconfig.php')
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body">Apakah anda yakin untuk menghapus pengguna ini?</div>
+                <div class="modal-body">Apakah anda yakin untuk menghapus Asset ini?</div>
 
             <div class="modal-body">
               <div class="form-group">
