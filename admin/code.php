@@ -2,6 +2,9 @@
 include_once('security.php');
 include_once('database/dbconfig.php');
 
+
+
+////////////////////////BAGIAN LOGIN/////////////////////////////////
 //fungsi akan aktif jika tombol login dipencet
 if(isset($_POST['login_btn']))
 {
@@ -47,8 +50,12 @@ if(isset($_POST['login_btn']))
 
 }
 
-//Fungsi Penambahan Pengguna di halaman pengaturan pengguna
-//Jika tambah pengguna "registerbtn" ditombol
+////////////////////////BAGIAN LOGIN/////////////////////////////////
+
+
+
+/////////////////////////////PENGATURAN PENGGUNA/////////////////////
+////////TAMBAH PENGGUNA/////////
 if(isset($_POST['registerbtn']))
 
 //jika sudah ditombol kemudian
@@ -83,6 +90,8 @@ if(isset($_POST['registerbtn']))
         header('location: register.php');
     }
 }
+
+////////UPDATE PENGGUNA/////////
 
 //Untuk modif data pada pengguna
 if(isset($_POST['updatebtn']))
@@ -135,6 +144,7 @@ if(isset($_POST['delete_btn']))
     }
 }
 
+////////////////////////////////////////////////////////////////////
 
 //Untuk hapus data asset
 //fungsi ini akan aktif ketika "delete_btn_asset" ditombol
@@ -156,7 +166,6 @@ if(isset($_POST['delete_btn_asset']))
         header('location: pengaturan-aset.php');
     }
 }
-
 
 
 //Fungsi untuk menambahkan asset di menu pengaturan aset
@@ -187,26 +196,5 @@ if(isset($_POST['daftaraset_btn']))
         $_SESSION['status'] = "Aset gagal ditambahkan";
         header('location: pengaturan-aset.php');
         }
-    }
-}
-
-//Untuk hapus data pengguna
-//fungsi ini akan aktif ketika "delete_btn" ditombol
-if(isset($_POST['delete_btn']))
-{
-    //disini pakai $query=Delete_id, soalnya ya buat ngehapus data berdasarkan "ID" yang udah dipilih
-    $id = $_POST['delete_id'];
-    $query = "DELETE FROM register WHERE id='$id' ";
-    $query_run = mysqli_query($connection, $query);
-
-    if ($query_run)
-    {
-        $_SESSION['success'] = "Data berhasil dihapus";
-        header('location: register.php');
-    }
-    else
-    {
-        $_SESSION['status'] = "Data gagal dihapus";
-        header('location: register.php');
     }
 }

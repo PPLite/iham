@@ -130,9 +130,107 @@ include('database/dbconfig.php')
 
             <td>
             <!--<button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button> -->
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusasset"> Hapus </button>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editdataasset"> Ubah </button>
               </h6>
             </div>
+
+            <!----Mulai Modal buat tambah aset baru. kotak yang ngawang ditengah-->
+            <!----Diambil dari https://getbootstrap.com/docs/4.0/components/modal/-->
+
+            <div class="modal fade" id="editdataasset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ubah Data Asset</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <form action="code.php" method="POST">
+
+                    <div class="modal-body">
+            
+                        <div class="form-group">
+                            <label> Nama Aset </label>
+                            <input type="text" name="nama_alat" class="form-control" placeholder="Masukkan Nama" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Kode UID</label>
+                            <input type="text" name="uid" class="form-control" placeholder="Masukkan kode UID" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Deskripsi</label>
+                            <input type="text" name="deskripsi" class="form-control" placeholder="Masukkan deskripsi alat" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Penanggung Jawab</label>
+                            <input type="text" name="penanggung_jawab" class="form-control" placeholder="Petugas yang bertanggungjawab" required>
+                        </div>
+            
+                        <input type="hidden" name="status_asset" value="tersedia" >
+
+                        <div class="form-group">
+                            <label>Gambar</label>
+                            <input type="file" name="gambar_asset" id="gambar_asset" class="form-control">
+                        </div>
+                    
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                        <button type="submit" name="daftaraset_btn" class="btn btn-primary">Simpan</button>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+
+
+            <div class="container-fluid">
+<!------Akhir dari Modal------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div class="modal fade" id="hapusasset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
