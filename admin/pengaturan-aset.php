@@ -116,7 +116,7 @@ include('database/dbconfig.php')
             <td><?php echo $row['deskripsi']; ?></td>
             <td><?php echo $row['tanggal']; ?></td>
             <td><?php echo $row['penanggung_jawab']; ?></td>
-            <td><?php echo $row['status']; ?></td>
+            <td><?php echo $row['status_asset']; ?></td>
             <td><?php echo $row['gambar']; ?></td>
             
             <!--Tombol buat edit aset
