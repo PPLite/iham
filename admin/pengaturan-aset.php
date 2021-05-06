@@ -41,12 +41,12 @@ include('database/dbconfig.php')
                 <input type="text" name="penanggung_jawab" class="form-control" placeholder="Petugas yang bertanggungjawab" required>
             </div>
  
+            <input type="hidden" name="status_asset" value="tersedia" >
+
             <div class="form-group">
                 <label>Gambar</label>
                 <input type="file" name="gambar_asset" id="gambar_asset" class="form-control">
             </div>
-
-            <input type="hidden" name="status_asset" value="tersedia" >
         
         </div>
         <div class="modal-footer">
