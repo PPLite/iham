@@ -43,7 +43,7 @@ include('database/dbconfig.php')
  
             <div class="form-group">
                 <label>Gambar</label>
-                <input type="file" name="gambar_aset" id="gambar_aset" class="form-control">
+                <input type="file" name="gambar_asset" id="gambar_asset" class="form-control">
             </div>
 
             <input type="hidden" name="status_asset" value="tersedia" >
