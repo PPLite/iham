@@ -85,6 +85,7 @@ include('database/dbconfig.php')
             <th>RFID UID</th>
             <th>Nama Alat</th>
             <th>Deskripsi Alat</th>
+            <th>Ditambahkan Pada</th>
             <th>Gambar</th>
             <th>Ubah</th>
             <th>Hapus</th>
@@ -105,13 +106,10 @@ include('database/dbconfig.php')
             <td><?php echo $row['uid']; ?></td>
             <td><?php echo $row['nama_alat']; ?></td>
             <td><?php echo $row['deskripsi']; ?></td>
+            <td><?php echo $row['tanggal']; ?></td>
             <td><?php echo $row['gambar']; ?></td>
             
             <!--Tombol buat edit pengguna-->
-            <!--Kodingan full dialihkan ke register_edit.php-->
-            <!-- Pada input type="hidden". dibuat hidden untuk menyembunyikan target yang akan diedit/ diambil datanya-->
-            <!-- Jika ingin ditampilkan data yang akan diambil untuk diubah, "hidden" dapat diganti dengan "text"-->
-
             <td>
                   <form action="register_edit.php" method="post">
                       <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
