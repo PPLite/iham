@@ -45,6 +45,8 @@ include('database/dbconfig.php')
                 <label>Gambar</label>
                 <input type="file" name="gambar_aset" id="gambar_aset" class="form-control">
             </div>
+
+            <input type="hidden" name="status_asset" value="tersedia" >
         
         </div>
         <div class="modal-footer">
@@ -92,6 +94,7 @@ include('database/dbconfig.php')
             <th>Deskripsi Alat</th>
             <th>Ditambahkan Pada</th>
             <th>Penanggung Jawab</th>
+            <th>Status</th>
             <th>Gambar</th>
             <th>Ubah</th>
           </tr>
@@ -113,6 +116,7 @@ include('database/dbconfig.php')
             <td><?php echo $row['deskripsi']; ?></td>
             <td><?php echo $row['tanggal']; ?></td>
             <td><?php echo $row['penanggung_jawab']; ?></td>
+            <td><?php echo $row['status']; ?></td>
             <td><?php echo $row['gambar']; ?></td>
             
             <!--Tombol buat edit aset

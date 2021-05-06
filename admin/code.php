@@ -159,7 +159,7 @@ if(isset($_POST['delete_btn_asset']))
 
 
 
-//Fungsi untuk menambahkan asset di menu epngaturan aset
+//Fungsi untuk menambahkan asset di menu pengaturan aset
 if(isset($_POST['daftaraset_btn']))
 
 //jika sudah ditombol kemudian
@@ -170,7 +170,8 @@ if(isset($_POST['daftaraset_btn']))
     $deskripsi = $_POST['deskripsi'];
     $gambar = $_POST['gambar'];
     $penanggung_jawab = $_POST['penanggung_jawab'];
-    $query = "INSERT INTO tb_rfid (uid,nama_alat,deskripsi,gambar,penanggung_jawab) VALUES ('$uid','$nama_alat','$deskripsi','$gambar','$penanggung_jawab')";
+    $status_asset = $_POST['status_asset'];
+    $query = "INSERT INTO tb_rfid (uid,nama_alat,deskripsi,gambar,penanggung_jawab,status_asset) VALUES ('$uid','$nama_alat','$deskripsi','$gambar','$penanggung_jawab',$status_asset)";
     $query_run = mysqli_query($connection,$query);
 
 
