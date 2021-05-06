@@ -38,7 +38,7 @@ include('database/dbconfig.php')
 
             <div class="form-group">
                 <label>Penanggung Jawab</label>
-                <input type="file" name="penanggung_jawab" id="form-control" placeholder="Petugas yang bertanggungjawab" required>
+                <input type="text" name="penanggung_jawab" id="form-control" placeholder="Petugas yang bertanggungjawab" required>
             </div>
 
             <div class="form-group">
