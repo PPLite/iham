@@ -40,7 +40,7 @@ include('database/dbconfig.php')
                 <label>Penanggung Jawab</label>
                 <input type="text" name="penanggung_jawab" class="form-control" placeholder="Petugas yang bertanggungjawab" required>
             </div>
-
+ 
             <div class="form-group">
                 <label>Gambar</label>
                 <input type="file" name="gambar_aset" id="gambar_aset" class="form-control">
