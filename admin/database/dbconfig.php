@@ -1,4 +1,4 @@
-<link href="../css/sb-admin-2.min.css" rel="stylesheet">
+<!--- link href="../css/sb-admin-2.min.css" rel="stylesheet" --->
 
 <?php
 
@@ -8,7 +8,7 @@ $db_password = "semogacepatlulus2021";
 $db_name = "mjdr3247_adminpanel";
 
 $connection = mysqli_connect($server_name,$db_username,$db_password,$db_name);
-$dbconfig = mysqli_select_db($connection,$db_name);
+//$dbconfig = mysqli_select_db($connection,$db_name);
 
 
 if(!$connection)
