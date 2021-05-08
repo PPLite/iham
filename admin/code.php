@@ -183,7 +183,7 @@ if(isset($_POST['daftaraset_btn']))
 
     if(file_exists("upload/" . $_FILES["gambar_asset"]["name"]))
     {
-        $store = $_FILES["Gambar sudah ada. '.$store.'"];
+        $store = $_FILES["gambar_asset"]["name"];
         $_SESSION['status']= "Gambar sudah ada. '.$store.";
         header('location: pengaturan-aset.php');
     }
