@@ -140,6 +140,7 @@ include('database/dbconfig.php')
             <td><?php echo $row['gambar_asset']; ?></td>
             
             <!--Tombol buat edit aset -->
+            <div>
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editdataasset"> Ubah </button>
               </h6>
             </div>
