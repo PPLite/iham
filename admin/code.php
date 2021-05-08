@@ -50,7 +50,7 @@ if(isset($_POST['login_btn']))
 
 }
 
-////////////////////////BAGIAN LOGIN/////////////////////////////////
+///////////////////////////////////////////////////////////////////////
 
 
 
@@ -93,7 +93,6 @@ if(isset($_POST['registerbtn']))
 
 ////////UPDATE PENGGUNA/////////
 
-//Untuk modif data pada pengguna
 if(isset($_POST['updatebtn']))
 
 //data apa aja yang diambil dan dimodif
@@ -123,7 +122,8 @@ if(isset($_POST['updatebtn']))
     }
 }
 
-//Untuk hapus data pengguna
+////////HAPUS PENGGUNA/////////
+
 //fungsi ini akan aktif ketika "delete_btn" ditombol
 if(isset($_POST['delete_btn']))
 {
@@ -146,7 +146,8 @@ if(isset($_POST['delete_btn']))
 
 ////////////////////////////////////////////////////////////////////
 
-//Untuk hapus data asset
+/////////////////////////////PENGATURAN ASSET/////////////////////
+///////////////HAPUS DATA ASSET/////////////////
 //fungsi ini akan aktif ketika "delete_btn_asset" ditombol
 if(isset($_POST['delete_btn_asset']))
 {
@@ -167,8 +168,7 @@ if(isset($_POST['delete_btn_asset']))
     }
 }
 
-
-//Fungsi untuk menambahkan asset di menu pengaturan aset
+///////////////TAMBAH DATA ASSET/////////////////
 if(isset($_POST['daftaraset_btn']))
 
 //jika sudah ditombol kemudian
@@ -179,22 +179,30 @@ if(isset($_POST['daftaraset_btn']))
     $deskripsi = $_POST['deskripsi'];
     $penanggung_jawab = $_POST['penanggung_jawab'];
     $status_asset = $_POST['status_asset'];
-    $gambar_asset = $_POST['gambar_asset'];
-    $query = "INSERT INTO tb_rfid (nama_alat,uid,deskripsi,penanggung_jawab,status_asset,gambar_asset) VALUES ('$nama_alat','$uid','$deskripsi','$penanggung_jawab','$status_asset','$gambar_asset')";
-    $query_run = mysqli_query($connection,$query);
+    $gambar_asset = $_FILES["gambar_asset"]['name'];
 
-
-    if($query_run)
+    if(file_exists("upload/" . $_FILES["gambar_asset"]["name"]))
     {
+        $store = $_FILES["Gambar sudah ada. '.$store.'"];
+        $_SESSION['status']= "Gambar sudah ada. '.$store.";
+        header('location: pengaturan_aset.php');
+    }
+    else
+    {
+        $query = "INSERT INTO tb_rfid (nama_alat,uid,deskripsi,penanggung_jawab,status_asset,gambar_asset) VALUES ('$nama_alat','$uid','$deskripsi','$penanggung_jawab','$status_asset','$gambar_asset')";
+        $query_run = mysqli_query($connection,$query);
+
         if($query_run)
         {
-        $_SESSION['success'] = "Aset berhasil ditambahkan";
-        header('location: pengaturan-aset.php');
+            move_uploaded_file($_FILES["gambar_asset"]["tmp_name"], "upload/".$_FILES["file"]["name"]);
+            $_SESSION['success'] = "Aset berhasil ditambahkan";
+            header('location: pengaturan-aset.php');
         }
         else
         {
-        $_SESSION['status'] = "Aset gagal ditambahkan";
-        header('location: pengaturan-aset.php');
+            $_SESSION['status'] = "Aset gagal ditambahkan";
+            header('location: pengaturan-aset.php');
         }
     }
 }
+////////////////////////////////////////////////////////////////////

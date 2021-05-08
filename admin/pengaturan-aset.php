@@ -76,6 +76,26 @@ include('database/dbconfig.php')
 
 <div class="card-body">
 
+
+  <!----Untuk nambahin status----->
+  <?php
+  //Status berhasil ditambahkan
+    if(isset($_SESSION['success']) && $_SESSION['success'] !='')
+    {
+      echo '<h2>'.$_SESSION['success'].' </h2>';
+      unset($_SESSION['success']);
+    }
+
+    //Status gagal ditambahkan
+    if(isset($_SESSION['status']) && $_SESSION['status'] !='')
+    {
+      echo '<h2>'.$_SESSION['status'].' </h2>';
+      unset($_SESSION['status']);
+    }
+  ?>
+
+
+
     <div class="table-responsive">
 
 <!---Buat ngambil data--->
@@ -146,7 +166,7 @@ include('database/dbconfig.php')
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <form action="code.php" method="POST">
+                  <form action="code.php" method="POST" enctype="multipart/form-data">
 
                     <div class="modal-body">
             
@@ -192,45 +212,6 @@ include('database/dbconfig.php')
             <div class="container-fluid">
 <!------Akhir dari Modal------->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <div class="modal fade" id="hapusasset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -258,12 +239,6 @@ include('database/dbconfig.php')
             </div>
 
 <div class="container-fluid">
-
-
-
-
-
-
 
             </tr>
           <?php
