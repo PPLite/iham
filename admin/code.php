@@ -179,11 +179,11 @@ if(isset($_POST['daftaraset_btn']))
     $deskripsi = $_POST['deskripsi'];
     $penanggung_jawab = $_POST['penanggung_jawab'];
     $status_asset = $_POST['status_asset'];
-    $gambar_asset = $_FILES["gambar_asset"]['name'];
+    $gambar_asset = $_FILES["gambar_asset"]['nama_alat'];
 
-    if(file_exists("upload/" . $_FILES["gambar_asset"]["name"]))
+    if(file_exists("upload/" . $_FILES["gambar_asset"]["nama_alat"]))
     {
-        $store = $_FILES["gambar_asset"]["name"];
+        $store = $_FILES["gambar_asset"]["nama_alat"];
         $_SESSION['status']= "Gambar sudah ada. '.$store.'";
         header('location: pengaturan-aset.php');
     }
