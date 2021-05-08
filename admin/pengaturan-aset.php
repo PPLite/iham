@@ -141,8 +141,10 @@ include('database/dbconfig.php')
             
             <!--Tombol buat edit aset -->
             <div>
+            <td>
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editdataasset"> Ubah </button>
               </h6>
+              </td>
             </div>
 
             <!----Mulai Modal buat tambah aset baru. kotak yang ngawang ditengah-->
