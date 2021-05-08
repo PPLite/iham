@@ -139,17 +139,7 @@ include('database/dbconfig.php')
             <td><?php echo $row['status_asset']; ?></td>
             <td><?php echo $row['gambar_asset']; ?></td>
             
-            <!--Tombol buat edit aset
-            <td>
-                  <form action="register_edit.php" method="post">
-                      <input type="hidden" name="edit_id" value="<?php //echo $row['id']; ?>">
-                      <button type="submit" name="edit_btn" class="btn btn-success">Ubah</button>
-                  </form>
-            </td>
-            -->
-
-            <td>
-            <!--<button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button> -->
+            <!--Tombol buat edit aset -->
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editdataasset"> Ubah </button>
               </h6>
             </div>
@@ -200,7 +190,7 @@ include('database/dbconfig.php')
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                        <button type="submit" name="daftaraset_btn" class="btn btn-primary">Simpan</button>
+                        <button type="submit" name="editaset_btn" class="btn btn-primary">Simpan</button>
                     </div>
                   </form>
 

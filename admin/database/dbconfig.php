@@ -1,3 +1,5 @@
+<link href="../css/sb-admin-2.min.css" 
+
 <?php
 
 $server_name = "localhost";
@@ -11,7 +13,7 @@ $dbconfig = mysqli_select_db($connection,$db_name);
 
 if(!$connection)
 {
-    die("Connection failed: " . mysqli_connect_error());
+    //die("Connection failed: " . //mysqli_connect_error());
     echo '
         <div class="container">
             <div class="row">
