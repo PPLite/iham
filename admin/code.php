@@ -200,7 +200,7 @@ if(isset($_POST['daftaraset_btn']))
         }
         else
         {
-            $_SESSION['status'] = "Aset gagal ditambahkan";
+            $_SESSION['success'] = "Aset gagal ditambahkan";
             header('location: pengaturan-aset.php');
         }
     }
