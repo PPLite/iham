@@ -185,7 +185,7 @@ if(isset($_POST['daftaraset_btn']))
     {
         $store = $_FILES["Gambar sudah ada. '.$store.'"];
         $_SESSION['status']= "Gambar sudah ada. '.$store.";
-        header('location: pengaturan_aset.php');
+        header('location: pengaturan-aset.php');
     }
     else
     {
