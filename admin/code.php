@@ -170,7 +170,7 @@ if(isset($_POST['delete_btn_asset']))
 
 
 ////////////////////////////TAMBAH DATA ASSET//////////
-if (isset($_POST['']))
+if (isset($_POST['daftaraset_btn']))
 {
     $nama_alat = $_POST['nama_alat'];
     $uid = $_POST['uid'];
