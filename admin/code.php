@@ -50,7 +50,7 @@ if(isset($_POST['login_btn']))
 
 }
 
-///////////////////////////////////////////////////////////////////////
+////////////////////////BAGIAN LOGIN/////////////////////////////////
 
 
 
@@ -93,6 +93,7 @@ if(isset($_POST['registerbtn']))
 
 ////////UPDATE PENGGUNA/////////
 
+//Untuk modif data pada pengguna
 if(isset($_POST['updatebtn']))
 
 //data apa aja yang diambil dan dimodif
@@ -122,8 +123,7 @@ if(isset($_POST['updatebtn']))
     }
 }
 
-////////HAPUS PENGGUNA/////////
-
+//Untuk hapus data pengguna
 //fungsi ini akan aktif ketika "delete_btn" ditombol
 if(isset($_POST['delete_btn']))
 {
@@ -146,8 +146,7 @@ if(isset($_POST['delete_btn']))
 
 ////////////////////////////////////////////////////////////////////
 
-/////////////////////////////PENGATURAN ASSET/////////////////////
-///////////////HAPUS DATA ASSET/////////////////
+//Untuk hapus data asset
 //fungsi ini akan aktif ketika "delete_btn_asset" ditombol
 if(isset($_POST['delete_btn_asset']))
 {
@@ -169,28 +168,33 @@ if(isset($_POST['delete_btn_asset']))
 }
 
 
-////////////////////////////TAMBAH DATA ASSET//////////
-if (isset($_POST['daftaraset_btn']))
+//Fungsi untuk menambahkan asset di menu pengaturan aset
+if(isset($_POST['daftaraset_btn']))
+
+//jika sudah ditombol kemudian
 {
+    //input data
     $nama_alat = $_POST['nama_alat'];
     $uid = $_POST['uid'];
     $deskripsi = $_POST['deskripsi'];
     $penanggung_jawab = $_POST['penanggung_jawab'];
     $status_asset = $_POST['status_asset'];
-    //$gambar_asset = $_FILES['gambar_asset'];
+    $gambar_asset = $_POST['gambar_asset'];
+    $query = "INSERT INTO tb_rfid (nama_alat,uid,deskripsi,penanggung_jawab,status_asset,gambar_asset) VALUES ('$nama_alat','$uid','$deskripsi','$penanggung_jawab','$status_asset','$gambar_asset')";
+    $query_run = mysqli_query($connection,$query);
 
-    $query = "INSERT INTO tb_rfid (nama_alat,uid,deskripsi,penanggung_jawab,status_asset) 
-    VALUES ('$nama_alat','$uid','$deskripsi','$penanggung_jawab','$status_asset')";
-    $query_run = mysqli_query($connection, $query);
 
     if($query_run)
     {
+        if($query_run)
+        {
         $_SESSION['success'] = "Aset berhasil ditambahkan";
         header('location: pengaturan-aset.php');
-    }
-    else
-    {
+        }
+        else
+        {
         $_SESSION['status'] = "Aset gagal ditambahkan";
         header('location: pengaturan-aset.php');
+        }
     }
 }
