@@ -35,4 +35,48 @@ if(isset($_POST['registerbtn']))
     }
 }
 
+///////////////TAMBAH DATA ASSET/////////////////
+if(isset($_POST['daftaraset_btn']))
+
+//jika sudah ditombol kemudian
+{
+    //input data
+    $nama_alat = $_POST['nama_alat'];
+    $uid = $_POST['uid'];
+    $deskripsi = $_POST['deskripsi'];
+    $penanggung_jawab = $_POST['penanggung_jawab'];
+    $status_asset = $_POST['status_asset'];
+    $gambar_asset = $_FILES['gambar_asset'];
+
+//    if(file_exists("upload/" . $_FILES["gambar_asset"]["nama_alat"]))
+//    {
+//        $store = $_FILES['gambar_asset'];
+//        $_SESSION['status']= "Gambar sudah ada. '.$store.'";
+//        header('Location: pengaturan-aset.php');
+//    }
+//    else
+//    {
+        $query = "INSERT INTO tb_rfid ('nama_alat','uid','deskripsi','penanggung_jawab','status_asset') VALUES ('$nama_alat','$uid','$deskripsi','$penanggung_jawab','$status_asset',)";
+        $query_run = mysqli_query($connection, $query);
+
+        if($query_run)
+        {
+            //move_uploaded_file($_FILES["gambar_asset"], "upload/".$_FILES["gambar_asset"]);
+            $_SESSION['success'] = "Aset berhasil ditambahkan";
+            header('location: pengaturan-aset.php');
+        }
+        else
+        {
+            $_SESSION['status'] = "Aset gagal ditambahkan";
+            header('location: pengaturan-aset.php');
+        }
+    }
+//}
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 ?>
