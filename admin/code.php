@@ -179,11 +179,11 @@ if(isset($_POST['daftaraset_btn']))
     $deskripsi = $_POST['deskripsi'];
     $penanggung_jawab = $_POST['penanggung_jawab'];
     $status_asset = $_POST['status_asset'];
-    $gambar_asset = $_FILES["gambar_asset"]['nama'];
+    $gambar_asset = $_FILES['gambar_asset']['nama'];
 
     if(file_exists("upload/" . $_FILES["gambar_asset"]["nama"]))
     {
-        $store = $_FILES["gambar_asset"]["namat"];
+        $store = $_FILES['gambar_asset']['namat'];
         $_SESSION['status']= "Gambar sudah ada. '.$store.'";
         header('Location: pengaturan-aset.php');
     }
@@ -194,13 +194,13 @@ if(isset($_POST['daftaraset_btn']))
 
         if($query_run)
         {
-            move_uploaded_file($_FILES["gambar_asset"]["nama_sementara"], "upload/".$_FILES["gambar_asset"]["nama"]);
+            move_uploaded_file($_FILES['gambar_asset']['nama'], "upload/".$_FILES['gambar_asset']['nama']);
             $_SESSION['success'] = "Aset berhasil ditambahkan";
             header('location: pengaturan-aset.php');
         }
         else
         {
-            $_SESSION['success'] = "Aset gagal ditambahkan";
+            $_SESSION['status'] = "Aset gagal ditambahkan";
             header('location: pengaturan-aset.php');
         }
     }
