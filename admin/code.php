@@ -177,10 +177,10 @@ if (isset($_POST['daftaraset_btn']))
     $deskripsi = $_POST['deskripsi'];
     $penanggung_jawab = $_POST['penanggung_jawab'];
     $status_asset = $_POST['status_asset'];
-    $gambar_asset = $_FILES['gambar_asset'];
+    //$gambar_asset = $_FILES['gambar_asset'];
 
-    $query = "INSERT INTO tb_rfid ('nama_alat','uid','deskripsi','penanggung_jawab','status_asset','gambar_asset') 
-    VALUES ('$nama_alat','$uid','$deskripsi','$penanggung_jawab','$status_asset','$gambar_asset')";
+    $query = "INSERT INTO tb_rfid (nama_alat,uid,deskripsi,penanggung_jawab,status_asset) 
+    VALUES ('$nama_alat','$uid','$deskripsi','$penanggung_jawab','$status_asset')";
     $query_run = mysqli_query($connection, $query);
 
     if($query_run)
@@ -193,10 +193,4 @@ if (isset($_POST['daftaraset_btn']))
         $_SESSION['status'] = "Aset gagal ditambahkan";
         header('location: pengaturan-aset.php');
     }
-
-
-
-
-
-
 }
