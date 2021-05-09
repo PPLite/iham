@@ -1,200 +1,290 @@
 <?php
-include_once('security.php');
-include_once('database/dbconfig.php');
+include('security.php'); 
+include('includes/header.php'); 
+include('includes/navbar.php');
+include('database/dbconfig.php')
+?>
+
+<!----Mulai Modal buat tambah aset baru. kotak yang ngawang ditengah-->
+<!----Diambil dari https://getbootstrap.com/docs/4.0/components/modal/-->
+
+<div class="modal fade" id="tambahinaset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tambahkan Asset Baru</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="code.php" method="POST">
+
+        <div class="modal-body">
+ 
+            <div class="form-group">
+                <label> Nama Aset </label>
+                <input type="text" name="nama_alat" class="form-control" placeholder="Masukkan Nama" required>
+            </div>
+
+            <div class="form-group">
+                <label>Kode UID</label>
+                <input type="text" name="uid" class="form-control" placeholder="Masukkan kode UID" required>
+            </div>
+
+            <div class="form-group">
+                <label>Deskripsi</label>
+                <input type="text" name="deskripsi" class="form-control" placeholder="Masukkan deskripsi alat" required>
+            </div>
+
+            <div class="form-group">
+                <label>Penanggung Jawab</label>
+                <input type="text" name="penanggung_jawab" class="form-control" placeholder="Petugas yang bertanggungjawab" required>
+            </div>
+ 
+            <input type="hidden" name="status_asset" value="tersedia" >
+
+            <div class="form-group">
+                <label>Gambar</label>
+                <input type="file" name="gambar_asset" id="gambar_asset" class="form-control">
+            </div>
+        
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+            <button type="submit" name="daftaraset_btn" class="btn btn-primary">Simpan</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
 
 
+<div class="container-fluid">
+<!------Akhir dari Modal------->
 
-////////////////////////BAGIAN LOGIN/////////////////////////////////
-//fungsi akan aktif jika tombol login dipencet
-if(isset($_POST['login_btn']))
-{
-    $username_login = $_POST['username'];
-    $password_login = $_POST['password'];
-    $usertype = $_POST['usertype'];
 
-    //untuk nyari "select" dari semua data"* dari tabel "register" dan, cocokin dari tambel kolom "email"
-    //terus cocokin dengan form "email" sama juga dengan password
-    $query = "SELECT * from register WHERE username='$username_login' AND password='$password_login' ";
+<!---- Untuk tombol "tambah aset"--->
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">Menu Pengelolaan Aset
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahinaset">
+              Tambahkan data Asset 
+            </button>
+    </h6>
+  </div>
+
+<div class="card-body">
+
+    <div class="table-responsive">
+
+<!---Buat ngambil data--->
+    <?php
+    //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
+    $query = "SELECT * FROM tb_rfid"; 
     $query_run = mysqli_query($connection, $query);
-    $usertype = mysqli_fetch_array($query_run);
-    //seperti biasa, logika if else    
+    ?>
 
-    //jika admin maka masuk ke index.php
-    if($usertype['usertype'] == "admin")
-    {
-        $_SESSION['username'] = $username_login;
-        $_SESSION['usertype'] = "Admin";
-        header('Location: index.php');
-    }
-
-    //jika tipe pengguna pengelola maka masuk ke register_edit.php
-    else if ($usertype ['usertype'] == "pengelola")
-    {
-        $_SESSION['username'] = $username_login;
-        $_SESSION['usertype'] = "pengelola";
-        header('Location: register_edit.php');
-    }
-
-    //jika tipe pengguna "pengguna" maka masuk ke register.php
-    else if ($usertype ['usertype'] == "pengguna")
-    {
-        $_SESSION['username'] = $username_login;
-        $_SESSION['usertype'] = "Pengguna";
-        header('Location: register.php');
-    }
-    else
-    {
-        $_SESSION['status'] = "Email / Password anda Salah";
-        header('Location: login.php');
-    }
-
-}
-
-////////////////////////BAGIAN LOGIN/////////////////////////////////
-
-
-
-/////////////////////////////PENGATURAN PENGGUNA/////////////////////
-////////TAMBAH PENGGUNA/////////
-if(isset($_POST['registerbtn']))
-
-//jika sudah ditombol kemudian
-{
-    //input data
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $cpassword = $_POST['confirmpassword'];
-    $usertype = $_POST['usertype'];
-
-    if($password === $cpassword)
-    {
-         //data yang tadi, dimasukkan ke database dewngan perintah "insert into" karena data tersebut data baru, dan diletakkan ke tabel yang udah disediakan
-        $query = "INSERT INTO register (username,email,password,usertype) VALUES ('$username','$email','$password','$usertype')";
-        $query_run = mysqli_query($connection,$query);
-    
-        if($query_run)
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>ID </th>
+            <th>RFID UID</th>
+            <th>Nama Alat</th>
+            <th>Deskripsi Alat</th>
+            <th>Ditambahkan Pada</th>
+            <th>Penanggung Jawab</th>
+            <th>Status</th>
+            <th>Gambar</th>
+            <th>Ubah</th>
+          </tr>
+        </thead>
+        <tbody>
+        <?php
+        //mengambil data dari database
+        //tipe kolom yang nantinya akan diambil
+        if(mysqli_num_rows($query_run) > 0 )
         {
-        $_SESSION['success'] = "Pengguna berhasil ditambahkan";
-        header('location: register.php');
+          while($row = mysqli_fetch_assoc($query_run))
+          {
+            ?>
+          <tr>
+          <!---Mengambil data dari database kemudian menampilkan ke tabel, serta menentukan kolom mana saja yang akan diambil datanya-->
+          <td><?php echo $row['id']; ?></td>
+            <td><?php echo $row['uid']; ?></td>
+            <td><?php echo $row['nama_alat']; ?></td>
+            <td><?php echo $row['deskripsi']; ?></td>
+            <td><?php echo $row['tanggal']; ?></td>
+            <td><?php echo $row['penanggung_jawab']; ?></td>
+            <td><?php echo $row['status_asset']; ?></td>
+            <td><?php echo $row['gambar_asset']; ?></td>
+            
+            <!--Tombol buat edit aset
+            <td>
+                  <form action="register_edit.php" method="post">
+                      <input type="hidden" name="edit_id" value="<?php //echo $row['id']; ?>">
+                      <button type="submit" name="edit_btn" class="btn btn-success">Ubah</button>
+                  </form>
+            </td>
+            -->
+
+            <td>
+            <!--<button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button> -->
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editdataasset"> Ubah </button>
+              </h6>
+            </div>
+
+            <!----Mulai Modal buat tambah aset baru. kotak yang ngawang ditengah-->
+            <!----Diambil dari https://getbootstrap.com/docs/4.0/components/modal/-->
+
+            <div class="modal fade" id="editdataasset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ubah Data Asset</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <form action="code.php" method="POST">
+
+                    <div class="modal-body">
+            
+                        <div class="form-group">
+                            <label> Nama Aset </label>
+                            <input type="text" name="nama_alat" class="form-control" placeholder="Masukkan Nama" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Kode UID</label>
+                            <input type="text" name="uid" class="form-control" placeholder="Masukkan kode UID" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Deskripsi</label>
+                            <input type="text" name="deskripsi" class="form-control" placeholder="Masukkan deskripsi alat" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Penanggung Jawab</label>
+                            <input type="text" name="penanggung_jawab" class="form-control" placeholder="Petugas yang bertanggungjawab" required>
+                        </div>
+            
+                        <input type="hidden" name="status_asset" value="tersedia" >
+
+                        <div class="form-group">
+                            <label>Gambar</label>
+                            <input type="file" name="gambar_asset" id="gambar_asset" class="form-control">
+                        </div>
+                    
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                        <button type="submit" name="daftaraset_btn" class="btn btn-primary">Simpan</button>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+
+
+            <div class="container-fluid">
+<!------Akhir dari Modal------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="modal fade" id="hapusasset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Hapus data Asset</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">Apakah anda yakin untuk menghapus Asset ini?</div>
+
+            <div class="modal-body">
+              <div class="form-group">
+                </div>
+                  <form action="code.php" method="POST">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                        <input type="hidden" name="delete_id_asset" value="<?php echo $row['id']; ?>">
+                        <button type="submit" name="delete_btn_asset" class="btn btn-danger">Hapus</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+<div class="container-fluid">
+
+
+
+
+
+
+
+            </tr>
+          <?php
+          }
         }
-        else
-        {
-        $_SESSION['status'] = "Pengguna gagal ditambahkan";
-        header('location: register.php');
+        //Jika gagal ngambil data akan mengeluarkan peringatan
+        else {
+          echo "Data tidak ditemukan";   
         }
-    }
-    else 
-    {
-        $_SESSION['status'] = "Password tidak sesuai";
-        header('location: register.php');
-    }
-}
+        ?>        
+        </tbody>
+      </table>
 
-////////UPDATE PENGGUNA/////////
+    </div>
+  </div>
+</div>
 
-//Untuk modif data pada pengguna
-if(isset($_POST['updatebtn']))
+</div>
+<!-- /.container-fluid -->
 
-//data apa aja yang diambil dan dimodif
-{
-    $id = $_POST['edit_id'];
-    $username = $_POST['edit_username'];
-    $email = $_POST['edit_email'];
-    $password = $_POST['edit_password'];
-    $usertype = $_POST['edit_usertype'];
-    $usertypeupdate = $_POST['update_usertype'];
-
-
-    //disini pakai $query = update. soalnya buat update data aja. dan apa yang akan diupdate dituliskan setelahnya
-    $query = "UPDATE register SET username='$username', email='$email', password='$password',usertype='$usertypeupdate' WHERE id='$id' ";
-    $query_run = mysqli_query($connection, $query);
-
-    //Tampilan status jika dilakukan perubahan data
-    if($query_run)
-    {
-        $_SESSION['success'] = "Data Berhasil diperbarui";
-        header('location: register.php');
-    }
-    else
-    {
-        $_SESSION['status'] = "Data Gagal diperbarui";
-        header('location: register.php');
-    }
-}
-
-//Untuk hapus data pengguna
-//fungsi ini akan aktif ketika "delete_btn" ditombol
-if(isset($_POST['delete_btn']))
-{
-    //disini pakai $query=Delete_id, soalnya ya buat ngehapus data berdasarkan "ID" yang udah dipilih
-    $id = $_POST['delete_id'];
-    $query = "DELETE FROM register WHERE id='$id' ";
-    $query_run = mysqli_query($connection, $query);
-
-    if ($query_run)
-    {
-        $_SESSION['success'] = "Data berhasil dihapus";
-        header('location: register.php');
-    }
-    else
-    {
-        $_SESSION['status'] = "Data gagal dihapus";
-        header('location: register.php');
-    }
-}
-
-////////////////////////////////////////////////////////////////////
-
-//Untuk hapus data asset
-//fungsi ini akan aktif ketika "delete_btn_asset" ditombol
-if(isset($_POST['delete_btn_asset']))
-{
-    //disini pakai $query=Delete_id, soalnya ya buat ngehapus data berdasarkan "ID" yang udah dipilih
-    $id = $_POST['delete_id_asset'];
-    $query = "DELETE FROM tb_rfid WHERE id='$id' ";
-    $query_run = mysqli_query($connection, $query);
-
-    if ($query_run)
-    {
-        $_SESSION['success'] = "Data berhasil dihapus";
-        header('location: pengaturan-aset.php');
-    }
-    else
-    {
-        $_SESSION['status'] = "Data gagal dihapus";
-        header('location: pengaturan-aset.php');
-    }
-}
-
-
-//Fungsi untuk menambahkan asset di menu pengaturan aset
-if(isset($_POST['daftaraset_btn']))
-
-//jika sudah ditombol kemudian
-{
-    //input data
-    $nama_alat = $_POST['nama_alat'];
-    $uid = $_POST['uid'];
-    $deskripsi = $_POST['deskripsi'];
-    $penanggung_jawab = $_POST['penanggung_jawab'];
-    $status_asset = $_POST['status_asset'];
-    $gambar_asset = $_POST['gambar_asset'];
-    $query = "INSERT INTO tb_rfid (nama_alat,uid,deskripsi,penanggung_jawab,status_asset,gambar_asset) VALUES ('$nama_alat','$uid','$deskripsi','$penanggung_jawab','$status_asset','$gambar_asset')";
-    $query_run = mysqli_query($connection,$query);
-
-
-    if($query_run)
-    {
-        if($query_run)
-        {
-        $_SESSION['success'] = "Aset berhasil ditambahkan";
-        header('location: pengaturan-aset.php');
-        }
-        else
-        {
-        $_SESSION['status'] = "Aset gagal ditambahkan";
-        header('location: pengaturan-aset.php');
-        }
-    }
-}
+<?php
+include('includes/scripts.php');
+include('includes/footer.php');
+?>
