@@ -172,8 +172,7 @@ include('database/dbconfig.php')
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                         <button type="submit" name="daftaraset_btn" class="btn btn-primary">Simpan</button>
-                        <button type="submit" name="delete_asset_btn" class="btn btn-danger">Hapus</button>
-                        <input type="hidden" name="delete_asset_id" value="<?php echo $row['id']; ?>">
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusasset"> Hapus </button>
                     </div>
                   </form>
 
@@ -183,47 +182,8 @@ include('database/dbconfig.php')
 
 
             <div class="container-fluid">
-<!------Akhir dari Modal------->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!------Akhir dari Konfirmasi Hapus------->
             <div class="modal fade" id="hapusasset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -243,7 +203,7 @@ include('database/dbconfig.php')
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                         <input type="hidden" name="delete_id_asset" value="<?php echo $row['id']; ?>">
-                        <button type="submit" name="delete_btn_asset" class="btn btn-danger">Hapus</button>
+                        <button type="submit" name="delete_asset_btn" class="btn btn-danger">Hapus</button>
                     </div>
                   </form>
                 </div>
@@ -251,12 +211,6 @@ include('database/dbconfig.php')
             </div>
 
 <div class="container-fluid">
-
-
-
-
-
-
 
             </tr>
           <?php
