@@ -76,26 +76,6 @@ include('database/dbconfig.php')
 
 <div class="card-body">
 
-
-  <!----Untuk nambahin status----->
-  <?php
-  //Status berhasil ditambahkan
-    if(isset($_SESSION['success']) && $_SESSION['success'] !='')
-    {
-      echo '<h2>'.$_SESSION['success'].' </h2>';
-      unset($_SESSION['success']);
-    }
-
-    //Status gagal ditambahkan
-    if(isset($_SESSION['status']) && $_SESSION['status'] !='')
-    {
-      echo '<h2>'.$_SESSION['status'].' </h2>';
-      unset($_SESSION['status']);
-    }
-  ?>
-
-
-
     <div class="table-responsive">
 
 <!---Buat ngambil data--->
@@ -139,12 +119,19 @@ include('database/dbconfig.php')
             <td><?php echo $row['status_asset']; ?></td>
             <td><?php echo $row['gambar_asset']; ?></td>
             
-            <!--Tombol buat edit aset -->
-            <div>
+            <!--Tombol buat edit aset
             <td>
+                  <form action="register_edit.php" method="post">
+                      <input type="hidden" name="edit_id" value="<?php //echo $row['id']; ?>">
+                      <button type="submit" name="edit_btn" class="btn btn-success">Ubah</button>
+                  </form>
+            </td>
+            -->
+
+            <td>
+            <!--<button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button> -->
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editdataasset"> Ubah </button>
               </h6>
-              </td>
             </div>
 
             <!----Mulai Modal buat tambah aset baru. kotak yang ngawang ditengah-->
@@ -193,7 +180,7 @@ include('database/dbconfig.php')
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                        <button type="submit" name="editaset_btn" class="btn btn-primary">Simpan</button>
+                        <button type="submit" name="daftaraset_btn" class="btn btn-primary">Simpan</button>
                     </div>
                   </form>
 
@@ -204,6 +191,45 @@ include('database/dbconfig.php')
 
             <div class="container-fluid">
 <!------Akhir dari Modal------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <div class="modal fade" id="hapusasset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -232,6 +258,12 @@ include('database/dbconfig.php')
             </div>
 
 <div class="container-fluid">
+
+
+
+
+
+
 
             </tr>
           <?php
