@@ -172,7 +172,6 @@ include('database/dbconfig.php')
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                         <button type="submit" name="daftaraset_btn" class="btn btn-primary">Simpan</button>
-                        <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusasset"> Hapus </button> -->
                     </div>
                   </form>
 
@@ -183,35 +182,6 @@ include('database/dbconfig.php')
 
             <div class="container-fluid">
 
-<!------Akhir dari Konfirmasi Hapus
-            <div class="modal fade" id="hapusasset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Hapus data Asset</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">Apakah anda yakin untuk menghapus Asset ini?</div>
-
-            <div class="modal-body">
-              <div class="form-group">
-                </div>
-                  <form action="code.php" method="POST">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                        <input type="hidden" name="delete_id_asset" value="<?php echo $row['id']; ?>">
-                        <button type="submit" name="delete_asset_btn" class="btn btn-danger">Hapus</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-
-<div class="container-fluid">
-------->
 
             </tr>
           <?php
