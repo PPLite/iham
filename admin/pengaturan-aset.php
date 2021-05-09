@@ -190,6 +190,7 @@ include('database/dbconfig.php')
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                         <button type="submit" name="daftaraset_btn" class="btn btn-primary">Simpan</button>
+                        <button type="submit" name="hapusaset_btn" class="btn btn-primary">Hapus</button>
                     </div>
                   </form>
 
