@@ -146,7 +146,7 @@ include('database/dbconfig.php')
             <!----Mulai Modal buat tambah aset baru. kotak yang ngawang ditengah-->
             <!----Diambil dari https://getbootstrap.com/docs/4.0/components/modal/-->
 
-            <div class="modal fade" id="editdataasset" tabindex="-2" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="editdataasset" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -203,7 +203,7 @@ include('database/dbconfig.php')
 
                   <!----MODAL HAPUS---->
                   </div>
-            <div class="modal fade" id="hapusaset_btn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="hapusaset_btn" tabindex="2" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
