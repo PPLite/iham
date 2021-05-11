@@ -144,7 +144,7 @@ Akhir dari Modal------->
             </div>
 
             <!----Mulai Modal buat tambah aset baru. kotak yang ngawang ditengah-->
-            <!----Diambil dari https://getbootstrap.com/docs/4.0/components/modal/-->
+            <!----Diambil dari https://getbootstrap.com/docs/4.0/components/modal/
 
             <div class="modal fade" id="editdataasset" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -186,7 +186,8 @@ Akhir dari Modal------->
                             <input type="file" name="gambar_asset" id="gambar_asset" class="form-control">
                         </div>                    
                     </div>
-                    <!----FOOTER MODAL BUTTON---->
+                    
+                    
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                         <button type="submit" name="daftaraset_btn" class="btn btn-primary">Simpan</button>
@@ -198,7 +199,7 @@ Akhir dari Modal------->
             </div>
             <div class="container-fluid">
             </tr>
-                    <!----FOOTER MODAL BUTTON---->
+                    FOOTER MODAL BUTTON---->
 
 
                   <!----MODAL HAPUS
@@ -231,12 +232,7 @@ Akhir dari Modal------->
                   --MODAL HAPUS---->
 
 
-
-
-
-
-                   <a data-toggle="modal" href="#myModal" class="btn btn-primary">Launch modal</a>
-                        <div class="modal" id="myModal">
+                        <div class="modal" id="editdataasset">
                           <div class="modal-dialog modal-lg">
                               <div class="modal-content">
                                 <div class="modal-header">
