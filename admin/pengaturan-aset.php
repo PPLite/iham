@@ -221,14 +221,14 @@ Akhir dari Modal------->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                        <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
+                        <input type="hidden" name="delete_id" value="<?php //echo $row['id']; ?>">
                         <button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button>
                     </div>
                   </form>
                 </div>
               </div>
             </div>
-                   <!----MODAL HAPUS---->
+                  --MODAL HAPUS---->
 
 
 
