@@ -200,7 +200,7 @@ include('database/dbconfig.php')
             </tr>
                     <!----FOOTER MODAL BUTTON---->
 
-            <div class="modal fade" id="hapusaset_btn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal" id="hapusaset_btn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
