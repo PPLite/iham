@@ -200,14 +200,11 @@ include('database/dbconfig.php')
             </tr>
                     <!----FOOTER MODAL BUTTON---->
 
-
-                  <!----MODAL HAPUS---->
-                  </div>
-            <div id="hapusaset_btn" tabindex="0" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="hapusaset_btn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Hapus data Asset</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Hapus data Pengguna</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -228,7 +225,10 @@ include('database/dbconfig.php')
                 </div>
               </div>
             </div>
-                   <!----MODAL HAPUS---->
+
+            <div class="container-fluid">
+
+            </td>
                     
           <?php
           }
