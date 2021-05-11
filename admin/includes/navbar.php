@@ -56,7 +56,7 @@ include_once('code.php');
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Fitur Aset:</h6>
       <a class="collapse-item" href="pengaturan-aset.php">Pengaturan Aset</a>
-      <a class="collapse-item" href="pesan-aset.php">Pesan Aset</a>
+      <a class="collapse-item" href="pesan-aset.php">Input Data</a>
       <a class="collapse-item" href="status-asset.php">Status Aset</a>
     </div>
   </div>
@@ -67,6 +67,13 @@ include_once('code.php');
   <a class="nav-link" href="register.php">
     <i class="fas fa-fw fa-chart-area"></i>
     <span>Pengaturan Pengguna</span></a>
+</li>
+
+
+<li class="nav-item">
+  <a class="nav-link" href="baca-tag.php">
+    <i class="fas fa-fw fa-wrench"></i>
+    <span>Baca Tag</span></a>
 </li>
 
 
@@ -155,7 +162,7 @@ include_once('code.php');
             <i class="fa fa-bars"></i>
           </button>
 
-          <!-- Topbar Search -->
+          <!-- Topbar Search
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
@@ -165,7 +172,7 @@ include_once('code.php');
                 </button>
               </div>
             </div>
-          </form>
+          </form> -->
 
 
           <!-- Topbar Navbar -->

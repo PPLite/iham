@@ -44,10 +44,10 @@ include('database/dbconfig.php')
             <input type="hidden" name="status_asset" value="tersedia" >
 
             <div class="form-group">
-                <label>Gambar</label>
+                <label>Peminjam</label>
                 <input type="file" name="gambar_asset" id="gambar_asset" class="form-control">
             </div>
-        
+
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
@@ -109,7 +109,7 @@ include('database/dbconfig.php')
             <th>Ditambahkan Pada</th>
             <th>Penanggung Jawab</th>
             <th>Status</th>
-            <th>Gambar</th>
+            <th>Peminjam</th>
             <th>Ubah</th>
           </tr>
         </thead>
@@ -131,7 +131,7 @@ include('database/dbconfig.php')
             <td><?php echo $row['tanggal']; ?></td>
             <td><?php echo $row['penanggung_jawab']; ?></td>
             <td><?php echo $row['status_asset']; ?></td>
-            <td><?php echo $row['gambar_asset']; ?></td>
+            <td><?php echo $row['peminjam']; ?></td>
 
             <td>
             <!--<button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button> -->
