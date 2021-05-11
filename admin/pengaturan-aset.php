@@ -203,7 +203,7 @@ include('database/dbconfig.php')
 
                   <!----MODAL HAPUS---->
                   </div>
-            <div class="modal fade" id="hapusaset_btn" tabindex="0" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div id="hapusaset_btn" tabindex="0" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -249,7 +249,6 @@ include('database/dbconfig.php')
 <!-- /.container-fluid -->
 
 <?php
-include('js/sb-admin-2.js');
 include('includes/scripts.php');
 include('includes/footer.php');
 ?>
