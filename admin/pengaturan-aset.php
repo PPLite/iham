@@ -190,7 +190,7 @@ include('database/dbconfig.php')
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                         <button type="submit" name="daftaraset_btn" class="btn btn-primary">Simpan</button>
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal"> TESTING </button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal2"> TESTING </button>
                     </div>
                   </form>
                 </div>
@@ -200,7 +200,7 @@ include('database/dbconfig.php')
             </tr>
                     <!----FOOTER MODAL BUTTON---->
 
-                    <!----------TES OVERLAY ---------->
+                    <!----------TES OVERLAY 
                     <div class="modal" id="myModal">
                       <div class="modal-dialog modal-lg">
                           <div class="modal-content">
@@ -218,6 +218,7 @@ include('database/dbconfig.php')
                           </div>
                         </div>
                     </div>
+                    ---------->
                     <div class="modal" id="myModal2" data-backdrop="static">
                       <div class="modal-dialog">
                           <div class="modal-content">
