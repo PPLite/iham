@@ -168,7 +168,7 @@ if(isset($_POST['delete_btn_asset']))
 }
 
 
-//Fungsi untuk menambahkan asset di menu pengaturan aset
+////////////////Fungsi untuk menambahkan asset di menu pengaturan aset////////////////////////////////////
 if(isset($_POST['daftaraset_btn']))
 
 //jika sudah ditombol kemudian
@@ -198,3 +198,6 @@ if(isset($_POST['daftaraset_btn']))
         }
     }
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////Fungsi untuk menambahkan asset di menu pengaturan aset////////////////////////////////////

@@ -8,7 +8,7 @@ include('database/dbconfig.php')
 <!----Mulai Modal buat tambah aset baru. kotak yang ngawang ditengah-->
 <!----Diambil dari https://getbootstrap.com/docs/4.0/components/modal/-->
 
-<div class="modal fade" id="tambahinaset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="tambahinasetanak" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -22,36 +22,58 @@ include('database/dbconfig.php')
         <div class="modal-body">
  
             <div class="form-group">
-                <label> Nama Aset </label>
-                <input type="text" name="nama_alat" class="form-control" placeholder="Masukkan Nama" required>
+                <label>Nama Anak</label>
+                <input type="text" name="nama_anak" class="form-control" placeholder="Masukkan Nama" required>
             </div>
 
-            <div class="form-group">
+                <div class="form-group">
                 <label>Kode UID</label>
-                <input type="text" name="uid" class="form-control" placeholder="Masukkan kode UID" required>
+                <input type="text" name="kode_uid" class="form-control" placeholder="Masukkan kode UID" required>
+
+                <button type="button" class="btn btn-success" data-target="#"> Ambil dari RFID Scanner </button>
+                </div>
+
+            <div class="form-group">
+                <label>Id Pengenal</label>
+                <input type="text" name="id_pengenal" class="form-control" placeholder="Masukkan Nomor KTP" required>
             </div>
 
             <div class="form-group">
-                <label>Deskripsi</label>
-                <input type="text" name="deskripsi" class="form-control" placeholder="Masukkan deskripsi alat" required>
+                <label>Nama Anak</label>
+                <input type="text" name="nama_anak" class="form-control" placeholder="Masukkan Nama Anak" required>
+            </div>
+
+            <div class="form-group">
+                <label>Nama Ibu</label>
+                <input type="text" name="nama_ibu" class="form-control" placeholder="Masukkan Nama Ibu" required>
             </div>
 
             <div class="form-group">
                 <label>Penanggung Jawab</label>
-                <input type="text" name="penanggung_jawab" class="form-control" placeholder="Petugas yang bertanggungjawab" required>
+                <input type="text" name="penanggung_jawab" class="form-control" placeholder="Masukkan Penanggung Jawab" required>
             </div>
- 
-            <input type="hidden" name="status_asset" value="tersedia" >
 
             <div class="form-group">
-                <label>Peminjam</label>
-                <input type="file" name="gambar_asset" id="gambar_asset" class="form-control">
+                <label>Alamat</label>
+                <input type="text" name="alamat" class="form-control" placeholder="Masukkan Alamat" required>
             </div>
+
+            <div class="form-group">
+                <label>Status</label>
+                <select name="usertype" class="form-control" >
+                  <option value="masuk"> Masuk </option>   
+                  <option value="terdaftar"> Terdaftar </option>
+                  <option value="inkubator"> Inkubator </option>
+                  <option value="ditangani"> Ditangani </option>
+                  <option value="bermasalah"> Bermasalah </option>
+                  <option value="keluar"> Keluar </option>
+                </select>
+             </div>
         
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-            <button type="submit" name="daftaraset_btn" class="btn btn-primary">Simpan</button>
+            <button type="submit" name="daftarasetanak_btn" class="btn btn-primary">Simpan</button>
         </div>
       </form>
 
@@ -85,8 +107,8 @@ include('database/dbconfig.php')
 <!---- Untuk tombol "tambah aset"--->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary">Menu Pengelolaan Aset
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahinaset">
+    <h6 class="m-0 font-weight-bold text-primary">Menu Pengelolaan Aset Anak
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahinasetanak">
               Tambahkan data Asset 
             </button>
     </h6>
@@ -99,21 +121,21 @@ include('database/dbconfig.php')
 <!---Buat ngambil data--->
     <?php
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
-    $query = "SELECT * FROM tb_rfid"; 
+    $query = "SELECT * FROM tb_stat_anak"; 
     $query_run = mysqli_query($connection, $query);
     ?>
 
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>ID </th>
+            <th>ID</th>
             <th>RFID UID</th>
-            <th>Nama Alat</th>
-            <th>Deskripsi Alat</th>
-            <th>Ditambahkan Pada</th>
+            <th>ID Pengenal</th>
+            <th>Nama Anak</th>
+            <th>Nama Ibu</th>
             <th>Penanggung Jawab</th>
+            <th>Alamat</th>
             <th>Status</th>
-            <th>Peminjam</th>
             <th>Ubah</th>
             <th>Hapus</th>
           </tr>
@@ -130,13 +152,13 @@ include('database/dbconfig.php')
           <tr>
           <!---Mengambil data dari database kemudian menampilkan ke tabel, serta menentukan kolom mana saja yang akan diambil datanya-->
           <td><?php echo $row['id']; ?></td>
-            <td><?php echo $row['uid']; ?></td>
-            <td><?php echo $row['nama_alat']; ?></td>
-            <td><?php echo $row['deskripsi']; ?></td>
-            <td><?php echo $row['tanggal']; ?></td>
+            <td><?php echo $row['rfid_uid']; ?></td>
+            <td><?php echo $row['id_pengenal']; ?></td>
+            <td><?php echo $row['nama_anak']; ?></td>
+            <td><?php echo $row['nama_ibu']; ?></td>
             <td><?php echo $row['penanggung_jawab']; ?></td>
-            <td><?php echo $row['status_asset']; ?></td>
-            <td><?php echo $row['peminjam']; ?></td>
+            <td><?php echo $row['alamat']; ?></td>
+            <td><?php echo $row['status']; ?></td>
 
             <td>
             <!--MODAL UNTUK EDIT/UBAH ASSET (DI TABEL) -->

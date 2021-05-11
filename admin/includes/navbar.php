@@ -55,7 +55,7 @@ include_once('code.php');
   <div id="kolapsitem1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Fitur Aset:</h6>
-      <a class="collapse-item" href="pengaturan-aset.php">Pengaturan Aset</a>
+      <a class="collapse-item" href="pengaturan-aset-ibu.php">Pengaturan Aset</a>
       <a class="collapse-item" href="pesan-aset.php">Input Data</a>
       <a class="collapse-item" href="status-asset.php">Status Aset</a>
     </div>
