@@ -20,7 +20,7 @@ This code may contains a lot of bugs. Don't deploy on real system yet. it could 
 IHAM is Created to fullfill Final Projects in vocational university
 
 ## License ##
-This Repository is forked from various repo
+This Repository is forked from various repo. Mainly from youtube
 
 Created By
 - MojoGantz
