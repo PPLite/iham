@@ -142,50 +142,7 @@ include('database/dbconfig.php')
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editdataasset"> Ubah </button>
               </h6>
             </div>
-
-                    <!----MODAL HAPUS---->
-                    </div>
-            <div class="modal fade" id="hapusaset_btn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Hapus data Asset</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">Apakah anda yakin untuk menghapus pengguna ini?</div>
-
-            <div class="modal-body">
-              <div class="form-group">
-                </div>
-                  <form action="code.php" method="POST">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                        <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
-                        <button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-                   <!----MODAL HAPUS---->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
             <!----Mulai Modal buat tambah aset baru. kotak yang ngawang ditengah-->
             <!----Diambil dari https://getbootstrap.com/docs/4.0/components/modal/-->
 
@@ -233,7 +190,7 @@ include('database/dbconfig.php')
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                         <button type="submit" name="daftaraset_btn" class="btn btn-primary">Simpan</button>
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusaset_btn"> Hapus </button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal"> TESTING </button>
                     </div>
                   </form>
                 </div>
@@ -242,6 +199,48 @@ include('database/dbconfig.php')
             <div class="container-fluid">
             </tr>
                     <!----FOOTER MODAL BUTTON---->
+
+                    <!----------TES OVERLAY ---------->
+                    <div class="modal" id="myModal">
+                      <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title">Modal title</h4>    
+                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            </div><div class="container"></div>
+                            <div class="modal-body">
+                              Content for the dialog / modal goes here.
+                              <a data-toggle="modal" href="#myModal2" class="btn btn-primary">Launch modal</a>
+                            </div>
+                            <div class="modal-footer">
+                              <a href="#" data-dismiss="modal" class="btn">Close</a>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="modal" id="myModal2" data-backdrop="static">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title">2nd Modal title</h4>
+                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            </div><div class="container"></div>
+                            <div class="modal-body">
+                              Content for the dialog / modal goes here.
+                              Content for the dialog / modal goes here.
+                              Content for the dialog / modal goes here.
+                              Content for the dialog / modal goes here.
+                              Content for the dialog / modal goes here.
+                            </div>
+                            <div class="modal-footer">
+                              <a href="#" data-dismiss="modal" class="btn">Close</a>
+                              <a href="#" class="btn btn-primary">Save changes</a>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                   
           <?php
           }
         }
@@ -263,4 +262,5 @@ include('database/dbconfig.php')
 <?php
 include('includes/scripts.php');
 include('includes/footer.php');
+include('includes/overlaymodal.css');
 ?>
