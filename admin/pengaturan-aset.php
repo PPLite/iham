@@ -6,7 +6,7 @@ include('database/dbconfig.php')
 ?>
 
 <!----Mulai Modal buat tambah aset baru. kotak yang ngawang ditengah-->
-<!----Diambil dari https://getbootstrap.com/docs/4.0/components/modal/
+<!----Diambil dari https://getbootstrap.com/docs/4.0/components/modal/-->
 
 <div class="modal fade" id="tambahinaset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -61,7 +61,7 @@ include('database/dbconfig.php')
 
 
 <div class="container-fluid">
-Akhir dari Modal------->
+<!------Akhir dari Modal------->
 
 <?php
   //Status berhasil ditambahkan
@@ -144,9 +144,9 @@ Akhir dari Modal------->
             </div>
 
             <!----Mulai Modal buat tambah aset baru. kotak yang ngawang ditengah-->
-            <!----Diambil dari https://getbootstrap.com/docs/4.0/components/modal/
+            <!----Diambil dari https://getbootstrap.com/docs/4.0/components/modal/-->
 
-            <div class="modal fade" id="editdataasset" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="editdataasset" tabindex="0" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -186,8 +186,7 @@ Akhir dari Modal------->
                             <input type="file" name="gambar_asset" id="gambar_asset" class="form-control">
                         </div>                    
                     </div>
-                    
-                    
+                    <!----FOOTER MODAL BUTTON---->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                         <button type="submit" name="daftaraset_btn" class="btn btn-primary">Simpan</button>
@@ -199,12 +198,12 @@ Akhir dari Modal------->
             </div>
             <div class="container-fluid">
             </tr>
-                    FOOTER MODAL BUTTON---->
+                    <!----FOOTER MODAL BUTTON---->
 
 
-                  <!----MODAL HAPUS
+                  <!----MODAL HAPUS---->
                   </div>
-            <div class="modal fade" id="hapusaset_btn" tabindex="2" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="hapusaset_btn" tabindex="0" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -222,114 +221,15 @@ Akhir dari Modal------->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                        <input type="hidden" name="delete_id" value="<?php //echo $row['id']; ?>">
+                        <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
                         <button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button>
                     </div>
                   </form>
                 </div>
               </div>
             </div>
-                  --MODAL HAPUS---->
-
-
-                        <div class="modal" id="editdataasset">
-                          <div class="modal-dialog modal-lg">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h4 class="modal-title">Modal title</h4>    
-                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                </div><div class="container"></div>
-                                <div class="modal-body">
-                                <form action="code.php" method="POST">
-                                    <div class="form-group">
-                                        <label> Nama Aset </label>
-                                        <input type="text" name="nama_alat" class="form-control" placeholder="Masukkan Nama" required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Kode UID</label>
-                                        <input type="text" name="uid" class="form-control" placeholder="Masukkan kode UID" required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Deskripsi</label>
-                                        <input type="text" name="deskripsi" class="form-control" placeholder="Masukkan deskripsi alat" required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Penanggung Jawab</label>
-                                        <input type="text" name="penanggung_jawab" class="form-control" placeholder="Petugas yang bertanggungjawab" required>
-                                    </div>
-
-                                    <input type="hidden" name="status_asset" value="tersedia" >
-
-                                    <div class="form-group">
-                                        <label>Gambar</label>
-                                        <input type="file" name="gambar_asset" id="gambar_asset" class="form-control">
-                                    </div>                    
-                                </div>
-                                </div>
-
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                    <button type="submit" name="daftaraset_btn" class="btn btn-primary">Simpan</button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal2"> Hapus </button>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-
-
-
-
-
-
-
-
-<div class="modal" id="myModal2" data-backdrop="static">
-	<div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">2nd Modal title</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        </div><div class="container"></div>
-        <div class="modal-body">
-          Content for the dialog / modal goes here.
-          Content for the dialog / modal goes here.
-          Content for the dialog / modal goes here.
-          Content for the dialog / modal goes here.
-          Content for the dialog / modal goes here.
-        </div>
-        <div class="modal-footer">
-          <a href="#" data-dismiss="modal" class="btn">Close</a>
-          <a href="#" class="btn btn-primary">Save changes</a>
-        </div>
-      </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                   <!----MODAL HAPUS---->
+                    
           <?php
           }
         }
@@ -349,6 +249,7 @@ Akhir dari Modal------->
 <!-- /.container-fluid -->
 
 <?php
+include('js/sb-admin-2.js');
 include('includes/scripts.php');
 include('includes/footer.php');
 ?>

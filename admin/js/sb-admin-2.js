@@ -46,4 +46,11 @@
     e.preventDefault();
   });
 
+  $('body').on('shown.bs.modal', '#myModal', function () {
+    $('input:visible:enabled:first', this).focus();
+  })
+
+
+
+
 })(jQuery); // End of use strict
