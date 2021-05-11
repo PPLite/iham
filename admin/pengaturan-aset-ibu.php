@@ -20,15 +20,9 @@ include('database/dbconfig.php')
       <form action="code.php" method="POST">
 
         <div class="modal-body">
- 
-            <div class="form-group">
-                <label>Nama Anak</label>
-                <input type="text" name="nama_anak" class="form-control" placeholder="Masukkan Nama" required>
-            </div>
-
                 <div class="form-group">
                 <label>Kode UID</label>
-                <input type="text" name="kode_uid" class="form-control" placeholder="Masukkan kode UID" required>
+                <input type="text" name="rfid_uid" class="form-control" placeholder="Masukkan kode UID" required>
 
                 <button type="button" class="btn btn-success" data-target="#"> Ambil dari RFID Scanner </button>
                 </div>
@@ -60,7 +54,7 @@ include('database/dbconfig.php')
 
             <div class="form-group">
                 <label>Status</label>
-                <select name="usertype" class="form-control" >
+                <select name="status" class="form-control" >
                   <option value="masuk"> Masuk </option>   
                   <option value="terdaftar"> Terdaftar </option>
                   <option value="inkubator"> Inkubator </option>

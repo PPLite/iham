@@ -2,8 +2,6 @@
 include_once('security.php');
 include_once('database/dbconfig.php');
 
-
-
 ////////////////////////BAGIAN LOGIN/////////////////////////////////
 //fungsi akan aktif jika tombol login dipencet
 if(isset($_POST['login_btn']))
@@ -180,7 +178,7 @@ if(isset($_POST['daftaraset_btn']))
     $penanggung_jawab = $_POST['penanggung_jawab'];
     $status_asset = $_POST['status_asset'];
     $gambar_asset = $_POST['gambar_asset'];
-    $query = "INSERT INTO tb_rfid (nama_alat,uid,deskripsi,penanggung_jawab,status_asset,gambar_asset) VALUES ('$nama_alat','$uid','$deskripsi','$penanggung_jawab','$status_asset','$gambar_asset')";
+    $query = "INSERT INTO tb_rfid (nama_alat,uid,deskripsi,penanggung_jawab,status_asset) VALUES ('$nama_alat','$uid','$deskripsi','$penanggung_jawab','$status_asset')";
     $query_run = mysqli_query($connection,$query);
 
 
@@ -200,4 +198,34 @@ if(isset($_POST['daftaraset_btn']))
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-////////////////Fungsi untuk menambahkan asset di menu pengaturan aset////////////////////////////////////
+////////////////Fungsi untuk menambahkan asset anak di menu pengaturan aset////////////////////////////////////
+if(isset($_POST['daftarasetanak_btn']))
+
+//jika sudah ditombol kemudian
+{
+    //input data
+    $rfid_uid = $_POST['rfid_uid'];
+    $id_pengenal = $_POST['id_pengenal'];
+    $nama_anak = $_POST['nama_anak'];
+    $nama_ibu = $_POST['nama_ibu'];
+    $penanggung_jawab = $_POST['penanggung_jawab'];
+    $alamat = $_POST['alamat'];
+    $status = $_POST['status'];
+    $query = "INSERT INTO tb_stat_anak (rfid_uid,id_pengenal,nama_anak,nama_ibu,penanggung_jawab,alamat,status) VALUES ('$rfid_uid','$id_pengenal','$nama_anak','$nama_ibu','$penanggung_jawab','$alamat','$status')";
+    $query_run = mysqli_query($connection,$query);
+
+
+    if($query_run)
+    {
+        if($query_run)
+        {
+        $_SESSION['success'] = "Aset berhasil ditambahkan";
+        header('location: pengaturan-aset-ibu.php');
+        }
+        else
+        {
+        $_SESSION['status'] = "Aset gagal ditambahkan";
+        header('location: pengaturan-aset-ibu.php');
+        }
+    }
+}
