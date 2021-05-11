@@ -113,8 +113,9 @@ include('database/dbconfig.php')
             <th>Ditambahkan Pada</th>
             <th>Penanggung Jawab</th>
             <th>Status</th>
-            <th>Gambar</th>
+            <th>Peminjam</th>
             <th>Ubah</th>
+            <th>Hapus</th>
           </tr>
         </thead>
         <tbody>
@@ -135,12 +136,16 @@ include('database/dbconfig.php')
             <td><?php echo $row['tanggal']; ?></td>
             <td><?php echo $row['penanggung_jawab']; ?></td>
             <td><?php echo $row['status_asset']; ?></td>
-            <td><?php echo $row['gambar_asset']; ?></td>
+            <td><?php echo $row['peminjam']; ?></td>
 
             <td>
             <!--MODAL UNTUK EDIT/UBAH ASSET (DI TABEL) -->
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editdataasset"> Ubah </button>
-              </h6>
+            </td>
+
+            <td>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusaset_btn"> Hapus </button>
+            </td>
             </div>
 
             <!----Mulai Modal buat tambah aset baru. kotak yang ngawang ditengah-->
@@ -190,7 +195,6 @@ include('database/dbconfig.php')
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                         <button type="submit" name="daftaraset_btn" class="btn btn-primary">Simpan</button>
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusaset_btn"> Hapus </button>
                     </div>
                   </form>
                 </div>

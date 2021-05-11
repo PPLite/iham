@@ -35,7 +35,7 @@ include_once('code.php');
 <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
     <i class="fas fa-fw fa-cog"></i>
-    <span>Menu Asset</span>
+    <span>Asset Barang</span>
   </a>
   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
@@ -47,7 +47,20 @@ include_once('code.php');
   </div>
 </li>
 
-
+<li class="nav-item">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#kolapsitem1" aria-expanded="true" aria-controls="kolapsitem1">
+    <i class="fas fa-fw fa-cog"></i>
+    <span>Asset Ibu dan Anak</span>
+  </a>
+  <div id="kolapsitem1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+      <h6 class="collapse-header">Fitur Aset:</h6>
+      <a class="collapse-item" href="pengaturan-aset.php">Pengaturan Aset</a>
+      <a class="collapse-item" href="pesan-aset.php">Pesan Aset</a>
+      <a class="collapse-item" href="status-asset.php">Status Aset</a>
+    </div>
+  </div>
+</li>
 
 
 <li class="nav-item">
