@@ -56,11 +56,11 @@ include('database/dbconfig.php')
                 <label>Status</label>
                 <select name="status" class="form-control" >
                   <option value="masuk"> Masuk </option>   
-                  <option value="terdaftar"> Terdaftar </option>
-                  <option value="inkubator"> Inkubator </option>
-                  <option value="ditangani"> Ditangani </option>
-                  <option value="bermasalah"> Bermasalah </option>
-                  <option value="keluar"> Keluar </option>
+                  <option value="checkin"> Check In </option>
+                  <option value="perawatan"> Perawatan </option>
+                  <option value="checkout"> Check Out </option>
+                  <option value="peringatan"> Peringatan </option>
+                  <option value="validasi"> Validasi </option>
                 </select>
              </div>
         
@@ -129,6 +129,7 @@ include('database/dbconfig.php')
             <th>Nama Ibu</th>
             <th>Penanggung Jawab</th>
             <th>Alamat</th>
+            <th>Waktu Masuk</th>
             <th>Status</th>
             <th>Ubah</th>
             <th>Hapus</th>
@@ -152,20 +153,20 @@ include('database/dbconfig.php')
             <td><?php echo $row['nama_ibu']; ?></td>
             <td><?php echo $row['penanggung_jawab']; ?></td>
             <td><?php echo $row['alamat']; ?></td>
+            <td><?php echo $row['waktu_masuk']; ?></td>
             <td><?php echo $row['status']; ?></td>
 
             <td>
-            <!--MODAL UNTUK EDIT/UBAH ASSET (DI TABEL) -->
+            <!--------------------TOMBOL UNTUK EDIT/HAPUS ASSET (DI DALAM TABEL) ----------------->
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editdataasset"> Ubah </button>
             </td>
-
             <td>
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusaset_btn"> Hapus </button>
             </td>
             </div>
+            <!------------------------------------------------------------------------------------->
 
-            <!----Mulai Modal buat tambah aset baru. kotak yang ngawang ditengah-->
-            <!----Diambil dari https://getbootstrap.com/docs/4.0/components/modal/-->
+            <!---------------------------------MODAL EDIT ASSET------------------------------------>
 
             <div class="modal fade" id="editdataasset" tabindex="0" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -179,35 +180,50 @@ include('database/dbconfig.php')
                   <form action="code.php" method="POST">
 
                     <div class="modal-body">
-            
-                        <div class="form-group">
-                            <label> Nama Aset </label>
-                            <input type="text" name="nama_alat" class="form-control" placeholder="Masukkan Nama" required>
+                    <div class="form-group">
+                        <label>Kode UID</label>
+                        <input type="text" name="rfid_uid" value="<?php echo $row['rfid_uid']?>" class="form-control" placeholder="Masukkan kode UID" required>
+
+                        <button type="button" class="btn btn-success" data-target="#"> Ambil dari RFID Scanner </button>
                         </div>
 
-                        <div class="form-group">
-                            <label>Kode UID</label>
-                            <input type="text" name="uid" class="form-control" placeholder="Masukkan kode UID" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Deskripsi</label>
-                            <input type="text" name="deskripsi" class="form-control" placeholder="Masukkan deskripsi alat" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Penanggung Jawab</label>
-                            <input type="text" name="penanggung_jawab" class="form-control" placeholder="Petugas yang bertanggungjawab" required>
-                        </div>
-            
-                        <input type="hidden" name="status_asset" value="tersedia" >
-
-                        <div class="form-group">
-                            <label>Gambar</label>
-                            <input type="file" name="gambar_asset" id="gambar_asset" class="form-control">
-                        </div>                    
+                    <div class="form-group">
+                        <label>Id Pengenal</label>
+                        <input type="text" name="update_id_pengenal" value="<?php echo $row['rfid_uid']?>" class="form-control" placeholder="Masukkan Nomor KTP" required>
                     </div>
-                    <!----FOOTER MODAL BUTTON---->
+
+                    <div class="form-group">
+                        <label>Nama Anak</label>
+                        <input type="text" name="update_nama_anak" class="form-control" placeholder="Masukkan Nama Anak" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nama Ibu</label>
+                        <input type="text" name="update_nama_ibu" class="form-control" placeholder="Masukkan Nama Ibu" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Penanggung Jawab</label>
+                        <input type="text" name="update_penanggung_jawab" class="form-control" placeholder="Masukkan Penanggung Jawab" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Alamat</label>
+                        <input type="text" name="update_alamat" class="form-control" placeholder="Masukkan Alamat" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select name="update_status" class="form-control" >
+                          <option value="masuk"> Masuk </option>   
+                          <option value="checkin"> Check In </option>
+                          <option value="perawatan"> Perawatan </option>
+                          <option value="checkout"> Check Out </option>
+                          <option value="peringatan"> Peringatan </option>
+                          <option value="validasi"> Validasi </option>
+                        </select>
+                    </div>           
+                    </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                         <button type="submit" name="daftaraset_btn" class="btn btn-primary">Simpan</button>
@@ -218,35 +234,7 @@ include('database/dbconfig.php')
             </div>
             <div class="container-fluid">
             </tr>
-                    <!----FOOTER MODAL BUTTON---->
-
-            <div class="modal" id="hapusaset_btn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Hapus data Pengguna</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">Apakah anda yakin untuk menghapus pengguna ini?</div>
-
-            <div class="modal-body">
-              <div class="form-group">
-                </div>
-                  <form action="code.php" method="POST">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                        <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
-                        <button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-
-            <div class="container-fluid">
+            <!------------------------------------------------------------------------------------------------------>
 
             </td>
                     
