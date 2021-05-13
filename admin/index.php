@@ -65,11 +65,6 @@ include_once('database/dbconfig.php');
 
               echo '<h4>'.$row.'&nbsp Asset</h4>';
               ?>
-              
-              
-              
-              
-              
               </div>
             </div>
             <div class="col-auto">
@@ -82,18 +77,29 @@ include_once('database/dbconfig.php');
 
     <!-- Kartu 3 -->
     <div class="col-xl-3 col-md-6 mb-4">
+    <a href="pengaturan-aset-ibu.php">
       <div class="card border-left-info shadow h-100 py-2">
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Jumlah Asset Terpakai</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">15 Asset</div>
+              <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Jumlah Bayi terdaftar</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">
+              <?php
+              $query = "SELECT id FROM tb_stat_anak ORDER BY id";
+              $query_run = mysqli_query($connection, $query);
+
+              $row = mysqli_num_rows($query_run);
+
+              echo '<h4>'.$row.'&nbsp Anak</h4>';
+              ?>
+              </div>
             </div>
             <div class="col-auto">
             </div>
           </div>
         </div>
       </div>
+      </a>
     </div>
 
     <!-- Kartu 4 -->
@@ -102,7 +108,7 @@ include_once('database/dbconfig.php');
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Jumlah Asset Dipesan</div>
+              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Aset Perlu ditangani</div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">2 Asset</div>
             </div>
             <div class="col-auto">
