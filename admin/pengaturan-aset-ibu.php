@@ -189,27 +189,27 @@ include('database/dbconfig.php')
 
                     <div class="form-group">
                         <label>Id Pengenal</label>
-                        <input type="text" name="update_id_pengenal" value="<?php echo $row['rfid_uid']?>" class="form-control" placeholder="Masukkan Nomor KTP" required>
+                        <input type="text" name="update_id_pengenal" value="<?php echo $row['id_pengenal']?>" class="form-control" placeholder="Masukkan Nomor KTP" required>
                     </div>
 
                     <div class="form-group">
                         <label>Nama Anak</label>
-                        <input type="text" name="update_nama_anak" class="form-control" placeholder="Masukkan Nama Anak" required>
+                        <input type="text" name="update_nama_anak" value="<?php echo $row['nama_anak']?>" class="form-control" placeholder="Masukkan Nama Anak" required>
                     </div>
 
                     <div class="form-group">
                         <label>Nama Ibu</label>
-                        <input type="text" name="update_nama_ibu" class="form-control" placeholder="Masukkan Nama Ibu" required>
+                        <input type="text" name="update_nama_ibu" value="<?php echo $row['nama_ibu']?>" class="form-control" placeholder="Masukkan Nama Ibu" required>
                     </div>
 
                     <div class="form-group">
                         <label>Penanggung Jawab</label>
-                        <input type="text" name="update_penanggung_jawab" class="form-control" placeholder="Masukkan Penanggung Jawab" required>
+                        <input type="text" name="update_penanggung_jawab" value="<?php echo $row['penanggung_jawab']?>" class="form-control" placeholder="Masukkan Penanggung Jawab" required>
                     </div>
 
                     <div class="form-group">
                         <label>Alamat</label>
-                        <input type="text" name="update_alamat" class="form-control" placeholder="Masukkan Alamat" required>
+                        <input type="text" name="update_alamat" value="<?php echo $row['alamat']?>" class="form-control" placeholder="Masukkan Alamat" required>
                     </div>
 
                     <div class="form-group">
