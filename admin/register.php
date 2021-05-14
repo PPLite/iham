@@ -230,6 +230,6 @@ include('database/dbconfig.php')
 <?php
 include('includes/scripts.php');
 include('includes/footer.php');
-include('modal-edit_script.php');
+include('includes/modal-edit_scripts.php');
 ?>
 <!------------------------------------------------------------------------------------->
