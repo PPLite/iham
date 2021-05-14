@@ -12,11 +12,11 @@ $(document).ready(function () {
 
             console.log(data);
 
-            $('#update_id_asset').val(data[0]);
-            $('#update_username').val(data[1]);
-            $('#update_email').val(data[2]);
-            $('#update_password').val(data[3]);
-            $('#update_usertype').val(data[4]);
+            $('#id').val(data[0]);
+            $('#username').val(data[1]);
+            $('#email').val(data[2]);
+            $('#password').val(data[3]);
+            $('#usertype').val(data[4]);
 
     });
 });

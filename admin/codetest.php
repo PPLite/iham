@@ -8,15 +8,15 @@ if(isset($_POST['updatepengguna']))
 
 //data apa aja yang diambil dan dimodif
 {
-    $id = $_POST['id_asset'];
+    $id = $_POST['id'];
 
-    $username = $_POST['edit_username'];
-    $email = $_POST['edit_email'];
-    $password = $_POST['edit_password'];
-    $usertype = $_POST['edit_usertype'];
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $usertype = $_POST['usertype'];
 
     //disini pakai $query = update. soalnya buat update data aja. dan apa yang akan diupdate dituliskan setelahnya
-    $query = "UPDATE register SET edit_username='$username', edit_email='$email', edit_password='$password',edit_usertype='$usertype' WHERE id='$id' ";
+    $query = "UPDATE register SET username='$username', email='$email', password='$password', usertype='$usertype' WHERE id='$id' ";
     $query_run = mysqli_query($connection, $query);
 
     //Tampilan status jika dilakukan perubahan data

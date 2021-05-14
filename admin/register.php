@@ -165,23 +165,23 @@ include('database/dbconfig.php')
 
         <div class="modal-body">
 
-        <input type="hidden" name="id_asset" id="update_id_asset">
+        <input type="hidden" name="id" id="id">
 
             <div class="form-group">
                 <label> Nama Pengguna </label>
-                <input type="text" name="edit_username" id="update_username" class="form-control" placeholder="Masukkan Nama">
+                <input type="text" name="username" id="username" class="form-control" placeholder="Masukkan Nama">
             </div>
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" name="edit_email" id="update_email" class="form-control" placeholder="Email">
+                <input type="email" name="email" id="email" class="form-control" placeholder="Email">
             </div>
             <div class="form-group">
                 <label>Kata Sandi</label>
-                <input type="password" name="edit_password" id="update_password" class="form-control" placeholder="Kata Sandi">
+                <input type="password" name="password" id="password" class="form-control" placeholder="Kata Sandi">
             </div>
             <div class="form-group">
                 <label>Hak Akses</label>
-                <select name="edit_usertype" class="form-control" id="update_usertype" > 
+                <select name="usertype" class="form-control" id="usertype" > 
                   <option value="admin"> Admin </option>
                   <option value="pengelola"> Pengelola </option>
                   <option value="pengguna"> Pengguna </option>
