@@ -156,95 +156,22 @@ include('database/dbconfig.php')
             <td><?php echo $row['waktu_masuk']; ?></td>
             <td><?php echo $row['status']; ?></td>
 
-            <td>
             <!--------------------TOMBOL UNTUK EDIT/HAPUS ASSET (DI DALAM TABEL) ----------------->
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editdataasset"> Ubah </button>
+            <td>
+            <form action="pengaturan-aset-ibu_edit.php" method="post">
+                      <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
+                      <button type="submit" name="edit_btn" class="btn btn-success">Ubah</button>
+                  </form>
             </td>
+            
+            
+            
             <td>
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusaset_btn"> Hapus </button>
             </td>
             </div>
             <!------------------------------------------------------------------------------------->
             </td>     
-
-<!---------------------AMBIL DATA DAN EDIT DATA ------------------>
-            <!---------------------------------MODAL EDIT ASSET------------------------------------>
-
-            <div class="modal fade" id="editdataasset" tabindex="0" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ubah Data Asset</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <form action="code.php" method="POST">
-
-                    <div class="modal-body">
-                    <div class="form-group">
-                        <label>Kode UID</label>
-                        <input type="text" name="update_rfid_uid" value="<?php echo $row['rfid_uid']?>" class="form-control" placeholder="Masukkan kode UID" required>
-
-                        <button type="button" class="btn btn-success" data-target="#"> Ambil dari RFID Scanner </button>
-                        </div>
-
-                    <div class="form-group">
-                        <label>Id Pengenal</label>
-                        <input type="text" name="update_id_pengenal" value="<?php echo $row['id_pengenal']?>" class="form-control" placeholder="Masukkan Nomor KTP" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Nama Anak</label>
-                        <input type="text" name="update_nama_anak" value="<?php echo $row['nama_anak']?>" class="form-control" placeholder="Masukkan Nama Anak" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Nama Ibu</label>
-                        <input type="text" name="update_nama_ibu" value="<?php echo $row['nama_ibu']?>" class="form-control" placeholder="Masukkan Nama Ibu" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Penanggung Jawab</label>
-                        <input type="text" name="update_penanggung_jawab" value="<?php echo $row['penanggung_jawab']?>" class="form-control" placeholder="Masukkan Penanggung Jawab" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Alamat</label>
-                        <input type="text" name="update_alamat" value="<?php echo $row['alamat']?>" class="form-control" placeholder="Masukkan Alamat" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Status</label>
-                        <select name="update_status" class="form-control" >
-                          <option value="masuk"> Masuk </option>   
-                          <option value="checkin"> Check In </option>
-                          <option value="perawatan"> Perawatan </option>
-                          <option value="checkout"> Check Out </option>
-                          <option value="peringatan"> Peringatan </option>
-                          <option value="validasi"> Validasi </option>
-                        </select>
-                    </div>           
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                        <button type="submit" name="editasetbayi_btn" class="btn btn-primary">Simpan</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div class="container-fluid">
-            </tr>
-            <!------------------------------------------------------------------------------------------------------>
-
-
-
-
-
-
-
-
 
           <?php
           }

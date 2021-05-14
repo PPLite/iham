@@ -235,6 +235,7 @@ if(isset($_POST['editasetbayi_btn']))
 
 //data apa aja yang diambil dan dimodif
 {
+    $id = $_POST['edit_id'];
     $rfid_uid = $_POST['update_rfid_uid'];
     $id_pengenal = $_POST['update_id_pengenal'];
     $nama_anak = $_POST['update_nama_anak'];
