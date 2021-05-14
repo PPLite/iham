@@ -1,0 +1,5 @@
+<?php
+///////UPDATE PENGGUNA/////////
+
+$connection = mysqli_connect("localhost","mjdr3247_admin","semogacepatlulus2021","mjdr3247_adminpanel");
+$db = mysqli_select_db($connection, 'register');

@@ -161,7 +161,7 @@ include('database/dbconfig.php')
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="codetest.php" method="POST">
+      <form action="code.php" method="POST">
 
         <div class="modal-body">
 
