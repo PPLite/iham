@@ -136,15 +136,15 @@ include('database/dbconfig.php')
 
            <!------------------------------------TOMBOL UNTUK UBAH DATA PENGGUNA----------------------------->
             <td>
-                      <button type="button" name="edit_btn" class="btn btn-success editbtn">Ubah</button>
+                      <button type="button" class="btn btn-success editbtn">Ubah</button>
                   </form>
             </td>
           <!----------------------------------------------------------------------------------------------->
           <!------------------------------------TOMBOL UNTUK HAPUS DATA PENGGUNA----------------------------->
             <td>
                   <form action="register_edit.php" method="post">
-                      <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
-                      <button type="submit" name="edit_btn" class="btn btn-danger">Hapus</button>
+                      <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
+                      <button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button>
                   </form>
             </td>
             <!----------------------------------------------------------------------------------------------->
@@ -156,7 +156,7 @@ include('database/dbconfig.php')
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Ubah data Pengguna</h5>
+        <h5 class="modal-title" id="exampleModalLabel">edit data Pengguna</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -230,5 +230,6 @@ include('database/dbconfig.php')
 <?php
 include('includes/scripts.php');
 include('includes/footer.php');
-include('includes/modal-edit_scripts.php');
+include('modal-edit_script.php');
 ?>
+<!------------------------------------------------------------------------------------->
