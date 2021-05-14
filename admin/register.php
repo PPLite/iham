@@ -165,25 +165,23 @@ include('database/dbconfig.php')
 
         <div class="modal-body">
 
+        <input type="hidden" name="id_asset" id="update_id_asset">
+
             <div class="form-group">
                 <label> Nama Pengguna </label>
-                <input type="text" name="username" class="form-control" placeholder="Masukkan Nama">
+                <input type="text" name="edit_username" id="update_username" class="form-control" placeholder="Masukkan Nama">
             </div>
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" name="email" class="form-control" placeholder="Email">
+                <input type="email" name="edit_email" id="update_email" class="form-control" placeholder="Email">
             </div>
             <div class="form-group">
                 <label>Kata Sandi</label>
-                <input type="password" name="password" class="form-control" placeholder="Kata Sandi">
-            </div>
-            <div class="form-group">
-                <label>Ulangi Kata sandi</label>
-                <input type="password" name="confirmpassword" class="form-control" placeholder="Ulangi Kata Sandi">
+                <input type="password" name="edit_password" id="update_password" class="form-control" placeholder="Kata Sandi">
             </div>
             <div class="form-group">
                 <label>Hak Akses</label>
-                <select name="usertype" class="form-control" > 
+                <select name="edit_usertype" class="form-control" id="update_usertype" > 
                   <option value="admin"> Admin </option>
                   <option value="pengelola"> Pengelola </option>
                   <option value="pengguna"> Pengguna </option>
@@ -192,7 +190,7 @@ include('database/dbconfig.php')
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-            <button type="submit" name="registerbtn" class="btn btn-primary">Simpan</button>
+            <button type="submit" name="updatepengguna" class="btn btn-primary">Perbarui</button>
         </div>
       </form>
 
