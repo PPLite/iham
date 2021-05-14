@@ -231,36 +231,37 @@ if(isset($_POST['daftarasetanak_btn']))
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Untuk modif data pada pengguna
-if(isset($_POST['updatebtn']))
+if(isset($_POST['editasetbayi_btn']))
 
 //data apa aja yang diambil dan dimodif
 {
-    $id = $_POST['edit_id'];
-    $username = $_POST['edit_username'];
-    $email = $_POST['edit_email'];
-    $password = $_POST['edit_password'];
-    $usertype = $_POST['edit_usertype'];
-    $usertypeupdate = $_POST['update_usertype'];
+    $rfid_uid = $_POST['update_rfid_uid'];
+    $id_pengenal = $_POST['update_id_pengenal'];
+    $nama_anak = $_POST['update_nama_anak'];
+    $nama_ibu = $_POST['update_nama_ibu'];
+    $penanggung_jawab = $_POST['update_penanggung_jawab'];
+    $alamat = $_POST['update_alamat'];
+    $status = $_POST['update_status'];
 
 
-    //disini pakai $query = update. soalnya buat update data aja. dan apa yang akan diupdate dituliskan setelahnya
-    $query = "UPDATE register SET username='$username', email='$email', password='$password',usertype='$usertypeupdate' WHERE id='$id' ";
-    $query_run = mysqli_query($connection, $query);
+    $query = "UPDATE tb_stat_anak SET update_rfid_uid='$rfid_uid', update_id_pengenal='$id_pengenal', update_nama_anak='$nama_anak', update_nama_ibu='$nama_ibu', update_penanggung_jawab='$penanggung_jawab', update_alamat='$alamat', update_status='$status' WHERE id='$id' "   ;
+    $query_run = mysqli_query($connection,$query);
+
 
     //Tampilan status jika dilakukan perubahan data
     if($query_run)
     {
         $_SESSION['success'] = "Data Berhasil diperbarui";
-        header('location: register.php');
+        header('location: pengaturan-aset-ibu.php');
     }
     else
     {
         $_SESSION['status'] = "Data Gagal diperbarui";
-        header('location: register.php');
+        header('location: pengaturan-aset-ibu.php');
     }
 }
 
-////////////////Fungsi untuk mengubah asset anak di menu pengaturan aset////////////////////////////////////
+///////////////////////////////////////////////////
 
 
 

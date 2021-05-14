@@ -165,7 +165,9 @@ include('database/dbconfig.php')
             </td>
             </div>
             <!------------------------------------------------------------------------------------->
+            </td>     
 
+<!---------------------AMBIL DATA DAN EDIT DATA ------------------>
             <!---------------------------------MODAL EDIT ASSET------------------------------------>
 
             <div class="modal fade" id="editdataasset" tabindex="0" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -182,7 +184,7 @@ include('database/dbconfig.php')
                     <div class="modal-body">
                     <div class="form-group">
                         <label>Kode UID</label>
-                        <input type="text" name="rfid_uid" value="<?php echo $row['rfid_uid']?>" class="form-control" placeholder="Masukkan kode UID" required>
+                        <input type="text" name="update_rfid_uid" value="<?php echo $row['rfid_uid']?>" class="form-control" placeholder="Masukkan kode UID" required>
 
                         <button type="button" class="btn btn-success" data-target="#"> Ambil dari RFID Scanner </button>
                         </div>
@@ -226,7 +228,7 @@ include('database/dbconfig.php')
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                        <button type="submit" name="daftaraset_btn" class="btn btn-primary">Simpan</button>
+                        <button type="submit" name="editasetbayi_btn" class="btn btn-primary">Simpan</button>
                     </div>
                   </form>
                 </div>
@@ -236,8 +238,14 @@ include('database/dbconfig.php')
             </tr>
             <!------------------------------------------------------------------------------------------------------>
 
-            </td>
-                    
+
+
+
+
+
+
+
+
           <?php
           }
         }
@@ -255,7 +263,6 @@ include('database/dbconfig.php')
 
 </div>
 <!-- /.container-fluid -->
-
 <?php
 include('includes/scripts.php');
 include('includes/footer.php');
