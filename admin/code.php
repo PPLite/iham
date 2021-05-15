@@ -270,7 +270,7 @@ if(isset($_POST['updateasset']))
     $penanggung_jawab = $_POST['penanggung_jawab'];
     $peminjam = $_POST['peminjam'];
     $status_asset = $_POST['status_asset']; 
-    $query = "UPDATE tb_rfid SET nama_alat='$nama_alat', uid='$uid', deskripsi='$deskripsi', penanggung_jawab='$penanggung_jawab',peminjam='$peminjam', status_asset='$status_asset') WHERE id='$id' ";
+    $query = "UPDATE tb_rfid SET nama_alat='$nama_alat', uid='$uid', deskripsi='$deskripsi', penanggung_jawab='$penanggung_jawab',peminjam='$peminjam', status_asset='$status_asset' WHERE id='$id' ";
     $query_run = mysqli_query($connection,$query);
 
 
