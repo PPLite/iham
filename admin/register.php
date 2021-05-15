@@ -137,15 +137,11 @@ include('database/dbconfig.php')
            <!------------------------------------TOMBOL UNTUK UBAH DATA PENGGUNA----------------------------->
             <td>
                       <button type="button" class="btn btn-success editbtn">Ubah</button>
-                  </form>
             </td>
           <!----------------------------------------------------------------------------------------------->
           <!------------------------------------TOMBOL UNTUK HAPUS DATA PENGGUNA----------------------------->
             <td>
-                  <form action="register_edit.php" method="post">
-                      <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
-                      <button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button>
-                  </form>
+                <button type="submit" name="delete_btn" class="btn btn-danger deletebtn">Hapus</button>
             </td>
             <!----------------------------------------------------------------------------------------------->
 
@@ -201,6 +197,55 @@ include('database/dbconfig.php')
 
 <div class="container-fluid">
 <!------------------------------------------------------------------------------------------------------------------>
+
+<!------------------------------FUNGSI UNTUK HAPUS (MODAL)------------------------------------->
+
+<div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Hapus data Pengguna</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="code.php" method="POST">
+
+        <div class="modal-body">
+
+        <input type="hidden" name="hapus_id" id="hapus_id">
+
+        <h5> Apakah anda yakin untuk menghapus Pengguna ini?</h5>
+        <h6>  Data yang sudah terhapus tidak dapat dikembalikan</h6>
+
+      </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+            <button type="submit" name="deletepengguna" class="btn btn-danger">Hapus</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+<!------------------------------------------------------------------------------------------------------------------>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <div class="container-fluid">

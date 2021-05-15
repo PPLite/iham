@@ -40,3 +40,24 @@ $(document).ready(function () {
 });
 </script>
 <!--------------------------------------------------------------->
+
+  <!---------------JAVASCRIPT UNTUK HAPUS PENGGUNA------------------->
+  <script>
+$(document).ready(function () {
+    $('.deletebtn').on('click', function() {
+
+        $('#deletemodal').modal('show');
+
+            $tr = $(this).closest('tr');
+
+            var data = $tr.children("td").map(function(){
+                return $(this).text();
+            }).get();
+
+            console.log(data);
+
+            $('#hapus_id').val(data[0]);
+    });
+});
+</script>
+<!--------------------------------------------------------------->
