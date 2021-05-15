@@ -59,7 +59,6 @@ include('database/dbconfig.php')
   </div>
 </div>
 
-
 <div class="container-fluid">
 <!------Akhir dari Modal------->
 
@@ -78,9 +77,6 @@ include('database/dbconfig.php')
       unset($_SESSION['status']);
     }
   ?>
-
-
-
 
 <!---- Untuk tombol "tambah aset"--->
 <div class="card shadow mb-4">
