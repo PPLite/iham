@@ -41,12 +41,22 @@ include('database/dbconfig.php')
                 <input type="text" name="penanggung_jawab" class="form-control" placeholder="Petugas yang bertanggungjawab" required>
             </div>
  
-            <input type="hidden" name="status_asset" value="tersedia" >
-
             <div class="form-group">
                 <label>Peminjam</label>
-                <input type="file" name="gambar_asset" id="gambar_asset" class="form-control">
+                <input type="text" name="peminjam" class="form-control">
             </div>
+
+            <div class="form-group">
+                <label>Status</label>
+                <select name="status_asset" class="form-control" >
+                  <option value="Tersedia"> Tersedia </option>   
+                  <option value="Dipinjam"> Dipinjam </option>
+                  <option value="Habis"> Habis </option>
+                  <option value="Rusak"> Rusak </option>
+                  <option value="Peringatan"> Peringatan </option>
+                  <option value="Validasi"> Validasi </option>
+                </select>
+             </div>
         
         </div>
         <div class="modal-footer">
@@ -103,13 +113,13 @@ include('database/dbconfig.php')
         <thead>
           <tr>
             <th>ID </th>
-            <th>RFID UID</th>
             <th>Nama Alat</th>
+            <th>RFID UID</th>
             <th>Deskripsi Alat</th>
             <th>Ditambahkan Pada</th>
             <th>Penanggung Jawab</th>
-            <th>Status</th>
             <th>Peminjam</th>
+            <th>Status</th>
             <th>Ubah</th>
             <th>Hapus</th>
           </tr>
@@ -125,105 +135,23 @@ include('database/dbconfig.php')
             ?>
           <tr>
           <!---Mengambil data dari database kemudian menampilkan ke tabel, serta menentukan kolom mana saja yang akan diambil datanya-->
-          <td><?php echo $row['id']; ?></td>
-            <td><?php echo $row['uid']; ?></td>
-            <td><?php echo $row['nama_alat']; ?></td>
-            <td><?php echo $row['deskripsi']; ?></td>
-            <td><?php echo $row['tanggal']; ?></td>
-            <td><?php echo $row['penanggung_jawab']; ?></td>
-            <td><?php echo $row['status_asset']; ?></td>
-            <td><?php echo $row['peminjam']; ?></td>
+          <td><?php echo $row['id']; ?></td> <!--- 0 --->
+            <td><?php echo $row['nama_alat']; ?></td>  <!--- 1 --->
+            <td><?php echo $row['uid']; ?></td> <!--- 2 --->
+            <td><?php echo $row['deskripsi']; ?></td> <!--- 3 --->
+            <td><?php echo $row['tanggal']; ?></td> <!--- 4 --->
+            <td><?php echo $row['penanggung_jawab']; ?></td> <!--- 5 --->
+            <td><?php echo $row['peminjam']; ?></td> <!--- 6 --->
+            <td><?php echo $row['status_asset']; ?></td>  <!--- 7 --->
 
             <td>
             <!--MODAL UNTUK EDIT/UBAH ASSET (DI TABEL) -->
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editdataasset"> Ubah </button>
+            <button type="button" class="btn btn-success editbtnasset">Ubah</button>
             </td>
 
             <td>
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusaset_btn"> Hapus </button>
             </td>
-            </div>
-
-            <!----Mulai Modal buat tambah aset baru. kotak yang ngawang ditengah-->
-            <!----Diambil dari https://getbootstrap.com/docs/4.0/components/modal/-->
-
-            <div class="modal fade" id="editdataasset" tabindex="0" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ubah Data Asset</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <form action="code.php" method="POST">
-
-                    <div class="modal-body">
-            
-                        <div class="form-group">
-                            <label> Nama Aset </label>
-                            <input type="text" name="nama_alat" class="form-control" placeholder="Masukkan Nama" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Kode UID</label>
-                            <input type="text" name="uid" class="form-control" placeholder="Masukkan kode UID" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Deskripsi</label>
-                            <input type="text" name="deskripsi" class="form-control" placeholder="Masukkan deskripsi alat" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Penanggung Jawab</label>
-                            <input type="text" name="penanggung_jawab" class="form-control" placeholder="Petugas yang bertanggungjawab" required>
-                        </div>
-            
-                        <input type="hidden" name="status_asset" value="tersedia" >
-
-                        <div class="form-group">
-                            <label>Gambar</label>
-                            <input type="file" name="gambar_asset" id="gambar_asset" class="form-control">
-                        </div>                    
-                    </div>
-                    <!----FOOTER MODAL BUTTON---->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                        <button type="submit" name="daftaraset_btn" class="btn btn-primary">Simpan</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div class="container-fluid">
-            </tr>
-                    <!----FOOTER MODAL BUTTON---->
-
-            <div class="modal" id="hapusaset_btn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Hapus data Pengguna</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">Apakah anda yakin untuk menghapus pengguna ini?</div>
-
-            <div class="modal-body">
-              <div class="form-group">
-                </div>
-                  <form action="code.php" method="POST">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                        <input type="hidden" name="delete_id_asset" value="<?php echo $row['id']; ?>">
-                        <button type="submit" name="delete_btn_asset" class="btn btn-danger">Hapus</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
             </div>
 
             <div class="container-fluid">
@@ -247,6 +175,76 @@ include('database/dbconfig.php')
 
 </div>
 <!-- /.container-fluid -->
+
+<!------------------------------FUNGSI UNTUK UBAH PENGGUNA (MODAL)------------------------------------->
+
+<div class="modal fade" id="editmodalasset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit data Pengguna</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="code.php" method="POST">
+
+        <div class="modal-body">
+
+        <input type="hidden" name="id" id="id">
+
+            <div class="form-group">
+                <label> Nama Asset </label>
+                <input type="text" name="nama_alat" id="nama_alat" class="form-control" placeholder="Masukkan Nama">
+            </div>
+
+            <div class="form-group">
+                <label>Kode UID</label>
+                <input type="text" name="uid" id="uid" class="form-control" placeholder="Kode UID">
+            </div>
+
+            <div class="form-group">
+                <label>Deskripsi</label>
+                <input type="text" name="deskripsi" id="deskripsi" class="form-control" placeholder="Deskripsi">
+            </div>
+
+            <div class="form-group">
+                <label>Penanggung Jawab</label>
+                <input type="text" name="penanggung_jawab" id="penanggung_jawab" class="form-control" placeholder="Penanggung Jawab">
+            </div>
+
+            <div class="form-group">
+                <label>Peminjam</label>
+                <input type="text" name="peminjam" id="peminjam" class="form-control" placeholder="peminjam">
+            </div>
+
+            <div class="form-group">
+                <label>Status Asset</label>
+                <select name="status_asset" class="form-control" id="status_asset" > 
+                  <option value="Tersedia"> Tersedia </option>   
+                  <option value="Dipinjam"> Dipinjam </option>
+                  <option value="Habis"> Habis </option>
+                  <option value="Rusak"> Rusak </option>
+                  <option value="Peringatan"> Peringatan </option>
+                  <option value="Validasi"> Validasi </option>
+                </select>
+             </div>
+
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+            <button type="submit" name="updateasset" class="btn btn-primary">Perbarui</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+<!------------------------------------------------------------------------------------------------------------------>
 
 <?php
 include('includes/scripts.php');

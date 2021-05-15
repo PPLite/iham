@@ -48,47 +48,6 @@ if(isset($_POST['login_btn']))
 
 }
 
-////////////////////////BAGIAN LOGIN/////////////////////////////////
-
-
-
-/////////////////////////////PENGATURAN PENGGUNA/////////////////////
-////////TAMBAH PENGGUNA/////////
-if(isset($_POST['registerbtn']))
-
-//jika sudah ditombol kemudian
-{
-    //input data
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $cpassword = $_POST['confirmpassword'];
-    $usertype = $_POST['usertype'];
-
-    if($password === $cpassword)
-    {
-         //data yang tadi, dimasukkan ke database dewngan perintah "insert into" karena data tersebut data baru, dan diletakkan ke tabel yang udah disediakan
-        $query = "INSERT INTO register (username,email,password,usertype) VALUES ('$username','$email','$password','$usertype')";
-        $query_run = mysqli_query($connection,$query);
-    
-        if($query_run)
-        {
-        $_SESSION['success'] = "Pengguna berhasil ditambahkan";
-        header('location: register.php');
-        }
-        else
-        {
-        $_SESSION['status'] = "Pengguna gagal ditambahkan";
-        header('location: register.php');
-        }
-    }
-    else 
-    {
-        $_SESSION['status'] = "Password tidak sesuai";
-        header('location: register.php');
-    }
-}
-
 ////////////////////////////////////////////////////////////////////
 
 //Untuk hapus data asset
@@ -111,39 +70,6 @@ if(isset($_POST['delete_btn_asset']))
         header('location: pengaturan-aset.php');
     }
 }
-
-
-////////////////Fungsi untuk menambahkan asset di menu pengaturan aset////////////////////////////////////
-if(isset($_POST['daftaraset_btn']))
-
-//jika sudah ditombol kemudian
-{
-    //input data
-    $nama_alat = $_POST['nama_alat'];
-    $uid = $_POST['uid'];
-    $deskripsi = $_POST['deskripsi'];
-    $penanggung_jawab = $_POST['penanggung_jawab'];
-    $status_asset = $_POST['status_asset'];
-    $gambar_asset = $_POST['gambar_asset'];
-    $query = "INSERT INTO tb_rfid (nama_alat,uid,deskripsi,penanggung_jawab,status_asset) VALUES ('$nama_alat','$uid','$deskripsi','$penanggung_jawab','$status_asset')";
-    $query_run = mysqli_query($connection,$query);
-
-
-    if($query_run)
-    {
-        if($query_run)
-        {
-        $_SESSION['success'] = "Aset berhasil ditambahkan";
-        header('location: pengaturan-aset.php');
-        }
-        else
-        {
-        $_SESSION['status'] = "Aset gagal ditambahkan";
-        header('location: pengaturan-aset.php');
-        }
-    }
-}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////Fungsi untuk menambahkan asset anak di menu pengaturan aset////////////////////////////////////
 if(isset($_POST['daftarasetanak_btn']))
@@ -209,7 +135,46 @@ if(isset($_POST['editasetbayi_btn']))
     }
 }
 
-///////////////////////////////////////////////////
+
+/////////////////////////////PENGATURAN PENGGUNA/////////////////////
+////////TAMBAH PENGGUNA/////////
+if(isset($_POST['registerbtn']))
+
+//jika sudah ditombol kemudian
+{
+    //input data
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $cpassword = $_POST['confirmpassword'];
+    $usertype = $_POST['usertype'];
+
+    if($password === $cpassword)
+    {
+         //data yang tadi, dimasukkan ke database dewngan perintah "insert into" karena data tersebut data baru, dan diletakkan ke tabel yang udah disediakan
+        $query = "INSERT INTO register (username,email,password,usertype) VALUES ('$username','$email','$password','$usertype')";
+        $query_run = mysqli_query($connection,$query);
+    
+        if($query_run)
+        {
+        $_SESSION['success'] = "Pengguna berhasil ditambahkan";
+        header('location: register.php');
+        }
+        else
+        {
+        $_SESSION['status'] = "Pengguna gagal ditambahkan";
+        header('location: register.php');
+        }
+    }
+    else 
+    {
+        $_SESSION['status'] = "Password tidak sesuai";
+        header('location: register.php');
+    }
+}
+
+////////////////////////////////////////////////////////////////////
+
 /////////Untuk modif data pada pengguna////////////
 if(isset($_POST['updatepengguna']))
 
@@ -238,9 +203,8 @@ if(isset($_POST['updatepengguna']))
         header('location: register.php');
     }
 }
-
-
 ///////////////////////////////////////////////////
+
 /////////Untuk HAPUS data pada pengguna////////////
 if(isset($_POST['deletepengguna']))
 {
@@ -261,8 +225,70 @@ if(isset($_POST['deletepengguna']))
     }
 }
 
+////////////////TAMBAHKAN ASET///////////////////////////////////
+if(isset($_POST['daftaraset_btn']))
+
+//jika sudah ditombol kemudian
+{
+    //input data
+    $nama_alat = $_POST['nama_alat'];
+    $uid = $_POST['uid'];
+    $deskripsi = $_POST['deskripsi'];
+    $penanggung_jawab = $_POST['penanggung_jawab'];
+    $peminjam = $_POST['peminjam'];
+    $status_asset = $_POST['status_asset'];
+    $query = "INSERT INTO tb_rfid (nama_alat,uid,deskripsi,penanggung_jawab,peminjam,status_asset) VALUES ('$nama_alat','$uid','$deskripsi','$penanggung_jawab','$peminjam','$status_asset')";
+    $query_run = mysqli_query($connection,$query);
 
 
+    if($query_run)
+    {
+        if($query_run)
+        {
+        $_SESSION['success'] = "Aset berhasil ditambahkan";
+        header('location: pengaturan-aset.php');
+        }
+        else
+        {
+        $_SESSION['status'] = "Aset gagal ditambahkan";
+        header('location: pengaturan-aset.php');
+        }
+    }
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////EDIT/UBAH/PERBARUI ASET///////////////////////////////////
+if(isset($_POST['updateasset']))
+
+//jika sudah ditombol kemudian
+{
+    $id = $_POST['id'];
+
+    $nama_alat = $_POST['nama_alat'];
+    $uid = $_POST['uid'];
+    $deskripsi = $_POST['deskripsi'];
+    $penanggung_jawab = $_POST['penanggung_jawab'];
+    $peminjam = $_POST['peminjam'];
+    $status_asset = $_POST['status_asset']; 
+    $query = "UPDATE tb_rfid SET nama_alat='$nama_alat', uid='$uid', deskripsi='$deskripsi', penanggung_jawab='$penanggung_jawab',peminjam='$peminjam', status_asset='$status_asset') WHERE id='$id' ";
+    $query_run = mysqli_query($connection,$query);
+
+
+    if($query_run)
+    {
+        if($query_run)
+        {
+        $_SESSION['success'] = "Aset berhasil Diperbarui";
+        header('location: pengaturan-aset.php');
+        }
+        else
+        {
+        $_SESSION['status'] = "Aset gagal Diperbarui";
+        header('location: pengaturan-aset.php');
+        }
+    }
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
