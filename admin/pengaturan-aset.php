@@ -109,7 +109,7 @@ include('database/dbconfig.php')
     $query_run = mysqli_query($connection, $query);
     ?>
 
-      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <table class="table table-bordered" id="dataaset" width="100%" cellspacing="0">
         <thead>
           <tr>
             <th>ID </th>
@@ -150,7 +150,7 @@ include('database/dbconfig.php')
             </td>
 
             <td>
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusaset_btn"> Hapus </button>
+            <button type="button" class="btn btn-danger deletebtnasset">Hapus</button>
             </td>
             </div>
 
@@ -176,13 +176,13 @@ include('database/dbconfig.php')
 </div>
 <!-- /.container-fluid -->
 
-<!------------------------------FUNGSI UNTUK UBAH PENGGUNA (MODAL)------------------------------------->
+<!------------------------------FUNGSI UNTUK UBAH ASSET (MODAL)------------------------------------->
 
 <div class="modal fade" id="editmodalasset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit data Pengguna</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Edit data Asset</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -245,6 +245,45 @@ include('database/dbconfig.php')
 
 <div class="container-fluid">
 <!------------------------------------------------------------------------------------------------------------------>
+
+<!------------------------------FUNGSI UNTUK HAPUS (MODAL)------------------------------------->
+
+<div class="modal fade" id="deletemodalasset" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Hapus data Pengguna</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="code.php" method="POST">
+
+        <div class="modal-body">
+
+        <input type="hidden" name="hapus_id_asset" id="hapus_id_asset">
+
+        <h5> Apakah anda yakin untuk menghapus Asset ini?</h5>
+        <h6>  Data yang sudah terhapus tidak dapat dikembalikan</h6>
+
+      </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+            <button type="submit" name="deleteasset" class="btn btn-danger">Hapus</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+<!------------------------------------------------------------------------------------------------------------------>
+
+
+
+
 
 <?php
 include('includes/scripts.php');

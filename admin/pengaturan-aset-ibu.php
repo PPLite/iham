@@ -119,7 +119,7 @@ include('database/dbconfig.php')
     $query_run = mysqli_query($connection, $query);
     ?>
 
-      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <table class="table table-bordered" id="tabelasetbayi" width="100%" cellspacing="0">
         <thead>
           <tr>
             <th>ID</th>
@@ -146,7 +146,7 @@ include('database/dbconfig.php')
             ?>
           <tr>
           <!---Mengambil data dari database kemudian menampilkan ke tabel, serta menentukan kolom mana saja yang akan diambil datanya-->
-          <td><?php echo $row['id']; ?></td>
+          <td><?php echo $row['id']; ?></td> 
             <td><?php echo $row['rfid_uid']; ?></td>
             <td><?php echo $row['id_pengenal']; ?></td>
             <td><?php echo $row['nama_anak']; ?></td>
@@ -158,17 +158,11 @@ include('database/dbconfig.php')
 
             <!--------------------TOMBOL UNTUK EDIT/HAPUS ASSET (DI DALAM TABEL) ----------------->
             <td>
-                  <form action="pengaturan-aset-ibu_edit.php" method="post">
-                      <input type="hidden" name="edit_id_bayi" value="<?php echo $row['id']; ?>">
-                      <button type="submit" name="edit_btn_bayi" class="btn btn-success">Ubah</button>
-                  </form>
+            <button type="button" class="btn btn-success editbtnassetbayi">Ubah</button>
             </td>
-
-            
-            
             
             <td>
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusaset_btn"> Hapus </button>
+            <button type="button" class="btn btn-danger deletebtnassetbayi">Hapus</button>
             </td>
             </div>
             <!------------------------------------------------------------------------------------->
@@ -191,6 +185,118 @@ include('database/dbconfig.php')
 
 </div>
 <!-- /.container-fluid -->
+
+<!------------------------------FUNGSI UNTUK UBAH ASSET BAYI (MODAL)------------------------------------->
+<div class="modal fade" id="modalasetbayi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ubah Data Asset</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="code.php" method="POST">
+
+        <div class="modal-body">
+
+        <input type="hidden" name="id" id="id">
+
+                <div class="form-group">
+                <label>Kode UID</label>
+                <input type="text" name="rfid_uid" id="rfid_uid" class="form-control" placeholder="Masukkan kode UID" required>
+
+                <button type="button" class="btn btn-success" data-target="#"> Ambil dari RFID Scanner </button>
+                </div>
+
+            <div class="form-group">
+                <label>Id Pengenal</label>
+                <input type="text" name="id_pengenal" id="id_pengenal" class="form-control" placeholder="Masukkan Nomor KTP" required>
+            </div>
+
+            <div class="form-group">
+                <label>Nama Anak</label>
+                <input type="text" name="nama_anak" id="nama_anak" class="form-control" placeholder="Masukkan Nama Anak" required>
+            </div>
+
+            <div class="form-group">
+                <label>Nama Ibu</label>
+                <input type="text" name="nama_ibu" id="nama_ibu" class="form-control" placeholder="Masukkan Nama Ibu" required>
+            </div>
+
+            <div class="form-group">
+                <label>Penanggung Jawab</label>
+                <input type="text" name="penanggung_jawab" id="penanggung_jawab" class="form-control" placeholder="Masukkan Penanggung Jawab" required>
+            </div>
+
+            <div class="form-group">
+                <label>Alamat</label>
+                <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Masukkan Alamat" required>
+            </div>
+
+            <div class="form-group">
+                <label>Status</label>
+                <select name="status" id="status" class="form-control" >
+                  <option value="masuk"> Masuk </option>   
+                  <option value="checkin"> Check In </option>
+                  <option value="perawatan"> Perawatan </option>
+                  <option value="checkout"> Check Out </option>
+                  <option value="peringatan"> Peringatan </option>
+                  <option value="validasi"> Validasi </option>
+                </select>
+             </div>
+        
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+            <button type="submit" name="updatebtnassetbayi" class="btn btn-primary ">Perbarui</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+<!------Akhir dari Modal------->
+
+
+<!------------------------------FUNGSI UNTUK HAPUS (MODAL)------------------------------------->
+
+<div class="modal fade" id="deletemodalassetbayi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Hapus data Asset</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="code.php" method="POST">
+
+        <div class="modal-body">
+
+        <input type="hidden" name="hapus_id_asset_bayi" id="hapus_id_asset_bayi">
+
+        <h5> Apakah anda yakin untuk menghapus Asset ini?</h5>
+        <h6>  Data yang sudah terhapus tidak dapat dikembalikan</h6>
+
+      </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+            <button type="submit" name="deleteassetbayi" class="btn btn-danger">Hapus</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+<!------------------------------------------------------------------------------------------------------------------>
+
 <?php
 include('includes/scripts.php');
 include('includes/footer.php');

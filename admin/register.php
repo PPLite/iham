@@ -69,14 +69,9 @@ include('database/dbconfig.php')
 
 
 <div class="container-fluid">
-<!------------------------------------------------------------------------------------------------------------------>
-
-<!--------Menampilkan di dalem tabelnya jika ditaruh disini kodenya----->
-<div class="card-body">
-<!---------------------------------------------------------------------->
 
 <!----MENAMPILKAN PEMBERITAHUAN JIKA DATA DITAMBAHKAN/DIHAPUS/GAGAL DIRPOSES----->
-  <?php
+<?php
   //Status berhasil ditambahkan
     if(isset($_SESSION['success']) && $_SESSION['success'] !='')
     {
@@ -91,20 +86,17 @@ include('database/dbconfig.php')
       unset($_SESSION['status']);
     }
   ?>
-<!---------------------------------------------------------------------->
-
-<!-----MEMBUAT TABEL RESPONSIF (BISA NGATUR SENDIRI)-------------------->
-    <div class="table-responsive">
-<!---------------------------------------------------------------------->
 
 
-<!---AMBIL DATA DARI DATABASE DAN DIMASUKKAN KE DALAM TABEL------------->
+<div class="card-body">
+<div class="table-responsive">
+
     <?php
     $query = "SELECT * FROM register"; 
     $query_run = mysqli_query($connection, $query);
     ?>
 
-      <table class="table table-bordered" id="datatableid" width="100%" cellspacing="0">
+      <table class="table table-bordered" id="tabelpengguna" width="100%" cellspacing="0">
         <thead>
           <tr>
             <th>ID </th>
@@ -144,7 +136,29 @@ include('database/dbconfig.php')
                 <button type="submit" name="delete_btn" class="btn btn-danger deletebtn">Hapus</button>
             </td>
             <!----------------------------------------------------------------------------------------------->
+            </div>
 
+            <div class="container-fluid">
+
+            </td>
+                    
+          <?php
+          }
+        }
+        //Jika gagal ngambil data akan mengeluarkan peringatan
+        else {
+          echo "Data tidak ditemukan";   
+        }
+        ?>        
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+</div>
+<!-- /.container-fluid -->
 
 <!------------------------------FUNGSI UNTUK UBAH PENGGUNA (MODAL)------------------------------------->
 
@@ -235,40 +249,6 @@ include('database/dbconfig.php')
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container-fluid">
-
-            </td>
-            </tr>
-          <?php
-          }
-        }
-        //Jika gagal ngambil data akan mengeluarkan peringatan
-        else {
-          echo "Data tidak ditemukan";   
-        }
-        ?>        
-        </tbody>
-      </table>
-
-    </div>
-  </div>
-</div>
-
-</div>
-<!-- /.container-fluid -->
 
 <?php
 include('includes/scripts.php');

@@ -29,7 +29,7 @@
 <!----------Halaman tabel dan pencarian data dalam tabelL---------------->
 <script>
 $(document).ready(function () {
-    $('#datatableid').DataTable();
+    $('#dataaset, #tabelpengguna, #tabelasetbayi').DataTable();
 
 });
 </script>
@@ -38,7 +38,7 @@ $(document).ready(function () {
 <!---------------JAVASCRIPT UNTUK EDIT PENGGUNA------------------->
 <script>
 $(document).ready(function () {
-    $('.editbtn').on('click', function() {
+    $('#tabelpengguna').on('click','.editbtn', function() {
 
         $('#editmodal').modal('show');
 
@@ -64,7 +64,7 @@ $(document).ready(function () {
 <!---------------JAVASCRIPT UNTUK HAPUS PENGGUNA------------------->
   <script>
 $(document).ready(function () {
-    $('.deletebtn').on('click', function() {
+    $('#tabelpengguna').on('click','.deletebtn', function() {
 
         $('#deletemodal').modal('show');
 
@@ -85,7 +85,7 @@ $(document).ready(function () {
 <!---------------JAVASCRIPT UNTUK EDIT ASET (BARANG)------------------->
 <script>
 $(document).ready(function () {
-    $('.editbtnasset').on('click', function() {
+    $('#dataaset').on('click', '.editbtnasset', function() {
 
         $('#editmodalasset').modal('show');
 
@@ -109,3 +109,71 @@ $(document).ready(function () {
 });
 </script>
 <!--------------------------------------------------------------->
+<!---------------JAVASCRIPT UNTUK HAPUS ASSET (BARANG)------------------->
+<script>
+$(document).ready(function () {
+    $('#dataaset').on('click','.deletebtnasset', function() {
+
+        $('#deletemodalasset').modal('show');
+
+            $tr = $(this).closest('tr');
+
+            var data = $tr.children("td").map(function(){
+                return $(this).text();
+            }).get();
+
+            console.log(data);
+
+            $('#hapus_id_asset').val(data[0]);
+    });
+});
+</script>
+<!-------------------------------------------------------------------->
+<!---------------JAVASCRIPT UNTUK EDIT ASET (BAYI)------------------->
+<script>
+$(document).ready(function () {
+    $('#tabelasetbayi').on('click', '.editbtnassetbayi', function() {
+
+        $('#modalasetbayi').modal('show');
+
+            $tr = $(this).closest('tr');
+
+            var data = $tr.children("td").map(function(){
+                return $(this).text();
+            }).get();
+
+            console.log(data);
+
+            $('#id').val(data[0]);
+            $('#rfid_uid').val(data[1]);
+            $('#id_pengenal').val(data[2]);
+            $('#nama_anak').val(data[3]);
+            $('#nama_ibu').val(data[4]);
+            $('#penanggung_jawab').val(data[5]);
+            $('#alamat').val(data[6]);
+            $('#status').val(data[8]);
+
+    });
+});
+</script>
+<!--------------------------------------------------------------->
+<!---------------JAVASCRIPT UNTUK HAPUS ASSET (BAYI)------------------->
+<script>
+$(document).ready(function () {
+    $('#tabelasetbayi').on('click','.deletebtnassetbayi', function() {
+
+        $('#deletemodalassetbayi').modal('show');
+
+            $tr = $(this).closest('tr');
+
+            var data = $tr.children("td").map(function(){
+                return $(this).text();
+            }).get();
+
+            console.log(data);
+
+            $('#hapus_id_asset_bayi').val(data[0]);
+    });
+});
+</script>
+<!-------------------------------------------------------------------->

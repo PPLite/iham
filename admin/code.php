@@ -50,92 +50,6 @@ if(isset($_POST['login_btn']))
 
 ////////////////////////////////////////////////////////////////////
 
-//Untuk hapus data asset
-//fungsi ini akan aktif ketika "delete_btn_asset" ditombol
-if(isset($_POST['delete_btn_asset']))
-{
-    //disini pakai $query=Delete_id, soalnya ya buat ngehapus data berdasarkan "ID" yang udah dipilih
-    $id = $_POST['delete_id_asset'];
-    $query = "DELETE FROM tb_rfid WHERE id='$id' ";
-    $query_run = mysqli_query($connection, $query);
-
-    if ($query_run)
-    {
-        $_SESSION['success'] = "Data berhasil dihapus";
-        header('location: pengaturan-aset.php');
-    }
-    else
-    {
-        $_SESSION['status'] = "Data gagal dihapus";
-        header('location: pengaturan-aset.php');
-    }
-}
-
-////////////////Fungsi untuk menambahkan asset anak di menu pengaturan aset////////////////////////////////////
-if(isset($_POST['daftarasetanak_btn']))
-
-//jika sudah ditombol kemudian
-{
-    //input data
-    $rfid_uid = $_POST['rfid_uid'];
-    $id_pengenal = $_POST['id_pengenal'];
-    $nama_anak = $_POST['nama_anak'];
-    $nama_ibu = $_POST['nama_ibu'];
-    $penanggung_jawab = $_POST['penanggung_jawab'];
-    $alamat = $_POST['alamat'];
-    $status = $_POST['status'];
-    $query = "INSERT INTO tb_stat_anak (rfid_uid,id_pengenal,nama_anak,nama_ibu,penanggung_jawab,alamat,status) VALUES ('$rfid_uid','$id_pengenal','$nama_anak','$nama_ibu','$penanggung_jawab','$alamat','$status')";
-    $query_run = mysqli_query($connection,$query);
-
-
-    if($query_run)
-    {
-        if($query_run)
-        {
-        $_SESSION['success'] = "Aset berhasil ditambahkan";
-        header('location: pengaturan-aset-ibu.php');
-        }
-        else
-        {
-        $_SESSION['status'] = "Aset gagal ditambahkan";
-        header('location: pengaturan-aset-ibu.php');
-        }
-    }
-}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Untuk modif data pada bayi
-if(isset($_POST['editasetbayi_btn']))
-
-//data apa aja yang diambil dan dimodif
-{
-    $id = $_POST['edit_id'];
-    $rfid_uid = $_POST['update_rfid_uid'];
-    $id_pengenal = $_POST['update_id_pengenal'];
-    $nama_anak = $_POST['update_nama_anak'];
-    $nama_ibu = $_POST['update_nama_ibu'];
-    $penanggung_jawab = $_POST['update_penanggung_jawab'];
-    $alamat = $_POST['update_alamat'];
-    $status = $_POST['update_status'];
-
-
-    $query = "UPDATE tb_stat_anak SET update_rfid_uid='$rfid_uid', update_id_pengenal='$id_pengenal', update_nama_anak='$nama_anak', update_nama_ibu='$nama_ibu', update_penanggung_jawab='$penanggung_jawab', update_alamat='$alamat', update_status='$status' WHERE id='$id' "   ;
-    $query_run = mysqli_query($connection,$query);
-
-
-    //Tampilan status jika dilakukan perubahan data
-    if($query_run)
-    {
-        $_SESSION['success'] = "Data Berhasil diperbarui";
-        header('location: pengaturan-aset-ibu.php');
-    }
-    else
-    {
-        $_SESSION['status'] = "Data Gagal diperbarui";
-        header('location: pengaturan-aset-ibu.php');
-    }
-}
-
-
 /////////////////////////////PENGATURAN PENGGUNA/////////////////////
 ////////TAMBAH PENGGUNA/////////
 if(isset($_POST['registerbtn']))
@@ -290,8 +204,111 @@ if(isset($_POST['updateasset']))
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//////////////////////////////////HAPUS DATA ASSET (BARANG)//////////////////////////////////////////////
+if(isset($_POST['deleteasset']))
+{
+    //disini pakai $query=Delete_id, soalnya ya buat ngehapus data berdasarkan "ID" yang udah dipilih
+    $id = $_POST['hapus_id_asset'];
+    $query = "DELETE FROM tb_rfid WHERE id='$id' ";
+    $query_run = mysqli_query($connection, $query);
+
+    if ($query_run)
+    {
+        $_SESSION['success'] = "Data berhasil dihapus";
+        header('location: pengaturan-aset.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Data gagal dihapus";
+        header('location: pengaturan-aset.php');
+    }
+}
+
+////////////////TAMBAH ASET BAYI////////////////////////////////////
+if(isset($_POST['daftarasetanak_btn']))
+
+//jika sudah ditombol kemudian
+{
+    //input data
+    $rfid_uid = $_POST['rfid_uid'];
+    $id_pengenal = $_POST['id_pengenal'];
+    $nama_anak = $_POST['nama_anak'];
+    $nama_ibu = $_POST['nama_ibu'];
+    $penanggung_jawab = $_POST['penanggung_jawab'];
+    $alamat = $_POST['alamat'];
+    $status = $_POST['status'];
+    $query = "INSERT INTO tb_stat_anak (rfid_uid,id_pengenal,nama_anak,nama_ibu,penanggung_jawab,alamat,status) VALUES ('$rfid_uid','$id_pengenal','$nama_anak','$nama_ibu','$penanggung_jawab','$alamat','$status')";
+    $query_run = mysqli_query($connection,$query);
 
 
+    if($query_run)
+    {
+        if($query_run)
+        {
+        $_SESSION['success'] = "Aset berhasil ditambahkan";
+        header('location: pengaturan-aset-ibu.php');
+        }
+        else
+        {
+        $_SESSION['status'] = "Aset gagal ditambahkan";
+        header('location: pengaturan-aset-ibu.php');
+        }
+    }
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Untuk modif data pada bayi
+if(isset($_POST['updatebtnassetbayi']))
+
+//data apa aja yang diambil dan dimodif
+{
+    $id = $_POST['id'];
+    
+    $rfid_uid = $_POST['rfid_uid'];
+    $id_pengenal = $_POST['id_pengenal'];
+    $nama_anak = $_POST['nama_anak'];
+    $nama_ibu = $_POST['nama_ibu'];
+    $penanggung_jawab = $_POST['penanggung_jawab'];
+    $alamat = $_POST['alamat'];
+    $status = $_POST['status'];
+
+
+    $query = "UPDATE tb_stat_anak SET rfid_uid='$rfid_uid', id_pengenal='$id_pengenal', nama_anak='$nama_anak', nama_ibu='$nama_ibu', penanggung_jawab='$penanggung_jawab', alamat='$alamat', status='$status' WHERE id='$id'  ";
+    $query_run = mysqli_query($connection,$query);
+
+
+    //Tampilan status jika dilakukan perubahan data
+    if($query_run)
+    {
+        $_SESSION['success'] = "Data Berhasil diperbarui";
+        header('location: pengaturan-aset-ibu.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Data Gagal diperbarui";
+        header('location: pengaturan-aset-ibu.php');
+    }
+}
+
+
+//////////////////////////////////HAPUS DATA ASSET (BAYI)//////////////////////////////////////////////
+if(isset($_POST['deleteassetbayi']))
+{
+    //disini pakai $query=Delete_id, soalnya ya buat ngehapus data berdasarkan "ID" yang udah dipilih
+    $id = $_POST['hapus_id_asset_bayi'];
+    $query = "DELETE FROM tb_stat_anak WHERE id='$id' ";
+    $query_run = mysqli_query($connection, $query);
+
+    if ($query_run)
+    {
+        $_SESSION['success'] = "Data berhasil dihapus";
+        header('location: pengaturan-aset-ibu.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Data gagal dihapus";
+        header('location: pengaturan-aset-ibu.php');
+    }
+}
 
 
 
