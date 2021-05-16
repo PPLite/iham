@@ -30,7 +30,8 @@ This Repository is forked from various repo. Mainly from youtube
 - Python 3.x
 - NPM
 - Python Shell for NPM 
-    - From Powershell execute this with elvelated permissions 'npm install -g windows-build-tools'
+    - From Powershell execute this with elvelated permissions
+    'npm install -g windows-build-tools'
 - XAMPP (or Cpanel)
 
 
