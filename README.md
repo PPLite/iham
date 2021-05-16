@@ -31,7 +31,7 @@ This Repository is forked from various repo. Mainly from youtube
 - NPM
 - Python Shell for NPM 
     - From Powershell execute this with elvelated permissions
-    'npm install -g windows-build-tools'
+`npm install -g windows-build-tools`
 - XAMPP (or Cpanel)
 
 
@@ -40,5 +40,3 @@ This Repository is forked from various repo. Mainly from youtube
 - MojoGantz
 - RachmaAJS
 - GuruhPM
-
-
