@@ -221,12 +221,12 @@ include('database/dbconfig.php')
             <div class="form-group">
                 <label>Status Asset</label>
                 <select name="status_asset" class="form-control" id="status_asset" > 
-                  <option value="Tersedia"> Tersedia </option>   
-                  <option value="Dipinjam"> Dipinjam </option>
-                  <option value="Habis"> Habis </option>
-                  <option value="Rusak"> Rusak </option>
-                  <option value="Peringatan"> Peringatan </option>
-                  <option value="Validasi"> Validasi </option>
+                  <option value="tersedia"> Tersedia </option>   
+                  <option value="dipinjam"> Dipinjam </option>
+                  <option value="habis"> Habis </option>
+                  <option value="rusak"> Rusak </option>
+                  <option value="peringatan"> Peringatan </option>
+                  <option value="validasi"> Validasi </option>
                 </select>
              </div>
 

@@ -22,7 +22,22 @@ IHAM is Created to fullfill Final Projects in vocational university
 ## License ##
 This Repository is forked from various repo. Mainly from youtube
 
-Created By
+## Requirements ##
+- PHP
+- Node.JS
+- MySQL
+- phpMyAdmin
+- Python 3.x
+- NPM
+- Python Shell for NPM 
+    - From Powershell execute this with elvelated permissions 'npm install -g windows-build-tools'
+- XAMPP (or Cpanel)
+
+
+## Created By ##
+
 - MojoGantz
 - RachmaAJS
 - GuruhPM
+
+
