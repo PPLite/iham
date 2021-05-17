@@ -6,7 +6,6 @@ include('database/dbconfig.php')
 ?>
 
 <!----Mulai Modal buat tambah aset baru. kotak yang ngawang ditengah-->
-<!----Diambil dari https://getbootstrap.com/docs/4.0/components/modal/-->
 
 <div class="modal fade" id="tambahinasetanak" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -23,8 +22,6 @@ include('database/dbconfig.php')
                 <div class="form-group">
                 <label>Kode UID</label>
                 <input type="text" name="rfid_uid" class="form-control" placeholder="Masukkan kode UID" required>
-
-                <button type="button" class="btn btn-success" data-target="#"> Ambil dari RFID Scanner </button>
                 </div>
 
             <div class="form-group">
@@ -259,7 +256,7 @@ include('database/dbconfig.php')
 
 
 <div class="container-fluid">
-<!------Akhir dari Modal------->
+<!-------------------------------Akhir dari Modal----------------------------------------------->
 
 
 <!------------------------------FUNGSI UNTUK HAPUS (MODAL)------------------------------------->
