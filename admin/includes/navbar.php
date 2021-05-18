@@ -56,7 +56,7 @@ include_once('code.php');
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Fitur Aset:</h6>
       <a class="collapse-item" href="pengaturan-aset-ibu.php">Pengaturan Aset</a>
-      <a class="collapse-item" href="pesan-aset.php">Input Data</a>
+      <a class="collapse-item" href="input/tambah-aset-ibu.php">Input Data</a>
       <a class="collapse-item" href="status-asset.php">Status Aset</a>
     </div>
   </div>

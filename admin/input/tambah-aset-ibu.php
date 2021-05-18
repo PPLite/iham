@@ -11,19 +11,18 @@ include('database/dbconfig.php')
 
             <div class="card mt-5">
                 <div class="card-header text-center">
-                    <h4> Demo ambil data dan Kirim Data </h4>
+                    <h4> Registrasi Asset Bayi Baru</h4>
                 </div>
-                    <div class="card-body">
-                    <form action="" method="GET">
-
-                        <div class="row">
-                            <div class="">
-                                <input type="hidden" name="tag_id" value="<?php if(isset($_GET['tag_id'])) {echo $_GET['tag_id'];} ?>" class="form-control">
+                            <div class="card-body">
+                                <form action="" method="GET">
+                                <div class="row">
+                                    <div class="">
+                                        <input type="hidden" name="tag_id" value="<?php if(isset($_GET['tag_id'])) {echo $_GET['tag_id'];} ?>" class="form-control">
+                                    </div>
+                                <div class="col-md-4">
+                                    <button type="SUBMIT" class="btn btn-primary">Ambil dari RFID</button>
+                                </div>
                             </div>
-                            <div class="col-md-4">
-                                <button type="SUBMIT" class="btn btn-primary">Ambil dari RFID</button>
-                            </div>
-                        </div>
 
                         <div class="row">
                             <div class="col-md-12">
