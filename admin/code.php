@@ -226,7 +226,6 @@ if(isset($_POST['deleteasset']))
 
 ////////////////TAMBAH ASET BAYI////////////////////////////////////
 if(isset($_POST['daftarasetanak_btn']))
-
 //jika sudah ditombol kemudian
 {
     //input data
@@ -255,6 +254,49 @@ if(isset($_POST['daftarasetanak_btn']))
         }
     }
 }
+
+if(isset($_GET['ambildata_btn']))
+//jika sudah ditombol kemudian
+{
+    //ambil data?
+    $rfid_uid = $_POST['rfid_uid'];
+    $id_pengenal = $_POST['id_pengenal'];
+    $nama_anak = $_POST['nama_anak'];
+    $nama_ibu = $_POST['nama_ibu'];
+    $penanggung_jawab = $_POST['penanggung_jawab'];
+    $alamat = $_POST['alamat'];
+    $status = $_POST['status'];
+
+
+
+
+    $query = "SELECT * FROM `tb_reader_scan` order by id desc limit 1";
+    $query_run = mysqli_query($connection, $query);
+
+
+    if($query_run)
+    {
+        if($query_run)
+        {
+        $_SESSION['success'] = "Aset berhasil ditambahkan";
+        header('location: pengaturan-aset-ibu.php');
+        }
+        else
+        {
+        $_SESSION['status'] = "Aset gagal ditambahkan";
+        header('location: pengaturan-aset-ibu.php');
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Untuk modif data pada bayi
 if(isset($_POST['updatebtnassetbayi']))
