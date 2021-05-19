@@ -28,7 +28,7 @@ include('database/dbconfig.php')
 
             <div class="form-group">
                 <label>Kode UID</label>
-                <input type="text" name="uid" class="form-control" placeholder="Masukkan kode UID" required>
+                <input type="text" name="rfid_uid" class="form-control" placeholder="Masukkan kode UID" required>
             </div>
 
             <div class="form-group">
@@ -137,7 +137,7 @@ include('database/dbconfig.php')
           <!---Mengambil data dari database kemudian menampilkan ke tabel, serta menentukan kolom mana saja yang akan diambil datanya-->
           <td><?php echo $row['id']; ?></td> <!--- 0 --->
             <td><?php echo $row['nama_alat']; ?></td>  <!--- 1 --->
-            <td><?php echo $row['uid']; ?></td> <!--- 2 --->
+            <td><?php echo $row['rfid_uid']; ?></td> <!--- 2 --->
             <td><?php echo $row['deskripsi']; ?></td> <!--- 3 --->
             <td><?php echo $row['tanggal']; ?></td> <!--- 4 --->
             <td><?php echo $row['penanggung_jawab']; ?></td> <!--- 5 --->
@@ -199,7 +199,7 @@ include('database/dbconfig.php')
 
             <div class="form-group">
                 <label>Kode UID</label>
-                <input type="text" name="uid" id="uid" class="form-control" placeholder="Kode UID">
+                <input type="text" name="rfid_uid" id="rfid_uid" class="form-control" placeholder="Kode UID">
             </div>
 
             <div class="form-group">

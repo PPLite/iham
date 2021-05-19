@@ -49,7 +49,7 @@ include('database/dbconfig.php')
           <tr>
           <!---Mengambil data dari database kemudian menampilkan ke tabel, serta menentukan kolom mana saja yang akan diambil datanya-->
           <td><?php echo $row['id']; ?></td>
-            <td><?php echo $row['tag_id']; ?></td>
+            <td><?php echo $row['rfid_uid']; ?></td>
             <td><?php echo $row['reader_id']; ?></td>
             <td><?php echo $row['timestamp']; ?></td>
             </div>

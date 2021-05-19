@@ -18,7 +18,7 @@ include('database/dbconfig.php')
 
                         <div class="row">
                             <div class="col-md-8">
-                                <input type="text" name="tag_id" value="<?php if(isset($_GET['tag_id'])) {echo $_GET['tag_id'];} ?>" class="form-control">
+                                <input type="text" name="rfid_uid" value="<?php if(isset($_GET['rfid_uid'])) {echo $_GET['rfid_uid'];} ?>" class="form-control">
                             </div>
 
                             <div class="col-md-4">
@@ -30,10 +30,10 @@ include('database/dbconfig.php')
                             <div class="col-md-12">
                                 <hr>
                                 <?php 
-                                if(isset($_GET['tag_id']))
+                                if(isset($_GET['rfid_uid']))
                                 {
-                                    $tag_id = $_GET['tag_id'];
-                                    $query = "SELECT * FROM tb_reader_scan WHERE id='$tag_id' ";
+                                    $rfid_uid = $_GET['rfid_uid'];
+                                    $query = "SELECT * FROM tb_reader_scan WHERE id='$rfid_uid' ";
                                     $query_run = mysqli_query($connection, $query);
 
                                     if(mysqli_num_rows($query_run) > 0)
@@ -44,7 +44,7 @@ include('database/dbconfig.php')
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="">Kode UID</label>
-                                                        <input type="text" value="<?= $row["tag_id"]; ?>" class="form-control">
+                                                        <input type="text" value="<?= $row["rfid_uid"]; ?>" class="form-control">
                                                     </div>
                                                 </div>
                                             <?php
@@ -64,7 +64,7 @@ include('database/dbconfig.php')
                                             <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="">Kode UID</label>
-                                                        <input type="text" value="<?= $row["tag_id"]; ?>" class="form-control">
+                                                        <input type="text" value="<?= $row["rfid_uid"]; ?>" class="form-control">
                                                     </div>
                                                 </div>
                                             <?php

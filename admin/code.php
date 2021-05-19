@@ -146,12 +146,12 @@ if(isset($_POST['daftaraset_btn']))
 {
     //input data
     $nama_alat = $_POST['nama_alat'];
-    $uid = $_POST['uid'];
+    $rfid_uid = $_POST['rfid_uid'];
     $deskripsi = $_POST['deskripsi'];
     $penanggung_jawab = $_POST['penanggung_jawab'];
     $peminjam = $_POST['peminjam'];
     $status_asset = $_POST['status_asset'];
-    $query = "INSERT INTO tb_rfid (nama_alat,uid,deskripsi,penanggung_jawab,peminjam,status_asset) VALUES ('$nama_alat','$uid','$deskripsi','$penanggung_jawab','$peminjam','$status_asset')";
+    $query = "INSERT INTO tb_rfid (nama_alat,rfid_uid,deskripsi,penanggung_jawab,peminjam,status_asset) VALUES ('$nama_alat','$rfid_uid','$deskripsi','$penanggung_jawab','$peminjam','$status_asset')";
     $query_run = mysqli_query($connection,$query);
 
 
@@ -179,12 +179,12 @@ if(isset($_POST['updateasset']))
     $id = $_POST['id'];
 
     $nama_alat = $_POST['nama_alat'];
-    $uid = $_POST['uid'];
+    $rfid_uid = $_POST['rfid_uid'];
     $deskripsi = $_POST['deskripsi'];
     $penanggung_jawab = $_POST['penanggung_jawab'];
     $peminjam = $_POST['peminjam'];
     $status_asset = $_POST['status_asset']; 
-    $query = "UPDATE tb_rfid SET nama_alat='$nama_alat', uid='$uid', deskripsi='$deskripsi', penanggung_jawab='$penanggung_jawab',peminjam='$peminjam', status_asset='$status_asset' WHERE id='$id' ";
+    $query = "UPDATE tb_rfid SET nama_alat='$nama_alat', rfid_uid='$rfid_uid', deskripsi='$deskripsi', penanggung_jawab='$penanggung_jawab',peminjam='$peminjam', status_asset='$status_asset' WHERE id='$id' ";
     $query_run = mysqli_query($connection,$query);
 
 

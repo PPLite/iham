@@ -52,7 +52,7 @@ while True:
 
       #Input data rfid ke database
       cursor = db.cursor()
-      sql = "INSERT INTO rfid (uid, nama_bayi) VALUES (%s, %s)"
+      sql = "INSERT INTO rfid (rfid_uid, nama_bayi) VALUES (%s, %s)"
       val = (new_data, "Guling")
       cursor.execute(sql, val)
       val2 = (new_data2, "Guling")
