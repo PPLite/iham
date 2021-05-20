@@ -100,7 +100,7 @@ include('database/dbconfig.php')
 
     <div class="form-group">
         <label>Penanggung Jawab</label>
-        <input type="text" name="penanggung_jawab" class="form-control" placeholder="Masukkan Penanggung Jawab" required>
+        <input type="text" name="penanggung_jawab_bayi" class="form-control" placeholder="Masukkan Penanggung Jawab" required>
     </div>
 
     <div class="form-group">

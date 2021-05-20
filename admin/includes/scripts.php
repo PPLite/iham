@@ -41,7 +41,7 @@
 <!----------Halaman tabel dan pencarian data dalam tabelL---------------->
 <script>
 $(document).ready(function () {
-    $('#dataaset, #tabelpengguna, #tabelasetbayi').DataTable();
+    $('#dataaset, #tabelpengguna, #tabelasetbayi, #tabelstatuscan').DataTable();
 
 });
 </script>
@@ -49,7 +49,7 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function() {
-    $('#tabelrfidscan1, #tabelrfidscan2').DataTable( {
+    $('#tabelrfidscan1, #tabelrfidscan2, #tablestatusscan1, #tablestatusscan2').DataTable( {
         "order": [[ 3, "desc" ]]
     } );
 } );
@@ -169,7 +169,7 @@ $(document).ready(function () {
             $('#id_pengenal').val(data[2]);
             $('#nama_anak').val(data[3]);
             $('#nama_ibu').val(data[4]);
-            $('#penanggung_jawab').val(data[5]);
+            $('#penanggung_jawab_bayi').val(data[5]);
             $('#alamat').val(data[6]);
             $('#status').val(data[8]);
 

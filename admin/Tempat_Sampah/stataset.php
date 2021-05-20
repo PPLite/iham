@@ -53,7 +53,7 @@ include('database/dbconfig.php')
             <td><?php echo $row['uid']; ?></td> <!--- 2 --->
             <td><?php echo $row['deskripsi']; ?></td> <!--- 3 --->
             <td><?php echo $row['tanggal']; ?></td> <!--- 4 --->
-            <td><?php echo $row['penanggung_jawab']; ?></td> <!--- 5 --->
+            <td><?php echo $row['penanggung_jawab_bayi']; ?></td> <!--- 5 --->
             <td><?php echo $row['peminjam']; ?></td> <!--- 6 --->
             <td><?php echo $row['status_asset']; ?></td>  <!--- 7 --->
 

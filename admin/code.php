@@ -233,10 +233,10 @@ if(isset($_POST['daftarasetanak_btn']))
     $id_pengenal = $_POST['id_pengenal'];
     $nama_anak = $_POST['nama_anak'];
     $nama_ibu = $_POST['nama_ibu'];
-    $penanggung_jawab = $_POST['penanggung_jawab'];
+    $penanggung_jawab_bayi = $_POST['penanggung_jawab_bayi'];
     $alamat = $_POST['alamat'];
     $status = $_POST['status'];
-    $query = "INSERT INTO tb_stat_anak (rfid_uid,id_pengenal,nama_anak,nama_ibu,penanggung_jawab,alamat,status) VALUES ('$rfid_uid','$id_pengenal','$nama_anak','$nama_ibu','$penanggung_jawab','$alamat','$status')";
+    $query = "INSERT INTO tb_stat_anak (rfid_uid,id_pengenal,nama_anak,nama_ibu,penanggung_jawab_bayi,alamat,status) VALUES ('$rfid_uid','$id_pengenal','$nama_anak','$nama_ibu','$penanggung_jawab_bayi','$alamat','$status')";
     $query_run = mysqli_query($connection,$query);
 
 
@@ -263,7 +263,7 @@ if(isset($_GET['ambildata_btn']))
     $id_pengenal = $_POST['id_pengenal'];
     $nama_anak = $_POST['nama_anak'];
     $nama_ibu = $_POST['nama_ibu'];
-    $penanggung_jawab = $_POST['penanggung_jawab'];
+    $penanggung_jawab_bayi = $_POST['penanggung_jawab_bayi'];
     $alamat = $_POST['alamat'];
     $status = $_POST['status'];
 
@@ -309,12 +309,12 @@ if(isset($_POST['updatebtnassetbayi']))
     $id_pengenal = $_POST['id_pengenal'];
     $nama_anak = $_POST['nama_anak'];
     $nama_ibu = $_POST['nama_ibu'];
-    $penanggung_jawab = $_POST['penanggung_jawab'];
+    $penanggung_jawab_bayi = $_POST['penanggung_jawab_bayi'];
     $alamat = $_POST['alamat'];
     $status = $_POST['status'];
 
 
-    $query = "UPDATE tb_stat_anak SET rfid_uid='$rfid_uid', id_pengenal='$id_pengenal', nama_anak='$nama_anak', nama_ibu='$nama_ibu', penanggung_jawab='$penanggung_jawab', alamat='$alamat', status='$status' WHERE id='$id'  ";
+    $query = "UPDATE tb_stat_anak SET rfid_uid='$rfid_uid', id_pengenal='$id_pengenal', nama_anak='$nama_anak', nama_ibu='$nama_ibu', penanggung_jawab_bayi='$penanggung_jawab_bayi', alamat='$alamat', status='$status' WHERE id='$id'  ";
     $query_run = mysqli_query($connection,$query);
 
 

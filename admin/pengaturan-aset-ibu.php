@@ -41,7 +41,7 @@ include('database/dbconfig.php')
 
             <div class="form-group">
                 <label>Penanggung Jawab</label>
-                <input type="text" name="penanggung_jawab" class="form-control" placeholder="Masukkan Penanggung Jawab" required>
+                <input type="text" name="penanggung_jawab_bayi" class="form-control" placeholder="Masukkan Penanggung Jawab" required>
             </div>
 
             <div class="form-group">
@@ -148,7 +148,7 @@ include('database/dbconfig.php')
             <td><?php echo $row['id_pengenal']; ?></td>
             <td><?php echo $row['nama_anak']; ?></td>
             <td><?php echo $row['nama_ibu']; ?></td>
-            <td><?php echo $row['penanggung_jawab']; ?></td>
+            <td><?php echo $row['penanggung_jawab_bayi']; ?></td>
             <td><?php echo $row['alamat']; ?></td>
             <td><?php echo $row['waktu_masuk']; ?></td>
             <td><?php echo $row['status']; ?></td>
@@ -223,7 +223,7 @@ include('database/dbconfig.php')
 
             <div class="form-group">
                 <label>Penanggung Jawab</label>
-                <input type="text" name="penanggung_jawab" id="penanggung_jawab" class="form-control" placeholder="Masukkan Penanggung Jawab" required>
+                <input type="text" name="penanggung_jawab_bayi" id="penanggung_jawab_bayi" class="form-control" placeholder="Masukkan Penanggung Jawab" required>
             </div>
 
             <div class="form-group">
