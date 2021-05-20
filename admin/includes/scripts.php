@@ -119,7 +119,7 @@ $(document).ready(function () {
 
             $('#id').val(data[0]);
             $('#nama_alat').val(data[1]);
-            $('#uid').val(data[2]);
+            $('#rfid_uid').val(data[2]);
             $('#deskripsi').val(data[3]);
             $('#penanggung_jawab').val(data[5]);
             $('#peminjam').val(data[6]);
