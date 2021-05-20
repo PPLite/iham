@@ -137,7 +137,7 @@ include('database/dbconfig.php')
 
 <!-- /.membuat tabel side by side-->
 </div>
-<!-- /.container-fluid -->
+<!-- /. container-fluid -->
 <?php
 include('includes/scripts.php');
 include('includes/footer.php');
