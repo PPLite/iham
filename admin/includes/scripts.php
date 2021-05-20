@@ -47,6 +47,14 @@ $(document).ready(function () {
 </script>
 <!----------------------------------------------------------------------->
 
+<script>
+$(document).ready(function() {
+    $('#tabelrfidscan1, #tabelrfidscan2').DataTable( {
+        "order": [[ 3, "desc" ]]
+    } );
+} );
+</script>
+
 <!---------------JAVASCRIPT UNTUK EDIT PENGGUNA------------------->
 <script>
 $(document).ready(function () {

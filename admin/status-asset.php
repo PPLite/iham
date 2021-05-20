@@ -26,7 +26,7 @@ include('database/dbconfig.php')
     $query_run = mysqli_query($connection, $query);
     ?>
 
-      <table class="table table-bordered" id="tabelasetbayi" width="100%" cellspacing="4">
+      <table class="table table-bordered" id="tabelrfidscan1" width="100%" cellspacing="4">
         <thead>
           <tr>
           <th>ID </th>
@@ -77,7 +77,7 @@ include('database/dbconfig.php')
     $query_run = mysqli_query($connection, $query);
     ?>
 
-      <table class="table table-bordered" id="tabelasetbayi" width="100%" cellspacing="0">
+      <table class="table table-bordered" id="tabelrfidscan2" width="100%" cellspacing="0">
         <thead>
           <tr>
           <th>ID </th>
