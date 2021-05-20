@@ -142,3 +142,5 @@ include('database/dbconfig.php')
 include('includes/scripts.php');
 include('includes/footer.php');
 ?>	
+
+xml_parser_set_option
