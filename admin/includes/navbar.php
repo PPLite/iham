@@ -78,8 +78,8 @@ include_once('code.php');
   <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Pengaturan RFID:</h6>
-      <a class="collapse-item" href="fitur-rfid/baca-tag.php">Baca RFID TAG</a>
-      <a class="collapse-item" href="fitur-rfid/status-asset.php">Status Asset</a>
+      <a class="collapse-item" href="baca-tag.php">Baca RFID TAG</a>
+      <a class="collapse-item" href="status-asset.php">Status Asset</a>
     </div>
   </div>
 </li>
