@@ -49,8 +49,16 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function() {
-    $('#tabelrfidscan1, #tabelrfidscan2, #tablestatusscan1, #tablestatusscan2').DataTable( {
-        "order": [[ 3, "desc" ]]
+    $('#tabelrfidscan1, #tabelrfidscan3').DataTable( {
+        "order": [[ 6, "desc" ]]
+    } );
+} );
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#tabelrfidscan2, #tabelrfidscan4').DataTable( {
+        "order": [[ 7, "desc" ]]
     } );
 } );
 </script>

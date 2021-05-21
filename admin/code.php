@@ -353,6 +353,45 @@ if(isset($_POST['deleteassetbayi']))
 }
 
 
+//////////////////////////////////HAPUS SEMUA HASIL SCAN//////////////////////////////////////////////
+if(isset($_POST['hapushasilscan1']))
+{
+    //disini pakai $query=Delete_id, soalnya ya buat ngehapus data berdasarkan "ID" yang udah dipilih
+    $id = $_POST['hapushasilscan1'];
+    $query = "DELETE FROM `tb_reader_scan1` WHERE 0";
+    $query_run = mysqli_query($connection, $query);
+
+    if ($query_run)
+    {
+        $_SESSION['success'] = "Data berhasil dihapus";
+        header('location: testcari.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Data gagal dihapus";
+        header('location: testcari.php');
+    }
+}
+
+if(isset($_POST['hapushasilscan2']))
+{
+    //disini pakai $query=Delete_id, soalnya ya buat ngehapus data berdasarkan "ID" yang udah dipilih
+    $id = $_POST['hapushasilscan2'];
+    $query = "DELETE FROM `tb_reader_scan2` WHERE 0";
+    $query_run = mysqli_query($connection, $query);
+
+    if ($query_run)
+    {
+        $_SESSION['success'] = "Data berhasil dihapus";
+        header('location: testcari.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Data gagal dihapus";
+        header('location: testcari.php');
+    }
+}
+
 
 
 
