@@ -42,7 +42,6 @@ include_once('code.php');
       <h6 class="collapse-header">Fitur Aset:</h6>
       <a class="collapse-item" href="pengaturan-aset.php">Pengaturan Aset</a>
       <a class="collapse-item" href="pesan-aset.php">Pesan Aset</a>
-      <a class="collapse-item" href="status-asset.php">Status Aset</a>
     </div>
   </div>
 </li>
@@ -57,7 +56,6 @@ include_once('code.php');
       <h6 class="collapse-header">Fitur Aset:</h6>
       <a class="collapse-item" href="pengaturan-aset-ibu.php">Pengaturan Aset</a>
       <a class="collapse-item" href="tambah-aset-ibu.php">Input Data</a>
-      <a class="collapse-item" href="status-asset.php">Status Aset</a>
     </div>
   </div>
 </li>

@@ -201,9 +201,7 @@ include('database/dbconfig.php')
 
                 <div class="form-group">
                 <label>Kode UID</label>
-                <input type="text" name="rfid_uid" id="rfid_uid" class="form-control" placeholder="Masukkan kode UID" required>
-
-                <button type="button" class="btn btn-success" data-target="#"> Ambil dari RFID Scanner </button>
+                <input type="text" name="rfid_uid" id="rfid_uid" class="form-control" placeholder="Masukkan kode UID" disabled required>
                 </div>
 
             <div class="form-group">

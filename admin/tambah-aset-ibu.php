@@ -20,7 +20,7 @@ include('database/dbconfig.php')
                                         <input type="hidden" name="rfid_uid" value="<?php if(isset($_GET['rfid_uid'])) {echo $_GET['rfid_uid'];} ?>" class="form-control">
                                     </div>
                                 <div class="col-md-4">
-                                    <button type="SUBMIT" class="btn btn-primary">Ambil dari RFID</button>
+                                    <button type="SUBMIT" class="btn btn-primary">Scan RFID</button>
                                 </div>
                             </div>
 
