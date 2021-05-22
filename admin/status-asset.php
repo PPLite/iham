@@ -2,7 +2,7 @@
 include('security.php'); 
 include('includes/header.php'); 
 include('includes/navbar.php');
-include('database/dbconfig.php')
+include('database/dbconfig.php');
 ?>
 
 <div class="container-fluid">
@@ -122,8 +122,6 @@ include('database/dbconfig.php')
   </div>
 </div>
 </div>
-
-
 
 
 
@@ -280,9 +278,6 @@ include('database/dbconfig.php')
     <h6 class="m-0 font-weight-bold text-primary"> Hasil Scanning RFID Reader 2 (Aset Bayi)
     </h6>
   </div>
-
- 
-
 
 
 

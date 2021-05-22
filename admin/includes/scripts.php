@@ -25,12 +25,12 @@
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-<!-- Python??-->
+<!-- Python??
 <script type="text/javascript" src="js/brython.js"></script>
 <script type="text/javascript" src="js/brython_stdlib.js"></script>
+-->
 
-
-
+<!--Bootstrap Tables. Ekstensi auto refresh-->
 
 
 
@@ -222,4 +222,17 @@ function showCustomer(str) {
   xhttp.open("GET", "includes/carijsscript.php?q="+str, true);
   xhttp.send();
 }
+</script>
+
+
+
+<!-----------------------Auto Refresh Data---------------->
+<script>
+$(document).ready(function())
+(
+    setInterval(function()){
+        $()
+    }
+)
+
 </script>
