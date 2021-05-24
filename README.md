@@ -10,7 +10,7 @@ Features
 - Responsive bootstrap landing page (Done)
 - Multi user login system (Done) 2 May
 - Multi user management system (WIP)
-- Store RFiD data and asset inventory (WIP)
+- Store RFiD data and asset inventory (Done) 24 May
 - Notification system when asset out of range (Comming Soon)
 
 ## Warning ##
