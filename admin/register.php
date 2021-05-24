@@ -193,8 +193,9 @@ include('database/dbconfig.php')
                 <label>Hak Akses</label>
                 <select name="usertype" class="form-control" id="usertype" > 
                   <option value="admin"> Admin </option>
-                  <option value="pengelola"> Pengelola </option>
-                  <option value="pengguna"> Pengguna </option>
+                  <option value="engginer"> Engginer </option>
+                  <option value="operator"> Operator </option>
+                  <option value="manajer-aset"> Operator </option>
                 </select>
              </div>
         </div>

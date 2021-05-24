@@ -80,7 +80,7 @@ include_once('code.php');
 <li class="nav-item">
   <a class="nav-link" href="baca-tag.php">
     <i class="fas fa-fw fa-wrench"></i>
-    <span>Scan Tag RFID</span></a>
+    <span>Pencarian Asset</span></a>
 </li>
 
 <li class="nav-item">

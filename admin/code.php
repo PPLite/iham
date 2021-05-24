@@ -26,25 +26,37 @@ if(isset($_POST['login_btn']))
     }
 
     //jika tipe pengguna pengelola maka masuk ke register_edit.php
-    else if ($usertype ['usertype'] == "pengelola")
+    else if ($usertype ['usertype'] == "engginer")
     {
         $_SESSION['username'] = $username_login;
-        $_SESSION['usertype'] = "pengelola";
+        $_SESSION['usertype'] = "Enggineer";
         header('Location: register_edit.php');
     }
 
     //jika tipe pengguna "pengguna" maka masuk ke register.php
-    else if ($usertype ['usertype'] == "pengguna")
+    else if ($usertype ['usertype'] == "operator")
     {
         $_SESSION['username'] = $username_login;
-        $_SESSION['usertype'] = "Pengguna";
+        $_SESSION['usertype'] = "Operator";
         header('Location: register.php');
     }
+    //jika tipe pengguna "pengguna" maka masuk ke register.php
+    else if ($usertype ['usertype'] == "manajer-aset")
+    {
+        $_SESSION['username'] = $username_login;
+        $_SESSION['usertype'] = "Manajer Asset";
+        header('Location: register.php');
+    }
+
+
+
+
     else
     {
         $_SESSION['status'] = "Email / Password anda Salah";
         header('Location: login.php');
     }
+    
 
 }
 
