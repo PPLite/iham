@@ -67,62 +67,27 @@ include_once('code.php');
     <span>Pengaturan Pengguna</span></a>
 </li>
 
-<!-- Nav Item - Utilities Collapse Menu -->
-<li class="nav-item">
-  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-    <i class="fas fa-fw fa-wrench"></i>
-    <span>Pengaturan RFID</span>
-  </a>
-  <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-    <div class="bg-white py-2 collapse-inner rounded">
-      <h6 class="collapse-header">Pengaturan RFID:</h6>
-      <a class="collapse-item" href="baca-tag.php">Baca RFID TAG</a>
-      <a class="collapse-item" href="status-asset.php">Status Asset</a>
-    </div>
-  </div>
-</li>
 
 <!-- Divider -->
 <hr class="sidebar-divider">
 
 <!-- Heading -->
 <div class="sidebar-heading">
-  Addons
+  Pengaturan Asset RFID
 </div>
 
-<!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
-  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-    <i class="fas fa-fw fa-folder"></i>
-    <span>Pages</span>
-  </a>
-  <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-    <div class="bg-white py-2 collapse-inner rounded">
-      <h6 class="collapse-header">Login Screens:</h6>
-      <a class="collapse-item" href="login.html">Login</a>
-      <a class="collapse-item" href="register.html">Register</a>
-      <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-      <div class="collapse-divider"></div>
-      <h6 class="collapse-header">Other Pages:</h6>
-      <a class="collapse-item" href="404.html">404 Page</a>
-      <a class="collapse-item" href="blank.html">Blank Page</a>
-    </div>
-  </div>
+  <a class="nav-link" href="baca-tag.php">
+    <i class="fas fa-fw fa-wrench"></i>
+    <span>Scan Tag RFID</span></a>
 </li>
 
-<!-- Nav Item - Charts -->
 <li class="nav-item">
-  <a class="nav-link" href="charts.html">
-    <i class="fas fa-fw fa-chart-area"></i>
-    <span>Charts</span></a>
+  <a class="nav-link" href="status-asset.php">
+    <i class="fas fa-fw fa-wrench"></i>
+    <span>Status Asset RFID</span></a>
 </li>
 
-<!-- Nav Item - Tables -->
-<li class="nav-item">
-  <a class="nav-link" href="tables.html">
-    <i class="fas fa-fw fa-table"></i>
-    <span>Tables</span></a>
-</li>
 
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">
@@ -149,7 +114,7 @@ include_once('code.php');
             <i class="fa fa-bars"></i>
           </button>
 
-          <!-- Topbar Search
+          
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
@@ -159,7 +124,7 @@ include_once('code.php');
                 </button>
               </div>
             </div>
-          </form> -->
+          </form>
 
 
           <!-- Topbar Navbar -->

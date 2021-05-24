@@ -4,6 +4,8 @@
 
   <!-- Javascript inti-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="js/sb-admin-2.min.js"></script>
 
   <!-- Javascript untuk semua web-->
   <script src="js/sb-admin-2.min.js"></script>
@@ -50,7 +52,7 @@ $(document).ready(function () {
 <script>
 $(document).ready(function() {
     $('#tabelrfidscan1, #tabelrfidscan3').DataTable( {
-        "order": [[ 6, "desc" ]]
+        "order": [[ 7, "desc" ]]
     } );
 } );
 </script>
@@ -58,7 +60,7 @@ $(document).ready(function() {
 <script>
 $(document).ready(function() {
     $('#tabelrfidscan2, #tabelrfidscan4').DataTable( {
-        "order": [[ 7, "desc" ]]
+        "order": [[ 8, "desc" ]]
     } );
 } );
 </script>

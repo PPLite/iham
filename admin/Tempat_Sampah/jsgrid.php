@@ -6,6 +6,8 @@ include('database/dbconfig.php')
 ?>
 
 
+<!DOCTYPE html>
+<html>
 <head>
   <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
@@ -19,9 +21,14 @@ include('database/dbconfig.php')
   <script type="text/javascript" charset="utf-8">
     // specify the columns
     const columnDefs = [
-      { field: "make" },
-      { field: "model" },
-      { field: "price" }
+      { field: "jumlah" },
+      { field: "rfid_uid" },
+      { field: "nama_alat" },
+      { field: "deskripsi" },
+      { field: "penanggung_jawab" },
+      { field: "status_asset" },
+      { field: "peminjam" },
+      { field: "timestamp" }
     ];
 
     // let the grid know which columns to use
@@ -36,13 +43,14 @@ include('database/dbconfig.php')
   new agGrid.Grid(eGridDiv, gridOptions);
 
   // fetch the row data to use and one ready provide it to the Grid via the Grid API
-  agGrid.simpleHttpRequest({url: 'https://www.ag-grid.com/example-assets/row-data.json'})
+  agGrid.simpleHttpRequest({url: 'rfid_scaner1_aset.json'})
       .then(data => {
           gridOptions.api.setRowData(data);
       });
 
   </script>
 </body>
+</html>
 
 
 
