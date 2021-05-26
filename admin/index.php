@@ -77,7 +77,7 @@ include_once('database/dbconfig.php');
 
     <!-- Kartu 3 -->
     <div class="col-xl-3 col-md-6 mb-4">
-    <a href="pengaturan-aset-ibu.php">
+    <a href="pengaturan-aset-bayi.php">
       <div class="card border-left-info shadow h-100 py-2">
         <div class="card-body">
           <div class="row no-gutters align-items-center">

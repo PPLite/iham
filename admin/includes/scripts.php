@@ -4,7 +4,6 @@
 
   <!-- Javascript inti-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="vendor/jquery/jquery.min.js"></script>
   <script src="js/sb-admin-2.min.js"></script>
 
   <!-- Javascript untuk semua web-->
@@ -206,35 +205,6 @@ $(document).ready(function () {
     });
 });
 </script>
-<!-------------------------------------------------------------------->
-
-<script>
-function showCustomer(str) {
-  var xhttp;    
-  if (str == "") {
-    document.getElementById("txtHint").innerHTML = "";
-    return;
-  }
-  xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("txtHint").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "includes/carijsscript.php?q="+str, true);
-  xhttp.send();
-}
-</script>
 
 
 
-<!-----------------------Auto Refresh Data---------------->
-<script>
-$(document).ready(function())
-(
-    setInterval(function()){
-        $()
-    }
-)
-
-</script>

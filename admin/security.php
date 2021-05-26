@@ -9,10 +9,12 @@ if($dbconfig)
 }
 else
 {
-    header("Location: database/dbconfig.php");
+header("Location: database/dbconfig.php");
 }
 
 if(!$_SESSION['username'])
 {
-    header('Location: login.php');
+header('Location: login.php');
 }
+
+

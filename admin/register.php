@@ -51,9 +51,10 @@ include('database/dbconfig.php')
             <div class="form-group">
                 <label>Hak Akses</label>
                 <select name="usertype" class="form-control" > 
-                  <option value="admin"> Admin </option>
-                  <option value="pengelola"> Pengelola </option>
-                  <option value="pengguna"> Pengguna </option>
+                <option value="admin"> Admin </option>
+                  <option value="engginer"> Engginer </option>
+                  <option value="operator"> Operator </option>
+                  <option value="manajer-aset"> Manajer Asset </option>
                 </select>
              </div>
         </div>
@@ -88,6 +89,7 @@ include('database/dbconfig.php')
   ?>
 
 
+<div class="container-fluid">
 <div class="card-body">
 <div class="table-responsive">
 
@@ -195,7 +197,7 @@ include('database/dbconfig.php')
                   <option value="admin"> Admin </option>
                   <option value="engginer"> Engginer </option>
                   <option value="operator"> Operator </option>
-                  <option value="manajer-aset"> Operator </option>
+                  <option value="manajer-aset"> Manajer Asset </option>
                 </select>
              </div>
         </div>

@@ -257,12 +257,12 @@ if(isset($_POST['daftarasetanak_btn']))
         if($query_run)
         {
         $_SESSION['success'] = "Aset berhasil ditambahkan";
-        header('location: pengaturan-aset-ibu.php');
+        header('location: pengaturan-aset-bayi.php');
         }
         else
         {
         $_SESSION['status'] = "Aset gagal ditambahkan";
-        header('location: pengaturan-aset-ibu.php');
+        header('location: pengaturan-aset-bayi.php');
         }
     }
 }
@@ -291,12 +291,12 @@ if(isset($_GET['ambildata_btn']))
         if($query_run)
         {
         $_SESSION['success'] = "Aset berhasil ditambahkan";
-        header('location: pengaturan-aset-ibu.php');
+        header('location: pengaturan-aset-bayi.php');
         }
         else
         {
         $_SESSION['status'] = "Aset gagal ditambahkan";
-        header('location: pengaturan-aset-ibu.php');
+        header('location: pengaturan-aset-bayi.php');
         }
     }
 }
@@ -334,12 +334,12 @@ if(isset($_POST['updatebtnassetbayi']))
     if($query_run)
     {
         $_SESSION['success'] = "Data Berhasil diperbarui";
-        header('location: pengaturan-aset-ibu.php');
+        header('location: pengaturan-aset-bayi.php');
     }
     else
     {
         $_SESSION['status'] = "Data Gagal diperbarui";
-        header('location: pengaturan-aset-ibu.php');
+        header('location: pengaturan-aset-bayi.php');
     }
 }
 
@@ -355,12 +355,12 @@ if(isset($_POST['deleteassetbayi']))
     if ($query_run)
     {
         $_SESSION['success'] = "Data berhasil dihapus";
-        header('location: pengaturan-aset-ibu.php');
+        header('location: pengaturan-aset-bayi.php');
     }
     else
     {
         $_SESSION['status'] = "Data gagal dihapus";
-        header('location: pengaturan-aset-ibu.php');
+        header('location: pengaturan-aset-bayi.php');
     }
 }
 

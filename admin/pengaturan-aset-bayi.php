@@ -2,7 +2,8 @@
 include('security.php'); 
 include('includes/header.php'); 
 include('includes/navbar.php');
-include('database/dbconfig.php')
+include('database/dbconfig.php');
+if ($_SESSION['username']=="admin") { 
 ?>
 
 <!----Mulai Modal buat tambah aset baru. kotak yang ngawang ditengah-->
@@ -201,7 +202,7 @@ include('database/dbconfig.php')
 
                 <div class="form-group">
                 <label>Kode UID</label>
-                <input type="text" name="rfid_uid" id="rfid_uid" class="form-control" placeholder="Masukkan kode UID" disabled required>
+                <input type="text" name="rfid_uid" id="rfid_uid" class="form-control" placeholder="Masukkan kode UID" required>
                 </div>
 
             <div class="form-group">
@@ -290,9 +291,20 @@ include('database/dbconfig.php')
 
 
 <div class="container-fluid">
-<!------------------------------------------------------------------------------------------------------------------>
+
 
 <?php
+}
+else
+{
+  ?>
+<script type="text/javascript">
+window.location.href = 'error.php';
+</script>
+<?php
+}
+
+
 include('includes/scripts.php');
 include('includes/footer.php');
 ?>
