@@ -205,6 +205,11 @@ $(document).ready(function () {
     });
 });
 </script>
-
-
+<!---------------BUAT BACKGROUND MONITORING------------------->
+<style>
+.responsive {
+    width: 100%;
+  height: 100%;
+}
+</style>
 

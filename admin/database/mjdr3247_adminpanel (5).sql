@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2021 at 02:52 PM
+-- Generation Time: May 26, 2021 at 03:23 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.5
 
@@ -40,26 +40,14 @@ CREATE TABLE `register` (
 --
 
 INSERT INTO `register` (`id`, `username`, `email`, `password`, `usertype`) VALUES
-(25, 'ajinomolto2', 'mj@gg.com', 'admin', 'pengguna'),
+(25, 'ajinomolto2', 'mj@gg.com', 'admin', 'admin'),
 (26, 'admin', 'admin@gg.com', 'admin', 'admin'),
-(28, 'admin2', 'admin@gg.wp', 'admin', 'admin'),
+(28, 'admin2', 'admin@gg.wp', 'admin', 'engginer'),
 (29, 'PPlite', 'mj@gg.com', 'admin', 'admin'),
-(31, 'Miku', 'Mikudayo@gmail.com', 'admin', 'pengguna'),
-(32, 'Hatsune Miku', 'mj@mj.com', '12345678', 'admin');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_aset_peringatan`
---
-
-CREATE TABLE `tb_aset_peringatan` (
-  `id` int(3) NOT NULL,
-  `rfid_uid` varchar(50) NOT NULL,
-  `nama_aset` varchar(50) NOT NULL,
-  `penanggung_jawab` varchar(50) NOT NULL,
-  `status` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+(31, 'Miku', 'Mikudayo@gmail.com', 'admin', 'operator'),
+(32, 'Hatsune Miku', 'mj@mj.com', '12345678', 'manajer-aset'),
+(34, 'mojo3', 'mojo22@gg.com', '123', 'manajer-aset'),
+(35, 'guruh', 'mj@gg.com', '1111', 'operator');
 
 -- --------------------------------------------------------
 
@@ -537,13 +525,7 @@ CREATE TABLE `tb_rfid` (
 --
 
 INSERT INTO `tb_rfid` (`id`, `rfid_uid`, `nama_alat`, `deskripsi`, `tanggal`, `penanggung_jawab`, `status_asset`, `peminjam`) VALUES
-(38, 'e20000202716016304408d11', 'Converter', 'Converter', '2021-05-18 08:41:26.041705', 'Rahma', 'Tersedia', '-'),
-(39, 'e20000202716016404408c22', 'Stick Xbox 360', 'Joystick', '2021-05-18 08:42:25.682117', 'Guruh', 'Dipinjam', 'Aini'),
-(40, 'e20000202716015704408452', 'Dokter', 'Dr. Boyiki Suprasti. M.Pd', '2021-05-18 08:43:40.235010', ' ', 'Tersedia', ''),
-(41, 'e2000020271601980440aeaf', 'Suster', 'Suster Gracia', '2021-05-18 08:45:31.441092', 'Suami', 'Tersedia', ' '),
-(42, 'e2000020271601880440a63a', 'Chassis Mobil', 'Mobil RC Acrylic', '2021-05-18 08:48:06.705491', 'Guruh', 'Peringatan', 'Mojo'),
-(43, 'e200002027160174044094e3', 'LCD Karakter', 'Dengan i2C', '2021-05-18 08:51:07.940230', 'Rahma', 'Dipinjam', 'Mojo'),
-(44, 'e20000202716015804408363', 'LCD Karakter', 'Tanpa i2c', '2021-05-18 08:53:02.864549', 'Suherman', 'Habis', 'Mojo');
+(46, 'Asset Dummy', 'Asset Dummy', 'Asset Dummy', '2021-05-25 17:11:12.015968', 'Asset Dummy', 'Tersedia', 'Asset Dummy');
 
 -- --------------------------------------------------------
 
@@ -634,11 +616,16 @@ CREATE TABLE `tb_stat_anak` (
 --
 
 INSERT INTO `tb_stat_anak` (`id`, `rfid_uid`, `id_pengenal`, `nama_anak`, `nama_ibu`, `penanggung_jawab_bayi`, `waktu_masuk`, `alamat`, `status`) VALUES
-(18, 'e200002027160173044095de', '172893982173312', 'Solipah Bin Sukijah', 'Sulijah', 'Rahma', '2021-05-19 06:29:14.103364', 'Sukolilo', 'peringatan'),
+(18, 'e2000020271601980440aeaf', '172893982173312', 'Solipah Bin Sukijah', 'Sulijah', 'Rahma', '2021-05-25 15:00:35.851389', 'Sukolilo', 'peringatan'),
 (19, 'e20000202716018204409d9f', '72894378923', 'Maria', 'Marpuah', 'Guruh', '2021-05-18 08:38:48.711067', 'Medaeng', 'checkout'),
 (20, 'e20000202716013204406922', '23498023', 'Sonia', 'Sukijah', 'Mojo', '2021-05-18 08:39:40.472276', 'Benjeng', 'masuk'),
-(22, 'e20000202716018204409xxx', 'Sukijan', 'Pablo Rodiguez Saloso Santoso', 'Sugihara Kayano', 'Mojo', '2021-05-20 20:55:07.841222', 'Sleman', 'checkout'),
-(23, 'e20000202716018204409d9f', '217938321978', 'suyatno', 'mariyam', 'jennifer', '2021-05-22 03:08:37.794178', 'bantul, jogjakarta', 'perawatan');
+(23, 'e20000202716018204409d9f', '217938321978', 'suyatno', 'mariyam', 'jennifer', '2021-05-22 03:08:37.794178', 'bantul, jogjakarta', 'perawatan'),
+(24, 'e20000202716016304408d11', 'aaaaaaaaaaaaa', 'Pablo Rodiguez Saloso Santoso', 'Suminten', 'Mojo', '2021-05-25 08:21:40.098921', 'Bratang', 'masuk'),
+(25, 'e200002027160174044094e3', 'bbbbbbbbbbbbbbbbb', 'Muhammad Al Roberto ', 'Mukiyem', 'Mojo', '2021-05-25 08:22:40.564314', 'Sukolilo', 'masuk'),
+(26, 'e20000202716016404408c22', '2178391213', 'Shouko Katsuragi', 'Sayaka Katsuragi', 'Mojo', '2021-05-25 08:27:28.258653', 'Tambaksari', 'masuk'),
+(27, 'e20000202716015704408452', '2178391213', 'Kana Ichinose', 'Hisako', 'Mojo', '2021-05-25 14:58:04.155400', 'Ngagel', 'perawatan'),
+(29, 'e2000020271601880440a63a', '437298392874', 'Shinobu Chiyoko', 'Emi Saori', 'Mojo', '2021-05-25 15:02:41.254926', 'Buduran', 'masuk'),
+(30, 'e20000202716015804408363', '123123213234234', 'Miku Sayuri', 'Tomoko Yuki', 'Mojo', '2021-05-25 15:04:59.909910', 'Rungkut Industri', 'masuk');
 
 -- --------------------------------------------------------
 
@@ -687,12 +674,6 @@ ALTER TABLE `register`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_aset_peringatan`
---
-ALTER TABLE `tb_aset_peringatan`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `tb_reader_scan`
 --
 ALTER TABLE `tb_reader_scan`
@@ -728,7 +709,7 @@ ALTER TABLE `tb_stat_anak`
 -- AUTO_INCREMENT for table `register`
 --
 ALTER TABLE `register`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `tb_reader_scan`
@@ -746,13 +727,13 @@ ALTER TABLE `tb_reader_scan2`
 -- AUTO_INCREMENT for table `tb_rfid`
 --
 ALTER TABLE `tb_rfid`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `tb_stat_anak`
 --
 ALTER TABLE `tb_stat_anak`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
