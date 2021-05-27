@@ -2,7 +2,8 @@
 include('security.php'); 
 include('includes/header.php'); 
 include('includes/navbar.php');
-include('database/dbconfig.php')
+include('database/dbconfig.php');
+if ($_SESSION['username']=="admin") {
 ?>
 
 <div class="container">
@@ -132,6 +133,16 @@ include('database/dbconfig.php')
 
 
 <?php
+}
+else
+{
+  ?>
+<script type="text/javascript">
+window.location.href = 'error.php';
+</script>
+<?php
+}
+
 include('includes/scripts.php');
 include('includes/footer.php');
 ?>

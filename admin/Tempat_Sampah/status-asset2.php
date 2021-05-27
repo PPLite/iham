@@ -1,6 +1,11 @@
 <?php
+header("Refresh: 3");
+include('security.php'); 
+include('includes/header.php'); 
+include('includes/navbar.php');
 include('database/dbconfig.php');
 ?>
+<!------------------Javascript Refresh ---------------------->
 
 
 
@@ -17,14 +22,14 @@ include('database/dbconfig.php');
 							<?php 
 								try
 								{
-								$bdd = new PDO('mysql:host=localhost;dbname=mjdr3247_adminpanel', 'mjdr3247_admin', 'semogacepatlulus2021');
+								$bdd = new PDO('mysql:host=localhost;dbname=exposants', 'root', '');
 								}
 								catch (Exception $e)
 								{
 								die('Error : ' . $e->getMessage());
 								}
-								$reponse1 = $bdd->query('SELECT * FROM tb_peta');
-								$tb_peta = $reponse1->fetchAll();
+								$reponse1 = $bdd->query('SELECT * FROM exposants');
+								$exposants = $reponse1->fetchAll();
 								$reponse1->closeCursor();
 							?>
 					</head>
@@ -32,7 +37,7 @@ include('database/dbconfig.php');
 					<div class="stand">
 						<?php
 							$kotak = 10;
-							foreach ($tb_peta as $i) {
+							foreach ($exposants as $i) {
 							echo '<div id="s'.$i[0].'
 							"style="width:'.$kotak*$i[2].'px;height:'.$kotak*$i[3].'px;top:'.$kotak*$i[5].'px;left:'.$kotak*$i[4].'px;">'."\n";
 							echo $i[1]."\n".$i[6];
@@ -71,7 +76,7 @@ include('database/dbconfig.php');
     $query_run = mysqli_query($connection, $query);
     ?>
 
-      <table class="table table-bordered" id="" width="100%" cellspacing="0">
+      <table class="table table-bordered" id="tabelrfidscan1" width="100%" cellspacing="0">
         <thead>
           <tr>
             <th>Timestamp</th>
@@ -144,7 +149,7 @@ include('database/dbconfig.php');
     $query_run = mysqli_query($connection, $query);
     ?>
 
-      <table class="table table-bordered" id="" width="100%" cellspacing="0">
+      <table class="table table-bordered" id="tabelrfidscan2" width="100%" cellspacing="0">
         <thead>
           <tr>
             <th>Timestamp</th>
@@ -218,7 +223,7 @@ include('database/dbconfig.php');
     $query_run = mysqli_query($connection, $query);
     ?>
 
-      <table class="table table-bordered" id="" width="100%" cellspacing="0">
+      <table class="table table-bordered" id="tabelrfidscan3" width="100%" cellspacing="0">
         <thead>
           <tr>
             <th>Timestamp</th>
@@ -293,7 +298,7 @@ include('database/dbconfig.php');
     $query_run = mysqli_query($connection, $query);
     ?>
 
-      <table class="table table-bordered" id="" width="100%" cellspacing="0">
+      <table class="table table-bordered" id="tabelrfidscan4" width="100%" cellspacing="0">
         <thead>
           <tr>
             <th>Timestamp</th>
@@ -344,10 +349,7 @@ include('database/dbconfig.php');
 </div>
 
 
-
-
-
-
 <?php
 include('includes/scripts.php');
+include('includes/footer.php');
 ?>
