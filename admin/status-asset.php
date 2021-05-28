@@ -3,7 +3,6 @@ include('security.php');
 include('includes/header.php'); 
 include('includes/navbar.php');
 ?>
-
 <head>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script>

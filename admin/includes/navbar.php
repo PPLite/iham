@@ -2,6 +2,34 @@
 include_once('code.php');
 ?>
 
+
+<script src="js/sweetalert2.all.min.js"></script>
+<script>
+Swal.fire({
+  title: "Terdapat Aset Tidak Terdeteksi",
+  text: "Harap Segera Cek Pada Status Asset, atau Hubungi Admin",
+  showDenyButton: true,
+  confirmButtonText: `Cek Sekarang`,
+  denyButtonText: `Tutup`,
+}).then((result) => {
+  /* Read more about isConfirmed, isDenied below */
+  if (result.isConfirmed) {
+    window.location = "status-asset.php";
+  } else if (result.isDenied) {
+    Swal.fire('Harap Segera cek Asset di sekitar', '', 'info')
+  }
+})
+</script>
+
+
+
+
+
+
+
+
+
+
    <!-- Sidebar -->
    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
