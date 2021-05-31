@@ -1,272 +1,32 @@
-SELECT 
-tb_reader_scan.rfid_uid,
-
-tb_rfid.nama_alat,
-tb_rfid.deskripsi,
-tb_rfid.penanggung_jawab,
-tb_rfid.peminjam,
-tb_rfid.status_asset,
-tb_rfid.tanggal,
-
-tb_stat_anak.id_pengenal,
-tb_stat_anak.nama_anak,
-tb_stat_anak.nama_ibu,
-tb_stat_anak.penanggung_jawab,
-tb_stat_anak.alamat,
-tb_stat_anak.status,
-tb_stat_anak.waktu_masuk
-
-FROM tb_reader_scan 
-LEFT JOIN tb_rfid ON tb_reader_scan.rfid_uid = tb_rfid.rfid_uid 
-LEFT JOIN tb_stat_anak ON tb_reader_scan.rfid_uid = tb_stat_anak.rfid_uid 
-ORDER BY tb_reader_scan.rfid_uid
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container-fluid">
-
-<div class="card shadow mb-4">
-  <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary"> Hasil Scanning RFID Reader 1
-    </h6>
-  </div>
-
-<div class="card-body">
-
-    <div class="table-responsive">
-
-<!---Buat ngambil data--->
-    <?php
-    //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
-    $query = "SELECT * FROM tb_reader_scan"; 
-    $query_run = mysqli_query($connection, $query);
-    ?>
-
-      <table class="table table-bordered" id="tabelrfidscan1" width="100%" cellspacing="0">
-        <thead>
-          <tr>
-          <th>ID </th>
-            <th>RFID UID</th>
-            <th>Reader ID</th>
-            <th>Time Stamp</th>
-          </tr>
-        </thead>
-        <tbody>
-        <?php
-        //mengambil data dari database
-        //tipe kolom yang nantinya akan diambil
-        if(mysqli_num_rows($query_run) > 0 )
-        {
-          while($row = mysqli_fetch_assoc($query_run))
-          {
-            ?>
-          <tr>
-          <!---Mengambil data dari database kemudian menampilkan ke tabel, serta menentukan kolom mana saja yang akan diambil datanya-->
-          <td><?php echo $row['id']; ?></td> 
-            <td><?php echo $row['rfid_uid']; ?></td>
-            <td><?php echo $row['reader_id']; ?></td>
-            <td><?php echo $row['timestamp']; ?></td>
-          <?php
-          }
-        }
-        //Jika gagal ngambil data akan mengeluarkan peringatan
-        else {
-          echo "Data tidak ditemukan";   
-        }
-        ?>        
-        </tbody>
-      </table>
-
-    </div>
-  </div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container-fluid">
-
-<div class="card shadow mb-4">
-  <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary"> Scanning RFID Reader 1
-    </h6>
-  </div>
-
-<div class="card-body">
-
-    <div class="table-responsive">
-
-<!---Buat ngambil data--->
-    <?php
-    //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
-    $query = "SELECT * FROM tb_reader_scan"; 
-    $query_run = mysqli_query($connection, $query);
-    ?>
-
-      <table class="table table-bordered" id="tabelrfidscan1" width="100%" cellspacing="0">
-        <thead>
-          <tr>
-          <th>ID </th>
-            <th>RFID UID</th>
-            <th>Reader ID</th>
-            <th>Time Stamp</th>
-          </tr>
-        </thead>
-        <tbody>
-        <?php
-        //mengambil data dari database
-        //tipe kolom yang nantinya akan diambil
-        if(mysqli_num_rows($query_run) > 0 )
-        {
-          while($row = mysqli_fetch_assoc($query_run))
-          {
-            ?>
-          <tr>
-          <!---Mengambil data dari database kemudian menampilkan ke tabel, serta menentukan kolom mana saja yang akan diambil datanya-->
-          <td><?php echo $row['id']; ?></td> 
-            <td><?php echo $row['rfid_uid']; ?></td>
-            <td><?php echo $row['reader_id']; ?></td>
-            <td><?php echo $row['timestamp']; ?></td>
-          <?php
-          }
-        }
-        //Jika gagal ngambil data akan mengeluarkan peringatan
-        else {
-          echo "Data tidak ditemukan";   
-        }
-        ?>        
-        </tbody>
-      </table>
-
-    </div>
-  </div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-<div class="container-fluid">
-
-<div class="card shadow mb-4">
-  <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary"> Scanning RFID Reader 2
-    </h6>
-  </div>
-
-<div class="card-body">
-
-    <div class="table-responsive">
-
-<!---Buat ngambil data--->
-    <?php
-    //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
-    $query = "SELECT * FROM tb_reader_scan2"; 
-    $query_run = mysqli_query($connection, $query);
-    ?>
-
-      <table class="table table-bordered" id="tabelrfidscan2" width="100%" cellspacing="0">
-        <thead>
-          <tr>
-          <th>ID </th>
-            <th>RFID UID</th>
-            <th>Reader ID</th>
-            <th>Time Stamp</th>
-          </tr>
-        </thead>
-        <tbody>
-        <?php
-        //mengambil data dari database
-        //tipe kolom yang nantinya akan diambil
-        if(mysqli_num_rows($query_run) > 0 )
-        {
-          while($row = mysqli_fetch_assoc($query_run))
-          {
-            ?>
-          <tr>
-          <!---Mengambil data dari database kemudian menampilkan ke tabel, serta menentukan kolom mana saja yang akan diambil datanya-->
-          <td><?php echo $row['id']; ?></td> 
-            <td><?php echo $row['rfid_uid']; ?></td>
-            <td><?php echo $row['reader_id']; ?></td>
-            <td><?php echo $row['timestamp']; ?></td>
-          <?php
-          }
-        }
-        //Jika gagal ngambil data akan mengeluarkan peringatan
-        else {
-          echo "Data tidak ditemukan";   
-        }
-        ?>        
-        </tbody>
-      </table>
-
-    </div>
-  </div>
-</div>
-</div>
-
-<?php
-include('includes/scripts.php');
-include('includes/footer.php');
-?>
+Kalau bikin view (gabungan tabel)
+CREATE VIEW view_name AS
+
+SELECT nama_alat,
+MAX(timestamp) as timestamp,
+rfid_uid,
+nama_alat,
+deskripsi,
+penanggung_jawab,
+status_asset,
+peminjam,
+COUNT(*) jumlah
+FROM tb_scanner1_assetbarang 
+GROUP BY nama_alat  
+ORDER BY `timestamp` DESC
+
+
+
+CREATE VIEW view_name AS
+
+SELECT nama_anak,
+rfid_uid,
+id_pengenal,
+nama_ibu,
+penanggung_jawab_bayi,
+alamat,
+status,
+MAX(timestamp) as timestamp,
+COUNT(*) jumlah
+FROM tb_scanner1_assetbayi 
+GROUP BY nama_anak 
+ORDER BY timestamp DESC

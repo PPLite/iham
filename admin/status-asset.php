@@ -12,7 +12,6 @@ include('includes/navbar.php');
             $("#div_refresh").load("mapping.php");
         }, 1000);
     });
- 
 </script>
 </head>
 <body>

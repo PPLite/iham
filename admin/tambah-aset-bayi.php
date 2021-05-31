@@ -112,12 +112,10 @@ if ($_SESSION['username']=="admin") {
     <div class="form-group">
         <label>Status</label>
         <select name="status" class="form-control" >
-          <option value="masuk"> Masuk </option>   
-          <option value="checkin"> Check In </option>
-          <option value="perawatan"> Perawatan </option>
-          <option value="checkout"> Check Out </option>
+          <option value="masuk"> Dipindahkan </option>   
+          <option value="checkin"> Perawatan </option>
           <option value="peringatan"> Peringatan </option>
-          <option value="validasi"> Validasi </option>
+          <option value="checkout"> Check Out </option>
         </select>
      </div>
 

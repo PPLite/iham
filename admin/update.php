@@ -29,12 +29,11 @@ function get_data()
 $file_name = 'rfid_scaner1_aset.json';
 if(file_put_contents($file_name, get_data()))
 {
-    echo $file_name . 'File Telah Dibuat';
+    echo' ';
 }
 else
 {
     echo 'Error?';
 }
-
 
 ?>

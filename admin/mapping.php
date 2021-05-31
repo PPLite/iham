@@ -3,8 +3,27 @@ include('database/dbconfig.php');
 ?>
 
 
+<!---Buat ngambil data--->
+<?php
+    //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
+    $query = "SELECT rfid_uid,timestamp
+              FROM tb_scanner1_assetbayi
+              ORDER BY `timestamp` DESC LIMIT 1
+    "; 
+    $query_run = mysqli_query($connection, $query);
+	$row = mysqli_fetch_assoc($query_run)
 
-
+    ?>
+	<?php
+    //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
+       $query_2= "SELECT rfid_uid,timestamp
+              FROM tb_scanner2_assetbayi
+              ORDER BY `timestamp` DESC LIMIT 1
+    "; 
+    $query_run2 = mysqli_query($connection, $query_2);
+	$row_2= mysqli_fetch_assoc($query_run2)
+    ?>
+	
 <div class="container-fluid">
 	<div class="card shadow mb-4">
   		<div class="card-header py-3">
@@ -13,31 +32,50 @@ include('database/dbconfig.php');
 			<div class="card-body">
 				<head>
 					<link rel="stylesheet/less" type="text/css" href="styles/plan.less">
-						<img src="vendors/bg.png" alt="backgroud" class="responsive">
+						<img src="vendors/bg.png" alt="Nature" class="responsive">
 							<?php 
 								try
 								{
-								$bdd = new PDO('mysql:host=localhost;dbname=mjdr3247_adminpanel', 'mjdr3247_admin', 'semogacepatlulus2021');
+								$bdd = new PDO('mysql:host=localhost;dbname=exposants', 'root', '');
 								}
 								catch (Exception $e)
 								{
 								die('Error : ' . $e->getMessage());
 								}
-								$reponse1 = $bdd->query('SELECT * FROM tb_peta');
-								$tb_peta = $reponse1->fetchAll();
+								$reponse1 = $bdd->query('SELECT * FROM exposants');
+								$exposants = $reponse1->fetchAll();
 								$reponse1->closeCursor();
 							?>
-					</head>
+				</head>
 				<body oncontextmenu="return false;">
 					<div class="stand">
 						<?php
 							$kotak = 10;
-							foreach ($tb_peta as $i) {
-							echo '<div id="s'.$i[0].'
-							"style="width:'.$kotak*$i[2].'px;height:'.$kotak*$i[3].'px;top:'.$kotak*$i[5].'px;left:'.$kotak*$i[4].'px;">'."\n";
-							echo $i[1]."\n".$i[6];
-							echo '</div>'."\n";
+							if($row['rfid_uid'] == $row_2['rfid_uid'] && $row['timestamp'] == $row_2['timestamp']){
+								echo '<div id="s'.$exposants[0][0].'
+								"style="width:'.$kotak*$exposants[2][2].'px;height:'.$kotak*$exposants[2][3].'px;top:'.$kotak*$exposants[2][5].'px;left:'.$kotak*$exposants[2][4].'px;">'."\n";
+                
+              }
+              
+							if ($row['rfid_uid'] !== $row_2['rfid_uid'] && $row['timestamp'] == $row_2['timestamp']){
+               // echo '<div id="s'.$exposants[2][0].'
+								//"style="width:'.$kotak*$exposants[2][2].'px;height:'.$kotak*$exposants[2][3].'px;top:'.$kotak*$exposants[2][5].'px;left:'.$kotak*$exposants[2][4].'px;">'."\n";
+								echo '<div id="s'.$exposants [0][0].'
+								"style="width:'.$kotak*$exposants[0][2].'px;height:'.$kotak*$exposants[0][3].'px;top:'.$kotak*$exposants[0][5].'px;left:'.$kotak*$exposants[0][4].'px;">'."\n";
+								echo '<div id="s'.$exposants [1][0].'
+								"style="width:'.$kotak*$exposants[1][2].'px;height:'.$kotak*$exposants[1][3].'px;top:'.$kotak*$exposants[1][5].'px;left:'.$kotak*$exposants[1][4].'px;">'."\n";
 							}
+							else{
+								if( $row['timestamp'] > $row_2['timestamp']){
+								echo '<div id="s'.$exposants[1][0].'
+								"style="width:'.$kotak*$exposants[1][2].'px;height:'.$kotak*$exposants[1][3].'px;top:'.$kotak*$exposants[1][5].'px;left:'.$kotak*$exposants[1][4].'px;">'."\n";
+								}
+								else{
+								echo '<div id="s'.$exposants[0][0].'
+								"style="width:'.$kotak*$exposants[0][2].'px;height:'.$kotak*$exposants[0][3].'px;top:'.$kotak*$exposants[0][5].'px;left:'.$kotak*$exposants[0][4].'px;">'."\n";									
+								}								
+							}
+
 						?>
 					</div>
 					<script type="text/javascript" src="vendors/less-1.5.0.min.js"></script>
@@ -45,8 +83,6 @@ include('database/dbconfig.php');
     		</div>
 	</div>
 </div>
-</div>
-
 
 
   <div class="container-fluid">
@@ -64,10 +100,7 @@ include('database/dbconfig.php');
 <!---Buat ngambil data--->
     <?php
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"    
-    $query = "SELECT COUNT(rfid_uid) AS jumlah, rfid_uid, nama_alat, deskripsi, penanggung_jawab, status_asset, peminjam, timestamp
-              FROM tb_scanner1_assetbarang
-              GROUP BY nama_alat
-              ORDER BY `timestamp` DESC";
+    $query = "SELECT * FROM tb_hasilscan1_asetbarang";
     $query_run = mysqli_query($connection, $query);
     ?>
 
@@ -102,7 +135,7 @@ include('database/dbconfig.php');
             <td><?php echo $row['penanggung_jawab']; ?></td>
             <td><?php echo $row['status_asset']; ?></td>
             <td><?php echo $row['peminjam']; ?></td>
-            <td><?php echo $row['jumlah']; ?>x</td>  
+            <td><?php echo $row['jumlah']; ?></td>  
           <?php
           }
         }
@@ -211,10 +244,7 @@ include('database/dbconfig.php');
 <!---Buat ngambil data--->
 <?php
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"    
-    $query = "SELECT COUNT(rfid_uid) AS jumlah, rfid_uid, nama_alat, deskripsi, penanggung_jawab, status_asset, peminjam, timestamp
-              FROM tb_scanner2_assetbarang
-              GROUP BY nama_alat
-              ORDER BY `timestamp` DESC";
+    $query = "SELECT * FROM tb_hasilscan2_asetbarang";
     $query_run = mysqli_query($connection, $query);
     ?>
 
@@ -343,9 +373,47 @@ include('database/dbconfig.php');
 </div>
 </div>
 
+<!------BIKIN JSON OTOMATIS------>
 
+<?php
+function get_data()
+{
+    $connect = mysqli_connect("localhost", "mjdr3247_admin","semogacepatlulus2021","mjdr3247_adminpanel");
+    $query = "SELECT COUNT(rfid_uid) AS jumlah, rfid_uid, nama_alat, deskripsi, penanggung_jawab, status_asset, peminjam, timestamp
+              FROM tb_scanner1_assetbarang
+              GROUP BY nama_alat
+              ORDER BY `timestamp` DESC";
+    $results = mysqli_query($connect, $query);
+    
 
+    $rfid_scanner1_aset = array();
+    while($row = mysqli_fetch_array($results))
+    {
+        $rfid_scanner1_aset[] = array(
+            'jumlah' => $row["jumlah"],
+            'rfid_uid' => $row["rfid_uid"],
+            'nama_alat' => $row["nama_alat"],
+            'deskripsi' => $row["deskripsi"],
+            'penanggung_jawab' => $row["penanggung_jawab"],
+            'status_asset' => $row["status_asset"],
+            'peminjam' => $row["peminjam"],
+            'timestamp' => $row["timestamp"]
+        );
+    }
+    return json_encode($rfid_scanner1_aset);
+}
 
+$file_name = 'rfid_scaner1_aset.json';
+if(file_put_contents($file_name, get_data()))
+{
+    echo' ';
+}
+else
+{
+    echo 'Error?';
+}
+
+?>
 
 
 <?php
