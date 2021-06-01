@@ -172,12 +172,12 @@ if(isset($_POST['daftaraset_btn']))
         if($query_run)
         {
         $_SESSION['success'] = "Aset berhasil ditambahkan";
-        header('location: pengaturan-aset.php');
+        header('location: pengaturan-aset-barang.php');
         }
         else
         {
         $_SESSION['status'] = "Aset gagal ditambahkan";
-        header('location: pengaturan-aset.php');
+        header('location: pengaturan-aset-barang.php');
         }
     }
 }
@@ -205,12 +205,12 @@ if(isset($_POST['updateasset']))
         if($query_run)
         {
         $_SESSION['success'] = "Aset berhasil Diperbarui";
-        header('location: pengaturan-aset.php');
+        header('location: pengaturan-aset-barang.php');
         }
         else
         {
         $_SESSION['status'] = "Aset gagal Diperbarui";
-        header('location: pengaturan-aset.php');
+        header('location: pengaturan-aset-barang.php');
         }
     }
 }
@@ -227,12 +227,12 @@ if(isset($_POST['deleteasset']))
     if ($query_run)
     {
         $_SESSION['success'] = "Data berhasil dihapus";
-        header('location: pengaturan-aset.php');
+        header('location: pengaturan-aset-barang.php');
     }
     else
     {
         $_SESSION['status'] = "Data gagal dihapus";
-        header('location: pengaturan-aset.php');
+        header('location: pengaturan-aset-barang.php');
     }
 }
 

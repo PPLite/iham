@@ -58,7 +58,7 @@ include_once('code.php');
   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Fitur Aset:</h6>
-      <a class="collapse-item" href="pengaturan-aset.php">Pengaturan Aset Barang</a>
+      <a class="collapse-item" href="pengaturan-aset-barang.php">Pengaturan Aset Barang</a>
       <a class="collapse-item" href="pengaturan-aset-keterangan.php">Keterangan Aset Barang</a>
       <a class="collapse-item" href="pengaturan-aset-monitoring.php">Log Data Aset Barang</a>
     </div>
