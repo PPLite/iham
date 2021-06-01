@@ -3,7 +3,10 @@ include('security.php');
 include('includes/header.php'); 
 include('includes/navbar.php');
 include('database/dbconfig.php');
-if ($_SESSION['username']=="admin") { 
+if ($_SESSION['username']=="admin");
+else if ($_SESSION['username']=="engginer")
+{
+  { 
 ?>
 
 <!----Mulai Modal buat tambah aset baru. kotak yang ngawang ditengah-->
@@ -294,6 +297,7 @@ if ($_SESSION['username']=="admin") {
 
 
 <?php
+}
 }
 else
 {

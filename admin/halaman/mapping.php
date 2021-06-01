@@ -1,5 +1,5 @@
 <?php
-include('database/dbconfig.php');
+include('../database/dbconfig.php');
 ?>
 
 
@@ -18,7 +18,7 @@ include('database/dbconfig.php');
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
        $query_2= "SELECT rfid_uid,timestamp
               FROM tb_scanner2_assetbayi
-              ORDER BY `timestamp` DESC LIMIT 1
+              ORDER BY `timestamp` DESC LIMIT 1 
     "; 
     $query_run2 = mysqli_query($connection, $query_2);
 	$row_2= mysqli_fetch_assoc($query_run2)
@@ -112,7 +112,7 @@ include('database/dbconfig.php');
             <th>Nama Alat</th>
             <th>Deskripsi</th>
             <th>Penanggung Jawab</th>
-            <th>Status Asset</th>
+            <th>Status Aset</th>
             <th>Peminjam</th>
             <th>Jumlah Terbaca</th>
           </tr>
@@ -256,7 +256,7 @@ include('database/dbconfig.php');
             <th>Nama Alat</th>
             <th>Deskripsi</th>
             <th>Penanggung Jawab</th>
-            <th>Status Asset</th>
+            <th>Status Aset</th>
             <th>Peminjam</th>
             <th>Jumlah Terbaca</th>
           </tr>
@@ -373,49 +373,6 @@ include('database/dbconfig.php');
 </div>
 </div>
 
-<!------BIKIN JSON OTOMATIS------>
-
 <?php
-function get_data()
-{
-    $connect = mysqli_connect("localhost", "mjdr3247_admin","semogacepatlulus2021","mjdr3247_adminpanel");
-    $query = "SELECT COUNT(rfid_uid) AS jumlah, rfid_uid, nama_alat, deskripsi, penanggung_jawab, status_asset, peminjam, timestamp
-              FROM tb_scanner1_assetbarang
-              GROUP BY nama_alat
-              ORDER BY `timestamp` DESC";
-    $results = mysqli_query($connect, $query);
-    
-
-    $rfid_scanner1_aset = array();
-    while($row = mysqli_fetch_array($results))
-    {
-        $rfid_scanner1_aset[] = array(
-            'jumlah' => $row["jumlah"],
-            'rfid_uid' => $row["rfid_uid"],
-            'nama_alat' => $row["nama_alat"],
-            'deskripsi' => $row["deskripsi"],
-            'penanggung_jawab' => $row["penanggung_jawab"],
-            'status_asset' => $row["status_asset"],
-            'peminjam' => $row["peminjam"],
-            'timestamp' => $row["timestamp"]
-        );
-    }
-    return json_encode($rfid_scanner1_aset);
-}
-
-$file_name = 'rfid_scaner1_aset.json';
-if(file_put_contents($file_name, get_data()))
-{
-    echo' ';
-}
-else
-{
-    echo 'Error?';
-}
-
-?>
-
-
-<?php
-include('includes/scripts.php');
+include('../includes/scripts.php');
 ?>

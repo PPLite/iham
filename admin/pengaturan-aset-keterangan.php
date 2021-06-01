@@ -11,7 +11,7 @@ include('database/dbconfig.php')
 <!---- Header --->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary">Menu Keterangan Aset
+    <h6 class="m-0 font-weight-bold text-primary">Tabel Aset Terdaftar
     </h6>
   </div>
 

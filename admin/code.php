@@ -29,7 +29,7 @@ if(isset($_POST['login_btn']))
     else if ($usertype ['usertype'] == "engginer")
     {
         $_SESSION['username'] = $username_login;
-        $_SESSION['usertype'] = "Enggineer";
+        $_SESSION['usertype'] = "engginer";
         header('Location: register_edit.php');
     }
 
@@ -37,14 +37,14 @@ if(isset($_POST['login_btn']))
     else if ($usertype ['usertype'] == "operator")
     {
         $_SESSION['username'] = $username_login;
-        $_SESSION['usertype'] = "Operator";
+        $_SESSION['usertype'] = "operator";
         header('Location: register.php');
     }
     //jika tipe pengguna "pengguna" maka masuk ke register.php
     else if ($usertype ['usertype'] == "manajer-aset")
     {
         $_SESSION['username'] = $username_login;
-        $_SESSION['usertype'] = "Manajer Asset";
+        $_SESSION['usertype'] = "manajer-aset";
         header('Location: register.php');
     }
 

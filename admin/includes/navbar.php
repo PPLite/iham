@@ -28,7 +28,7 @@ include_once('code.php');
   <div class="sidebar-brand-icon rotate-n-15">
     <i class=""></i>
   </div>
-  <div class="sidebar-brand-text mx-3">RFIDB Dashboard</div>
+  <div class="sidebar-brand-text mx-3">IHAM Dashboard</div>
 </a>
 
 <!-- Divider -->
@@ -60,8 +60,7 @@ include_once('code.php');
       <h6 class="collapse-header">Fitur Aset:</h6>
       <a class="collapse-item" href="pengaturan-aset.php">Pengaturan Aset Barang</a>
       <a class="collapse-item" href="pengaturan-aset-keterangan.php">Keterangan Aset Barang</a>
-      <a class="collapse-item" href="pengaturan-aset-monitoring.php">Monitoring Aset Barang</a>
-      <a class="collapse-item" href="tambah-aset-barang.php">Register Asset Baru</a>
+      <a class="collapse-item" href="pengaturan-aset-monitoring.php">Log Data Aset Barang</a>
     </div>
   </div>
 </li>
@@ -76,8 +75,7 @@ include_once('code.php');
       <h6 class="collapse-header">Fitur Aset Bayi:</h6>
       <a class="collapse-item" href="pengaturan-aset-bayi.php">Pengaturan Aset Bayi</a>
       <a class="collapse-item" href="pengaturan-aset-bayi-keterangan.php">Keterangan Aset Bayi</a>
-      <a class="collapse-item" href="pengaturan-aset-bayi-monitoring.php">Monitoring Aset Bayi</a>
-      <a class="collapse-item" href="tambah-aset-bayi.php">Register Asset Bayi Baru</a>
+      <a class="collapse-item" href="pengaturan-aset-bayi-monitoring.php">Log Data Bayi</a>
 
     </div>
   </div>

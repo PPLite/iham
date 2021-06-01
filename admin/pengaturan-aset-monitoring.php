@@ -6,34 +6,6 @@ include('database/dbconfig.php');
 ?>
 
 <div class="container-fluid">
-  <div class="card shadow mb-4">
-    <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary"> Menu Pengelolaan Database</h6>
-        <div class="card-body">
-          <form action="code.php" method="post">
-            <button type="submit" name="hapushasilscan1" class="btn btn-danger">
-              Hapus Semua Data Scan Reader 1 
-            </button>
-      
-            <button type="submit" name="hapushasilscan2" class="btn btn-danger">
-              Hapus Semua Data Scan Reader 2
-            </button>
-
-            <!-- <button type="submit" name="" class="btn btn-primary">
-              Tambah Data Reader 1
-            </button>
-
-            <button type="submit" name="" class="btn btn-primary">
-              Tambah Data Reader 2
-            </button>
-            -->
-        </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="container-fluid">
 <?php
   //Status berhasil ditambahkan
     if(isset($_SESSION['success']) && $_SESSION['success'] !='')
@@ -68,10 +40,7 @@ include('database/dbconfig.php');
 <!---Buat ngambil data--->
     <?php
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"    
-    $query = "SELECT COUNT(rfid_uid) AS jumlah, rfid_uid, nama_alat, deskripsi, penanggung_jawab, status_asset, peminjam, timestamp
-              FROM tb_scanner1_assetbarang
-              GROUP BY nama_alat
-              ORDER BY `timestamp` DESC";
+    $query = "SELECT * FROM `tb_hasilscan1_asetbarang` ORDER BY `tb_hasilscan1_asetbarang`.`timestamp` DESC";
     $query_run = mysqli_query($connection, $query);
     ?>
 
@@ -139,10 +108,7 @@ include('database/dbconfig.php');
 <!---Buat ngambil data--->
 <?php
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"    
-    $query = "SELECT COUNT(rfid_uid) AS jumlah, rfid_uid, nama_alat, deskripsi, penanggung_jawab, status_asset, peminjam, timestamp
-              FROM tb_scanner2_assetbarang
-              GROUP BY nama_alat
-              ORDER BY `timestamp` DESC";
+    $query = "SELECT * FROM `tb_hasilscan2_asetbarang` ORDER BY `tb_hasilscan2_asetbarang`.`timestamp` DESC";
     $query_run = mysqli_query($connection, $query);
     ?>
 

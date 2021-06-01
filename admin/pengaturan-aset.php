@@ -3,7 +3,8 @@ include('security.php');
 include('includes/header.php'); 
 include('includes/navbar.php');
 include('database/dbconfig.php');
-if ($_SESSION['username']=="admin") { 
+if ($_SESSION['username']=="admin")
+{
 ?>
 
 <div class="container-fluid">
@@ -25,10 +26,10 @@ if ($_SESSION['username']=="admin") {
     }
   ?>
 
-<!---- Untuk tombol "tambah aset"--->
+<!---- Kotak Di Atas buat judul--->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary">Menu Pengelolaan Aset
+    <h6 class="m-0 font-weight-bold text-primary">Tabel Aset Terdaftar
     </h6>
   </div>
 
