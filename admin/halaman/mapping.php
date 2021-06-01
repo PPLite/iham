@@ -169,10 +169,7 @@ include('../database/dbconfig.php');
 <!---Buat ngambil data--->
     <?php
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
-    $query = "SELECT COUNT(rfid_uid) AS jumlah, rfid_uid, id_pengenal, nama_anak, nama_ibu, penanggung_jawab_bayi, alamat, status, timestamp
-              FROM tb_scanner1_assetbayi
-              GROUP BY nama_anak
-              ORDER BY `timestamp` DESC 
+    $query = "SELECT * FROM `tb_hasilscan1_asetbayi` ORDER BY `tb_hasilscan1_asetbayi`.`timestamp` DESC
     "; 
     $query_run = mysqli_query($connection, $query);
     ?>
@@ -244,7 +241,7 @@ include('../database/dbconfig.php');
 <!---Buat ngambil data--->
 <?php
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"    
-    $query = "SELECT * FROM tb_hasilscan2_asetbarang";
+    $query = "SELECT * FROM `tb_hasilscan2_asetbarang` ORDER BY `tb_hasilscan2_asetbarang`.`timestamp` DESC";
     $query_run = mysqli_query($connection, $query);
     ?>
 
@@ -315,11 +312,7 @@ include('../database/dbconfig.php');
 <!---Buat ngambil data--->
 <?php
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
-    $query = "SELECT COUNT(rfid_uid) AS jumlah, rfid_uid, id_pengenal, nama_anak, nama_ibu, penanggung_jawab_bayi, alamat, status, timestamp
-              FROM tb_scanner2_assetbayi
-              GROUP BY nama_anak
-              ORDER BY `timestamp` DESC 
-    "; 
+    $query = "SELECT * FROM `tb_hasilscan2_asetbayi` ORDER BY `tb_hasilscan2_asetbayi`.`timestamp` DESC"; 
     $query_run = mysqli_query($connection, $query);
     ?>
 
