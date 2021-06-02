@@ -1,14 +1,3 @@
-<?php
-include('security.php'); 
-include('includes/header.php'); 
-include('includes/navbar.php');
-include('database/dbconfig.php');
-if ($_SESSION['username']=="admin");
-else if ($_SESSION['username']=="engginer")
-{
-  { 
-?>
-
 <!----Mulai Modal buat tambah aset baru. kotak yang ngawang ditengah-->
 
 <div class="modal fade" id="tambahinasetanak" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -294,21 +283,3 @@ else if ($_SESSION['username']=="engginer")
 
 
 <div class="container-fluid">
-
-
-<?php
-}
-}
-else
-{
-  ?>
-<script type="text/javascript">
-window.location.href = 'error.php';
-</script>
-<?php
-}
-
-
-include('includes/scripts.php');
-include('includes/footer.php');
-?>

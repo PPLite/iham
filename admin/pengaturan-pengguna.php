@@ -13,11 +13,11 @@ include('database/dbconfig.php');
 <?php
 if ($_SESSION['usertype']=="Admin")
 {
-    include('halaman/pengaturan-aset.php');
+    include('halaman/register.php');
 }
 else if ($_SESSION['usertype']=="engginer") 
 {
-    include('halaman/pengaturan-aset.php');
+    include('halaman/register.php');
 }
 else
 {

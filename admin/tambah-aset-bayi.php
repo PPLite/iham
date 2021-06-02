@@ -12,9 +12,9 @@ if ($_SESSION['username']=="admin") {
 
             <div class="card mt-5">
                 <div class="card-header text-center">
-                    <h4> Registrasi Asset Bayi Baru</h4>
-                </div>
-                            <div class="card-body">
+                    <h4> Form Peminjaman Barang</h4>
+                </div>  
+                <div class="card-body">
                                 <form action="" method="GET">
                                 <div class="row">
                                     <div class="">
@@ -69,6 +69,7 @@ if ($_SESSION['username']=="admin") {
 
 
 
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-7">
@@ -80,28 +81,28 @@ if ($_SESSION['username']=="admin") {
 <div class="modal-body">
 
         <div class="form-group">
-        <label>Kode UID</label>
-        <input type="text" name="rfid_uid" class="form-control" value="<?= $row["rfid_uid"]; ?>" placeholder="Masukkan kode UID" required>
+        <label>Nama Peminjam</label>
+        <input type="text" name="rfid_uid" class="form-control" value="<?= $row["rfid_uid"]; ?>" placeholder="Nama" required>
         </div>     
 
     <div class="form-group">
-        <label>Id Pengenal</label>
-        <input type="text" name="id_pengenal" class="form-control" placeholder="Masukkan Nomor KTP" required>
+        <label>Jabatan</label>
+        <input type="text" name="id_pengenal" class="form-control" placeholder="Jabatan" required>
     </div>
 
     <div class="form-group">
-        <label>Nama Anak</label>
-        <input type="text" name="nama_anak" class="form-control" placeholder="Masukkan Nama Anak" required>
+        <label>Nama Barang</label>
+        <input type="text" name="nama_anak" class="form-control" placeholder="Nama Barang" required>
     </div>
 
     <div class="form-group">
-        <label>Nama Ibu</label>
-        <input type="text" name="nama_ibu" class="form-control" placeholder="Masukkan Nama Ibu" required>
+        <label>Keperluan</label>
+        <input type="text" name="nama_ibu" class="form-control" placeholder="Keperluan" required>
     </div>
 
     <div class="form-group">
-        <label>Penanggung Jawab</label>
-        <input type="text" name="penanggung_jawab_bayi" class="form-control" placeholder="Masukkan Penanggung Jawab" required>
+        <label>Durasi</label>
+        <input type="text" name="penanggung_jawab_bayi" class="form-control" placeholder="Durasi" required>
     </div>
 
     <div class="form-group">

@@ -1,19 +1,15 @@
-<?php
-include('security.php'); 
-include('includes/header.php'); 
-include('includes/navbar.php');
-include('database/dbconfig.php');
-if ($_SESSION['username']=="admin") { 
-?>
-
 <!--------------------------------HEADER DAN TOMBOL UNTUK TAMBAH ADMIN------------------------------------------->
+<div class="container-fluid">
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary">Profil Admin 
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
-              Tambahkan data Pengguna 
-            </button>
+    <h6 class="m-0 font-weight-bold text-primary">Halaman Pengguna Terdaftar
     </h6>
+  </div>
+
+  <div class="card-header py-4">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
+              Tambahkan Pengguna Baru
+            </button>
   </div>
   <!---------------------------------------------------------------------------------------------------------->
 
@@ -248,23 +244,3 @@ if ($_SESSION['username']=="admin") {
 
 
 <div class="container-fluid">
-<!------------------------------------------------------------------------------------------------------------------>
-
-
-
-
-<?php
-}
-else
-{
-  ?>
-<script type="text/javascript">
-window.location.href = 'error.php';
-</script>
-<?php
-}
-
-include('includes/scripts.php');
-include('includes/footer.php');
-?>
-<!------------------------------------------------------------------------------------->
