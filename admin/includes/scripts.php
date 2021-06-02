@@ -135,6 +135,7 @@ $(document).ready(function () {
             $('#penanggung_jawab').val(data[5]);
             $('#peminjam').val(data[6]);
             $('#status_asset').val(data[7]);
+            $('#keterangan').val(data[8]);
 
     });
 });

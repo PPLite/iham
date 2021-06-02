@@ -46,6 +46,7 @@
             <th>Penanggung Jawab</th>
             <th>Peminjam</th>
             <th>Status</th>
+            <th>Keterangan</th>
             <th>Ubah</th>
             <th>Hapus</th>
           </tr>
@@ -69,6 +70,7 @@
             <td><?php echo $row['penanggung_jawab']; ?></td> <!--- 5 --->
             <td><?php echo $row['peminjam']; ?></td> <!--- 6 --->
             <td><?php echo $row['status_asset']; ?></td>  <!--- 7 --->
+            <td><?php echo $row['keterangan']; ?></td>
 
             <td>
             <!--MODAL UNTUK EDIT/UBAH ASSET (DI TABEL) -->
@@ -154,6 +156,11 @@
                   <option value="validasi"> Validasi </option>
                 </select>
              </div>
+
+             <div class="form-group">
+                <label>Keterangan</label>
+                <input type="text" name="keterangan" id="keterangan" class="form-control" placeholder="keterangan">
+            </div>
 
         </div>
 

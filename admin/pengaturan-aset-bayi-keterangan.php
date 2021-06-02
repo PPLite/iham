@@ -38,6 +38,7 @@ include('database/dbconfig.php');
             <th>Alamat</th>
             <th>Waktu Masuk</th>
             <th>Status</th>
+            <th>Keterangan</th>
           </tr>
         </thead>
         <tbody>
@@ -60,6 +61,7 @@ include('database/dbconfig.php');
             <td><?php echo $row['alamat']; ?></td>
             <td><?php echo $row['waktu_masuk']; ?></td>
             <td><?php echo $row['status']; ?></td>
+            <td><?php echo $row['keterangan']; ?></td>
             </td>     
 
           <?php

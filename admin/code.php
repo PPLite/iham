@@ -195,8 +195,9 @@ if(isset($_POST['updateasset']))
     $deskripsi = $_POST['deskripsi'];
     $penanggung_jawab = $_POST['penanggung_jawab'];
     $peminjam = $_POST['peminjam'];
-    $status_asset = $_POST['status_asset']; 
-    $query = "UPDATE tb_rfid SET nama_alat='$nama_alat', rfid_uid='$rfid_uid', deskripsi='$deskripsi', penanggung_jawab='$penanggung_jawab',peminjam='$peminjam', status_asset='$status_asset' WHERE id='$id' ";
+    $status_asset = $_POST['status_asset'];
+    $keterangan = $_POST['keterangan']; 
+    $query = "UPDATE tb_rfid SET nama_alat='$nama_alat', rfid_uid='$rfid_uid', deskripsi='$deskripsi', penanggung_jawab='$penanggung_jawab',peminjam='$peminjam', status_asset='$status_asset', keterangan='$keterangan' WHERE id='$id' ";
     $query_run = mysqli_query($connection,$query);
 
 
@@ -404,28 +405,4 @@ if(isset($_POST['hapushasilscan2']))
     }
 }
 
-
-
-
-
-
-
-
-
-
-
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
