@@ -121,6 +121,7 @@
             <th>Alamat</th>
             <th>Waktu Masuk</th>
             <th>Status</th>
+            <th>Keterangan</th>
             <th>Ubah</th>
             <th>Hapus</th>
           </tr>
@@ -145,6 +146,7 @@
             <td><?php echo $row['alamat']; ?></td>
             <td><?php echo $row['waktu_masuk']; ?></td>
             <td><?php echo $row['status']; ?></td>
+            <td><?php echo $row['keterangan']; ?></td>
 
             <!--------------------TOMBOL UNTUK EDIT/HAPUS ASSET (DI DALAM TABEL) ----------------->
             <td>
@@ -220,6 +222,11 @@
             <div class="form-group">
                 <label>Alamat</label>
                 <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Masukkan Alamat" required>
+            </div>
+
+            <div class="form-group">
+                <label>Keterangan</label>
+                <input type="text" name="keterangan" id="keterangan" class="form-control" placeholder="Masukkan Keterangan" required>
             </div>
 
             <div class="form-group">

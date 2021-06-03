@@ -357,49 +357,6 @@ if(isset($_POST['daftarasetanak_btn']))
         }
     }
 }
-
-if(isset($_GET['ambildata_btn']))
-//jika sudah ditombol kemudian
-{
-    //ambil data?
-    $rfid_uid = $_POST['rfid_uid'];
-    $id_pengenal = $_POST['id_pengenal'];
-    $nama_anak = $_POST['nama_anak'];
-    $nama_ibu = $_POST['nama_ibu'];
-    $penanggung_jawab_bayi = $_POST['penanggung_jawab_bayi'];
-    $alamat = $_POST['alamat'];
-    $status = $_POST['status'];
-
-
-
-
-    $query = "SELECT * FROM `tb_reader_scan` order by id desc limit 1";
-    $query_run = mysqli_query($connection, $query);
-
-
-    if($query_run)
-    {
-        if($query_run)
-        {
-        $_SESSION['success'] = "Aset berhasil ditambahkan";
-        header('location: pengaturan-aset-bayi.php');
-        }
-        else
-        {
-        $_SESSION['status'] = "Aset gagal ditambahkan";
-        header('location: pengaturan-aset-bayi.php');
-        }
-    }
-}
-
-
-
-
-
-
-
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Untuk modif data pada bayi
 if(isset($_POST['updatebtnassetbayi']))
@@ -415,9 +372,10 @@ if(isset($_POST['updatebtnassetbayi']))
     $penanggung_jawab_bayi = $_POST['penanggung_jawab_bayi'];
     $alamat = $_POST['alamat'];
     $status = $_POST['status'];
+    $keterangan = $_POST['keterangan'];
 
 
-    $query = "UPDATE tb_stat_anak SET rfid_uid='$rfid_uid', id_pengenal='$id_pengenal', nama_anak='$nama_anak', nama_ibu='$nama_ibu', penanggung_jawab_bayi='$penanggung_jawab_bayi', alamat='$alamat', status='$status' WHERE id='$id'  ";
+    $query = "UPDATE tb_stat_anak SET rfid_uid='$rfid_uid', keterangan='$keterangan' , id_pengenal='$id_pengenal', nama_anak='$nama_anak', nama_ibu='$nama_ibu', penanggung_jawab_bayi='$penanggung_jawab_bayi', alamat='$alamat', status='$status' WHERE id='$id'  ";
     $query_run = mysqli_query($connection,$query);
 
 
@@ -494,5 +452,48 @@ if(isset($_POST['hapushasilscan2']))
         header('location: status-asset.php');
     }
 }
+
+
+//////////////////////////////////BUAT AMBIL DATA DARI RFID SCANNER//////////////////////////////////////////////
+if(isset($_GET['ambildata_btn']))
+//jika sudah ditombol kemudian
+{
+    //ambil data?
+    $rfid_uid = $_POST['rfid_uid'];
+    $id_pengenal = $_POST['id_pengenal'];
+    $nama_anak = $_POST['nama_anak'];
+    $nama_ibu = $_POST['nama_ibu'];
+    $penanggung_jawab_bayi = $_POST['penanggung_jawab_bayi'];
+    $alamat = $_POST['alamat'];
+    $status = $_POST['status'];
+
+
+
+
+    $query = "SELECT * FROM `tb_reader_scan` order by id desc limit 1";
+    $query_run = mysqli_query($connection, $query);
+
+
+    if($query_run)
+    {
+        if($query_run)
+        {
+        $_SESSION['success'] = "Aset berhasil ditambahkan";
+        header('location: pengaturan-aset-bayi.php');
+        }
+        else
+        {
+        $_SESSION['status'] = "Aset gagal ditambahkan";
+        header('location: pengaturan-aset-bayi.php');
+        }
+    }
+}
+
+
+
+
+
+
+
 
 ?>

@@ -184,6 +184,7 @@ $(document).ready(function () {
             $('#penanggung_jawab_bayi').val(data[5]);
             $('#alamat').val(data[6]);
             $('#status').val(data[8]);
+            $('#keterangan').val(data[9]);
 
     });
 });
