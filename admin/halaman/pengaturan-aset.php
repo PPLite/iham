@@ -154,6 +154,8 @@
                   <option value="rusak"> Rusak </option>
                   <option value="peringatan"> Peringatan </option>
                   <option value="validasi"> Validasi </option>
+                  <option value="konfirmasi_pinjam"> Menunggu Konfirmasi Pinjam </option>
+                  <option value="konfirmasi_pindah"> Menunggu Konfirmasi Pindah </option>
                 </select>
              </div>
 

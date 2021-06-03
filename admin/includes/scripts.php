@@ -219,14 +219,13 @@ $(document).ready(function () {
                           <script>
                           <?php
                           echo $a;
-                          //echo $b;
+                          echo $b;
                           echo $c;
                           ?>  
                           function changeValue(id){  
                             document.getElementById('deskripsi').value = deskripsi[id].deskripsi;
-                            document.getElementById('keterangan').value = keterangan[id].keterangan;
-                            //document.getElementById('id').value = id[id].id; 
-                            
+                            document.getElementById('nama_alat').value = nama_alat[id].nama_alat; 
+                            document.getElementById('keterangan').value = keterangan[id].keterangan;                         
                           };  
                           </script>
 
@@ -244,39 +243,18 @@ $(document).ready(function () {
             }).get();
 
             console.log(data);
+            $('#rfid_uid').val(data[0]);
+            $('#nama_alat').val(data[1]);
+            $('#deskripsi').val(data[2]);
+            $('#penanggung_jawab').val(data[3]);
+            //$('#status_asset').val(data[4]);
+            //$('#peminjam').val(data[5]);
+            //$('#keterangan').val(data[6]);
 
-            $('#hapus_id_asset').val(data[0]);
+            $('#hapus_id_asset_bayi').val(data[0]);
     });
 });
 </script>
-
-<script>
-$(document).ready(function () {
-    $('#tabelasetbayi').on('click', '.editbtnassetbayi', function() {
-
-        $('#modalasetbayi').modal('show');
-
-            $tr = $(this).closest('tr');
-
-            var data = $tr.children("td").map(function(){
-                return $(this).text();
-            }).get();
-
-            console.log(data);
-
-            $('#id').val(data[0]);
-            $('#rfid_uid').val(data[1]);
-            $('#id_pengenal').val(data[2]);
-            $('#nama_anak').val(data[3]);
-            $('#nama_ibu').val(data[4]);
-            $('#penanggung_jawab_bayi').val(data[5]);
-            $('#alamat').val(data[6]);
-            $('#status').val(data[8]);
-
-    });
-});
-</script>
-
 
 
 

@@ -34,34 +34,35 @@ include('database/dbconfig.php');
         <input type="text" name="Jabatan" id="Jabatan" class="form-control" placeholder="Isi Jabatan Peminjam" required>
     </div>
 
-
-
-
     <div class="form-group">
-        <label>Nama Alat</label>
-            <select name="nama_alat" id="nama_alat" class="form-control" onchange='changeValue(this.value)'required>
+        <label>RFID UID</label>
+            <select name="rfid_uid" id="rfid_uid" class="form-control" onchange='changeValue(this.value)'required>
                 <?php   
                     $query = mysqli_query($connection, "select * from tb_rfid order by id desc");  
-                    $result = mysqli_query($connection, "select * from tb_rfid");  
+                    $result = mysqli_query($connection, "SELECT * FROM tb_rfid WHERE `status_asset` IN (\"peringatan\",\"tersedia\",\"dipinjam\",\"habis\",\"rusak\",\"validasi\")");  
                          $a = "var deskripsi = new Array();\n;";
-                         //$b = "var id = new Array();\n;";
+                         $b = "var nama_alat = new Array();\n;";
                          $c = "var keterangan = new Array();\n;";
                                while ($row = mysqli_fetch_array($result)) {  
-                                     echo '<option name="nama_alat" value="'.$row['nama_alat'] . '">' . $row['nama_alat'] . '</option>';   
-                                          $a .= "deskripsi['" . $row['nama_alat'] . "'] = {deskripsi:'" . addslashes($row['deskripsi'])."'};\n";
-                                          //$c .= "id['" . $row['nama_alat'] . "'] = {id:'" . addslashes($row['id'])."'};\n";
-                                          $c .= "keterangan['" . $row['nama_alat'] . "'] = {keterangan:'" . addslashes($row['keterangan'])."'};\n";
+                                     echo '<option name="rfid_uid" value="'.$row['rfid_uid'] . '">' . $row['rfid_uid'] . '</option>';   
+                                          $a .= "deskripsi['" . $row['rfid_uid'] . "'] = {deskripsi:'" . addslashes($row['deskripsi'])."'};\n";
+                                          $b .= "nama_alat['" . $row['rfid_uid'] . "'] = {nama_alat:'" . addslashes($row['nama_alat'])."'};\n";
+                                          $c .= "keterangan['" . $row['rfid_uid'] . "'] = {keterangan:'" . addslashes($row['keterangan'])."'};\n";
                             }  
                           ?>  
             </select>
     </div>
 
-
+    <div class="form-group">
+        <label>Nama Alat</label>
+        <input type="text" name="nama_alat" id="nama_alat" class="form-control" placeholder="Pilih Aset Terlebih Dahulu" required>
+    </div>
 
     <div class="form-group">
-        <label>deskripsi</label>
-        <input type="text" name="Deskripsi" id="deskripsi" class="form-control" placeholder="Pilih Aset Terlebih Dahulu" required>
+        <label>Deskripsi</label>
+        <input type="text" name="deskripsi" id="deskripsi" class="form-control" placeholder="Pilih Aset Terlebih Dahulu" required>
     </div>
+
 
     <div class="form-group">
         <label>Keterangan</label>
@@ -75,13 +76,10 @@ include('database/dbconfig.php');
                   <option value="konfirmasi_pindah"> Dipindah </option>
                 </select>
              </div>
-
-
-
 </div>
 
 <div class="modal-footer">
-    <button type="submit" name="formpinjam" class="btn btn-primary">Simpan</button>
+    <button type="POST" name="formpinjam" class="btn btn-primary">Simpan</button>
 </div>
 </form>
 

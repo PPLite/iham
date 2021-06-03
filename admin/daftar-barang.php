@@ -22,7 +22,7 @@ include('database/dbconfig.php')
 <!---Buat ngambil data--->
     <?php
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
-    $query = "SELECT * FROM tb_rfid WHERE `status_asset` IN (\"peringatan\",\"tersedia\",\"dipinjam\",\"habis\",\"rusak\",\"validasi\")";; 
+    $query = "SELECT * FROM tb_rfid WHERE `status_asset` IN (\"peringatan\",\"tersedia\",\"dipinjam\",\"habis\",\"rusak\",\"validasi\")"; 
     $query_run = mysqli_query($connection, $query);
     ?>
 
@@ -37,6 +37,7 @@ include('database/dbconfig.php')
             <th>Penanggung Jawab</th>
             <th>Peminjam</th>
             <th>Status</th>
+            <th>Keterangan</th>
           </tr>
         </thead>
         <tbody>
@@ -58,6 +59,7 @@ include('database/dbconfig.php')
             <td><?php echo $row['penanggung_jawab']; ?></td> <!--- 5 --->
             <td><?php echo $row['peminjam']; ?></td> <!--- 6 --->
             <td><?php echo $row['status_asset']; ?></td>  <!--- 7 --->
+            <td><?php echo $row['keterangan']; ?></td>  <!--- 7 --->
             </div>
 
             <div class="container-fluid">

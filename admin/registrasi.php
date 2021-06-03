@@ -11,7 +11,7 @@ include('database/dbconfig.php');
 
             <div class="card mt-5">
                 <div class="card-header text-center">
-                    <h4> REGISTRASI ASET BARU </h4>
+                    <h4> Registrasi Aset Baru </h4>
                 </div>
 
 <!--------MEMBUAT DROPDOWN UNTUK PEMILIHAN JENIS ASET----->

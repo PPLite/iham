@@ -6,25 +6,6 @@ include('database/dbconfig.php');
 ?>
 
 <div class="container-fluid">
-  <div class="card shadow mb-4">
-    <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary"> Menu Pengelolaan Database</h6>
-        <div class="card-body">
-          <form action="code.php" method="post">
-            <button type="submit" name="hapushasilscan1" class="btn btn-danger">
-              Hapus Semua Data Scan Reader 1 
-            </button>
-      
-            <button type="submit" name="hapushasilscan2" class="btn btn-danger">
-              Hapus Semua Data Scan Reader 2
-            </button>
-        </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="container-fluid">
 <?php
   //Status berhasil ditambahkan
     if(isset($_SESSION['success']) && $_SESSION['success'] !='')

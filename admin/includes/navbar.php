@@ -46,40 +46,52 @@ include_once('code.php');
 
 <!-- Heading -->
 <div class="sidebar-heading">
-  Pengaturan
+  Main Menu
 </div>
 
 <!-- Item  -->
 <li class="nav-item">
+  <a class="nav-link" href="registrasi.php">
+    <i class="fas fa-fw fa-chart-area"></i>
+    <span>Registrasi</span></a>
+</li>
+
+<!-- Pasien-->
+<li class="nav-item">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#kolapsitem1" aria-expanded="true" aria-controls="kolapsitem1">
+    <i class="fas fa-fw fa-cog"></i>
+    <span>Pasien Bayi</span>
+  </a>
+  <div id="kolapsitem1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+      <h6 class="collapse-header">Sub-menu:</h6>
+      
+      <a class="collapse-item" href="pengaturan-aset-bayi-keterangan.php">Daftar Pasien Bayi</a>
+      <a class="collapse-item" href="log-data-bayi.php">Log Data Pasien</a>
+      <a class="collapse-item" href="pengaturan-aset-bayi.php">Pengaturan Data Pasien</a>
+    </div>
+  </div>
+</li>
+<!-- Peralatan Medis-->
+<li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
     <i class="fas fa-fw fa-cog"></i>
-    <span>Aset Barang</span>
+    <span>Peralatan Medis</span>
   </a>
   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
-      <h6 class="collapse-header">Fitur Aset:</h6>
-      <a class="collapse-item" href="pengaturan-aset-barang.php">Pengaturan Aset Barang</a>
+      <h6 class="collapse-header">Sub-menu:</h6>
       <a class="collapse-item" href="daftar-barang.php">Daftar Barang</a>
-      <a class="collapse-item" href="validasi-peminjaman-aset.php">Konfirmasi Barang</a>
       <a class="collapse-item" href="form-peminjaman.php">Form Peminjaman Barang</a>
+      <a class="collapse-item" href="validasi-peminjaman-aset.php">Konfirmasi Peminjaman </a>
+      <a class="collapse-item" href="log-data-aset.php">Log Data Barang</a>
+      <a class="collapse-item" href="pengaturan-aset-barang.php">Pengaturan Data Barang</a>
+      
     </div>
   </div>
 </li>
 
-<li class="nav-item">
-  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#kolapsitem1" aria-expanded="true" aria-controls="kolapsitem1">
-    <i class="fas fa-fw fa-cog"></i>
-    <span>Aset Bayi</span>
-  </a>
-  <div id="kolapsitem1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-    <div class="bg-white py-2 collapse-inner rounded">
-      <h6 class="collapse-header">Fitur Aset Bayi:</h6>
-      <a class="collapse-item" href="pengaturan-aset-bayi.php">Pengaturan Aset Bayi</a>
-      <a class="collapse-item" href="pengaturan-aset-bayi-keterangan.php">Keterangan Aset Bayi</a>
-      <a class="collapse-item" href="pengaturan-aset-bayi-monitoring.php">Log Data Bayi</a>
-    </div>
-  </div>
-</li>
+
 
 
 <li class="nav-item">
@@ -88,11 +100,6 @@ include_once('code.php');
     <span>Pengaturan Pengguna</span></a>
 </li>
 
-<li class="nav-item">
-  <a class="nav-link" href="registrasi.php">
-    <i class="fas fa-fw fa-chart-area"></i>
-    <span>Registrasi</span></a>
-</li>
 
 
 <!-- Divider -->
@@ -112,7 +119,7 @@ include_once('code.php');
 <li class="nav-item">
   <a class="nav-link" href="status-asset.php">
     <i class="fas fa-fw fa-wrench"></i>
-    <span>Status Asset RFID</span></a>
+    <span>Patient Monitoring</span></a>
 </li>
 
 

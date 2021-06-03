@@ -71,10 +71,10 @@ include('database/dbconfig.php');
           <tr>
           <!---Mengambil data dari database kemudian menampilkan ke tabel, serta menentukan kolom mana saja yang akan diambil datanya-->
           
-            <td><?php echo $row['rfid_uid']; ?></td>
-            <td><?php echo $row['nama_alat']; ?></td>
-            <td><?php echo $row['deskripsi']; ?></td>
-            <td><?php echo $row['penanggung_jawab']; ?></td>
+            <td><?php echo $row['rfid_uid']; ?></td> 
+            <td><?php echo $row['nama_alat']; ?></td> 
+            <td><?php echo $row['deskripsi']; ?></td> 
+            <td><?php echo $row['penanggung_jawab']; ?></td>  
             <td><?php echo $row['status_asset']; ?></td>
             <td><?php echo $row['peminjam']; ?></td>
             <td><?php echo $row['keterangan']; ?></td>
@@ -118,14 +118,18 @@ include('database/dbconfig.php');
 
         <div class="modal-body">
 
-        <input type="hidden" name="hapus_id_asset" id="hapus_id_asset">
+        <input type="hidden" name="tolak_aset" id="tolak_aset">
 
         <h5> Apakah anda yakin untuk Menolak Peminjaman/Pemindahan Asset ini?</h5>
 
       </div>
         <div class="modal-footer">
-            <input type="text" name="nama_alat" value="nama_alat" id="nama_alat" class="form-control">
-            <input type="text" name="status_asset" value="tersedia" id="status_asset" class="form-control">
+            <input type="text" name="rfid_uid" id="rfid_uid" class="form-control">
+            <input type="text" name="nama_alat" id="nama_alat" class="form-control">
+            <input type="text" name="deskripsi" id="deskripsi" class="form-control">
+            <input type="text" name="status_asset" id="status_asset" value="tersedia" class="form-control">
+            <input type="text" name="peminjam" id="peminjam" class="form-control">
+            <input type="text" name="keterangan" id="keterangan" class="form-control">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Batalkan</button>
             <button type="submit" name="tolak_aset" class="btn btn-danger">Tolak</button>
         </div>

@@ -84,18 +84,18 @@ if(isset($_POST['registerbtn']))
         if($query_run)
         {
         $_SESSION['success'] = "Pengguna berhasil ditambahkan";
-        header('location: register.php');
+        header('location: pengaturan-pengguna.php');
         }
         else
         {
         $_SESSION['status'] = "Pengguna gagal ditambahkan";
-        header('location: register.php');
+        header('location: pengaturan-pengguna.php');
         }
     }
     else 
     {
         $_SESSION['status'] = "Password tidak sesuai";
-        header('location: register.php');
+        header('location: pengaturan-pengguna.php');
     }
 }
 
@@ -121,12 +121,12 @@ if(isset($_POST['updatepengguna']))
     if($query_run)
     {
         $_SESSION['success'] = "Data Berhasil diperbarui";
-        header('location: register.php');
+        header('location: pengaturan-pengguna.php');
     }
     else
     {
         $_SESSION['status'] = "Data Gagal diperbarui";
-        header('location: register.php');
+        header('location: rpengaturan-pengguna.php');
     }
 }
 ///////////////////////////////////////////////////
@@ -142,12 +142,12 @@ if(isset($_POST['deletepengguna']))
     if ($query_run)
     {
         $_SESSION['success'] = "Data berhasil dihapus";
-        header('location: register.php');
+        header('location: pengaturan-pengguna.php');
     }
     else
     {
         $_SESSION['status'] = "Data gagal dihapus";
-        header('location: register.php');
+        header('location: pengaturan-pengguna.php');
     }
 }
 
@@ -226,8 +226,9 @@ if(isset($_POST['formpinjam']))
     $deskripsi = $_POST['deskripsi'];
     $peminjam = $_POST['peminjam'];
     $status_asset = $_POST['status_asset'];
-    $keterangan = $_POST['keterangan']; 
-    $query = "UPDATE tb_rfid SET nama_alat='$nama_alat', deskripsi='$deskripsi', peminjam='$peminjam', status_asset='$status_asset', keterangan='$keterangan' WHERE nama_alat='$nama_alat' ";
+    $keterangan = $_POST['keterangan'];
+    $rfid_uid = $_POST['rfid_uid']; 
+    $query = "UPDATE tb_rfid SET nama_alat='$nama_alat', deskripsi='$deskripsi', peminjam='$peminjam', status_asset='$status_asset', keterangan='$keterangan' WHERE rfid_uid='$rfid_uid' ";
     $query_run = mysqli_query($connection,$query);
 
 
@@ -236,12 +237,12 @@ if(isset($_POST['formpinjam']))
         if($query_run)  
         {
         $_SESSION['success'] = "Aset berhasil Diperbarui";
-        header('location: pengaturan-aset-barang.php');
+        header('location: validasi-peminjaman-aset.php');
         }
         else
         {
         $_SESSION['status'] = "Aset gagal Diperbarui";
-        header('location: pengaturan-aset-barang.php');
+        header('location: validasi-peminjaman-aset.php');
         }
     }
 }
