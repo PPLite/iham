@@ -61,6 +61,7 @@ include_once('code.php');
       <a class="collapse-item" href="pengaturan-aset-barang.php">Pengaturan Aset Barang</a>
       <a class="collapse-item" href="pengaturan-aset-keterangan.php">Keterangan Aset Barang</a>
       <a class="collapse-item" href="pengaturan-aset-monitoring.php">Log Data Aset Barang</a>
+      <a class="collapse-item" href="form-peminjaman.php">Form Peminjaman Barang</a>
     </div>
   </div>
 </li>
@@ -76,7 +77,6 @@ include_once('code.php');
       <a class="collapse-item" href="pengaturan-aset-bayi.php">Pengaturan Aset Bayi</a>
       <a class="collapse-item" href="pengaturan-aset-bayi-keterangan.php">Keterangan Aset Bayi</a>
       <a class="collapse-item" href="pengaturan-aset-bayi-monitoring.php">Log Data Bayi</a>
-
     </div>
   </div>
 </li>

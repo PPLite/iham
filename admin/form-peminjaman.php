@@ -26,12 +26,12 @@ include('database/dbconfig.php');
 
 <div class="form-group">
         <label>Nama Peminjam</label>
-        <input type="text" name="peminjam" id="peminjam" class="form-control" placeholder="Pilih Aset Terlebih Dahulu" required>
+        <input type="text" name="peminjam" id="peminjam" class="form-control" placeholder="Isi Nama Peminjam" required>
     </div>
 
     <div class="form-group">
         <label>Jabatan</label>
-        <input type="text" name="Jabatan" id="Jabatan" class="form-control" placeholder="Pilih Aset Terlebih Dahulu" required>
+        <input type="text" name="Jabatan" id="Jabatan" class="form-control" placeholder="Isi Jabatan Peminjam" required>
     </div>
 
 

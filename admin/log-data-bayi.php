@@ -18,15 +18,6 @@ include('database/dbconfig.php');
             <button type="submit" name="hapushasilscan2" class="btn btn-danger">
               Hapus Semua Data Scan Reader 2
             </button>
-
-            <!-- <button type="submit" name="" class="btn btn-primary">
-              Tambah Data Reader 1
-            </button>
-
-            <button type="submit" name="" class="btn btn-primary">
-              Tambah Data Reader 2
-            </button>
-            -->
         </div>
     </div>
   </div>
