@@ -110,14 +110,8 @@ if ($_SESSION['username']=="admin") {
     </div>
 
     <div class="form-group">
-        <label>Status</label>
-        <select name="status" class="form-control" >
-          <option value="masuk"> Dipindahkan </option>   
-          <option value="checkin"> Perawatan </option>
-          <option value="peringatan"> Peringatan </option>
-          <option value="checkout"> Check Out </option>
-        </select>
-     </div>
+        <input type="hidden" name="status" class="form-control" value="perawatan" required>
+    </div>
 
 </div>
 <div class="modal-footer">

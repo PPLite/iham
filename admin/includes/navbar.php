@@ -88,6 +88,12 @@ include_once('code.php');
     <span>Pengaturan Pengguna</span></a>
 </li>
 
+<li class="nav-item">
+  <a class="nav-link" href="registrasi.php">
+    <i class="fas fa-fw fa-chart-area"></i>
+    <span>Registrasi</span></a>
+</li>
+
 
 <!-- Divider -->
 <hr class="sidebar-divider">

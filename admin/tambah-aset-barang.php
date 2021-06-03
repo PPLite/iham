@@ -100,21 +100,8 @@ include('database/dbconfig.php');
             </div>
  
             <div class="form-group">
-                <label>Peminjam</label>
-                <input type="text" name="peminjam" placeholder="Isi jika asset sedang dipinjam" class="form-control">
+                <input type="hidden" name="status_asset" id="status_asset" value="tersedia" class="form-control">
             </div>
-
-            <div class="form-group">
-                <label>Status</label>
-                <select name="status_asset" class="form-control" >
-                  <option value="Tersedia"> Tersedia </option>   
-                  <option value="Dipinjam"> Dipinjam </option>
-                  <option value="Habis"> Habis </option>
-                  <option value="Rusak"> Rusak </option>
-                  <option value="Peringatan"> Peringatan </option>
-                  <option value="Validasi"> Validasi </option>
-                </select>
-             </div>
   
 </div>
 <div class="modal-footer">
