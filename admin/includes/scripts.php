@@ -215,8 +215,6 @@ $(document).ready(function () {
   height: 100%;
 }
 </style>
-
-
 <!---------------HALAMAN FORM PEMINJAMAN, BIAR YG LAIN NYANGKUT------------------->
                           <script>
                           <?php
@@ -231,4 +229,57 @@ $(document).ready(function () {
                             
                           };  
                           </script>
+
+<!---------------BUAT TOLAK ASET BARANG------------------->
+<script>
+$(document).ready(function () {
+    $('#validasiaset').on('click','.tolakvalidasiaset', function() {
+
+        $('#tolakvalidasiasetmodal').modal('show');
+
+            $tr = $(this).closest('tr');
+
+            var data = $tr.children("td").map(function(){
+                return $(this).text();
+            }).get();
+
+            console.log(data);
+
+            $('#hapus_id_asset').val(data[0]);
+    });
+});
+</script>
+
+<script>
+$(document).ready(function () {
+    $('#tabelasetbayi').on('click', '.editbtnassetbayi', function() {
+
+        $('#modalasetbayi').modal('show');
+
+            $tr = $(this).closest('tr');
+
+            var data = $tr.children("td").map(function(){
+                return $(this).text();
+            }).get();
+
+            console.log(data);
+
+            $('#id').val(data[0]);
+            $('#rfid_uid').val(data[1]);
+            $('#id_pengenal').val(data[2]);
+            $('#nama_anak').val(data[3]);
+            $('#nama_ibu').val(data[4]);
+            $('#penanggung_jawab_bayi').val(data[5]);
+            $('#alamat').val(data[6]);
+            $('#status').val(data[8]);
+
+    });
+});
+</script>
+
+
+
+
+
+
 

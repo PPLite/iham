@@ -44,7 +44,7 @@ include('database/dbconfig.php');
     $query_run = mysqli_query($connection, $query);
     ?>
 
-      <table class="table table-bordered" id="dataaset" width="100%" cellspacing="0">
+      <table class="table table-bordered" id="validasiaset" width="100%" cellspacing="0">
         <thead>
           <tr>
             <th>RFID UID</th>
@@ -53,8 +53,10 @@ include('database/dbconfig.php');
             <th>Penanggung Jawab</th>
             <th>Status Asset</th>
             <th>Peminjam</th>
-            <th>x</th>
-            <th>x</th>
+            <th>Keterangan</th>
+            <th>Terima</th>
+            <th>Tolak</th>
+
           </tr>
         </thead>
         <tbody>
@@ -75,8 +77,15 @@ include('database/dbconfig.php');
             <td><?php echo $row['penanggung_jawab']; ?></td>
             <td><?php echo $row['status_asset']; ?></td>
             <td><?php echo $row['peminjam']; ?></td>
-            <td>>x</td>
-            <td>>x</td>  
+            <td><?php echo $row['keterangan']; ?></td>
+            <td>
+            <!--MODAL UNTUK EDIT/UBAH ASSET (DI TABEL) -->
+            <button type="button" class="btn btn-success editbtnasset">Terima</button>
+            </td>
+
+            <td>
+            <button type="button" class="btn btn-danger tolakvalidasiaset">Tolak</button>
+            </td> 
 
           <?php
           }
@@ -93,6 +102,49 @@ include('database/dbconfig.php');
   </div>
 </div>
 </div>
+
+<!------------------------------FUNGSI UNTUK HAPUS (MODAL)------------------------------------->
+
+<div class="modal fade" id="tolakvalidasiasetmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tolak Validasi</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="code.php" method="POST">
+
+        <div class="modal-body">
+
+        <input type="hidden" name="hapus_id_asset" id="hapus_id_asset">
+
+        <h5> Apakah anda yakin untuk Menolak Peminjaman/Pemindahan Asset ini?</h5>
+
+      </div>
+        <div class="modal-footer">
+            <input type="text" name="nama_alat" value="nama_alat" id="nama_alat" class="form-control">
+            <input type="text" name="status_asset" value="tersedia" id="status_asset" class="form-control">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batalkan</button>
+            <button type="submit" name="tolak_aset" class="btn btn-danger">Tolak</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
 <?php
 include('includes/scripts.php');

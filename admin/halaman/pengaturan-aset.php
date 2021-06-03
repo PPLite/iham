@@ -70,7 +70,7 @@
             <td><?php echo $row['penanggung_jawab']; ?></td> <!--- 5 --->
             <td><?php echo $row['peminjam']; ?></td> <!--- 6 --->
             <td><?php echo $row['status_asset']; ?></td>  <!--- 7 --->
-            <td><?php echo $row['keterangan']; ?></td>
+            <td><?php echo $row['keterangan']; ?></td>  <!--- 8 --->
 
             <td>
             <!--MODAL UNTUK EDIT/UBAH ASSET (DI TABEL) -->

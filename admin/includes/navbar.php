@@ -53,14 +53,14 @@ include_once('code.php');
 <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
     <i class="fas fa-fw fa-cog"></i>
-    <span>Asset Barang</span>
+    <span>Aset Barang</span>
   </a>
   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Fitur Aset:</h6>
       <a class="collapse-item" href="pengaturan-aset-barang.php">Pengaturan Aset Barang</a>
-      <a class="collapse-item" href="pengaturan-aset-keterangan.php">Keterangan Aset Barang</a>
-      <a class="collapse-item" href="pengaturan-aset-monitoring.php">Log Data Aset Barang</a>
+      <a class="collapse-item" href="daftar-barang.php">Daftar Barang</a>
+      <a class="collapse-item" href="validasi-peminjaman-aset.php">Konfirmasi Barang</a>
       <a class="collapse-item" href="form-peminjaman.php">Form Peminjaman Barang</a>
     </div>
   </div>
@@ -69,7 +69,7 @@ include_once('code.php');
 <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#kolapsitem1" aria-expanded="true" aria-controls="kolapsitem1">
     <i class="fas fa-fw fa-cog"></i>
-    <span>Asset Bayi</span>
+    <span>Aset Bayi</span>
   </a>
   <div id="kolapsitem1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
