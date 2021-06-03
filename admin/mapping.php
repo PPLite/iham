@@ -8,7 +8,7 @@ include('database/dbconfig.php');
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
     $query = "SELECT rfid_uid,timestamp
               FROM tb_scanner1_assetbayi
-              ORDER BY `timestamp` DESC LIMIT 10
+              ORDER BY `timestamp` DESC LIMIT 3
     "; 
     $query_run = mysqli_query($connection, $query);
 	$row = mysqli_fetch_assoc($query_run)
@@ -18,7 +18,7 @@ include('database/dbconfig.php');
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
        $query_2= "SELECT rfid_uid,timestamp
               FROM tb_scanner2_assetbayi
-              ORDER BY `timestamp` DESC LIMIT 10
+              ORDER BY `timestamp` DESC LIMIT 3
     "; 
     $query_run2 = mysqli_query($connection, $query_2);
 	$row_2= mysqli_fetch_assoc($query_run2)
@@ -53,11 +53,13 @@ include('database/dbconfig.php');
 				<body oncontextmenu="return false;">
 					<div class="stand">
 						<?php
-							$kotak = 10;
+							
 							$posY = 0;
 							//foreach($row as $j){
 								
 							//}
+					//while(mysqli_num_rows($query_run) > 0  || mysqli_num_rows($query_run_2) > 0) {
+							$kotak = 10;
 							foreach($exposants as $i){
 								if($i['rfid_uid']==$row['rfid_uid'] && $i['rfid_uid']==$row_2['rfid_uid'] && $row['timestamp'] == $row_2['timestamp']){
 									$width = 5;
@@ -66,7 +68,10 @@ include('database/dbconfig.php');
 									$posY = $posY +10;
 									
 									echo '<div id= "s'. $i['nama_alat'].'
-									"style="width:'.$kotak*$width.'px;height:'.$kotak*$height.'px;top:'.$kotak*$posX.'px;left:'.$kotak*$posY.'px;">'."\n";	
+									"style="width:'.$kotak*$width.'px;height:'.$kotak*$height.'px;top:'.$kotak*$posX.'px;left:'.$kotak*$posY.'px;">'."\n";
+                  echo $i['nama_alat']."\n";
+                  echo '</div>'."\n";	
+									break;
 								}
 								if($i['rfid_uid']!==$row['rfid_uid'] && $i['rfid_uid']==$row_2['rfid_uid'] && $row['timestamp'] !== $row_2['timestamp']){
 									$width = 5;
@@ -75,7 +80,10 @@ include('database/dbconfig.php');
 									$posY = $posY +10;
 									
 									echo '<div id= "s'. $i['nama_alat'].'
-									"style="width:'.$kotak*$width.'px;height:'.$kotak*$height.'px;top:'.$kotak*$posX.'px;left:'.$kotak*$posY.'px;">'."\n";	
+									"style="width:'.$kotak*$width.'px;height:'.$kotak*$height.'px;top:'.$kotak*$posX.'px;left:'.$kotak*$posY.'px;">'."\n";
+									echo $i['nama_alat']."\n";
+                  echo '</div>'."\n";	
+                  break;
 								}
 								if($i['rfid_uid']==$row['rfid_uid'] && $i['rfid_uid']!==$row_2['rfid_uid'] && $row['timestamp'] !== $row_2['timestamp']){
 									$width = 5;
@@ -85,12 +93,61 @@ include('database/dbconfig.php');
 									
 									echo '<div id= "s'. $i['nama_alat'].'
 									"style="width:'.$kotak*$width.'px;height:'.$kotak*$height.'px;top:'.$kotak*$posX.'px;left:'.$kotak*$posY.'px;">'."\n";	
+									echo $i['nama_alat']."\n";
+                  echo '</div>'."\n";	
+                  break;
 								}
 									
 							}	
-							           
+							$kotak= 5;
+							foreach($exposants_2 as $j){
+								if($j['rfid_uid']==$row['rfid_uid'] && $j['rfid_uid']==$row_2['rfid_uid'] && $row['timestamp'] == $row_2['timestamp']){
+									$width = 5;
+									$height = 5;
+									$border_radius = 50%
+									//$display = 'inline-block';
+									$posX = 60;
+									$posY = $posY +10;
+									
+									echo '<div id= "s'. $j['nama_anak'].'
+									"style="width:'.$kotak*$width.'px;height:'.$kotak*$height.'px;top:'.$kotak*$posX.'px;left:'.$kotak*$posY.'px;">'."\n";		
+									echo $j['nama_anak']."\n";
+                  echo '</div>'."\n";	
+                  break;
+								}
+								if($j['rfid_uid']!==$row['rfid_uid'] && $j['rfid_uid']==$row_2['rfid_uid'] && $row['timestamp'] !== $row_2['timestamp']){
+									$width = 5;
+									$height = 5;
+									$border_radius = 50%
+									//$display = 'inline-block';
+									$posX = -30;
+									$posY = $posY +10;
+									
+									echo '<div id= "s'. $j['nama_anak'].'
+									"style="width:'.$kotak*$width.'px;height:'.$kotak*$height.'px;top:'.$kotak*$posX.'px;left:'.$kotak*$posY.'px;">'."\n";		
+									echo $j['nama_anak']."\n";
+                  echo '</div>'."\n";
+                  break;
+								}
+								if($j['rfid_uid']==$row['rfid_uid'] && $j['rfid_uid']!==$row_2['rfid_uid'] && $row['timestamp'] !== $row_2['timestamp']){
+									$width = 5;
+									$height = 5;
+									$border_radius = 50%
+									//$display = 'inline-block';
+									$posX = 100;
+									$posY = $posY +10;
+									
+									echo '<div id= "s'. $j['nama_anak'].'
+									"style="width:'.$kotak*$width.'px;height:'.$kotak*$height.'px;top:'.$kotak*$posX.'px;left:'.$kotak*$posY.'px;">'."\n";	
+									echo $j['nama_anak']."\n";
+                  echo '</div>'."\n";
+                  break;
+								}
+									
+							}
+					//}
 							//if ($row['rfid_uid'] !== $row_2['rfid_uid'] && $row['timestamp'] == $row_2['timestamp']){
-								// echo '<div id="s'.$exposants[2][0].'
+								 //echo '<div id="s'.$exposants[2][0].'
 								//"style="width:'.$kotak*$exposants[2][2].'px;height:'.$kotak*$exposants[2][3].'px;top:'.$kotak*$exposants[2][5].'px;left:'.$kotak*$exposants[2][4].'px;">'."\n";
 								//echo '<div id="s'.$exposants [0][1].'
 								//"style="width:'.$kotak*$exposants[0][2].'px;height:'.$kotak*$exposants[0][3].'px;top:'.$kotak*$exposants[0][5].'px;left:'.$kotak*$exposants[0][4].'px;">'."\n";

@@ -217,6 +217,44 @@ if(isset($_POST['updateasset']))
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+////////////////PINJAM ASET///////////////////////////////////
+if(isset($_POST['formpinjam']))
+
+//jika sudah ditombol kemudian
+{
+    $nama_alat = $_POST['nama_alat'];
+    $deskripsi = $_POST['deskripsi'];
+    $peminjam = $_POST['peminjam'];
+    $status_asset = $_POST['status_asset'];
+    $keterangan = $_POST['keterangan']; 
+    $query = "UPDATE tb_rfid SET nama_alat='$nama_alat', deskripsi='$deskripsi', peminjam='$peminjam', status_asset='$status_asset', keterangan='$keterangan' WHERE nama_alat='$nama_alat' ";
+    $query_run = mysqli_query($connection,$query);
+
+
+    if($query_run)
+    {
+        if($query_run)  
+        {
+        $_SESSION['success'] = "Aset berhasil Diperbarui";
+        header('location: pengaturan-aset-barang.php');
+        }
+        else
+        {
+        $_SESSION['status'] = "Aset gagal Diperbarui";
+        header('location: pengaturan-aset-barang.php');
+        }
+    }
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
 //////////////////////////////////HAPUS DATA ASSET (BARANG)//////////////////////////////////////////////
 if(isset($_POST['deleteasset']))
 {

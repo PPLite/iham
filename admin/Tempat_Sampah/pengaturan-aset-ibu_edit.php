@@ -32,7 +32,7 @@ if (isset($_POST['edit_btn']))
     <form action="code.php" method="POST">
     <!---Fungsi kok di hidden supaya kolom "id" tidak dapat di edit/ disembunyikan--->
     <!--- Jika diganti menjadi "text" "id" menjadi dapat diedit--->
-    <input type="hidden" name="edit_id" value="<?php echo $row['id']?>">
+    <input type="text" name="edit_id" value="<?php echo $row['id']?>">
 
 <!---Tabel untuk pengguna yang akan di edit---->
 <!---Mengambil data spesifik dari database---->
@@ -46,7 +46,7 @@ if (isset($_POST['edit_btn']))
     </div>
     <div class="form-group">
         <label>Kata Sandi</label>
-        <input type="password" name="edit_password" value="<?php echo $row['password']?>" class="form-control" placeholder="Masukkan Password">
+        <input type="password" name="edit_password" class="form-control" placeholder="Masukkan Password">
     </div>
     <div class="form-group">
         <label>Hak Wewenang</label>

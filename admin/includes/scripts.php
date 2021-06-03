@@ -216,3 +216,19 @@ $(document).ready(function () {
 }
 </style>
 
+
+<!---------------HALAMAN FORM PEMINJAMAN, BIAR YG LAIN NYANGKUT------------------->
+                          <script>
+                          <?php
+                          echo $a;
+                          //echo $b;
+                          echo $c;
+                          ?>  
+                          function changeValue(id){  
+                            document.getElementById('deskripsi').value = deskripsi[id].deskripsi;
+                            document.getElementById('keterangan').value = keterangan[id].keterangan;
+                            //document.getElementById('id').value = id[id].id; 
+                            
+                          };  
+                          </script>
+
