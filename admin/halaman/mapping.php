@@ -8,7 +8,7 @@ include('../database/dbconfig.php');
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
     $query = "SELECT rfid_uid,timestamp,nama_anak
               FROM tb_scanner1_assetbayi
-              ORDER BY `timestamp` DESC LIMIT 3
+              ORDER BY `timestamp` DESC LIMIT 5
     "; 
     $query_run = mysqli_query($connection, $query);
 	$row = mysqli_fetch_assoc($query_run);
@@ -19,7 +19,7 @@ include('../database/dbconfig.php');
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
        $query_2= "SELECT rfid_uid,timestamp,nama_anak
               FROM tb_scanner2_assetbayi
-              ORDER BY `timestamp` DESC LIMIT 3
+              ORDER BY `timestamp` DESC LIMIT 5
     "; 
     $query_run2 = mysqli_query($connection, $query_2);
 	$row_2 = mysqli_fetch_assoc($query_run2);
@@ -45,7 +45,7 @@ include('../database/dbconfig.php');
       <table class="table table-bordered" id="" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>Timestamp</th>
+			<th>timestamp</th>
             <th>RFID UID</th>
             <th>Nama Anak</th>
           </tr>
@@ -106,7 +106,7 @@ include('../database/dbconfig.php');
       <table class="table table-bordered" id="" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>Timestamp</th>
+			<th>timestamp</th>
             <th>RFID UID</th>
             <th>Nama Anak</th>
           </tr>
@@ -134,7 +134,6 @@ include('../database/dbconfig.php');
 		//	}?> 
 		<?php	
 		  }
-
 		}
       
         //Jika gagal ngambil data akan mengeluarkan peringatan
@@ -149,7 +148,6 @@ include('../database/dbconfig.php');
   </div>
 </div>
 </div>
-
 
 
 <?php
