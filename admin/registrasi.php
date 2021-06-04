@@ -88,6 +88,7 @@ include('database/dbconfig.php');
     </div>
 </div>
 
+<!--------Library------>
 <?php
 include('includes/scripts.php');
 include('includes/footer.php');

@@ -3,7 +3,6 @@ include('security.php');
 include('includes/header.php'); 
 include('includes/navbar.php');
 include('database/dbconfig.php');
-
 ?>
 
 <div class="container">
@@ -111,7 +110,7 @@ include('database/dbconfig.php');
             </div>
         </div>
     </div>
-</div
+</div>
 
 
 <?php

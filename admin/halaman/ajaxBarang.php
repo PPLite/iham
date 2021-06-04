@@ -8,7 +8,7 @@ $con = new mysqli($server,$username,$password,$database);
 if($con->connect_error){
 die("Koneksi gagal: ".$con->connect_error);
 }
-$sql = $con->query ("SELECT * FROM tb_rfid WHERE `status_asset` IN (\"peringatan\",\"tersedia\",\"dipinjam\",\"habis\",\"rusak\",\"validasi\")");
+$sql = $con->query ("SELECT * FROM tb_rfid WHERE `status_asset` IN (\"tersedia\")");
 while ($row = $sql->fetch_assoc()) {
         $namas[] = array('nama_alat' 		=>$row ['nama_alat'],
 						 'id' 				=>$row ['id'],

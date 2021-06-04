@@ -250,8 +250,8 @@ $(document).ready(function () {
             $('#deskripsi').val(data[3]);
             $('#penanggung_jawab').val(data[4]);
             //$('#status_asset').val(data[5]);
-            $('#peminjam').val(data[6]);
-            $('#keterangan').val(data[7]);
+            //$('#peminjam').val(data[6]);
+            //$('#keterangan').val(data[7]);
     });
 });
 </script>

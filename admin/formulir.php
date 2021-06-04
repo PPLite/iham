@@ -19,6 +19,10 @@ else if ($_SESSION['usertype']=="engginer")
 {
     include('halaman/formpeminjaman2.php');
 }
+else if ($_SESSION['usertype']=="operator") 
+{
+    include('halaman/formpeminjaman2.php');
+}
 else
 {
     ?>

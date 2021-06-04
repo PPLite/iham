@@ -172,12 +172,12 @@ if(isset($_POST['daftaraset_btn']))
         if($query_run)
         {
         $_SESSION['success'] = "Aset berhasil ditambahkan";
-        header('location: pengaturan-aset-barang.php');
+        header('location: daftar-barang.php');
         }
         else
         {
         $_SESSION['status'] = "Aset gagal ditambahkan";
-        header('location: pengaturan-aset-barang.php');
+        header('location: daftar-barang.php');
         }
     }
 }
@@ -324,12 +324,12 @@ if(isset($_POST['daftarasetanak_btn']))
         if($query_run)
         {
         $_SESSION['success'] = "Aset berhasil ditambahkan";
-        header('location: pengaturan-aset-bayi.php');
+        header('location: daftar-bayi.php');
         }
         else
         {
         $_SESSION['status'] = "Aset gagal ditambahkan";
-        header('location: pengaturan-aset-bayi.php');
+        header('location: daftar-bayi.php');
         }
     }
 }

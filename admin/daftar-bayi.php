@@ -11,7 +11,7 @@ include('database/dbconfig.php');
 <!---- Untuk tombol "tambah aset"--->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary">Menu Pengelolaan Aset Anak
+    <h6 class="m-0 font-weight-bold text-primary">Tabel Bayi Terdaftar
     </h6>
   </div>
 
@@ -30,8 +30,8 @@ include('database/dbconfig.php');
         <thead>
           <tr>
             <th>ID</th>
-            <th>RFID UID</th>
-            <th>ID Pengenal</th>
+            <!--<th>RFID UID</th>-->
+            <th>Nomor KTP/SIM</th>
             <th>Nama Anak</th>
             <th>Nama Ibu</th>
             <th>Penanggung Jawab</th>
@@ -53,7 +53,7 @@ include('database/dbconfig.php');
           <tr>
           <!---Mengambil data dari database kemudian menampilkan ke tabel, serta menentukan kolom mana saja yang akan diambil datanya-->
           <td><?php echo $row['id']; ?></td> 
-            <td><?php echo $row['rfid_uid']; ?></td>
+            <!--<td><?php //echo $row['rfid_uid']; ?></td>-->
             <td><?php echo $row['id_pengenal']; ?></td>
             <td><?php echo $row['nama_anak']; ?></td>
             <td><?php echo $row['nama_ibu']; ?></td>

@@ -6,7 +6,7 @@ include('database/dbconfig.php')
 ?>
 
 <div class="container-fluid">
-<!------Akhir dari Modal------->
+
 
 <!---- Header --->
 <div class="card shadow mb-4">
@@ -14,6 +14,22 @@ include('database/dbconfig.php')
     <h6 class="m-0 font-weight-bold text-primary">Tabel Aset Terdaftar
     </h6>
   </div>
+
+<?php
+  //Status berhasil ditambahkan
+    if(isset($_SESSION['success']) && $_SESSION['success'] !='')
+    {
+      echo '<h2>'.$_SESSION['success'].' </h2>';
+      unset($_SESSION['success']);
+    }
+
+    //Status gagal ditambahkan
+    if(isset($_SESSION['status']) && $_SESSION['status'] !='')
+    {
+      echo '<h2>'.$_SESSION['status'].' </h2>';
+      unset($_SESSION['status']);
+    }
+  ?>
 
 <div class="card-body">
 
@@ -31,7 +47,7 @@ include('database/dbconfig.php')
           <tr>
             <th>ID </th>
             <th>Nama Alat</th>
-            <th>RFID UID</th>
+            <!--<th>RFID UID</th>-->
             <th>Deskripsi Alat</th>
             <th>Ditambahkan Pada</th>
             <th>Penanggung Jawab</th>
@@ -53,7 +69,7 @@ include('database/dbconfig.php')
           <!---Mengambil data dari database kemudian menampilkan ke tabel, serta menentukan kolom mana saja yang akan diambil datanya-->
           <td><?php echo $row['id']; ?></td> <!--- 0 --->
             <td><?php echo $row['nama_alat']; ?></td>  <!--- 1 --->
-            <td><?php echo $row['rfid_uid']; ?></td> <!--- 2 --->
+           <!---  <td><?php echo $row['rfid_uid']; ?></td> 2 --->
             <td><?php echo $row['deskripsi']; ?></td> <!--- 3 --->
             <td><?php echo $row['tanggal']; ?></td> <!--- 4 --->
             <td><?php echo $row['penanggung_jawab']; ?></td> <!--- 5 --->

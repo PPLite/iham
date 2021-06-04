@@ -49,7 +49,7 @@ include_once('code.php');
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Sub-menu:</h6>
       
-      <a class="collapse-item" href="pengaturan-aset-bayi-keterangan.php">Daftar Pasien Bayi</a>
+      <a class="collapse-item" href="daftar-bayi.php">Daftar Pasien Bayi</a>
       <a class="collapse-item" href="log-data-bayi.php">Log Data Pasien</a>
       <a class="collapse-item" href="pengaturan-aset-bayi.php">Pengaturan Data Pasien</a>
     </div>
