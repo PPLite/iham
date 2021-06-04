@@ -216,12 +216,12 @@ $(document).ready(function () {
   height: 100%;
 }
 </style>
-<!---------------HALAMAN FORM PEMINJAMAN, BIAR YG LAIN NYANGKUT------------------->
+<!---------------HALAMAN FORM PEMINJAMAN, BIAR YG LAIN NYANGKUT----------------
                           <script>
                           <?php
-                          echo $a;
-                          echo $b;
-                          echo $c;
+                          //echo $a;
+                          //echo $b;
+                          //echo $c;
                           ?>  
                           function changeValue(id){  
                             document.getElementById('deskripsi').value = deskripsi[id].deskripsi;
@@ -230,7 +230,7 @@ $(document).ready(function () {
                           };  
                           </script>
 
-<!---------------BUAT TOLAK ASET BARANG------------------->
+------------BUAT TOLAK ASET BARANG------------------->
 <script>
 $(document).ready(function () {
     $('#validasiaset').on('click','.tolakvalidasiaset', function() {
@@ -244,15 +244,14 @@ $(document).ready(function () {
             }).get();
 
             console.log(data);
-            $('#rfid_uid').val(data[0]);
-            $('#nama_alat').val(data[1]);
-            $('#deskripsi').val(data[2]);
-            $('#penanggung_jawab').val(data[3]);
-            //$('#status_asset').val(data[4]);
-            //$('#peminjam').val(data[5]);
-            //$('#keterangan').val(data[6]);
-
-            $('#hapus_id_asset_bayi').val(data[0]);
+            $('#id').val(data[0]);
+            $('#rfid_uid').val(data[1]);
+            $('#nama_alat').val(data[2]);
+            $('#deskripsi').val(data[3]);
+            $('#penanggung_jawab').val(data[4]);
+            //$('#status_asset').val(data[5]);
+            $('#peminjam').val(data[6]);
+            $('#keterangan').val(data[7]);
     });
 });
 </script>

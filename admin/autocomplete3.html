@@ -1,0 +1,44 @@
+<label>Nama</label>
+<input type="text" class="form-control" id="nama_alat" name="nama_alat" ><br/>
+<label>Kode Alat</label>
+<input type="text" class="form-control" id="kode" name="kode" ><br/>
+<label>UID Alat</label>
+<input type="text" class="form-control" id="uid" name="uid" ><br/>
+<label>Deskripsi Alat</label>
+<input type="text" class="form-control" id="deskripsi" name="deskripsi" readonly><br/>
+<label>Penanggung Jawab</label>
+<input type="text" class="form-control" id="penanggung_jawab" name="penanggung_jawab" readonly><br/>
+<label>Keterangan</label>
+<input type="text" class="form-control" id="keterangan" name="keterangan" readonly><br/>
+<label>Peminjam</label>
+<input type="text" class="form-control" id="peminjam" name="peminjam" readonly><br/>
+<label>Status Aset</label>
+<input type="text" class="form-control" id="status_asset" name="status_asset" readonly><br/>
+
+ 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" rel="Stylesheet"></link>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+ 
+ <script>
+ $(document).ready(function() {
+ 
+//barang________
+ var ac_config = {
+ source: "ajaxBarang.php",
+ select: function(event, ui){
+ $("#nama_alat").val(ui.item.nama_alat);
+ $("#kode").val(ui.item.kode);
+ $("#uid").val(ui.item.uid);
+ $("#deskripsi").val(ui.item.deskripsi);
+ $("#penanggung_jawab").val(ui.item.penanggung_jawab);
+ $("#status_asset").val(ui.item.status_asset);
+ $("#keterangan").val(ui.item.keterangan);
+ $("#peminjam").val(ui.item.peminjam);
+
+ },
+ minLength:1
+ };
+ $("#nama_alat").autocomplete(ac_config);
+ })
+ </script>

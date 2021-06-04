@@ -3,23 +3,6 @@ include_once('code.php');
 ?>
 
 
-<script src="js/sweetalert2.all.min.js"></script>
-<script>
-// Swal.fire({
-//  title: "Terdapat Aset Tidak Terdeteksi",
-//  text: "Harap Segera Cek Pada Status Asset, atau Hubungi Admin",
-//  showDenyButton: true,
-//  confirmButtonText: `Cek Sekarang`,
-//  denyButtonText: `Tutup`,
-// }).then((result) => {
-//  if (result.isConfirmed) {
-//    window.location = "status-asset.php";
-//  } else if (result.isDenied) {
-//    Swal.fire('Harap Segera cek Asset di sekitar', '', 'info')
-//  }
-})
-</script>
-
    <!-- Sidebar -->
    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -82,7 +65,7 @@ include_once('code.php');
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Sub-menu:</h6>
       <a class="collapse-item" href="daftar-barang.php">Daftar Barang</a>
-      <a class="collapse-item" href="form-peminjaman.php">Form Peminjaman Barang</a>
+      <a class="collapse-item" href="formulir.php">Form Peminjaman Barang</a>
       <a class="collapse-item" href="validasi-peminjaman-aset.php">Konfirmasi Peminjaman </a>
       <a class="collapse-item" href="log-data-aset.php">Log Data Barang</a>
       <a class="collapse-item" href="pengaturan-aset-barang.php">Pengaturan Data Barang</a>

@@ -1,0 +1,33 @@
+ <label>Nama</label>
+ <input type="text" class="form-control" id="nama" name="nama" ><br/>
+<label>Kode Barang</label>
+ <input type="text" class="form-control" id="kode" name="kode" ><br/>
+ <label>Harga</label>
+ <input type="text" class="form-control" id="harga" name="harga" readonly><br/>
+ <label>Stok</label>
+ <input type="text" class="form-control" id="stok" name="stok" readonly><br/>
+  <label>idBarang</label>
+ <input type="text" class="form-control" id="idBarang" name="idBarang" readonly><br/>
+ 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" rel="Stylesheet"></link>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+ 
+ <script>
+ $(document).ready(function() {
+ 
+//barang________
+ var ac_config = {
+ source: "ajaxBarang.php",
+ select: function(event, ui){
+ $("#nama").val(ui.item.nama);
+ $("#kode").val(ui.item.kode);
+ $("#harga").val(ui.item.harga);
+ $("#stok").val(ui.item.stok);
+ $("#idBarang").val(ui.item.idBarang);
+ },
+ minLength:1
+ };
+ $("#nama").autocomplete(ac_config);
+ })
+ </script>

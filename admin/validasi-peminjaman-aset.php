@@ -47,6 +47,7 @@ include('database/dbconfig.php');
       <table class="table table-bordered" id="validasiaset" width="100%" cellspacing="0">
         <thead>
           <tr>
+            <th>ID Barang</th>
             <th>RFID UID</th>
             <th>Nama Alat</th>
             <th>Deskripsi</th>
@@ -70,7 +71,7 @@ include('database/dbconfig.php');
             ?>
           <tr>
           <!---Mengambil data dari database kemudian menampilkan ke tabel, serta menentukan kolom mana saja yang akan diambil datanya-->
-          
+            <td><?php echo $row['id']; ?></td> 
             <td><?php echo $row['rfid_uid']; ?></td> 
             <td><?php echo $row['nama_alat']; ?></td> 
             <td><?php echo $row['deskripsi']; ?></td> 
@@ -120,16 +121,20 @@ include('database/dbconfig.php');
 
         <input type="hidden" name="tolak_aset" id="tolak_aset">
 
+            <input type="hidden" name="id" id="id">
+            <input type="hidden" name="rfid_uid" id="rfid_uid">
+            <input type="hidden" name="nama_alat" id="nama_alat">
+            <input type="hidden" name="deskripsi" id="deskripsi">
+            <input type="hidden" name="penanggung_jawab" id="penanggung_jawab">
+            <input type="hidden" name="status_asset" value="dipinjam" id="status_asset">
+            <input type="hidden" name="peminjam" id="peminjam">
+            <input type="hidden" name="keterangan" id="keterangan">
+
         <h5> Apakah anda yakin untuk Menolak Peminjaman/Pemindahan Asset ini?</h5>
 
       </div>
         <div class="modal-footer">
-            <input type="text" name="rfid_uid" id="rfid_uid" class="form-control">
-            <input type="text" name="nama_alat" id="nama_alat" class="form-control">
-            <input type="text" name="deskripsi" id="deskripsi" class="form-control">
-            <input type="text" name="status_asset" id="status_asset" value="tersedia" class="form-control">
-            <input type="text" name="peminjam" id="peminjam" class="form-control">
-            <input type="text" name="keterangan" id="keterangan" class="form-control">
+
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Batalkan</button>
             <button type="submit" name="tolak_aset" class="btn btn-danger">Tolak</button>
         </div>
