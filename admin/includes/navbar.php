@@ -51,6 +51,8 @@ include_once('code.php');
       
       <a class="collapse-item" href="daftar-bayi.php">Daftar Pasien Bayi</a>
       <a class="collapse-item" href="log-data-bayi.php">Log Data Pasien</a>
+      <a class="collapse-item" href="formulir-bayi.php">Pindah Ruang</a>
+      <a class="collapse-item" href="konfirmasi-pindah-ruang.php">Konfirmasi Pindah Ruang</a>
       <a class="collapse-item" href="pengaturan-aset-bayi.php">Pengaturan Data Pasien</a>
     </div>
   </div>

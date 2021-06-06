@@ -200,7 +200,7 @@
                 </div>
 
             <div class="form-group">
-                <label>Id Pengenal</label>
+                <label>No KTP/SIM</label>
                 <input type="text" name="id_pengenal" id="id_pengenal" class="form-control" placeholder="Masukkan Nomor KTP" required>
             </div>
 
