@@ -11,7 +11,7 @@
               Tambahkan Pengguna Baru
             </button>
   </div>
-  <!---------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------->
 
 <!------------------------------FUNGSI UNTUK TAMBAH PENGGUNA BARU (MODAL)------------------------------------->
 
@@ -30,7 +30,8 @@
 
             <div class="form-group">
                 <label> Nama Pengguna </label>
-                <input type="text" name="username" class="form-control" placeholder="Masukkan Nama">
+                <input type="text" name="username" class="form-control check_nama" placeholder="Masukkan Nama">
+                <small class="error_nama" style="color:red;"></small>
             </div>
             <div class="form-group">
                 <label>Email</label>

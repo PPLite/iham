@@ -1,22 +1,6 @@
 <div class="container-fluid">
 <!------Akhir dari Modal------->
 
-<?php
-  //Status berhasil ditambahkan
-    if(isset($_SESSION['success']) && $_SESSION['success'] !='')
-    {
-      echo '<h2>'.$_SESSION['success'].' </h2>';
-      unset($_SESSION['success']);
-    }
-
-    //Status gagal ditambahkan
-    if(isset($_SESSION['status']) && $_SESSION['status'] !='')
-    {
-      echo '<h2>'.$_SESSION['status'].' </h2>';
-      unset($_SESSION['status']);
-    }
-  ?>
-
 <!---- Kotak Di Atas buat judul--->
 <div class="card shadow mb-4">
   <div class="card-header py-3">

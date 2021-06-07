@@ -236,21 +236,7 @@ $(document).ready(function () {
   height: 100%;
 }
 </style>
-<!---------------HALAMAN FORM PEMINJAMAN, BIAR YG LAIN NYANGKUT----------------
-                          <script>
-                          <?php
-                          //echo $a;
-                          //echo $b;
-                          //echo $c;
-                          ?>  
-                          function changeValue(id){  
-                            document.getElementById('deskripsi').value = deskripsi[id].deskripsi;
-                            document.getElementById('nama_alat').value = nama_alat[id].nama_alat; 
-                            document.getElementById('keterangan').value = keterangan[id].keterangan;                         
-                          };  
-                          </script>
-
-------------BUAT TOLAK ASET BARANG------------------->
+<!----------SCRIPT buat Validasi Aset (barang) ------------->
 <script>
 $(document).ready(function () {
     $('#validasiaset').on('click','.tolakvalidasiaset', function() {
@@ -276,7 +262,7 @@ $(document).ready(function () {
 });
 </script>
 
-<!---------------konfirmasi login------------------->
+<!---------------BUAT CEK EMAIL APA SUDAH TERDAFTAR APA BELUM------------------->
 <script>
 $(document).ready(function(){
 
@@ -299,8 +285,55 @@ $(document).ready(function(){
         });
     });
 });
-
 </script>
 
+<!---------------BUAT CEK NAMA APA SUDAH TERDAFTAR APA BELUM------------------->
+<script>
+$(document).ready(function(){
 
+    $('.check_nama').keyup(function(e){
+        
+        var nama = $('.check_nama').val();
+        //alert(email);
+
+        $.ajax({
+            type    : "POST",
+            url     : "code.php",
+            data    : {
+                        "check_submit_btn_namaregistrasi" : 1,
+                        "nama_id" : nama,
+                    },
+                    success : function (response){
+                    //alert(response);
+                    $('.error_nama').text(response);
+                    }
+        });
+    });
+});
+</script>
+
+<!---------------BUAT CEK RFID TAG (ASET BARANG) APA SUDAH TERDAFTAR APA BELUM------------------->
+<script>
+$(document).ready(function(){
+
+    $('.check_rfid_barang').keyup(function(e){
+        
+        var rfidbarang = $('.check_rfid_barang').val();
+        //alert(email);
+
+        $.ajax({
+            type    : "POST",
+            url     : "code.php",
+            data    : {
+                        "check_submit_btn_namarfidbarang" : 1,
+                        "rfid_id" : rfid,
+                    },
+                    success : function (response){
+                    //alert(response);
+                    $('.error_rfid').text(response);
+                    }
+        });
+    });
+});
+</script>
 

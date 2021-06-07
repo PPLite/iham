@@ -65,6 +65,8 @@ if(isset($_POST['login_btn']))
 /////////////////////////////PENGATURAN PENGGUNA/////////////////////
 
 ////////CEK PENGGUNA APA SUDAH TERDAFTAR/////////
+
+////////Buat Cek Email/////////
 if(isset($_POST['check_submit_btn']))
 {
     $email = $_POST['email_id'];
@@ -81,10 +83,25 @@ if(isset($_POST['check_submit_btn']))
     }
 }
 
+////////Buat Cek nama/////////
+if(isset($_POST['check_submit_btn_namaregistrasi']))
+{
+    $username = $_POST['nama_id'];
+    $nama_query = "SELECT * FROM register WHERE username='$username' ";
+    $nama_query_run = mysqli_query($connection, $nama_query);
+    if(mysqli_num_rows($nama_query_run)> 0)
+    {
+        echo "Pengguna ini Telah terdaftar. Silahkan pilih lainnya.";
+    }
+
+    else
+    {
+        echo "Username Tersedia.";
+    }
+}
+
 ////////TAMBAH PENGGUNA/////////
 if(isset($_POST['registerbtn']))
-
-//jika sudah ditombol kemudian
 {
     //input data
     $username = $_POST['username'];
@@ -93,11 +110,14 @@ if(isset($_POST['registerbtn']))
     $cpassword = $_POST['confirmpassword'];
     $usertype = $_POST['usertype'];
 
-    $email_query = "SELECT * FROM register WHERE email='$email' ";
+    $email_query = "SELECT * FROM register 
+    WHERE username= '$username' OR email= '$email' > 0 ";
     $email_query_run = mysqli_query($connection, $email_query);
-    if(mysqli_num_rows($email_query_run)> 0)
+    if(
+     
+        mysqli_num_rows($email_query_run) > 0)
     {
-        $_SESSION['status'] ="Registrasi Gagal. Email Telah Terdaftar";
+        $_SESSION['status'] ="Registrasi Gagal. Email/Username Telah Terdaftar";
         $_SESSION['status_code'] = "error";
         header('location: pengaturan-pengguna.php');
     }
@@ -126,7 +146,7 @@ if(isset($_POST['registerbtn']))
         }
         else 
         {
-            $_SESSION['status'] ="Password tidak Sesuai";
+            $_SESSION['status'] ="Registrasi Gagal. Password tidak Sesuai";
             $_SESSION['status_code'] = "info";
             header('location: pengaturan-pengguna.php');
         }
@@ -239,17 +259,38 @@ if(isset($_POST['updateasset']))
     {
         if($query_run)
         {
-        $_SESSION['success'] = "Aset berhasil Diperbarui";
-        header('location: pengaturan-aset-barang.php');
+            $_SESSION['status'] ="Data Berhasil di Ubah";
+            $_SESSION['status_code'] = "success";
+            header('location: pengaturan-aset-barang.php');
         }
         else
         {
-        $_SESSION['status'] = "Aset gagal Diperbarui";
-        header('location: pengaturan-aset-barang.php');
+            $_SESSION['status'] = "Data gagal di Ubah";
+            $_SESSION['status_code'] = "error";
+            header('location: pengaturan-aset-barang.php.php');
         }
     }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////Buat Cek RFID TAG APA SUDAH TERDAFTAR/////////
+if(isset($_POST['check_submit_btn_namarfidbarang']))
+{
+    $rfid_uid = $_POST['rfid_id'];
+    $rfidbarang_query = "SELECT * FROM tb_rfid WHERE username='$username' ";
+    $rfidbarang_query_run = mysqli_query($connection, $nama_query);
+    if(mysqli_num_rows($nama_query_run)> 0)
+    {
+        echo "Pengguna ini Telah terdaftar. Silahkan pilih lainnya.";
+    }
+
+    else
+    {
+        echo "Username Tersedia.";
+    }
+}
 
 ////////////////PINJAM ASET///////////////////////////////////
 if(isset($_POST['formpinjam']))
@@ -327,13 +368,14 @@ if(isset($_POST['deleteasset']))
 
     if ($query_run)
     {
-        $_SESSION['success'] = "Data berhasil dihapus";
+        $_SESSION['status'] ="Data Berhasil di Hapus";
+        $_SESSION['status_code'] = "success";
         header('location: pengaturan-aset-barang.php');
     }
     else
     {
         $_SESSION['status'] = "Data gagal dihapus";
-        header('location: pengaturan-aset-barang.php');
+        header('location: pengaturan-aset-barang.php.php');
     }
 }
 
