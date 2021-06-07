@@ -44,9 +44,9 @@ include('../database/dbconfig.php');
 								{
 								die('Error : ' . $e->getMessage());
 								}
-								$tb_1 = $bdd->query('SELECT * FROM tb_area_1');
-								$tb_2 = $bdd->query('SELECT * FROM tb_area_2');
-								$tb_3 = $bdd->query('SELECT * FROM tb_area_3');
+								$tb_1 = $bdd->query('SELECT * FROM tb_area_1 ORDER BY `timestamp` DESC LIMIT 1');
+								$tb_2 = $bdd->query('SELECT * FROM tb_area_2 ORDER BY `timestamp` DESC LIMIT 1');
+								$tb_3 = $bdd->query('SELECT * FROM tb_area_3 ORDER BY `timestamp` DESC LIMIT 1');
 								$area_1 = $tb_1->fetchAll();
 								$area_2 = $tb_2->fetchAll();
 								$area_3 = $tb_3->fetchAll();
@@ -119,9 +119,9 @@ include('../database/dbconfig.php');
 									$name = $row_2['nama_anak'];
 									$Ynew = $a_3['posY']+1;
 									if($id !== $a_3['rfid_uid']){
-										$new_tot = 1;
-										$data = "INSERT INTO tb_area_3 (rfid_uid,nama_anak,total,posX, posY)
-										VALUES ('$id','$name','$new_tot','$posX','$Ynew')";
+										$new_tot = array( array($id,1));
+										$data = "INSERT INTO tb_area_3 (rfid_uid,nama_anak,posX, posY)
+										VALUES ('$id','$name','$posX','$Ynew')";
 										$run_3 = mysqli_query($connection, $data);
 
 										$delete = " DELETE FROM tb_area_3 WHERE total = '0'
@@ -130,15 +130,18 @@ include('../database/dbconfig.php');
 									}
 									else {
 										$new_tot = $a_3['total'] + 1;
-										$data = "UPDATE tb_area_3 SET total = $new_tot 
-										WHERE rfid_uid = $id ";
+										$data = "INSERT INTO tb_area_3 (total)
+										VALUES ('$new_tot')";
 										$run_3 = mysqli_query($connection, $data);
+										//$data = "UPDATE tb_area_3 SET total = $new_tot 
+										//WHERE rfid_uid = $id ";
+										//$run_3 = mysqli_query($connection, $data);
 									}
 								}
 
 							}
 
-							$tot_read = $area_3['tot_all'] +1;
+							//$tot_read = $area_3['tot_all'] +1;
 							//if ($tot_read == 10){
 							//	foreach($area_3 as $b_3){
 							//		if($b_3['total']< 5){

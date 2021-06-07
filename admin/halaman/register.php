@@ -34,7 +34,8 @@
             </div>
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" name="email" class="form-control" placeholder="Email">
+                <input type="email" name="email" class="form-control check_email" placeholder="Masukkan Email">
+                <small class="error_email" style="color:red;"></small>
             </div>
             <div class="form-group">
                 <label>Kata Sandi</label>
@@ -67,22 +68,7 @@
 
 <div class="container-fluid">
 
-<!----MENAMPILKAN PEMBERITAHUAN JIKA DATA DITAMBAHKAN/DIHAPUS/GAGAL DIRPOSES----->
-<?php
-  //Status berhasil ditambahkan
-    if(isset($_SESSION['success']) && $_SESSION['success'] !='')
-    {
-      echo '<h2>'.$_SESSION['success'].' </h2>';
-      unset($_SESSION['success']);
-    }
 
-    //Status gagal ditambahkan
-    if(isset($_SESSION['status']) && $_SESSION['status'] !='')
-    {
-      echo '<h2>'.$_SESSION['status'].' </h2>';
-      unset($_SESSION['status']);
-    }
-  ?>
 
 
 <div class="container-fluid">

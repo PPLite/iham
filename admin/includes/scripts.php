@@ -29,6 +29,26 @@
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
+    <!--Inisialisasi Sweet Alert -->
+    <script src="js/sweetalert.min.js"></script>
+        <?php
+        if(isset($_SESSION['status']) && $_SESSION['status'] !='')
+        {
+        ?>
+            <script>
+                swal({
+                    title   : "<?php echo $_SESSION['status']; ?>",
+                    icon    : "<?php echo $_SESSION['status_code']; ?>",
+                    button  : "Ok",
+                });
+            </script>
+        <?php
+            unset($_SESSION['status']);
+    }
+    ?>
+
+
+
 <!-- Python??
 <script type="text/javascript" src="js/brython.js"></script>
 <script type="text/javascript" src="js/brython_stdlib.js"></script>
@@ -256,8 +276,31 @@ $(document).ready(function () {
 });
 </script>
 
+<!---------------konfirmasi login------------------->
+<script>
+$(document).ready(function(){
 
+    $('.check_email').keyup(function(e){
+        
+        var email = $('.check_email').val();
+        //alert(email);
 
+        $.ajax({
+            type    : "POST",
+            url     : "code.php",
+            data    : {
+                        "check_submit_btn" : 1,
+                        "email_id" : email,
+                    },
+                    success : function (response){
+                    //alert(response);
+                    $('.error_email').text(response);
+                    }
+        });
+    });
+});
+
+</script>
 
 
 

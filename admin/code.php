@@ -63,6 +63,24 @@ if(isset($_POST['login_btn']))
 ////////////////////////////////////////////////////////////////////
 
 /////////////////////////////PENGATURAN PENGGUNA/////////////////////
+
+////////CEK PENGGUNA APA SUDAH TERDAFTAR/////////
+if(isset($_POST['check_submit_btn']))
+{
+    $email = $_POST['email_id'];
+    $email_query = "SELECT * FROM register WHERE email='$email' ";
+    $email_query_run = mysqli_query($connection, $email_query);
+    if(mysqli_num_rows($email_query_run)> 0)
+    {
+        echo "Email Telah terdaftar. Silahkan pilih lainnya.";
+    }
+
+    else
+    {
+        echo "Email Tersedia.";
+    }
+}
+
 ////////TAMBAH PENGGUNA/////////
 if(isset($_POST['registerbtn']))
 
@@ -75,27 +93,43 @@ if(isset($_POST['registerbtn']))
     $cpassword = $_POST['confirmpassword'];
     $usertype = $_POST['usertype'];
 
-    if($password === $cpassword)
+    $email_query = "SELECT * FROM register WHERE email='$email' ";
+    $email_query_run = mysqli_query($connection, $email_query);
+    if(mysqli_num_rows($email_query_run)> 0)
     {
-         //data yang tadi, dimasukkan ke database dewngan perintah "insert into" karena data tersebut data baru, dan diletakkan ke tabel yang udah disediakan
-        $query = "INSERT INTO register (username,email,password,usertype) VALUES ('$username','$email','$password','$usertype')";
-        $query_run = mysqli_query($connection,$query);
-    
-        if($query_run)
-        {
-        $_SESSION['success'] = "Pengguna berhasil ditambahkan";
+        $_SESSION['status'] ="Registrasi Gagal. Email Telah Terdaftar";
+        $_SESSION['status_code'] = "error";
         header('location: pengaturan-pengguna.php');
-        }
-        else
-        {
-        $_SESSION['status'] = "Pengguna gagal ditambahkan";
-        header('location: pengaturan-pengguna.php');
-        }
     }
-    else 
+
+    else
     {
-        $_SESSION['status'] = "Password tidak sesuai";
-        header('location: pengaturan-pengguna.php');
+
+        if($password === $cpassword)
+        {
+            //data yang tadi, dimasukkan ke database dewngan perintah "insert into" karena data tersebut data baru, dan diletakkan ke tabel yang udah disediakan
+            $query = "INSERT INTO register (username,email,password,usertype) VALUES ('$username','$email','$password','$usertype')";
+            $query_run = mysqli_query($connection,$query);
+        
+            if($query_run)
+            {
+                $_SESSION['status'] ="Registrasi Berhasil";
+                $_SESSION['status_code'] = "success";
+                header('location: pengaturan-pengguna.php');
+            }
+            else
+            {
+                $_SESSION['status'] ="Registrasi Gagal. Terjadi kesalahan Internal";
+                $_SESSION['status_code'] = "error";
+                header('location: pengaturan-pengguna.php');
+            }
+        }
+        else 
+        {
+            $_SESSION['status'] ="Password tidak Sesuai";
+            $_SESSION['status_code'] = "info";
+            header('location: pengaturan-pengguna.php');
+        }
     }
 }
 
