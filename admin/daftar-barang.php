@@ -14,23 +14,6 @@ include('database/dbconfig.php')
     <h6 class="m-0 font-weight-bold text-primary">Tabel Aset Terdaftar
     </h6>
   </div>
-
-<?php
-  //Status berhasil ditambahkan
-    if(isset($_SESSION['success']) && $_SESSION['success'] !='')
-    {
-      echo '<h2>'.$_SESSION['success'].' </h2>';
-      unset($_SESSION['success']);
-    }
-
-    //Status gagal ditambahkan
-    if(isset($_SESSION['status']) && $_SESSION['status'] !='')
-    {
-      echo '<h2>'.$_SESSION['status'].' </h2>';
-      unset($_SESSION['status']);
-    }
-  ?>
-
 <div class="card-body">
 
     <div class="table-responsive">

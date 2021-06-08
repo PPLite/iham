@@ -21,27 +21,27 @@
 
                     <div class="form-group">
                         <label>Kode Alat</label>
-                        <input type="text" readonly name="id" id="id" class="form-control" placeholder="Pilih aset terlebih dahulu" readonly>
+                        <input type="text" name="id" id="id" class="form-control" placeholder="Pilih aset terlebih dahulu" required data-readonly>
                     </div>
 
                     <div class="form-group">
                         <label>RFID UID</label>
-                        <input type="text" readonly name="rfid_uid" id="rfid_uid" class="form-control" placeholder="Pilih aset terlebih dahulu" required>
+                        <input type="text" name="rfid_uid" id="rfid_uid" class="form-control" placeholder="Pilih aset terlebih dahulu" required data-readonly>
                     </div>
 
                     <div class="form-group">
                         <label>Deskripsi</label>
-                        <input type="text" readonly name="deskripsi" id="deskripsi" class="form-control" placeholder="Pilih aset terlebih dahulu" required>
+                        <input type="text" name="deskripsi" id="deskripsi" class="form-control" placeholder="Pilih aset terlebih dahulu" required data-readonly>
                     </div>
 
                     <div class="form-group">
                         <label>Penanggung Jawab</label>
-                        <input type="text" readonly name="penanggung_jawab" id="penanggung_jawab" class="form-control" placeholder="Pilih aset terlebih dahulu" required>
+                        <input type="text" name="penanggung_jawab" id="penanggung_jawab" class="form-control" placeholder="Pilih aset terlebih dahulu" required data-readonly>
                     </div>
 
                     <div class="form-group">
                         <label>Status Aset Sekarang</label>
-                        <input type="text" readonly name="status_asset" id="status_asset" class="form-control" placeholder="Pilih aset terlebih dahulu" required>
+                        <input type="text" name="status_asset" id="status_asset" class="form-control" placeholder="Pilih aset terlebih dahulu" required data-readonly>
                     </div>
 
                     <div class="form-group">
@@ -51,12 +51,12 @@
 
                     <div class="form-group">
                         <label>Jabatan</label>
-                        <input type="text" name="Jabatan" id="Jabatan" class="form-control" placeholder="Jabatan Peminjam" required data-readonly>
+                        <input type="text" name="Jabatan" id="Jabatan" class="form-control" placeholder="Jabatan Peminjam" required>
                     </div>
 
                     <div class="form-group">
                         <label>Keterangan</label>
-                        <input type="text" name="keterangan" id="keterangan" class="form-control" placeholder="Isikan Keterangan" required data-readonly> 
+                        <input type="text" name="keterangan" id="keterangan" class="form-control" placeholder="Isikan Keterangan" required> 
                     </div>
 
                     <div class="form-group">

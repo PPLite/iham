@@ -47,19 +47,6 @@
     }
     ?>
 
-
-
-<!-- Python??
-<script type="text/javascript" src="js/brython.js"></script>
-<script type="text/javascript" src="js/brython_stdlib.js"></script>
--->
-
-
-
-
-
-
-
 <!---------------JAVASCRIPT UNTUK KONFIGURASI TABEL---------------------->
 <!----------Halaman tabel dan pencarian data dalam tabelL---------------->
 <script>
@@ -318,15 +305,15 @@ $(document).ready(function(){
 
     $('.check_rfid_barang').keyup(function(e){
         
-        var rfidbarang = $('.check_rfid_barang').val();
+        var rfid_uid = $('.check_rfid_barang').val();
         //alert(email);
 
         $.ajax({
             type    : "POST",
             url     : "code.php",
             data    : {
-                        "check_submit_btn_namarfidbarang" : 1,
-                        "rfid_id" : rfid,
+                        "check_btn_namarfidbarang" : 1,
+                        "rfid_uid" : rfid_uid,
                     },
                     success : function (response){
                     //alert(response);
