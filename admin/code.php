@@ -365,13 +365,14 @@ if(isset($_POST['daftarasetanak_btn']))
                 header('location: daftar-bayi.php');
             }
         }
-    }
     else
-    {
-        $_SESSION['status'] ="Registrasi Gagal. Email/Username Telah Terdaftar";
-        $_SESSION['status_code'] = "error";
-        header('location: daftar-bayi.php');
+        {
+            $_SESSION['status'] ="Registrasi Gagal. Email/Username Telah Terdaftar";
+            $_SESSION['status_code'] = "error";
+            header('location: daftar-bayi.php');
+        }
     }
+
 
 
 
