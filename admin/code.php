@@ -413,7 +413,8 @@ if(isset($_POST['deleteassetbayi']))
 
     if ($query_run)
     {
-        $_SESSION['success'] = "Data berhasil dihapus";
+        $_SESSION['status'] = "Data berhasil di hapus";
+        $_SESSION['status_code'] = "success";
         header('location: pengaturan-aset-bayi.php');
     }
     else
