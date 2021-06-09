@@ -340,39 +340,35 @@ if(isset($_POST['daftarasetanak_btn']))
     $penanggung_jawab_bayi = $_POST['penanggung_jawab_bayi'];
     $alamat = $_POST['alamat'];
     $status = $_POST['status'];
-    
-    //SELECT * FROM tb_stat_anak WHERE rfid_uid = 'e20000202716018204409d9f' AND status = 'checkout'
-    //SELECT * FROM tb_stat_anak WHERE rfid_uid = \'e20000202716018204409d9f\' AND status = \'checkout\
     $cekanak_query = "SELECT * FROM tb_stat_anak 
-    WHERE rfid_uid = '$rfid_uid' AND status=\'checkout\'";
+    WHERE rfid_uid = '$rfid_uid' AND status='checkout'";
     $cekanak_query_run = mysqli_query($connection, $cekanak_query);
     if(mysqli_num_rows($cekanak_query_run) > 0)
     {
-        $query = "INSERT INTO tb_stat_anak (rfid_uid,id_pengenal,nama_anak,nama_ibu,penanggung_jawab_bayi,alamat,status) VALUES ('$rfid_uid','$id_pengenal','$nama_anak','$nama_ibu','$penanggung_jawab_bayi','$alamat','$status')";
-        $query_run = mysqli_query($connection,$query);
-        if($query_run)
-        {
-            $_SESSION['status'] ="Data Berhasil di Ubah";
-            $_SESSION['status_code'] = "success";
-            header('location: daftar-bayi.php');
-        }
-        else
-        {
-            $_SESSION['status'] ="Data Berhasil di Ubah";
-            $_SESSION['status_code'] = "error";
-            header('location: daftar-bayi.php');
-        }
+        
+        $_SESSION['status'] ="Registrasi Gagal. Kode RFID masih aktif";
+        $_SESSION['status_code'] = "error";
+        header('location: daftar-bayi.php');
+
     }
     else
         {
-            $_SESSION['status'] ="Registrasi Gagal. Kode RFID masih aktif";
-            $_SESSION['status_code'] = "error";
-            header('location: daftar-bayi.php');
+            $query = "INSERT INTO tb_stat_anak (rfid_uid,id_pengenal,nama_anak,nama_ibu,penanggung_jawab_bayi,alamat,status) VALUES ('$rfid_uid','$id_pengenal','$nama_anak','$nama_ibu','$penanggung_jawab_bayi','$alamat','$status')";
+            $query_run = mysqli_query($connection,$query);
+            if($query_run)
+            {
+                $_SESSION['status'] ="Pasien berhasil di simpan";
+                $_SESSION['status_code'] = "success";
+                header('location: daftar-bayi.php');
+            }
+            else
+            {
+                $_SESSION['status'] ="Pasien Gagal di Simpan. Harap hubungi Operator";
+                $_SESSION['status_code'] = "error";
+                header('location: daftar-bayi.php');
+            }
         }
 }
-
-
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Untuk modif data pada bayi
