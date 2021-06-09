@@ -352,6 +352,12 @@ if(isset($_POST['daftarasetanak_btn']))
 
         if($query_run)
         {
+            $_SESSION['status'] ="Registrasi Gagal. Kode RFID masih aktif";
+            $_SESSION['status_code'] = "error";
+            header('location: daftar-bayi.php');
+        }
+        else
+        {
             if($query_run)
             {
             $_SESSION['status'] ="Data Berhasil di Ubah";
@@ -364,12 +370,6 @@ if(isset($_POST['daftarasetanak_btn']))
                 $_SESSION['status_code'] = "error";
                 header('location: daftar-bayi.php');
             }
-        }
-    else
-        {
-            $_SESSION['status'] ="Registrasi Gagal. Email/Username Telah Terdaftar";
-            $_SESSION['status_code'] = "error";
-            header('location: daftar-bayi.php');
         }
     }
 }
