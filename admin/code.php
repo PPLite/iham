@@ -393,12 +393,14 @@ if(isset($_POST['updatebtnassetbayi']))
     //Tampilan status jika dilakukan perubahan data
     if($query_run)
     {
-        $_SESSION['success'] = "Data Berhasil diperbarui";
+        $_SESSION['status'] ="Data berhasil di editf";
+        $_SESSION['status_code'] = "success";
         header('location: pengaturan-aset-bayi.php');
     }
     else
     {
         $_SESSION['status'] = "Data Gagal diperbarui";
+        $_SESSION['status_code'] = "error";
         header('location: pengaturan-aset-bayi.php');
     }
 }
