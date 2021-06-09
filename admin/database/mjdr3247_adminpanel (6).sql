@@ -599,7 +599,7 @@ INSERT INTO `tb_stat_anak` (`id`, `rfid_uid`, `id_pengenal`, `nama_anak`, `nama_
 --
 DROP TABLE IF EXISTS `tb_hasilscan1_asetbarang`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `tb_hasilscan1_asetbarang`  AS SELECT `tb_scanner1_assetbarang`.`nama_alat` AS `nama_alat`, max(`tb_scanner1_assetbarang`.`timestamp`) AS `timestamp`, `tb_scanner1_assetbarang`.`rfid_uid` AS `rfid_uid`, `tb_scanner1_assetbarang`.`deskripsi` AS `deskripsi`, `tb_scanner1_assetbarang`.`penanggung_jawab` AS `penanggung_jawab`, `tb_scanner1_assetbarang`.`status_asset` AS `status_asset`, `tb_scanner1_assetbarang`.`peminjam` AS `peminjam`, count(0) AS `jumlah` FROM `tb_scanner1_assetbarang` GROUP BY `tb_scanner1_assetbarang`.`nama_alat` ORDER BY max(`tb_scanner1_assetbarang`.`timestamp`) DESC ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`mjdr3247_admin`@`localhost` SQL SECURITY DEFINER VIEW `tb_hasilscan1_asetbarang`  AS SELECT `tb_scanner1_assetbarang`.`nama_alat` AS `nama_alat`, max(`tb_scanner1_assetbarang`.`timestamp`) AS `timestamp`, `tb_scanner1_assetbarang`.`rfid_uid` AS `rfid_uid`, `tb_scanner1_assetbarang`.`deskripsi` AS `deskripsi`, `tb_scanner1_assetbarang`.`penanggung_jawab` AS `penanggung_jawab`, `tb_scanner1_assetbarang`.`status_asset` AS `status_asset`, `tb_scanner1_assetbarang`.`peminjam` AS `peminjam`, count(0) AS `jumlah` FROM `tb_scanner1_assetbarang` GROUP BY `tb_scanner1_assetbarang`.`nama_alat` ORDER BY max(`tb_scanner1_assetbarang`.`timestamp`) DESC ;
 
 -- --------------------------------------------------------
 
@@ -608,7 +608,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `tb_hasilscan1_asetbayi`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `tb_hasilscan1_asetbayi`  AS SELECT `tb_scanner1_assetbayi`.`nama_anak` AS `nama_anak`, `tb_scanner1_assetbayi`.`rfid_uid` AS `rfid_uid`, `tb_scanner1_assetbayi`.`id_pengenal` AS `id_pengenal`, `tb_scanner1_assetbayi`.`nama_ibu` AS `nama_ibu`, `tb_scanner1_assetbayi`.`penanggung_jawab_bayi` AS `penanggung_jawab_bayi`, `tb_scanner1_assetbayi`.`alamat` AS `alamat`, `tb_scanner1_assetbayi`.`status` AS `status`, max(`tb_scanner1_assetbayi`.`timestamp`) AS `timestamp`, count(0) AS `jumlah` FROM `tb_scanner1_assetbayi` GROUP BY `tb_scanner1_assetbayi`.`nama_anak` ORDER BY max(`tb_scanner1_assetbayi`.`timestamp`) DESC ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`mjdr3247_admin`@`localhost` SQL SECURITY DEFINER VIEW `tb_hasilscan1_asetbayi`  AS SELECT `tb_scanner1_assetbayi`.`nama_anak` AS `nama_anak`, `tb_scanner1_assetbayi`.`rfid_uid` AS `rfid_uid`, `tb_scanner1_assetbayi`.`id_pengenal` AS `id_pengenal`, `tb_scanner1_assetbayi`.`nama_ibu` AS `nama_ibu`, `tb_scanner1_assetbayi`.`penanggung_jawab_bayi` AS `penanggung_jawab_bayi`, `tb_scanner1_assetbayi`.`alamat` AS `alamat`, `tb_scanner1_assetbayi`.`status` AS `status`, max(`tb_scanner1_assetbayi`.`timestamp`) AS `timestamp`, count(0) AS `jumlah` FROM `tb_scanner1_assetbayi` GROUP BY `tb_scanner1_assetbayi`.`nama_anak` ORDER BY max(`tb_scanner1_assetbayi`.`timestamp`) DESC ;
 
 -- --------------------------------------------------------
 
@@ -617,7 +617,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `tb_hasilscan2_asetbarang`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `tb_hasilscan2_asetbarang`  AS SELECT `tb_scanner2_assetbarang`.`nama_alat` AS `nama_alat`, max(`tb_scanner2_assetbarang`.`timestamp`) AS `timestamp`, `tb_scanner2_assetbarang`.`rfid_uid` AS `rfid_uid`, `tb_scanner2_assetbarang`.`deskripsi` AS `deskripsi`, `tb_scanner2_assetbarang`.`penanggung_jawab` AS `penanggung_jawab`, `tb_scanner2_assetbarang`.`status_asset` AS `status_asset`, `tb_scanner2_assetbarang`.`peminjam` AS `peminjam`, count(0) AS `jumlah` FROM `tb_scanner2_assetbarang` GROUP BY `tb_scanner2_assetbarang`.`nama_alat` ORDER BY max(`tb_scanner2_assetbarang`.`timestamp`) DESC ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`mjdr3247_admin`@`localhost` SQL SECURITY DEFINER VIEW `tb_hasilscan2_asetbarang`  AS SELECT `tb_scanner2_assetbarang`.`nama_alat` AS `nama_alat`, max(`tb_scanner2_assetbarang`.`timestamp`) AS `timestamp`, `tb_scanner2_assetbarang`.`rfid_uid` AS `rfid_uid`, `tb_scanner2_assetbarang`.`deskripsi` AS `deskripsi`, `tb_scanner2_assetbarang`.`penanggung_jawab` AS `penanggung_jawab`, `tb_scanner2_assetbarang`.`status_asset` AS `status_asset`, `tb_scanner2_assetbarang`.`peminjam` AS `peminjam`, count(0) AS `jumlah` FROM `tb_scanner2_assetbarang` GROUP BY `tb_scanner2_assetbarang`.`nama_alat` ORDER BY max(`tb_scanner2_assetbarang`.`timestamp`) DESC ;
 
 -- --------------------------------------------------------
 
@@ -626,7 +626,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `tb_hasilscan2_asetbayi`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `tb_hasilscan2_asetbayi`  AS SELECT `tb_scanner2_assetbayi`.`nama_anak` AS `nama_anak`, `tb_scanner2_assetbayi`.`rfid_uid` AS `rfid_uid`, `tb_scanner2_assetbayi`.`id_pengenal` AS `id_pengenal`, `tb_scanner2_assetbayi`.`nama_ibu` AS `nama_ibu`, `tb_scanner2_assetbayi`.`penanggung_jawab_bayi` AS `penanggung_jawab_bayi`, `tb_scanner2_assetbayi`.`alamat` AS `alamat`, `tb_scanner2_assetbayi`.`status` AS `status`, max(`tb_scanner2_assetbayi`.`timestamp`) AS `timestamp`, count(0) AS `jumlah` FROM `tb_scanner2_assetbayi` GROUP BY `tb_scanner2_assetbayi`.`nama_anak` ORDER BY max(`tb_scanner2_assetbayi`.`timestamp`) DESC ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`mjdr3247_admin`@`localhost` SQL SECURITY DEFINER VIEW `tb_hasilscan2_asetbayi`  AS SELECT `tb_scanner2_assetbayi`.`nama_anak` AS `nama_anak`, `tb_scanner2_assetbayi`.`rfid_uid` AS `rfid_uid`, `tb_scanner2_assetbayi`.`id_pengenal` AS `id_pengenal`, `tb_scanner2_assetbayi`.`nama_ibu` AS `nama_ibu`, `tb_scanner2_assetbayi`.`penanggung_jawab_bayi` AS `penanggung_jawab_bayi`, `tb_scanner2_assetbayi`.`alamat` AS `alamat`, `tb_scanner2_assetbayi`.`status` AS `status`, max(`tb_scanner2_assetbayi`.`timestamp`) AS `timestamp`, count(0) AS `jumlah` FROM `tb_scanner2_assetbayi` GROUP BY `tb_scanner2_assetbayi`.`nama_anak` ORDER BY max(`tb_scanner2_assetbayi`.`timestamp`) DESC ;
 
 -- --------------------------------------------------------
 
@@ -635,7 +635,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `tb_scanner1_assetbarang`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `tb_scanner1_assetbarang`  AS SELECT `tb_reader_scan`.`rfid_uid` AS `rfid_uid`, `tb_rfid`.`nama_alat` AS `nama_alat`, `tb_rfid`.`deskripsi` AS `deskripsi`, `tb_rfid`.`penanggung_jawab` AS `penanggung_jawab`, `tb_rfid`.`status_asset` AS `status_asset`, `tb_rfid`.`peminjam` AS `peminjam`, `tb_reader_scan`.`timestamp` AS `timestamp` FROM (`tb_reader_scan` join `tb_rfid` on(`tb_reader_scan`.`rfid_uid` = `tb_rfid`.`rfid_uid`)) ORDER BY `tb_reader_scan`.`rfid_uid` DESC ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`mjdr3247_admin`@`localhost` SQL SECURITY DEFINER VIEW `tb_scanner1_assetbarang`  AS SELECT `tb_reader_scan`.`rfid_uid` AS `rfid_uid`, `tb_rfid`.`nama_alat` AS `nama_alat`, `tb_rfid`.`deskripsi` AS `deskripsi`, `tb_rfid`.`penanggung_jawab` AS `penanggung_jawab`, `tb_rfid`.`status_asset` AS `status_asset`, `tb_rfid`.`peminjam` AS `peminjam`, `tb_reader_scan`.`timestamp` AS `timestamp` FROM (`tb_reader_scan` join `tb_rfid` on(`tb_reader_scan`.`rfid_uid` = `tb_rfid`.`rfid_uid`)) ORDER BY `tb_reader_scan`.`rfid_uid` DESC ;
 
 -- --------------------------------------------------------
 
@@ -644,7 +644,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `tb_scanner1_assetbayi`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `tb_scanner1_assetbayi`  AS SELECT `tb_reader_scan`.`rfid_uid` AS `rfid_uid`, `tb_stat_anak`.`id_pengenal` AS `id_pengenal`, `tb_stat_anak`.`nama_anak` AS `nama_anak`, `tb_stat_anak`.`nama_ibu` AS `nama_ibu`, `tb_stat_anak`.`penanggung_jawab_bayi` AS `penanggung_jawab_bayi`, `tb_stat_anak`.`alamat` AS `alamat`, `tb_stat_anak`.`status` AS `status`, `tb_reader_scan`.`timestamp` AS `timestamp` FROM (`tb_reader_scan` join `tb_stat_anak` on(`tb_reader_scan`.`rfid_uid` = `tb_stat_anak`.`rfid_uid`)) ORDER BY `tb_reader_scan`.`rfid_uid` ASC ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`mjdr3247_admin`@`localhost` SQL SECURITY DEFINER VIEW `tb_scanner1_assetbayi`  AS SELECT `tb_reader_scan`.`rfid_uid` AS `rfid_uid`, `tb_stat_anak`.`id_pengenal` AS `id_pengenal`, `tb_stat_anak`.`nama_anak` AS `nama_anak`, `tb_stat_anak`.`nama_ibu` AS `nama_ibu`, `tb_stat_anak`.`penanggung_jawab_bayi` AS `penanggung_jawab_bayi`, `tb_stat_anak`.`alamat` AS `alamat`, `tb_stat_anak`.`status` AS `status`, `tb_reader_scan`.`timestamp` AS `timestamp` FROM (`tb_reader_scan` join `tb_stat_anak` on(`tb_reader_scan`.`rfid_uid` = `tb_stat_anak`.`rfid_uid`)) ORDER BY `tb_reader_scan`.`rfid_uid` ASC ;
 
 -- --------------------------------------------------------
 
@@ -653,7 +653,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `tb_scanner2_assetbarang`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `tb_scanner2_assetbarang`  AS SELECT `tb_reader_scan2`.`rfid_uid` AS `rfid_uid`, `tb_rfid`.`nama_alat` AS `nama_alat`, `tb_rfid`.`deskripsi` AS `deskripsi`, `tb_rfid`.`penanggung_jawab` AS `penanggung_jawab`, `tb_rfid`.`status_asset` AS `status_asset`, `tb_rfid`.`peminjam` AS `peminjam`, `tb_reader_scan2`.`timestamp` AS `timestamp` FROM (`tb_reader_scan2` join `tb_rfid` on(`tb_reader_scan2`.`rfid_uid` = `tb_rfid`.`rfid_uid`)) ORDER BY `tb_reader_scan2`.`rfid_uid` ASC ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`mjdr3247_admin`@`localhost` SQL SECURITY DEFINER VIEW `tb_scanner2_assetbarang`  AS SELECT `tb_reader_scan2`.`rfid_uid` AS `rfid_uid`, `tb_rfid`.`nama_alat` AS `nama_alat`, `tb_rfid`.`deskripsi` AS `deskripsi`, `tb_rfid`.`penanggung_jawab` AS `penanggung_jawab`, `tb_rfid`.`status_asset` AS `status_asset`, `tb_rfid`.`peminjam` AS `peminjam`, `tb_reader_scan2`.`timestamp` AS `timestamp` FROM (`tb_reader_scan2` join `tb_rfid` on(`tb_reader_scan2`.`rfid_uid` = `tb_rfid`.`rfid_uid`)) ORDER BY `tb_reader_scan2`.`rfid_uid` ASC ;
 
 -- --------------------------------------------------------
 
@@ -662,7 +662,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `tb_scanner2_assetbayi`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `tb_scanner2_assetbayi`  AS SELECT `tb_reader_scan2`.`rfid_uid` AS `rfid_uid`, `tb_stat_anak`.`id_pengenal` AS `id_pengenal`, `tb_stat_anak`.`nama_anak` AS `nama_anak`, `tb_stat_anak`.`nama_ibu` AS `nama_ibu`, `tb_stat_anak`.`penanggung_jawab_bayi` AS `penanggung_jawab_bayi`, `tb_stat_anak`.`alamat` AS `alamat`, `tb_stat_anak`.`status` AS `status`, `tb_reader_scan2`.`timestamp` AS `timestamp` FROM (`tb_reader_scan2` join `tb_stat_anak` on(`tb_reader_scan2`.`rfid_uid` = `tb_stat_anak`.`rfid_uid`)) ORDER BY `tb_reader_scan2`.`rfid_uid` ASC ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`mjdr3247_admin`@`localhost` SQL SECURITY DEFINER VIEW `tb_scanner2_assetbayi`  AS SELECT `tb_reader_scan2`.`rfid_uid` AS `rfid_uid`, `tb_stat_anak`.`id_pengenal` AS `id_pengenal`, `tb_stat_anak`.`nama_anak` AS `nama_anak`, `tb_stat_anak`.`nama_ibu` AS `nama_ibu`, `tb_stat_anak`.`penanggung_jawab_bayi` AS `penanggung_jawab_bayi`, `tb_stat_anak`.`alamat` AS `alamat`, `tb_stat_anak`.`status` AS `status`, `tb_reader_scan2`.`timestamp` AS `timestamp` FROM (`tb_reader_scan2` join `tb_stat_anak` on(`tb_reader_scan2`.`rfid_uid` = `tb_stat_anak`.`rfid_uid`)) ORDER BY `tb_reader_scan2`.`rfid_uid` ASC ;
 
 --
 -- Indexes for dumped tables
