@@ -24,6 +24,7 @@ include('../database/dbconfig.php');
     $query_run2 = mysqli_query($connection, $query_2);
 	$row_2 = mysqli_fetch_assoc($query_run2);
 	
+	
     ?>
 	
 <div class="container-fluid">
@@ -183,6 +184,62 @@ include('../database/dbconfig.php');
 							$it_2->closeCursor();
 							$it_3->closeCursor();
 			
+						//Filter Data
+						//$tot =0;
+						$reset_1 = 0;
+						$reset_2 = 0;
+						$reset_3 = 0;
+						
+						// Filter area 1
+						$dat_all_1 ="SELECT SUM('total') FROM tb_area_1" ;
+						$tot_1 = mysqli_query($connection, $dat_all_1);
+						if($tot_1 == '100'){
+							$delete_1 = "DELETE FROM tb_area_1 WHERE total < '1000' ";
+							$reset_1  = 1;
+							if($reset_1 == 1){
+								$new_r   = 0;
+								foreach($obj_1 as $x_1){
+									$id_new  = $x_1['rfid_uid'];
+									$data_r  = "UPDATE tb_area_1 SET total='$new_r' WHERE rfid_uid=$id_new";
+									$run_r   = mysqli_query($connection,$data_r);
+								}
+						
+							}
+						}
+
+						// Filter area 2
+						$dat_all_2 ="SELECT SUM('total') FROM tb_area_2" ;
+						$tot_2 = mysqli_query($connection, $dat_all_2);
+						if($tot_2 == '100'){
+							$delete_2 = "DELETE FROM tb_area_2 WHERE total < '1000'";
+							$reset_2  = 1;
+							if($reset_2 == 1){
+								$new_r   = 0;
+								foreach($obj_2 as $x_2){
+									$id_new  = $x_3['rfid_uid'];
+									$data_r  = "UPDATE tb_area_2 SET total='$new_r' WHERE rfid_uid=$id_new";
+									$run_r   = mysqli_query($connection,$data_r);
+								}
+							}
+						}
+
+
+						// Filter area 3
+						$dat_all_3 ="SELECT SUM('total') FROM tb_area_3" ;
+						$tot_3 = mysqli_query($connection, $dat_all_3);
+						if($tot_3 >= '100'){
+							$delete_3 = "DELETE FROM tb_area_3 WHERE total < 1000";
+							$reset_3  = 1;
+							if($reset_3 == 1){
+								$new_r   = 0;
+								foreach($obj_3 as $x_3){
+									$id_new  = $x_3['rfid_uid'];
+									$data_r  = "UPDATE tb_area_3 SET total='$new_r' WHERE rfid_uid=$id_new";
+									$run_r   = mysqli_query($connection,$data_r);
+								}
+							}
+						}
+						
 						
 						//tampilan objek pada peta
 						$kotak = 10;
@@ -210,7 +267,7 @@ include('../database/dbconfig.php');
 							echo '</div>'."\n";
 						}
 						//Filter object
-						$total_all = $obj_1['tot_all'] + 1;
+						//$total_all = $obj_1['tot_all'] + 1;
 						
 						//filter object loss
 						//$tot_read = $area_1['tot_all'] +1;
