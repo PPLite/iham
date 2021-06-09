@@ -372,6 +372,7 @@ if(isset($_POST['daftarasetanak_btn']))
             header('location: daftar-bayi.php');
         }
     }
+}
 
 
 
