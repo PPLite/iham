@@ -85,8 +85,8 @@ include('database/dbconfig.php');
         </div>     
 
     <div class="form-group">
-        <label>Id Pengenal</label>
-        <input type="text" name="id_pengenal" class="form-control" placeholder="Masukkan Nomor KTP" required>
+        <label>No KTP/SIM</label>
+        <input type="text" name="id_pengenal" class="form-control" placeholder="Masukkan Nomor KTP/SIM Pasien" required >
     </div>
 
     <div class="form-group">

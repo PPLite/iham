@@ -348,16 +348,23 @@ if(isset($_POST['daftarasetanak_btn']))
     {
         if($query_run)
         {
-        $_SESSION['success'] = "Aset berhasil ditambahkan";
+        $_SESSION['status'] ="Data Berhasil di Ubah";
+        $_SESSION['status_code'] = "success";
         header('location: daftar-bayi.php');
         }
         else
         {
-        $_SESSION['status'] = "Aset gagal ditambahkan";
-        header('location: daftar-bayi.php');
+            $_SESSION['status'] ="Data Berhasil di Ubah";
+            $_SESSION['status_code'] = "error";
+            header('location: daftar-bayi.php');
         }
     }
 }
+
+
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Untuk modif data pada bayi
 if(isset($_POST['updatebtnassetbayi']))
