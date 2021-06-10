@@ -26,9 +26,8 @@ include('database/dbconfig.php');
                                 </div>
                             </div>
                     </div>
-                    <a href="tambah-aset-bayi.php">
                     <div class="col-lg-5 mb-4">
-                            <div class="card bg-success text-white shadow">
+                            <div class="card bg-success text-white shadow" href="tambah-aset-bayi.php">>
                                 <div class="card-body">
                                     Registrasi Bayi
                                     <div class="float-right">
