@@ -25,7 +25,10 @@ include('database/dbconfig.php');
         </div>
 
         <div class="card-body">
-        <p>Siliahkan pilih Jenis Aset yang akan di Registrasi</p>
+            <div class="card-header text-center">
+             <h5> Silahkan Pilih Aset yang akan Di Registrasi </h5>
+        </div>
+
         <div class="row">
                     <div class="col-lg-5 mb-4">
                       <div class="card bg-primary text-white shadow">
