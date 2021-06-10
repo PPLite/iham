@@ -38,6 +38,10 @@ include('database/dbconfig.php');
                             </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!--- Yang dulunya pernah jadi dropdown
 <div class="bs-example">
