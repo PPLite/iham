@@ -13,7 +13,7 @@ include('database/dbconfig.php');
                 <div class="card-header text-center">
                     <h4> Registrasi Aset Baru </h4>
                 </div>
-                
+
                 <div class="card-body">
                   <div class="row">
                     <div class="col-lg-5 mb-4">
@@ -38,7 +38,8 @@ include('database/dbconfig.php');
           </div>
         </div>
       </div>
-
+    </div>
+</div>
 <!--- Yang dulunya pernah jadi dropdown
 <div class="bs-example">
     <div class="dropdown">
