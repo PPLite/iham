@@ -143,7 +143,7 @@ include_once('database/dbconfig.php');
                                     <div class="card bg-primary text-white shadow">
                                         <div class="card-body">
                                             Registrasi Barang
-                                            <div class="col-auto">
+                                            <div class="col-6 col-md-4">
                                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
                                             </div>
                                         </div>
