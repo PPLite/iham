@@ -134,10 +134,33 @@ include_once('database/dbconfig.php');
     <!-- Project Card Example -->
     <div class="card shadow mb-4">
       <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Registrasi</h6>
       </div>
       <div class="card-body">
-       popipo
+
+      <div class="row">
+                                <div class="col-lg-6 mb-4">
+                                    <div class="card bg-primary text-white shadow">
+                                        <div class="card-body">
+                                            Primary
+                                            <div class="text-white-50 small">#4e73df</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 mb-4">
+                                    <div class="card bg-success text-white shadow">
+                                        <div class="card-body">
+                                            Success
+                                            <div class="text-white-50 small">#1cc88a</div>
+                                        </div>
+                                    </div>
+                                </div>
+      </div>
+
+
+
+
+
       </div>
     </div>
 
