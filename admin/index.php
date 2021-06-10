@@ -139,7 +139,7 @@ include_once('database/dbconfig.php');
       <div class="card-body">
 
       <div class="row">
-                                <div class="col-lg-6 mb-4">
+                                <div class="col-lg-3 mb-4">
                                     <div class="card bg-primary text-white shadow">
                                         <div class="card-body">
                                             Registrasi Barang
