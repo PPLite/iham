@@ -24,7 +24,9 @@ include('database/dbconfig.php');
         </div>
         </div>
 
-        <h6 class="m-0 font-weight-bold text-primary">Pilih Jenis Aset</h6>
+        <div class="card-body">
+                                    <p>Use Font Awesome Icons (included with this theme package) along with the circle
+                                        buttons as shown in the examples below!</p>
 
 
         <div class="bs-example">
