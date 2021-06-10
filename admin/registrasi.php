@@ -28,6 +28,7 @@ include('database/dbconfig.php');
                             </div>
                         </div>
 
+                <div class="row justify-content-center">
                     <div class="col-lg-5 mb-4">
                         <a href="tambah-aset-bayi.php">
                                 <div class="card bg-success text-white shadow">
@@ -38,9 +39,9 @@ include('database/dbconfig.php');
                                             </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
                     </div>
+                </div>
+            </div>
 
 <!--- Yang dulunya pernah jadi dropdown
 <div class="bs-example">
