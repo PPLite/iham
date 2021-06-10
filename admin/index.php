@@ -133,9 +133,9 @@ include_once('database/dbconfig.php');
                 <h6 class="m-0 font-weight-bold text-primary">Registrasi</h6>
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#menuakordion1" aria-expanded="true" aria-controls="menuakordion1">
               </div>
+              <div id="menuakordion1" class="collapse" data-parent="#accordionSidebar">
                 <div class="card-body">
                   <div class="row">
-                  <div id="menuakordion1" class="collapse" data-parent="#accordionSidebar">
                     <div class="col-lg-5 mb-4">
                       <div class="card bg-primary text-white shadow">
                         <div class="card-body">
