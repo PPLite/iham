@@ -25,13 +25,14 @@ include('database/dbconfig.php');
         </div>
 
         <div class="card-body">
-            <div class="card-header text-center">
+            <div class="text-center">
              <h5> Silahkan Pilih Aset yang akan Di Registrasi </h5>
         </div>
 
         <div class="row">
-                    <div class="col-lg-5 mb-4" href="tambah-aset-barang.php">
+                    <div class="col-lg-5 mb-4">
                       <div class="card bg-primary text-white shadow">
+                        <a href="tambah-aset-barang.php">
                         <div class="card-body">
                             Registrasi Barang
                         <div class="float-right">
@@ -40,8 +41,9 @@ include('database/dbconfig.php');
                       </div>
                     </div>
                   </div>
-                <div class="col-lg-5 mb-4" href="tambah-aset-bayi.php">
+                <div class="col-lg-5 mb-4">
                     <div class="card bg-success text-white shadow">
+                    <a href="tambah-aset-bayi.php">
                   <div class="card-body" >
                             Registrasi bayi
                   <div class="float-right">
