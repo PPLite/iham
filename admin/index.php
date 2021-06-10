@@ -131,7 +131,7 @@ include_once('database/dbconfig.php');
             <div class="card shadow mb-4">
               <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Registrasi</h6>
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#menuakordion1" aria-expanded="true" aria-controls="menuakordion1">
               </div>
                 <div class="card-body">
                   <div class="row">
@@ -146,7 +146,7 @@ include_once('database/dbconfig.php');
                     </div>
                   </div>
 
-                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                  <div id="menuakordion1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="col-lg-5 mb-4">
                     <div class="card bg-success text-white shadow">
                   <div class="card-body">
