@@ -24,7 +24,7 @@ include('database/dbconfig.php');
         </div>
         </div>
 
-        <h4> Pilih Tipe Aset </h4>
+        <h6 class="m-0 font-weight-bold text-primary">Pilih Jenis Aset</h6>
 
 
         <div class="bs-example">
