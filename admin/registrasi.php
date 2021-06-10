@@ -26,6 +26,37 @@ include('database/dbconfig.php');
 
         <div class="card-body">
         <p>Siliahkan pilih Jenis Aset yang akan di Registrasi</p>
+        <div class="row">
+                    <div class="col-lg-5 mb-4">
+                      <div class="card bg-primary text-white shadow">
+                        <div class="card-body" href="tambah-aset-barang.php">
+                        Registrasi Barang
+                        <div class="float-right">
+                          <i class="fas fa-archive fa-2x text-gray-300"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    <div class="col-lg-5 mb-4">
+                    <div class="card bg-success text-white shadow">
+                  <div class="card-body">
+                    Registrasi Bayi
+                  <div class="float-right">
+                <i class="fas fa-baby-carriage fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
 
 
         <div class="bs-example">
