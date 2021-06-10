@@ -25,8 +25,7 @@ include('database/dbconfig.php');
         </div>
 
         <div class="card-body">
-                                    <p>Use Font Awesome Icons (included with this theme package) along with the circle
-                                        buttons as shown in the examples below!</p>
+        <p>Siliahkan pilih Jenis Aset yang akan di Registrasi</p>
 
 
         <div class="bs-example">
@@ -37,6 +36,7 @@ include('database/dbconfig.php');
             <a href="tambah-aset-bayi.php" class="dropdown-item">bayi</a>
         </div>
     </div>
+</div>
 </div>
 
                             <div class="card-body">
