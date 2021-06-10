@@ -144,7 +144,7 @@ include_once('database/dbconfig.php');
                                         <div class="card-body">
                                             Registrasi Barang
                                             <div class="float-right">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                            <i class="fas fa-archive fa-2x text-gray-300"></i>
                                             </div>
                                         </div>
                                     </div>
