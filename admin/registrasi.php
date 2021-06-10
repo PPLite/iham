@@ -18,7 +18,7 @@ include('database/dbconfig.php');
                   <div class="row">
                     <div class="col-lg-5 mb-4">
                       <div class="card bg-primary text-white shadow">
-                        <div class="card-body" href="tambah-aset-barang.php">
+                        <div class="card-body" >
                         Registrasi Barang
                         <div class="float-right">
                           <i class="fas fa-archive fa-2x text-gray-300"></i>
@@ -27,6 +27,7 @@ include('database/dbconfig.php');
                     </div>
                   </div>
                     <div class="col-lg-5 mb-4">
+                    <a href="tambah-aset-bayi.php">
                     <div class="card bg-success text-white shadow">
                   <div class="card-body">
                     Registrasi Bayi
@@ -39,7 +40,6 @@ include('database/dbconfig.php');
         </div>
       </div>
     </div>
-</div>
 <!--- Yang dulunya pernah jadi dropdown
 <div class="bs-example">
     <div class="dropdown">
