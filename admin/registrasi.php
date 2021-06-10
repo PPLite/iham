@@ -33,6 +33,7 @@ include('database/dbconfig.php');
                                                 <i class="fas fa-archive fa-2x text-gray-300"></i>
                                             </div>
                                         </div>
+                                    </div>
 
                                         <div class="col-lg-5 mb-4">
                                             <a href="tambah-aset-bayi.php">
@@ -41,9 +42,11 @@ include('database/dbconfig.php');
                                                         Registrasi bayi
                                                     <div class="float-right">
                                                     <i class="fas fa-baby-carriage fa-2x text-gray-300"></i>
+                                                    </div>
                                                 </div>
                                         </div>
                                     </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -52,6 +55,7 @@ include('database/dbconfig.php');
         </div>
     </div>
 </div>
+
 <!--- Yang dulunya pernah jadi dropdown
 <div class="bs-example">
     <div class="dropdown">
