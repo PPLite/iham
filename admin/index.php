@@ -129,7 +129,7 @@ include_once('database/dbconfig.php');
 <!-- Content Row -->
 <div class="row">
   <!-- Content Column -->
-  <div class="col-lg-6 mb-4">
+  <div class="col-lg-5 mb-4">
 
     <!-- Project Card Example -->
     <div class="card shadow mb-4">
