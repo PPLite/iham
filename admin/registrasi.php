@@ -25,15 +25,25 @@ include('database/dbconfig.php');
                                     </div>
                                 </div>
                             </div>
+                    </div>
+                    <div class="col-lg-5 mb-4">
+                        <a href="tambah-aset-bayi.php">
+                            <div class="card bg-success text-white shadow">
+                                <div class="card-body">
+                                    Registrasi Bayi
+                                    <div class="float-right">
+                                      <i class="fas fa-baby-carriage fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                  </div>
+                </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 
 
 <!--------Library------>
