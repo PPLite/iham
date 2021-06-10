@@ -51,18 +51,8 @@ include('database/dbconfig.php');
             </div>
           </div>
 
-
-
-
-
-
-
-
-
-
-
-
-        <div class="bs-example">
+<!--- Yang dulunya pernah jadi dropdown
+<div class="bs-example">
     <div class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jenis Aset</a>
         <div class="dropdown-menu">
@@ -72,6 +62,7 @@ include('database/dbconfig.php');
     </div>
 </div>
 </div>
+--->
 
                             <div class="card-body">
                                 <form action="" method="GET">
