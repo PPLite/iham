@@ -6,11 +6,15 @@ include('database/dbconfig.php');
 ?>
 
 
+
+
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-7">
+        <div class="col-md-7">     
 
-            <div class="card mt-5">
+
+
+        <div class="card mt-5">
                 <div class="card-header text-center">
                     <h4> Registrasi Aset Baru </h4>
                 </div>
@@ -42,17 +46,11 @@ include('database/dbconfig.php');
                 </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
 
 
 
 
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-7">     
             <div class="card mt-5">
                 <div class="card-header text-center">
                     <h4> Registrasi Asset Barang Baru</h4>
