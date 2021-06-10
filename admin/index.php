@@ -139,6 +139,7 @@ include_once('database/dbconfig.php');
       <div class="card-body">
        popipo
       </div>
+    </div>
 
 
 
@@ -150,5 +151,3 @@ include_once('database/dbconfig.php');
 include('includes/scripts.php');
 include('includes/footer.php');
 ?>
-
-</div>
