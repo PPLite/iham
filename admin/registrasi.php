@@ -13,14 +13,12 @@ include('database/dbconfig.php');
                 <div class="card-header text-center">
                     <h4> Registrasi Aset Baru </h4>
                 </div>
-
-                <div class="row justify-content-start">
-                    <div class="col-4">
-                        <div class="card-body">
-                            <div class="col-lg-5 mb-4">
-                                <a href="tambah-aset-bayi.php">
-                                    <div class="card bg-primary text-white shadow">
-                                        <div class="card-body" >
+                <div class="card-body">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-5 mb-4">
+                        <a href="tambah-aset-bayi.php">
+                                <div class="card bg-primary text-white shadow">
+                                    <div class="card-body" >
                                             Registrasi Barang
                                         <div class="float-right">
                                             <i class="fas fa-archive fa-2x text-gray-300"></i>
@@ -29,24 +27,6 @@ include('database/dbconfig.php');
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                <div class="col-4">
-                One of two columns
-                </div>
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
                     <div class="col-lg-5 mb-4">
                         <a href="tambah-aset-bayi.php">
@@ -57,10 +37,11 @@ include('database/dbconfig.php');
                                             <i class="fas fa-baby-carriage fa-2x text-gray-300"></i>
                                             </div>
                                     </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+
 <!--- Yang dulunya pernah jadi dropdown
 <div class="bs-example">
     <div class="dropdown">
