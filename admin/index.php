@@ -154,8 +154,10 @@ include_once('database/dbconfig.php');
                                 <div class="col-lg-6 mb-4">
                                     <div class="card bg-success text-white shadow">
                                         <div class="card-body">
-                                            Success
-                                            <div class="text-white-50 small">#1cc88a</div>
+                                            Registrasi Bayi
+                                            <div class="float-right">
+                                            <i class="fas fa-baby-carriage fa-2x text-gray-300"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
