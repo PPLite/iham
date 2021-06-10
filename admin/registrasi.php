@@ -23,8 +23,11 @@ include('database/dbconfig.php');
     </div>
         </div>
         </div>
-        <div class="bs-example">
 
+        <h4> Pilih Tipe Aset </h4>
+
+
+        <div class="bs-example">
     <div class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jenis Aset</a>
         <div class="dropdown-menu">
