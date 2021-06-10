@@ -127,9 +127,9 @@ include_once('database/dbconfig.php');
 
 
         <div class="row">
-          <div class="col-lg-5 mb-4">
+          <div class="col-lg-5 mb-4" id="accordion">
             <div class="card shadow mb-4">
-              <div class="card-header py-3" id="accordion">
+              <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Registrasi</h6>
               </div>
                 <div class="card-body">
