@@ -31,8 +31,8 @@ include('database/dbconfig.php');
 
         <div class="row">
                     <div class="col-lg-5 mb-4">
+                    <a href="tambah-aset-barang.php">
                       <div class="card bg-primary text-white shadow">
-                        <a href="tambah-aset-barang.php">
                         <div class="card-body">
                             Registrasi Barang
                         <div class="float-right">
@@ -42,8 +42,8 @@ include('database/dbconfig.php');
                     </div>
                   </div>
                 <div class="col-lg-5 mb-4">
+                <a href="tambah-aset-bayi.php">
                     <div class="card bg-success text-white shadow">
-                    <a href="tambah-aset-bayi.php">
                   <div class="card-body" >
                             Registrasi bayi
                   <div class="float-right">
