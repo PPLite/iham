@@ -128,7 +128,7 @@ include_once('database/dbconfig.php');
   <!-- Content Row -->
 
 
-  
+
                         <!-- Area Chart -->
                         <div class="col-xl-8 col-lg-7">
                             <div class="card shadow mb-4">
@@ -141,6 +141,7 @@ include_once('database/dbconfig.php');
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                         </a>
+
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                             aria-labelledby="dropdownMenuLink">
                                             <div class="dropdown-header">Dropdown Header:</div>
@@ -154,7 +155,7 @@ include_once('database/dbconfig.php');
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
+                                    lululug
                                     </div>
                                 </div>
                             </div>
