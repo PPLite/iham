@@ -144,12 +144,15 @@ include_once('database/dbconfig.php');
                       </div>
                     </div>
                   </div>
+
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="col-lg-5 mb-4">
                     <div class="card bg-success text-white shadow">
                   <div class="card-body">
                     Registrasi Bayi
                   <div class="float-right">
                 <i class="fas fa-baby-carriage fa-2x text-gray-300"></i>
+                </div>
               </div>
             </div>
           </div>
