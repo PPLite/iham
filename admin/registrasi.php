@@ -16,12 +16,12 @@ include('database/dbconfig.php');
                 <div class="card-body">
                   <div class="row justify-content-center">
                     <div class="col-lg-5 mb-4">
-                        <a href="tambah-aset-bayi.php">
+                        <a href="tambah-aset-barang.php">
                             <div class="card bg-primary text-white shadow">
-                                <div class="card-body" >
+                                <div class="card-body">
                                     Registrasi Barang
                                     <div class="float-right">
-                                     <i class="fas fa-archive fa-2x text-gray-300"></i>
+                                        <i class="fas fa-archive fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>
@@ -36,26 +36,15 @@ include('database/dbconfig.php');
                                     </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
+                  </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!--- Yang dulunya pernah jadi dropdown
-<div class="bs-example">
-    <div class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jenis Aset</a>
-        <div class="dropdown-menu">
-            <a href="tambah-aset-barang.php" class="dropdown-item">barang</a>
-            <a href="tambah-aset-bayi.php" class="dropdown-item">bayi</a>
-        </div>
-    </div>
-</div>
-</div>
---->
+
 
 <!--------Library------>
 <?php
