@@ -48,10 +48,6 @@
     ?>
 
 <!-------AKORDION / Dan lain-lain---------->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
 
 <!---------------JAVASCRIPT UNTUK KONFIGURASI TABEL---------------------->
 <!----------Halaman tabel dan pencarian data dalam tabelL---------------->
