@@ -146,7 +146,7 @@ include_once('database/dbconfig.php');
                     </div>
                   </div>
 
-                  <div id="menuakordion1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                  <div id="menuakordion1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                     <div class="col-lg-5 mb-4">
                     <div class="card bg-success text-white shadow">
                   <div class="card-body">
