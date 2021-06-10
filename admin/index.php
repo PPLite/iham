@@ -127,7 +127,7 @@ include_once('database/dbconfig.php');
 
 
         <div class="row">
-          <div class="col-lg-5 mb-4">
+          <div class="col-lg-4 mb-4">
             <div class="card shadow mb-4">
               <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Registrasi</h6>
@@ -137,6 +137,7 @@ include_once('database/dbconfig.php');
                     <div class="col-lg-5 mb-4">
                       <div class="card bg-primary text-white shadow">
                         <div class="card-body">
+                        <a href="tambah-aset-barang.php">
                         Registrasi Barang
                         <div class="float-right">
                           <i class="fas fa-archive fa-2x text-gray-300"></i>
