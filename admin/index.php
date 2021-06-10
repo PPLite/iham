@@ -155,12 +155,18 @@ include_once('database/dbconfig.php');
                                 <div class="card-body">
                                     <div class="chart-area">
                                         
-                                    <div class="card mb-4 py-3 border-bottom-success">
-                                      <div class="card-body">
-                                        .border-bottom-success
-                                      </div>
-                                </div>
+                                        <div class="card mb-4 py-3 border-bottom-success">
+                                          <div class="card-body">
+                                            .border-bottom-success
+                                          </div>
+                                        </div>
 
+                                        <div class="card mb-4 py-3 border-bottom-info">
+                                        .border-bottom-info.border-bottom-info
+                                          <div class="card-body">
+                                            .border-bottom-success
+                                          </div>
+                                        </div>
 
 
                                     </div>
