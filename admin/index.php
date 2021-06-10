@@ -126,9 +126,6 @@ include_once('database/dbconfig.php');
   </div>
 
 
-                    <!-- Content Row -->
-
-                    <div class="row">
 
                         <!-- Area Chart -->
                         <div class="col-xl-8 col-lg-7">
@@ -160,7 +157,7 @@ include_once('database/dbconfig.php');
                                 </div>
                             </div>
                         </div>
-                        
+
 
 <?php
 include('includes/scripts.php');
