@@ -22,8 +22,7 @@ include('database/dbconfig.php');
                             <div class="col-lg-5 mb-4">
                                 <div class="card bg-primary text-white shadow">
                                     <div class="card-body">
-                                    Hewes Hewes nang tengah 
-                                    <a href="tambah-aset-barang.php" class="text-white"></a>
+                                    <a href="tambah-aset-barang.php" class="text-white">Hewes Hewes nang tengah </a>
                                     </div>
                                 </div>
                             </div>
