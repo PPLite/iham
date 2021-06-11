@@ -13,7 +13,7 @@ include('database/dbconfig.php');
           <div class="card mt-5">
 
                 <div class="card-header text-center">
-                    <h4> Registrasi Asset Barang Baru</h4>
+                    <h4> Registrasi Pasien Bayi Baru</h4>
                 </div>
 
                 <div class="card-body">
