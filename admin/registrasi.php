@@ -15,9 +15,12 @@ include('database/dbconfig.php');
             </div>
         </div>
 
+        
+
             <div class="card-body">
                 <div class="row justify-content-center">
                     <div class="col-lg-5 mb-4">
+                    <div class="row">
                         <a href="tambah-aset-barang.php">
                             <div class="card bg-primary text-white shadow">
                                 <div class="card-body">
@@ -27,6 +30,7 @@ include('database/dbconfig.php');
                                     </div>
                                 </div>
                             </div>
+                    </div>
                     </div>
                 </div>
             </div>
