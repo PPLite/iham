@@ -9,9 +9,12 @@ include('database/dbconfig.php');
     <div class="row justify-content-center">
         <div class="col-md-7">
 
-        <div class="card-header text-center">
-            <h4> Registrasi Aset Baru </h4>
+        <div class="card mt-5">
+            <div class="card-header text-center">
+                <h4> Registrasi Aset Baru </h4>
+            </div>
         </div>
+
             <div class="card-body">
                 <div class="row justify-content-center">
                     <div class="col-lg-5 mb-4">
