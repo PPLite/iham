@@ -16,11 +16,13 @@ include('database/dbconfig.php');
 
                     <div class="row"> <!-- Pembuka buat "ROW" / kotak werno werni -->
                         <div class="row justify-content-center">
-                                <div class="col-lg-6 mb-4">
+                                <div class="col-lg-5 mb-4">
                                     <div class="card bg-primary text-white shadow">
                                         <div class="card-body">
                                             Primary
                                             <div class="text-white-50 small">#4e73df</div>
+                                            <div class="float-right">
+                                            <i class="fas fa-archive fa-2x text-gray-300"></i></div>
                                         </div>
                                     </div>
                                 </div>
@@ -31,6 +33,7 @@ include('database/dbconfig.php');
                                 <button type="SUBMIT" class="btn btn-primary">Scan RFID</button>
                             </div>
                         </div>
+
                 </div> <!-- Penutup buat "ROW" -->
           </div>
             

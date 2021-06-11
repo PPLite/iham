@@ -11,7 +11,7 @@
                             Registrasi Barang
                             <div class="float-right">
                             <i class="fas fa-archive fa-2x text-gray-300"></i>
-                        </div>
+                            </div>
                     </div>
                 </div>
             </div>
