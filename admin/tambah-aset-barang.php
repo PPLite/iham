@@ -14,8 +14,8 @@ include('database/dbconfig.php');
                     <h4> Registrasi Asset Barang Baru</h4>
                 </div>
 
-               
-                <div class="col-lg-5 mb-4">
+                        <div class="card-body">
+                            <div class="col-lg-5 mb-4">
                                 <div class="card bg-primary text-white shadow">
                                     <div class="card-body">
                                     <a href="tambah-aset-barang.php" class="text-white">Registrasi Barang </a>
@@ -33,7 +33,7 @@ include('database/dbconfig.php');
                                     </div>
                                 </div>
                             </div>
-
+                        </div>
 
                             <div class="card-body">
                                 <form action="" method="GET">
