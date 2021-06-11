@@ -39,8 +39,11 @@ include('database/dbconfig.php');
 
 
                         <div class="row">
+                            <div class="col-md-12">
                         Penggaris?
+                            </div>
                         </div>
+                            
                         
                     </div>
                 </div>
