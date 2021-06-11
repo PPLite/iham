@@ -21,7 +21,8 @@ include('database/dbconfig.php');
                             <div class="col-lg-5 mb-4">
                                 <div class="card bg-primary text-white shadow">
                                     <div class="card-body">
-                                    <a href="tambah-aset-barang.php" class="text-white">Hewes Hewes nang tengah </a>
+                                    <a href="tambah-aset-barang.php" class="text-white">Registrasi Barang </a>
+                                    <i class="fas fa-archive fa-2x text-gray-300 float-right"></i>
                                     </div>
                                 </div>
                             </div>
@@ -30,7 +31,7 @@ include('database/dbconfig.php');
                             <div class="col-lg-5 mb-4">
                                 <div class="card bg-primary text-white shadow">
                                     <div class="card-body">
-                                    <a href="tambah-aset-barang.php" class="text-white">Hewes Hewes nang tengah Parte Duo</a>
+                                    <a href="tambah-aset-barang.php" class="text-white">Registrasi Bayi</a>
                                     </div>
                                 </div>
                             </div>
@@ -38,8 +39,6 @@ include('database/dbconfig.php');
 
                     </div>
                 </div>
-
-
 
           </div>
             
