@@ -21,12 +21,11 @@ include('database/dbconfig.php');
                                         <div class="card-body">
                                             Primary
                                             <div class="text-white-50 small">#4e73df</div>
-                                            <div class="float-right">
-                                            <i class="fas fa-archive fa-2x text-gray-300"></i></div>
+                                            <i class="fas fa-archive fa-2x text-gray-300 float-right"></i>
                                         </div>
                                     </div>
                                 </div>
-                        </row>
+                            </row>
 
                         <div class="card-body">
                             <div class="col-md-12">
