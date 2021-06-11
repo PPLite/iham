@@ -29,9 +29,10 @@ include('database/dbconfig.php');
 
 
                             <div class="col-lg-5 mb-4">
-                                <div class="card bg-primary text-white shadow">
+                                <div class="card bg-success text-white shadow">
                                     <div class="card-body">
                                     <a href="tambah-aset-barang.php" class="text-white">Registrasi Bayi</a>
+                                    <i class="fas fa-baby-carriage fa-2x text-gray-300 float-right"></i>
                                     </div>
                                 </div>
                             </div>
