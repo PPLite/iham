@@ -17,8 +17,17 @@ include('database/dbconfig.php');
 
                 <div class="card-body">
                     <div class="row justify-content-center">
-                    
-                    <a href="tambah-aset-barang.php">Hewes Hewes nang tengah </a>
+                
+                        <div class="row">
+                            <div class="col-lg-6 mb-4">
+                                <div class="card bg-primary text-white shadow">
+                                    <div class="card-body">
+                                    <a href="tambah-aset-barang.php">Hewes Hewes nang tengah </a>
+                                    
+                                        </div>
+                                    </div>
+                                </div>
+
                     </div>
                 </div>
 
