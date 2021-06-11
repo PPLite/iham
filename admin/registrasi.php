@@ -27,6 +27,7 @@ include('database/dbconfig.php');
                                     </div>
                                 </div>
                         </row>
+                    </div> <!-- Penutup buat "ROW" -->
 
                         <div class="card-body">
                             <div class="col-md-12">
@@ -34,7 +35,7 @@ include('database/dbconfig.php');
                             </div>
                         </div>
 
-                </div> <!-- Penutup buat "ROW" -->
+                
           </div>
             
         </div>   
