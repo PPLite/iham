@@ -14,9 +14,11 @@ include('database/dbconfig.php');
                     <h4> Registrasi Asset Barang Baru</h4>
                 </div>
                         <div class="card-body">
-                            <div class="col-md-4">
-                                <button type="SUBMIT" class="btn btn-primary">Scan RFID</button>
-                            </div>
+                        Registrasi Barang
+                        <div class="float-right">
+                            <i class="fas fa-archive fa-2x text-gray-300"></i>
+                        </div>
+
                         </div>
 
                         <div class="card-body">
