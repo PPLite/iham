@@ -13,23 +13,23 @@ include('database/dbconfig.php');
                 <div class="card-header text-center">
                     <h4> Registrasi Asset Barang Baru</h4>
                 </div>
-                        <div class="card-body">
+                      <div class="card-body">
                         Registrasi Barang
-                        <div class="float-right">
-                            <i class="fas fa-archive fa-2x text-gray-300"></i>
-                        </div>
-
-                        </div>
+                          <div class="row">
+                            <div class="col-lg-5 mb-4">
+                              <div class="float-right">
+                                <i class="fas fa-archive fa-2x text-gray-300"></i>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                        
 
                         <div class="card-body">
                             <div class="col-md-12">
                                 <button type="SUBMIT" class="btn btn-primary">Scan RFID</button>
                             </div>
                         </div>
-                </div>
-            </div>
-
-
         </div>
     </div>
 </div>
