@@ -15,6 +15,8 @@ include('database/dbconfig.php');
                     <h4> Registrasi Asset Barang Baru</h4>
                 </div>
 
+                <form>
+
                 <div class="card-body">
                     <div class="row justify-content-center">
                 
@@ -36,6 +38,8 @@ include('database/dbconfig.php');
                                     </div>
                                 </div>
                             </div>
+
+                    </form>
 
 
                         <div class="row">
