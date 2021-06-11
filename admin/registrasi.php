@@ -9,7 +9,7 @@ include('database/dbconfig.php');
     <div class="row justify-content-center">
         <div class="col-md-7">
 
-            <div class="card mt-5">
+          <div class="card mt-5">
                 <div class="card-header text-center">
                     <h4> Registrasi Asset Barang Baru</h4>
                 </div>
@@ -24,8 +24,9 @@ include('database/dbconfig.php');
                                     <div class="float-right">
                                       <i class="fas fa-archive fa-2x text-gray-300"></i>
                                     </div>
+                                </div>
                               </div>
-                            </div>
+                          </div>
                         </div>
                       </div>
                         
@@ -35,7 +36,7 @@ include('database/dbconfig.php');
                                 <button type="SUBMIT" class="btn btn-primary">Scan RFID</button>
                             </div>
                         </div>
-              </div>   
+          </div>   
 
         </div>
     </div>
