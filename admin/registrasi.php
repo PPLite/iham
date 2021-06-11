@@ -30,6 +30,8 @@ include('database/dbconfig.php');
                                 <button type="SUBMIT" class="btn btn-primary">Scan RFID</button>
                             </div>
                         </div>
+              </div>   
+
         </div>
     </div>
 </div>
