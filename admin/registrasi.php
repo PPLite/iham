@@ -38,6 +38,10 @@ include('database/dbconfig.php');
                             </div>
 
 
+                        <div class="row">
+                        Penggaris?
+                        </div>
+                        
                     </div>
                 </div>
 
