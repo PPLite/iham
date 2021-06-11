@@ -13,11 +13,9 @@ include('database/dbconfig.php');
                 <div class="card-header text-center">
                     <h4> Registrasi Asset Barang Baru</h4>
                 </div>
-
                       <div class="card-body">
                         <div class="row">
                           <div class="col-lg-5 mb-4">
-                            <a href="tambah-aset-barang.php">
                             <div class="card bg-primary text-white shadow">
                               <div class="card-body">
                                 Registrasi Barang
@@ -36,6 +34,7 @@ include('database/dbconfig.php');
                                 <button type="SUBMIT" class="btn btn-primary">Scan RFID</button>
                             </div>
                         </div>
+          </div>  
         </div>   
     </div>
 </div>
