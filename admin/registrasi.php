@@ -14,7 +14,8 @@ include('database/dbconfig.php');
                     <h4> Registrasi Asset Barang Baru</h4>
                 </div>
 
-                <div class="row">
+                    <div class="row"> <!-- Pembuka buat "ROW" / kotak werno werni -->
+                        <div class="row justify-content-center">
                                 <div class="col-lg-6 mb-4">
                                     <div class="card bg-primary text-white shadow">
                                         <div class="card-body">
@@ -23,7 +24,8 @@ include('database/dbconfig.php');
                                         </div>
                                     </div>
                                 </div>
-                </div>
+                        </row>
+                    </div> <!-- Penutup buat "ROW" -->
 
                         <div class="card-body">
                             <div class="col-md-12">
