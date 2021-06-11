@@ -19,17 +19,15 @@ include('database/dbconfig.php');
                             </div>
                         </div>
 
-                        <div class="row">
+                        <div class="card-body">
                             <div class="col-md-12">
-
-                            hewes hewes
-
+                                <button type="SUBMIT" class="btn btn-primary">Scan RFID</button>
                             </div>
                         </div>
                 </div>
             </div>
 
-            
+
         </div>
     </div>
 </div>
