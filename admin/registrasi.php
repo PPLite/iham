@@ -18,22 +18,25 @@ include('database/dbconfig.php');
         
 
             <div class="card-body">
-                <div class="row justify-content-center">
-                    <div class="col-lg-5 mb-4">
-                    <div class="row">
-                        <a href="tambah-aset-barang.php">
-                            <div class="card bg-primary text-white shadow">
-                                <div class="card-body">
-                                    Registrasi Barang
-                                    <div class="float-right">
-                                        <i class="fas fa-archive fa-2x text-gray-300"></i>
+                <div class="col-md-4">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5 mb-4">
+                            <div class="row">
+                                <a href="tambah-aset-barang.php">
+                                    <div class="card bg-primary text-white shadow">
+                                        <div class="card-body">
+                                            Registrasi Barang
+                                            <div class="float-right">
+                                            <i class="fas fa-archive fa-2x text-gray-300"></i>
+                                        </div>
                                     </div>
-                                </div>
                             </div>
-                    </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
 </div>
