@@ -18,7 +18,7 @@ include('database/dbconfig.php');
                 <div class="card-body">
                     <div class="row justify-content-center">
                 
-                        <div class="row">
+                        
                             <div class="col-lg-5 mb-4">
                                 <div class="card bg-primary text-white shadow">
                                     <div class="card-body">
@@ -27,7 +27,7 @@ include('database/dbconfig.php');
                                 </div>
                             </div>
 
-                        </div> 
+                        
 
 
 
