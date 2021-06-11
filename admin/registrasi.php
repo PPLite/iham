@@ -26,9 +26,10 @@ include('database/dbconfig.php');
                                     </div>
                                 </div>
                             </row>
-                            </div> <!-- Penutup buat "ROW" -->        
+                        </row>
+                    </div> <!-- Penutup buat "ROW" -->        
                                 
-          </div>
+            </div>
             
         </div>   
     </div>
