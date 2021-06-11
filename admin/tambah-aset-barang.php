@@ -23,8 +23,9 @@ include('database/dbconfig.php');
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-
+                        <div class="card-body">
                             <div class="col-lg-5 mb-4">
                                 <div class="card bg-success text-white shadow">
                                     <div class="card-body">
