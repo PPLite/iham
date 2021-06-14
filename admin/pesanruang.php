@@ -13,11 +13,11 @@ include('database/dbconfig.php');
 <?php
 if ($_SESSION['usertype']=="Admin")
 {
-    include('halaman/register.php');
+    include('halaman/bedcapacity.php');
 }
 else if ($_SESSION['usertype']=="engginer") 
 {
-    include('halaman/register.php');
+    include('halaman/bedcapacity.php');
 }
 else
 {
