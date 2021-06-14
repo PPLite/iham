@@ -31,7 +31,7 @@
             <th>Alamat</th>
             <th>Waktu Masuk</th>
             <th>Status</th>
-            <th>Keterangan</th>
+            <th> </th>
           </tr>
         </thead>
         <tbody>

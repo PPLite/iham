@@ -76,13 +76,16 @@ include_once('code.php');
   </div>
 </li>
 
-
-
-
 <li class="nav-item">
   <a class="nav-link" href="pengaturan-pengguna.php">
     <i class="fas fa-fw fa-chart-area"></i>
     <span>Pengaturan Pengguna</span></a>
+</li>
+
+<li class="nav-item">
+  <a class="nav-link" href="pesan-ruang.php">
+    <i class="fas fa-fw fa-chart-area"></i>
+    <span>Pesan Kamar</span></a>
 </li>
 
 
