@@ -177,14 +177,14 @@ include_once('code.php');
 
 <div class="container my-auto">
 <div class="copyright text-center my-auto">
+Jumlah Dokter
   <span span class="mr-2 d-none d-lg-inline text-gray-600 small">               
               <?php
               $query = "SELECT id FROM register ORDER BY id";
               $query_run = mysqli_query($connection, $query);
               $row = mysqli_num_rows($query_run);
-              echo '.$row.';
+              echo '<h7>'.$row.'</h7>';
               ?>
-Dokter
   </span>
 
 </div>
