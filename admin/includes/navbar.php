@@ -178,7 +178,7 @@ include_once('code.php');
 
 <div class="container my-auto">
 <div class="copyright text-center my-auto">
-Bayi           
+<span span class="mr-2 d-none d-lg-inline text-gray-600 small"> Bayi </span>          
   <?php
               $query = "SELECT id FROM tb_stat_anak ORDER BY id";
               $query_run = mysqli_query($connection, $query);
@@ -193,7 +193,7 @@ Bayi
 
 <div class="container my-auto">
 <div class="copyright text-center my-auto">
-  Pasien            
+<span span class="mr-2 d-none d-lg-inline text-gray-600 small"> Pasien </span>     
   <?php
               $query = "SELECT id FROM tb_rfid ORDER BY id";
               $query_run = mysqli_query($connection, $query);
@@ -209,7 +209,7 @@ Bayi
 
 <div class="container my-auto">
 <div class="copyright text-center my-auto">
-Petugas Medis            
+<span span class="mr-2 d-none d-lg-inline text-gray-600 small"> Petugas Medis </span>    
               <?php
               $query = "SELECT id FROM register ORDER BY id";
               $query_run = mysqli_query($connection, $query);
