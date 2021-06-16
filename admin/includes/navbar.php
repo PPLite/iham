@@ -172,27 +172,44 @@ include_once('code.php');
                 </form>
               </div>
             </li>
+
 <!-------- Mengambil Data Pasien yang terdaftar ----------------->
 <div class="topbar-divider d-none d-sm-block"></div>
 
 <div class="container my-auto">
 <div class="copyright text-center my-auto">
-  Jumlah Bayi               
+<div class="text-info"> Jumlah Bayi </div>               
   <?php
               $query = "SELECT id FROM tb_stat_anak ORDER BY id";
               $query_run = mysqli_query($connection, $query);
               $row = mysqli_num_rows($query_run);
               echo '<h6>'.$row.'</h6>';
               ?>
-              </div>
+</div>
 </div>
 
-<!-------- Mengambil Data dokter yang terdaftar ----------------->
+<!-------- Mengambil Data Petugas Medis yang terdaftar ----------------->
 <div class="topbar-divider d-none d-sm-block"></div>
 
 <div class="container my-auto">
 <div class="copyright text-center my-auto">
-  Jumlah Pasien               
+  <div class="text-danger"> Jumlah Pasien </div>              
+  <?php
+              $query = "SELECT id FROM tb_rfid ORDER BY id";
+              $query_run = mysqli_query($connection, $query);
+              $row = mysqli_num_rows($query_run);
+              echo '<h6>'.$row.'</h6>';
+              ?>
+</div>
+</div>
+
+
+<!-------- Mengambil Data Petugas Medis yang terdaftar ----------------->
+<div class="topbar-divider d-none d-sm-block"></div>
+
+<div class="container my-auto">
+<div class="copyright text-center my-auto">
+<div class="text-success"> Jumlah Petugas Medis </div>             
               <?php
               $query = "SELECT id FROM register ORDER BY id";
               $query_run = mysqli_query($connection, $query);
@@ -200,26 +217,10 @@ include_once('code.php');
               echo '<h6>'.$row.'</h6>';
               ?>
 </div>
-
-
-
 </div>
-<!-------- Mengambil kelas pengguna dari database ----------------->
 
-<!-------- Mengambil kelas pengguna dari database ----------------->
-            <div class="topbar-divider d-none d-sm-block"></div>
 
-          <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            
-            <span span class="mr-2 d-none d-lg-inline text-gray-600 small">
-            Anda terdaftar sebagai :
-            <?php echo $_SESSION['usertype']; ?>
-            </span>
-          </div>
-        </div>
-            <div class="topbar-divider d-none d-sm-block"></div>
-<!-------- Mengambil kelas pengguna dari database ----------------->
+
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">

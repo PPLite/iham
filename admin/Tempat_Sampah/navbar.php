@@ -104,3 +104,24 @@
                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
               </div>
             </li>
+
+
+
+            <!-------- Mengambil kelas pengguna dari database ----------------->
+            <div class="topbar-divider d-none d-sm-block"></div>
+
+          <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            
+            <span span class="mr-2 d-none d-lg-inline text-gray-600 small">
+            Anda terdaftar sebagai :
+            <?php echo $_SESSION['usertype']; ?>
+            </span>
+          </div>
+        </div>
+            <div class="topbar-divider d-none d-sm-block"></div>
+<!-------- Mengambil kelas pengguna dari database ----------------->
+
+
+
+
