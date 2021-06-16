@@ -185,13 +185,13 @@ include_once('code.php');
               echo '<h6>'.$row.'</h6>';
               ?>
               </div>
-
 </div>
 
 <!-------- Mengambil Data dokter yang terdaftar ----------------->
 <div class="topbar-divider d-none d-sm-block"></div>
 
 <div class="container my-auto">
+<div class="copyright text-center my-auto">
   Jumlah Pasien               
               <?php
               $query = "SELECT id FROM register ORDER BY id";
@@ -199,7 +199,6 @@ include_once('code.php');
               $row = mysqli_num_rows($query_run);
               echo '<h7>'.$row.'</h7>';
               ?>
-
 </div>
 
 
