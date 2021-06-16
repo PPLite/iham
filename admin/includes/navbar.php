@@ -172,7 +172,35 @@ include_once('code.php');
                 </form>
               </div>
             </li>
-            
+<!-------- Mengambil Data dokter yang terdaftar ----------------->
+<div class="topbar-divider d-none d-sm-block"></div>
+
+<div class="container my-auto">
+<div class="copyright text-center my-auto">
+  <span span class="mr-2 d-none d-lg-inline text-gray-600 small">               
+              <?php
+              $query = "SELECT id FROM register ORDER BY id";
+              $query_run = mysqli_query($connection, $query);
+
+              $row = mysqli_num_rows($query_run);
+
+              echo .$row.;
+              ?>
+Dokter
+  </span>
+
+
+
+
+
+
+
+
+</div>
+</div>
+  <div class="topbar-divider d-none d-sm-block"></div>
+<!-------- Mengambil kelas pengguna dari database ----------------->
+
 <!-------- Mengambil kelas pengguna dari database ----------------->
             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -194,7 +222,6 @@ include_once('code.php');
               <!--- Untuk menampilkan pengguna yang sedang aktif saat itu--->
               <?php
                echo $_SESSION['username']; 
-              
               ?> 
               
                 </span>
