@@ -197,7 +197,7 @@ include_once('code.php');
               $query = "SELECT id FROM register ORDER BY id";
               $query_run = mysqli_query($connection, $query);
               $row = mysqli_num_rows($query_run);
-              echo '<h7>'.$row.'</h7>';
+              echo '<h6>'.$row.'</h6>';
               ?>
 </div>
 
