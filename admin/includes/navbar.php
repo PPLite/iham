@@ -184,7 +184,7 @@ include_once('code.php');
 
               $row = mysqli_num_rows($query_run);
 
-              echo .$row.;
+              echo '<h6>'.$row.'</h6>';
               ?>
 Dokter
   </span>
