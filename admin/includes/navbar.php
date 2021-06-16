@@ -183,7 +183,7 @@ include_once('code.php');
               $query = "SELECT id FROM tb_stat_anak ORDER BY id";
               $query_run = mysqli_query($connection, $query);
               $row = mysqli_num_rows($query_run);
-              echo '<h6>'.$row.'</h6>';
+              echo '<h5>'.$row.'</h5>';
               ?>
 </div>
 </div>
@@ -198,7 +198,7 @@ include_once('code.php');
               $query = "SELECT id FROM tb_rfid ORDER BY id";
               $query_run = mysqli_query($connection, $query);
               $row = mysqli_num_rows($query_run);
-              echo '<h6 class="text-danger">'.$row.'</h6>';
+              echo '<h5 class="text-danger">'.$row.'</h5>';
               ?>
 </div>
 </div>
@@ -214,12 +214,12 @@ Staff
               $query = "SELECT id FROM register ORDER BY id";
               $query_run = mysqli_query($connection, $query);
               $row = mysqli_num_rows($query_run);
-              echo '<h6 class="text-success">'.$row.'</h6>';
+              echo '<h5 class="text-success">'.$row.'</h5>';
               ?>
 </div>
 </div>
 
-
+<div class="topbar-divider d-none d-sm-block"></div>
 
 
             <!-- Nav Item - User Information -->
