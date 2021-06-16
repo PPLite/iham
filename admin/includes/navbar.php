@@ -192,7 +192,6 @@ include_once('code.php');
 <div class="topbar-divider d-none d-sm-block"></div>
 
 <div class="container my-auto">
-  <span span class="mr-2 d-none d-lg-inline text-gray-600 small">
   Jumlah Pasien               
               <?php
               $query = "SELECT id FROM register ORDER BY id";
@@ -200,7 +199,11 @@ include_once('code.php');
               $row = mysqli_num_rows($query_run);
               echo '<h7>'.$row.'</h7>';
               ?>
-  </span>
+
+</div>
+
+
+
 </div>
 <!-------- Mengambil kelas pengguna dari database ----------------->
 
