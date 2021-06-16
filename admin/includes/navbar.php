@@ -172,13 +172,31 @@ include_once('code.php');
                 </form>
               </div>
             </li>
+<!-------- Mengambil Data Pasien yang terdaftar ----------------->
+<div class="topbar-divider d-none d-sm-block"></div>
+
+<div class="container my-auto">
+<div class="copyright text-center my-auto">
+  <span span class="mr-2 d-none d-lg-inline text-gray-600 small">
+  Jumlah Bayi               
+  <?php
+              $query = "SELECT id FROM tb_stat_anak ORDER BY id";
+              $query_run = mysqli_query($connection, $query);
+              $row = mysqli_num_rows($query_run);
+              echo '<h7>'.$row.'</h7>';
+              ?>
+              </div>
+  </span>
+
+</div>
+
 <!-------- Mengambil Data dokter yang terdaftar ----------------->
 <div class="topbar-divider d-none d-sm-block"></div>
 
 <div class="container my-auto">
 <div class="copyright text-center my-auto">
-Jumlah Dokter
-  <span span class="mr-2 d-none d-lg-inline text-gray-600 small">               
+  <span span class="mr-2 d-none d-lg-inline text-gray-600 small">
+  Jumlah Pasien               
               <?php
               $query = "SELECT id FROM register ORDER BY id";
               $query_run = mysqli_query($connection, $query);
@@ -188,6 +206,9 @@ Jumlah Dokter
   </span>
 
 </div>
+
+
+
 </div>
 <!-------- Mengambil kelas pengguna dari database ----------------->
 
