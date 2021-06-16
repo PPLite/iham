@@ -177,16 +177,14 @@ include_once('code.php');
 
 <div class="container my-auto">
 <div class="copyright text-center my-auto">
-  <span span class="mr-2 d-none d-lg-inline text-gray-600 small">
   Jumlah Bayi               
   <?php
               $query = "SELECT id FROM tb_stat_anak ORDER BY id";
               $query_run = mysqli_query($connection, $query);
               $row = mysqli_num_rows($query_run);
-              echo '<h7>'.$row.'</h7>';
+              echo '<h6>'.$row.'</h6>';
               ?>
               </div>
-  </span>
 
 </div>
 
@@ -194,7 +192,6 @@ include_once('code.php');
 <div class="topbar-divider d-none d-sm-block"></div>
 
 <div class="container my-auto">
-<div class="copyright text-center my-auto">
   <span span class="mr-2 d-none d-lg-inline text-gray-600 small">
   Jumlah Pasien               
               <?php
@@ -204,11 +201,6 @@ include_once('code.php');
               echo '<h7>'.$row.'</h7>';
               ?>
   </span>
-
-</div>
-
-
-
 </div>
 <!-------- Mengambil kelas pengguna dari database ----------------->
 
