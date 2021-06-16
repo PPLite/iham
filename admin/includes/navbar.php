@@ -178,12 +178,12 @@ include_once('code.php');
 
 <div class="container my-auto">
 <div class="copyright text-center my-auto">
-<div class="text-info"> Jumlah Bayi </div>               
+Bayi           
   <?php
               $query = "SELECT id FROM tb_stat_anak ORDER BY id";
               $query_run = mysqli_query($connection, $query);
               $row = mysqli_num_rows($query_run);
-              echo '<h6>'.$row.'</h6>';
+              echo '<h6 class="text-info">'.$row.'</h6>';
               ?>
 </div>
 </div>
@@ -193,12 +193,12 @@ include_once('code.php');
 
 <div class="container my-auto">
 <div class="copyright text-center my-auto">
-  <div class="text-danger"> Jumlah Pasien </div>              
+  Pasien            
   <?php
               $query = "SELECT id FROM tb_rfid ORDER BY id";
               $query_run = mysqli_query($connection, $query);
               $row = mysqli_num_rows($query_run);
-              echo '<h6>'.$row.'</h6>';
+              echo '<h6 class="text-danger">'.$row.'</h6>';
               ?>
 </div>
 </div>
@@ -209,7 +209,7 @@ include_once('code.php');
 
 <div class="container my-auto">
 <div class="copyright text-center my-auto">
-Jumlah Petugas Medis            
+Petugas Medis            
               <?php
               $query = "SELECT id FROM register ORDER BY id";
               $query_run = mysqli_query($connection, $query);
