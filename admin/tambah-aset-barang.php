@@ -51,8 +51,7 @@ include('database/dbconfig.php');
                         <div class="row">
                             <div class="col-md-12">
                                 <hr>
-                                <?php
-                                $row["rfid_uid"]  = array(); 
+                                <?php 
                                 if(isset($_GET['rfid_uid']))
                                     {
                                         $query = "SELECT * FROM `tb_reader_scan` order by id desc limit 1";
@@ -79,7 +78,9 @@ include('database/dbconfig.php');
                                     <?php  
                                  }             
                                  else
-                                 $row["rfid_uid"] = "";                   
+                                 ?>
+                                 <?= $row["reader_id"]=""; ?>
+                                 <?php
                             ?>        
                             </div>
                             </div>
