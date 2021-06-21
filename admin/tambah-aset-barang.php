@@ -75,7 +75,9 @@ include('database/dbconfig.php');
                                                 <input type="text" value="<?= $row["reader_id"]; ?>" class="form-control" disabled>
                                             </div>
                                         </div>
-                                    <?php  
+                                    <?php 
+                                    else
+                                    $row["rfid_uid"] = "";  
                                  }                               
                             ?>        
                             </div>
