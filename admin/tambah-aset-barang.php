@@ -82,7 +82,11 @@ include('database/dbconfig.php');
                                             {
                                                 $row["rfid_uid"]="";
                                             }
-                                    }             
+                                    }
+                                    else
+                                    {
+                                        $row["rfid_uid"]="";
+                                    }         
                             ?>        
                             </div>
                             </div>
