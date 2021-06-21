@@ -51,6 +51,7 @@ include('database/dbconfig.php');
                         <div class="row">
                             <div class="col-md-12">
                                 <hr>
+                                
                                 <?php 
                                 if(isset($_GET['rfid_uid']))
                                     {
@@ -58,31 +59,27 @@ include('database/dbconfig.php');
                                         $query_run = mysqli_query($connection, $query);
                                         
 
-                                            if(mysqli_num_rows($query_run) > 0)
-                                            foreach($query_run as $row)
-                                            {
-                                            ?>
-                                            <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <label for="">Kode UID</label>
-                                                        <input type="text" value="<?= $row["rfid_uid"]; ?>" class="form-control" disabled>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="">Waktu Di Scan</label>
-                                                        <input type="text" value="<?= $row["timestamp"]; ?>" class="form-control" disabled>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="">Di Scan oleh Reader</label>
-                                                        <input type="text" value="<?= $row["reader_id"]; ?>" class="form-control" disabled>
-                                                    </div>
-                                                </div>
-                                            <?php
-                                            }
-                                    }
-                                    else
-                                    {
-                                        $row["rfid_uid"]="";
-                                    }         
+                                    if(mysqli_num_rows($query_run) > 0)
+                                    foreach($query_run as $row)
+                                    ?>
+                                    <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="">Kode UID</label>
+                                                <input type="text" value="<?= $row["rfid_uid"]; ?>" class="form-control" disabled>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Waktu Di Scan</label>
+                                                <input type="text" value="<?= $row["timestamp"]; ?>" class="form-control" disabled>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Di Scan oleh Reader</label>
+                                                <input type="text" value="<?= $row["reader_id"]; ?>" class="form-control" disabled>
+                                            </div>
+                                        </div>
+                                    <?php
+                                 }
+                                 else
+                                 $row["rfid_uid"] = "";                                  
                             ?>        
                             </div>
                             </div>
