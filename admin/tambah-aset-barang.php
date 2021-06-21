@@ -78,7 +78,7 @@ include('database/dbconfig.php');
                                     <?php  
                                  }
                                  else
-                                 $row["rfid_uid"] = "Silahkan Klik Scan RFID Terlebih Dahulu";                                
+                                 $row["rfid_uid"] = '';                                
                             ?>        
                             </div>
                             </div>
