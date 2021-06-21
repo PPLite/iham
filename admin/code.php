@@ -186,7 +186,7 @@ if(isset($_POST['daftaraset_btn']))
         }
             else
             {
-                if(empty($rfid_uid))       
+                if(!preg_match("/^[a-e0-9]*$/", $rfid_uid))      
                 {
                     $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Dahulu";
                     $_SESSION['status_code'] = "error";
