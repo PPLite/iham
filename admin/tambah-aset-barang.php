@@ -78,7 +78,7 @@ include('database/dbconfig.php');
                                     <?php  
                                  }             
                                  else
-                                 $row["rfid_uid"] = "";                   
+                                 $row["rfid_uid"] = "0";                   
                             ?>        
                             </div>
                             </div>
@@ -103,7 +103,7 @@ include('database/dbconfig.php');
 <div class="modal-body">
 
         <div class="form-group">
-        <input type="hidden" name="rfid_uid" class="form-control check_rfid_barang" value="<?= $row["rfid_uid"]; ?>" placeholder="Masukkan kode UID" required>
+        <input type="text" name="rfid_uid" class="form-control check_rfid_barang" value="<?= $row["rfid_uid"]; ?>" placeholder="Masukkan kode UID" required>
         <small class="error_rfid" style="color:red;"></small>
         </div>     
 
