@@ -80,7 +80,7 @@ include('database/dbconfig.php');
                                             }
                                             else
                                             {
-                                                $row["reader_id"]="";
+                                                $row["rfid_uid"]="";
                                             }
                                     }             
                             ?>        
