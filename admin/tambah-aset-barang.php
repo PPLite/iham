@@ -84,9 +84,7 @@ include('database/dbconfig.php');
                                             }
                                     }
                                     else
-                                    {
-                                        $row["rfid_uid"]="0";
-                                    }            
+                                    $row["rfid_uid"]="0";           
                             ?>        
                             </div>
                             </div>
