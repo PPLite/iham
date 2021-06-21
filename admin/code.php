@@ -184,26 +184,35 @@ if(isset($_POST['daftaraset_btn']))
             $_SESSION['status_code'] = "error";
             header('location: daftar-barang.php');
         }
-    else 
-    {
-        $query = "INSERT INTO tb_rfid (nama_alat,rfid_uid,deskripsi,penanggung_jawab,peminjam,status_asset) VALUES ('$nama_alat','$rfid_uid','$deskripsi','$penanggung_jawab','$peminjam','$status_asset')";
-        $query_run = mysqli_query($connection,$query);
-        if($query_run)
-        {
-            if($query_run)
+            else 
             {
-                $_SESSION['status'] ="Aset Barang Berhasil Ditambahkan";
-                $_SESSION['status_code'] = "success";
-            header('location: daftar-barang.php');
+                if(empty($rfid_uid))
+                {
+                    $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Dahulu";
+                    $_SESSION['status_code'] = "error";
+                    header('location: daftar-barang.php');
+                }
+                    else
+                    {
+                        $query = "INSERT INTO tb_rfid (nama_alat,rfid_uid,deskripsi,penanggung_jawab,peminjam,status_asset) VALUES ('$nama_alat','$rfid_uid','$deskripsi','$penanggung_jawab','$peminjam','$status_asset')";
+                        $query_run = mysqli_query($connection,$query);
+                        if($query_run)
+                        {
+                            if($query_run)
+                            {
+                                $_SESSION['status'] ="Aset Barang Berhasil Ditambahkan";
+                                $_SESSION['status_code'] = "success";
+                            header('location: daftar-barang.php');
+                            }
+                            else
+                            {
+                                $_SESSION['status'] ="Registrasi Gagal. RFID Telah Terdaftar";
+                                $_SESSION['status_code'] = "error";
+                            header('location: daftar-barang.php');
+                            }
+                        }
+                }
             }
-            else
-            {
-                $_SESSION['status'] ="Registrasi Gagal. RFID Telah Terdaftar";
-                $_SESSION['status_code'] = "error";
-            header('location: daftar-barang.php');
-            }
-        }
-    }
 
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
