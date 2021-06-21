@@ -78,7 +78,7 @@ include('database/dbconfig.php');
                                     <?php  
                                  }             
                                  else
-                                 $row["rfid_uid"] = "0";                   
+                                 $row["rfid_uid"] = "";                   
                             ?>        
                             </div>
                             </div>
