@@ -182,15 +182,14 @@ if(isset($_POST['daftaraset_btn']))
         {
             $_SESSION['status'] ="Registrasi Gagal. RFID Telah Terdaftar";
             $_SESSION['status_code'] = "error";
-            header('location: daftar-barang.php');
+            header('location: tambah-aset-barang.php');
         }
-            else 
-            {
-                if(empty($rfid_uid))
+            else if(empty($rfid_uid))
+                
                 {
                     $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Dahulu";
                     $_SESSION['status_code'] = "error";
-                    header('location: daftar-barang.php');
+                    header('location: tambah-aset-barang.php');
                 }
                     else
                     {
@@ -212,8 +211,6 @@ if(isset($_POST['daftaraset_btn']))
                             }
                         }
                 }
-            }
-
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
