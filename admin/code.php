@@ -188,7 +188,7 @@ if(isset($_POST['daftaraset_btn']))
             {
                 if(!preg_match("/^[a-e0-9]*$/", $rfid_uid))      
                 {
-                    $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Dahulu";
+                    $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Terlebih Dahulu";
                     $_SESSION['status_code'] = "error";
                     header('location: tambah-aset-barang.php');
                 }
@@ -354,7 +354,7 @@ if(isset($_POST['daftarasetanak_btn']))
     $status = $_POST['status'];
 
     $cekanak_query = "SELECT * FROM tb_stat_anak 
-    WHERE rfid_uid = '$rfid_uid' AND status='checkout'";
+    WHERE rfid_uid = '$rfid_uid' AND status='checkout' > 0";
     $cekanak_query_run = mysqli_query($connection, $cekanak_query);
     if(mysqli_num_rows($cekanak_query_run) > 0)
         {
@@ -366,7 +366,7 @@ if(isset($_POST['daftarasetanak_btn']))
             {
                 if(!preg_match("/^[a-e0-9]*$/", $rfid_uid))      
                 {
-                    $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Dahulu";
+                    $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Terlebih Dahulu";
                     $_SESSION['status_code'] = "error";
                     header('location: tambah-aset-bayi.php');
                 }
@@ -380,13 +380,13 @@ if(isset($_POST['daftarasetanak_btn']))
                         {
                             $_SESSION['status'] ="Data Pasien Berhasil Ditambahkan";
                             $_SESSION['status_code'] = "success";
-                        header('location: daftar-barang.php');
+                            header('location: tambah-aset-bayi.php');
                         }
                         else
                         {
                             $_SESSION['status'] ="Kesalahan Internal. Registrasi Gagal";
                             $_SESSION['status_code'] = "error";
-                        header('location: daftar-barang.php');
+                            header('location: tambah-aset-bayi.php');
                         }
                     }
                 }
