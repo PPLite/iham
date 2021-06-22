@@ -341,6 +341,7 @@ if(isset($_POST['deleteasset']))
 
 ////////////////TAMBAH ASET BAYI (NEW) //////////////////////////////////
 if(isset($_POST['daftarasetanak_btn']))
+
 //jika sudah ditombol kemudian
 {
     //input data
@@ -351,37 +352,46 @@ if(isset($_POST['daftarasetanak_btn']))
     $penanggung_jawab_bayi = $_POST['penanggung_jawab_bayi'];
     $alamat = $_POST['alamat'];
     $status = $_POST['status'];
-    $cekanak_query = "SELECT * FROM tb_stat_anak 
-    WHERE rfid_uid = '$rfid_uid' AND status='checkout'";
+
+    $cekanak_query = "SELECT * FROM tb_stat_anak WHERE `status` IN ("checkout") AND rfid_uid = '$rfid_uid'";
     $cekanak_query_run = mysqli_query($connection, $cekanak_query);
     if(mysqli_num_rows($cekanak_query_run) > 0)
-    {
-        $query = "INSERT INTO tb_stat_anak (rfid_uid,id_pengenal,nama_anak,nama_ibu,penanggung_jawab_bayi,alamat,status) VALUES ('$rfid_uid','$id_pengenal','$nama_anak','$nama_ibu','$penanggung_jawab_bayi','$alamat','$status')";
-        $query_run = mysqli_query($connection,$query);
-        if($query_run)
         {
-            $_SESSION['status'] ="Pasien berhasil di simpan";
-            $_SESSION['status_code'] = "success";
-            header('location: daftar-bayi.php');
-        }
-        else
-        {
-            $_SESSION['status'] ="Pasien Gagal di Simpan. Harap hubungi Operator";
+            $_SESSION['status'] ="Registrasi Gagal. RFID Telah Terdaftar";
             $_SESSION['status_code'] = "error";
-            header('location: daftar-bayi.php');
+            header('location: tambah-aset-bayi.php');
         }
-
-    }
-    else
-        {
-            $_SESSION['status'] ="Registrasi Gagal. Kode RFID masih aktif";
-            $_SESSION['status_code'] = "error";
-            header('location: daftar-bayi.php');
-        }
+            else
+            {
+                if(!preg_match("/^[a-e0-9]*$/", $rfid_uid))      
+                {
+                    $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Terlebih Dahulu";
+                    $_SESSION['status_code'] = "error";
+                    header('location: tambah-aset-bayi.php');
+                }
+                else
+                {
+                    $query = "INSERT INTO tb_stat_anak (rfid_uid,id_pengenal,nama_anak,nama_ibu,penanggung_jawab_bayi,alamat,status) VALUES ('$rfid_uid','$id_pengenal','$nama_anak','$nama_ibu','$penanggung_jawab_bayi','$alamat','$status')";
+                    $query_run = mysqli_query($connection,$query);
+                    if($query_run)
+                    {
+                        if($query_run)
+                        {
+                            $_SESSION['status'] ="Data Pasien Berhasil Ditambahkan";
+                            $_SESSION['status_code'] = "success";
+                            header('location: tambah-aset-bayi.php');
+                        }
+                        else
+                        {
+                            $_SESSION['status'] ="Kesalahan Internal. Registrasi Gagal";
+                            $_SESSION['status_code'] = "error";
+                            header('location: tambah-aset-bayi.php');
+                        }
+                    }
+                }
+            }
+                     
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 
 
