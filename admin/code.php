@@ -353,7 +353,7 @@ if(isset($_POST['daftarasetanak_btn']))
     $alamat = $_POST['alamat'];
     $status = $_POST['status'];
 
-    $cekanak_query = "SELECT * FROM tb_stat_anak WHERE `status` IN ("checkout") AND rfid_uid = '$rfid_uid'";
+    $cekanak_query = "SELECT * FROM tb_stat_anak WHERE `status` IN ('checkout') AND rfid_uid = '$rfid_uid'";
     $cekanak_query_run = mysqli_query($connection, $cekanak_query);
     if(mysqli_num_rows($cekanak_query_run) > 0)
         {
