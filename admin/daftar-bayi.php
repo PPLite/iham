@@ -29,9 +29,9 @@ include('database/dbconfig.php');
       <table class="table table-bordered" id="tabelasetbayi" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>ID</th>
+            <!--<th>ID</th>-->
             <!--<th>RFID UID</th>-->
-            <th>Nomor KTP/SIM</th>
+            <th>Nomor KTP/SIM Ortu</th>
             <th>Nama Anak</th>
             <th>Nama Ibu</th>
             <th>Penanggung Jawab</th>
@@ -52,7 +52,7 @@ include('database/dbconfig.php');
             ?>
           <tr>
           <!---Mengambil data dari database kemudian menampilkan ke tabel, serta menentukan kolom mana saja yang akan diambil datanya-->
-          <td><?php echo $row['id']; ?></td> 
+          <!--<td><?php //echo $row['id']; ?></td> -->
             <!--<td><?php //echo $row['rfid_uid']; ?></td>-->
             <td><?php echo $row['id_pengenal']; ?></td>
             <td><?php echo $row['nama_anak']; ?></td>
