@@ -1,13 +1,8 @@
-image:
-  file: .gitpod.Dockerfile
-# This is to get rid of the annoying popup feel free to leave this out
-ports:
-  - port: 9000
-    onOpen: ignore
-vscode:
-  extensions:
-    - felixfbecker.php-debug@1.13.0:WX8Y3EpQk3zgahy41yJtNQ==
-    
 tasks:
-  - init: npm install
-    command: npm start
+  - init: |
+      touch /tmp/.npm-lock
+      npm install
+      rm /tmp/.npm-lock
+    command: npm run server
+  - init: sleep 1 && while [ -f /tmp/.npm-lock ]; do sleep 1; done
+    command: npm run client
