@@ -22,8 +22,9 @@ include('database/dbconfig.php');
 <!---Buat ngambil data--->
     <?php
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
-    $query = "SELECT * FROM tb_stat_anak"; 
-    $query_run = mysqli_query($connection, $query);
+    $query1 = "SELECT * FROM tb_stat_anak";
+    $query2 = "SELECT DATE_FORMAT(`waktu_masuk`, '%Y/%M/%d %H:%i') AS timestamp FROM tb_stat_anak"; 
+    $query_run = mysqli_query($connection, $query1, $query2);
     ?>
 
       <table class="table table-bordered" id="tabelasetbayi" width="100%" cellspacing="0">
@@ -59,7 +60,7 @@ include('database/dbconfig.php');
             <td><?php echo $row['nama_ibu']; ?></td>
             <td><?php echo $row['penanggung_jawab_bayi']; ?></td>
             <td><?php echo $row['alamat']; ?></td>
-            <td><?php echo $row['waktu_masuk']; ?></td>
+            <td><?php echo $row['timestamp']; ?></td>
             <td><?php echo $row['status']; ?></td>
             <td><?php echo $row['keterangan']; ?></td>
             </td>     
