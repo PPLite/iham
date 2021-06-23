@@ -61,101 +61,152 @@ include('../database/dbconfig.php');
 					<div class="stand">
 						<?php
 						//Get reader condition
-						if($row['timestamp']==$row_2['timestamp']){
+						$ts1 = strtotime($row['timestamp']);
+						$ts2 = strtotime($row_2['timestamp']); 
+						$time_diff  = $ts1 - $ts2;
+						$time_diff2 = $ts2 - $ts1;
+						echo $time_diff. "\n";
+						echo $time_diff2. "\n";
+						$object = array (0);
+						$posX =0;
+
+						if($time_diff > -5 && $time_diff2 < 5 && $time_diff <= 0 && $time_diff2 >= 0){
 							//Get Area Position
 							if($row['rfid_uid']==$row_2['rfid_uid']){// area 2
-								$object = [2];
+								$object = array(2);
 								$posX = 30;
 							}
 							else{
-								$object = [1,3];
-								$posX = [100,-30];
+								$object = array(1,3);
+								$posX = array(-30,100);
 							}
 						}
-						if($row['timestamp']>=$row_2['timestamp']){
-							$object = [1];
+						if($time_diff < -5 && $time_diff2 > 5){
+							$object = array(1);
+							$posX = -30;
+						//	echo "<h2>" . $object[0]. "</h2>";
+						//	echo "<h2>" . $posX. "</h2>";
+						}
+						if($time_diff > 5 && $time_diff2 < -5){
+							$object= array(3);
 							$posX = 100;
 						}
-						else{
-							$object= [3];
-							$posX = 100;
-						}
+
+						//echo $object. "\n";
 						// List Object in Spesific area
 						foreach($object as $j){
+							echo $j. "\n";
+							echo $posX. "\n";
 							if($j == 1){
+								$same = 0;
+								$new_Y = 0;
 								foreach($area_1 as $a_1){
-									$same = 0;
-									$id   = $row_1['rfid_uid'];
-									$name = $row_1['nama_anak'];
+									$id   = $row['rfid_uid'];
+									$posY = $a_1['posY'];
 									if($id == $a_1['rfid_uid']){
 										$new_tot = $a_1['total'] + 1;
-										$time = $a_1['timestamp'];
-										$data= "UPDATE tb_area_1 SET total='$new_tot' WHERE rfid_uid='$id'";
+										$new_Y = $a_1['posY'] ;
+										$data= "UPDATE tb_area_1 SET 
+												total='$new_tot'
+												WHERE rfid_uid='$id'";
+
 										$run_1= mysqli_query($connection,$data);
 										$same =1;
 										break;
 									}
+									else{
+										$total = $a_1['total'];
+										$new_Y = $a_1['posY'];
+									}
+									
 								}
+								
 								if($same == 0){
+									$id   = $row['rfid_uid'];
+									$name = $row['nama_anak'];
 									$new_tot = 1;
-									$Ynew = $a_1['posY'] + 10;
+									$Ynew = $new_Y+ 10;
 									$data = "INSERT INTO tb_area_1 (rfid_uid,nama_anak,total,posX, posY)
-									VALUES ('$id','$name','$new_tot','$posX','$Ynew')";
+									VALUES ('$id', '$name',' $new_tot', '$posX' , '$Ynew')";
 									$run_1 = mysqli_query($connection, $data);
 
 									$delete = " DELETE FROM tb_area_1 WHERE total = '0'
 									LIMIT 1 ";
 									$del_1 = mysqli_query($connection, $delete);
-								}							
+								}					
 							}
 							if($j==2) {
+								$same = 0;
+								$new_Y = 0;
 								foreach($area_2 as $a_2){
-									$same = 0;
 									$id   = $row_2['rfid_uid'];
-									$name = $row_2['nama_anak'];
+									$posY = $a_2['posY'];
 									if($id == $a_2['rfid_uid']){
 										$new_tot = $a_2['total'] + 1;
-										$time = $a_2['timestamp'];
-										$data= "UPDATE tb_area_2 SET total='$new_tot' WHERE rfid_uid='$id'";
+										$new_Y = $a_2['posY'] ;
+										$data= "UPDATE tb_area_2 SET 
+												total='$new_tot'
+												WHERE rfid_uid='$id'";
+
 										$run_2= mysqli_query($connection,$data);
 										$same =1;
 										break;
 									}
+									else{
+										$total = $a_2['total'];
+										$new_Y = $a_2['posY'];
+									}
+									
 								}
+								
 								if($same == 0){
+									$id   = $row_2 ['rfid_uid'];
+									$name = $row_2 ['nama_anak'];
 									$new_tot = 1;
-									$Ynew = $a_2['posY'] + 10;
+									$Ynew = $new_Y+ 10;
 									$data = "INSERT INTO tb_area_2 (rfid_uid,nama_anak,total,posX, posY)
-									VALUES ('$id','$name','$new_tot','$posX','$Ynew')";
-									$run_2 = mysqli_query($connection, $data);
+									VALUES ('$id', '$name',' $new_tot', '$posX' , '$Ynew')";
+									$run_3 = mysqli_query($connection, $data);
 
 									$delete = " DELETE FROM tb_area_2 WHERE total = '0'
 									LIMIT 1 ";
-									$del_2 = mysqli_query($connection, $delete);
+									$del_3 = mysqli_query($connection, $delete);
 								}
-						
 								
 							}
 							else {
+								//echo "<h2> area:" . $j. "</h2>";
+								//echo "<h2> posisiX:" . $posX. "</h2>";
+								$same = 0;
+								$new_Y = 0;
 								foreach($area_3 as $a_3){
-									$same = 0;
 									$id   = $row_2['rfid_uid'];
-									$name = $row_2['nama_anak'];
+									$posY = $a_3['posY'];
 									if($id == $a_3['rfid_uid']){
 										$new_tot = $a_3['total'] + 1;
-										$time = $a_3['timestamp'];
-										$data= "UPDATE tb_area_3 SET total='$new_tot' WHERE rfid_uid='$id'";
+										$new_Y = $a_3['posY'] ;
+										$data= "UPDATE tb_area_3 SET 
+												total='$new_tot'
+												WHERE rfid_uid='$id'";
+
 										$run_3= mysqli_query($connection,$data);
 										$same =1;
 										break;
 									}
-									$total = $a_3['total'];
+									else{
+										$total = $a_3['total'];
+										$new_Y = $a_3['posY'];
+									}
+									
 								}
+								
 								if($same == 0){
+									$id   = $row_2 ['rfid_uid'];
+									$name = $row_2 ['nama_anak'];
 									$new_tot = 1;
-									$Ynew = $a_3['posY'] + 10;
+									$Ynew = $new_Y+ 10;
 									$data = "INSERT INTO tb_area_3 (rfid_uid,nama_anak,total,posX, posY)
-									VALUES ('$id','$name','$new_tot','$posX','$Ynew')";
+									VALUES ('$id', '$name',' $new_tot', '$posX' , '$Ynew')";
 									$run_3 = mysqli_query($connection, $data);
 
 									$delete = " DELETE FROM tb_area_3 WHERE total = '0'
@@ -183,88 +234,155 @@ include('../database/dbconfig.php');
 							$it_1->closeCursor();
 							$it_2->closeCursor();
 							$it_3->closeCursor();
+							//$con = $result = mysql_query($connection, $it_1);
 			
 						//Filter Data
-						//$tot =0;
-						$reset_1 = 0;
-						$reset_2 = 0;
-						$reset_3 = 0;
+						//initiialization
+						$t_1 = 0;
+						$t_2 = 0;
+						$t_3 = 0;
+						$reset_all = 0;
 						
+						//Sum Object in All Area
+						foreach ($obj_1 as $n_1){
+							$t_1 = $t_1 + $n_1['total'];
+						}
+
+						foreach ($obj_2 as $n_2){
+							$t_2 = $t_2 + $n_2['total'];
+						}
+			
+						foreach ($obj_3 as $n_3){
+							$t_3 = $t_3 + $n_3['total'];
+						}
+						
+						$reset_all = $t_1 + $t_2 + $t_3;
+						$min_v = $reset_all/3;
+						echo $reset_all. "\n";
+						echo $t_1. "\n";
+						echo $t_2. "\n";
+						echo $t_3. "\n";
+
 						// Filter area 1
-						$dat_all_1 ="SELECT SUM('total') FROM tb_area_1" ;
-						$tot_1 = mysqli_query($connection, $dat_all_1);
-						if($tot_1 == '100'){
-							$delete_1 = "DELETE FROM tb_area_1 WHERE total < '1000' ";
-							$reset_1  = 1;
-							if($reset_1 == 1){
-								$new_r   = 0;
-								foreach($obj_1 as $x_1){
-									$id_new  = $x_1['rfid_uid'];
-									$data_r  = "UPDATE tb_area_1 SET total='$new_r' WHERE rfid_uid=$id_new";
-									$run_r   = mysqli_query($connection,$data_r);
-								}
+						if( $reset_all >= 10){
+							// Area 1
+								$delete_1 = "DELETE FROM tb_area_1 WHERE total <= $min_v";
+								$del_1 = mysqli_query($connection, $delete_1);
+								$data = "INSERT INTO tb_area_1 (rfid_uid,nama_anak,total,posX, posY)
+									VALUES ('00000000000', ' ','  ', ' ' , ' ')";
+							        $up_1= mysqli_query($connection,$data);
 						
+							foreach($obj_1 as $x_1){
+								$new_r   = 0;
+								$id_new  = $x_1['rfid_uid'];
+								$data_r  = "UPDATE tb_area_1 SET total = '$new_r' WHERE total > $min_v";
+								$run_r   = mysqli_query($connection,$data_r);
 							}
+
+							// Area 2
+							$delete_2 = "DELETE FROM tb_area_2 WHERE total <= 10";
+							$del_2 = mysqli_query($connection, $delete_2);
+							$data = "INSERT INTO tb_area_2 (rfid_uid,nama_anak,total,posX, posY)
+							VALUES ('00000000000', ' ','  ', ' ' , ' ')";
+							$up_2= mysqli_query($connection,$data);
+					
+					
+							foreach($obj_2 as $x_2){
+								$new_r   = 0;
+								$id_new  = $x_2['rfid_uid'];
+								$data_r  = "UPDATE tb_area_2 SET total = '$new_r' WHERE total > 10";
+								$run_r   = mysqli_query($connection,$data_r);
+							}
+
+							//Area 3
+							$delete_3 = "DELETE FROM tb_area_3 WHERE total <= $min_v";
+							$del_3 = mysqli_query($connection, $delete_3);
+							$data = "INSERT INTO tb_area_3 (rfid_uid,nama_anak,total,posX, posY)
+									VALUES ('00000000000', ' ','  ', ' ' , ' ')";
+							$up_3= mysqli_query($connection,$data);
+							
+							
+							foreach($obj_3 as $x_3){
+								$new_r   = 0;
+								$id_new  = $x_3['rfid_uid'];
+								$data_r  = "UPDATE tb_area_3 SET total = '$new_r' WHERE total > $min_v";
+								$run_r   = mysqli_query($connection,$data_r);
+							}
+
 						}
 
 						// Filter area 2
-						$dat_all_2 ="SELECT SUM('total') FROM tb_area_2" ;
-						$tot_2 = mysqli_query($connection, $dat_all_2);
-						if($tot_2 == '100'){
-							$delete_2 = "DELETE FROM tb_area_2 WHERE total < '1000'";
-							$reset_2  = 1;
-							if($reset_2 == 1){
-								$new_r   = 0;
-								foreach($obj_2 as $x_2){
-									$id_new  = $x_3['rfid_uid'];
-									$data_r  = "UPDATE tb_area_2 SET total='$new_r' WHERE rfid_uid=$id_new";
-									$run_r   = mysqli_query($connection,$data_r);
-								}
-							}
-						}
+						//if($t_2 >= 5 || $reset_all >= 10){
+
+						//		$delete_2 = "DELETE FROM tb_area_2 WHERE total <= 10";
+						//		$del_2 = mysqli_query($connection, $delete_2);
+						//		$data = "INSERT INTO tb_area_2 (rfid_uid,nama_anak,total,posX, posY)
+						//			VALUES ('00000000000', ' ','  ', ' ' , ' ')";
+						//		$up_2= mysqli_query($connection,$data);
+						//	//}
+							
+						//	foreach($obj_2 as $x_2){
+						//		$new_r   = 0;
+						//		$id_new  = $x_2['rfid_uid'];
+						//		$data_r  = "UPDATE tb_area_2 SET total = '$new_r' WHERE total > 10";
+						//		$run_r   = mysqli_query($connection,$data_r);
+						//	}
+						//}
 
 
 						// Filter area 3
-						$dat_all_3 ="SELECT SUM('total') FROM tb_area_3" ;
-						$tot_3 = mysqli_query($connection, $dat_all_3);
-						if($tot_3 >= '100'){
-							$delete_3 = "DELETE FROM tb_area_3 WHERE total < 1000";
-							$reset_3  = 1;
-							if($reset_3 == 1){
-								$new_r   = 0;
-								foreach($obj_3 as $x_3){
-									$id_new  = $x_3['rfid_uid'];
-									$data_r  = "UPDATE tb_area_3 SET total='$new_r' WHERE rfid_uid=$id_new";
-									$run_r   = mysqli_query($connection,$data_r);
-								}
-							}
-						}
-						
-						
-						//tampilan objek pada peta
+						//if($t_3 >= 5 || $reset_all >= 10){
+						//		$delete_3 = "DELETE FROM tb_area_3 WHERE total <= $min_v";
+						//		$del_3 = mysqli_query($connection, $delete_3);
+						//		$data = "INSERT INTO tb_area_3 (rfid_uid,nama_anak,total,posX, posY)
+						//			VALUES ('00000000000', ' ','  ', ' ' , ' ')";
+						//		$up_3= mysqli_query($connection,$data);
+						//	//}
+							
+						//	foreach($obj_3 as $x_3){
+						//		$new_r   = 0;
+						//		$id_new  = $x_3['rfid_uid'];
+						//		$data_r  = "UPDATE tb_area_3 SET total = '$new_r' WHERE total > $min_v";
+						//		$run_r   = mysqli_query($connection,$data_r);
+						//	}
+						//}
+
+						//tampilan objek pada peta di setiap area
 						$kotak = 10;
 						$width = 5;
 						$height = 5;
 						
 						foreach($obj_1 as $p_1){
-							echo '<div id= "s'. $p_1['nama_anak'].'
-							"style="width:'.$kotak*$width.'px;height:'.$kotak*$height.'px;top:'.$kotak*$p_1['posY'].'px;left:'.$kotak*$p_1['posX'].'px;">'."\n";
-							echo $p_1['nama_anak']."\n";
-							echo '</div>'."\n";
+							if($p_1['rfid_uid'] !== '00000000000' && $p_1['rfid_uid'] !== ' ' ){
+								$textY = ($kotak*$p_1['posY']) - 20;
+								echo '<div id="ok">';
+								echo '<img src="img\baby.png" alt="'.$p_1['nama_anak'].'" width = '.$kotak*$width.' height= '.$kotak*$height.' style="position: absolute; top:'.$kotak*$p_1['posY'].'px;left:'.$kotak*$p_1['posX'].'px;">';
+								echo '<p style="font-size:10px;font-style:bold;position: absolute;top:'.$textY.'px;left:'.$kotak*$p_1['posX'].'px;">'.$p_1['nama_anak'].'</p>';
+								echo '</div>';
+							}
 						}
 
+
 						foreach($obj_2 as $p_2){
-							echo '<div id= "s'. $p_2['nama_anak'].'
-							"style="width:'.$kotak*$width.'px;height:'.$kotak*$height.'px;top:'.$kotak*$p_2['posY'].'px;left:'.$kotak*$p_2['posX'].'px;">'."\n";
-							echo $p_2['nama_anak']."\n";
-							echo '</div>'."\n";
+							if($p_2['rfid_uid'] !== '00000000000' && $p_2['rfid_uid'] !== ' '){
+								$textY = ($kotak*$p_2['posY']) - 20;
+								echo '<div id="ok">';
+								echo '<img src="img\baby.png" alt="'.$p_2['nama_anak'].'" width = '.$kotak*$width.' height= '.$kotak*$height.' style="position: absolute; top:'.$kotak*$p_2['posY'].'px;left:'.$kotak*$p_2['posX'].'px;">';
+								echo '<p style="font-size:10px;font-style:bold;position: absolute;top:'.$textY.'px;left:'.$kotak*$p_2['posX'].'px;">'.$p_2['nama_anak'].'</p>';
+								echo '</div>';
+							}
+
 						}
 
 						foreach($obj_3 as $p_3){
-							echo '<div id= "s'. $p_3['nama_anak'].'
-							"style="width:'.$kotak*$width.'px;height:'.$kotak*$height.'px;top:'.$kotak*$p_3['posY'].'px;left:'.$kotak*$p_3['posX'].'px;">'."\n";
-							echo $p_3['nama_anak']."\n";
-							echo '</div>'."\n";
+							if($p_3['rfid_uid'] !== '00000000000' && $p_3['rfid_uid'] !== ' '){
+								$textY = ($kotak*$p_3['posY']) - 20;
+								echo '<div id="ok">';
+								echo '<img src="img\baby.png" alt="'.$p_3['nama_anak'].'" width = '.$kotak*$width.' height= '.$kotak*$height.' style="position: absolute; top:'.$kotak*$p_3['posY'].'px;left:'.$kotak*$p_3['posX'].'px;">';
+								echo '<p style="font-size:10px;font-style:bold;position: absolute;top:'.$textY.'px;left:'.$kotak*$p_3['posX'].'px;">'.$p_3['nama_anak'].'</p>';
+								echo '</div>';
+							}
+
 						}
 						//Filter object
 						//$total_all = $obj_1['tot_all'] + 1;
