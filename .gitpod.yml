@@ -6,3 +6,5 @@ tasks:
     command: npm run server
   - init: sleep 1 && while [ -f /tmp/.npm-lock ]; do sleep 1; done
     command: npm run client
+image:
+  file: .gitpod.dockerfile
