@@ -49,7 +49,7 @@ include('database/dbconfig.php');
         //tipe kolom yang nantinya akan diambil
         if(mysqli_num_rows($query_run) > 0 )
         {
-          while($row = mysqli_fetch_assoc($query_run,$query_run2))
+          while($row = mysqli_fetch_array($query_run,$query_run2))
           {
             ?>
           <tr>
