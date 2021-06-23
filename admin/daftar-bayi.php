@@ -24,8 +24,7 @@ include('database/dbconfig.php');
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
     $query1 = "SELECT * FROM tb_stat_anak";
     $query2 = "SELECT DATE_FORMAT(`waktu_masuk`, '%Y/%M/%d %H:%i') AS timestamp FROM tb_stat_anak"; 
-    $query_run = mysqli_query($connection, $query1);
-    $query_run2 = mysqli_query($connection, $query1);
+    $query_run = mysqli_query($connection, $query1, $query2);
     ?>
 
       <table class="table table-bordered" id="tabelasetbayi" width="100%" cellspacing="0">
@@ -49,7 +48,7 @@ include('database/dbconfig.php');
         //tipe kolom yang nantinya akan diambil
         if(mysqli_num_rows($query_run) > 0 )
         {
-          while($row = mysqli_fetch_array($query_run,$query_run2))
+          while($row = mysqli_fetch_array($query_run))
           {
             ?>
           <tr>
