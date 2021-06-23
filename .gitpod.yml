@@ -7,3 +7,7 @@ ports:
 vscode:
   extensions:
     - felixfbecker.php-debug@1.13.0:WX8Y3EpQk3zgahy41yJtNQ==
+    
+tasks:
+  - init: npm install
+    command: npm start
