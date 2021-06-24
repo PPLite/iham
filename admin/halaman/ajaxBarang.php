@@ -1,7 +1,7 @@
 <?php 
 $server = "localhost";
-$username = "root" ;
-$password = "" ;
+$username = "mjdr3247_admin" ;
+$password = "semogacepatlulus2021" ;
 $database = "mjdr3247_adminpanel";
 
 $con = new mysqli($server,$username,$password,$database);
