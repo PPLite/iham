@@ -3,7 +3,7 @@
     $hostName = "localhost";
     $username = "mjdr3247_admin";
     $password = "semogacepatlulus2021";
-    $dbname = "testmjdr3247_adminpanel";
+    $dbname = "mjdr3247_adminpanel";
  
     $mysqli = new mysqli($hostName, $username, $password, $dbname);
  
