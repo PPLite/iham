@@ -252,6 +252,25 @@ if(isset($_POST['updateasset']))
     }
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ////////////////PINJAM ASET///////////////////////////////////
 if(isset($_POST['formpinjam']))
 
@@ -264,25 +283,42 @@ if(isset($_POST['formpinjam']))
     $penanggung_jawab = $_POST['penanggung_jawab'];
     $peminjam = $_POST['peminjam'];
     $status_asset = $_POST['status_asset'];
-    $keterangan = $_POST['keterangan']; 
-    $query = "UPDATE tb_rfid SET nama_alat='$nama_alat', rfid_uid='$rfid_uid', deskripsi='$deskripsi', penanggung_jawab='$penanggung_jawab',peminjam='$peminjam', status_asset='$status_asset', keterangan='$keterangan' WHERE id='$id' ";
-    $query_run = mysqli_query($connection,$query);
+    $keterangan = $_POST['keterangan'];
 
-
-    if($query_run)
-    {
-        if($query_run)  
+    $cekaset_query = "SELECT * FROM tb_rfid
+    WHERE nama_alat= '$nama_alat' > 0 ";
+    $cekaset_query_run = mysqli_query($connection,$cekaset_query);
+        if(mysqli_num_rows($cekaset_query_run) > 0)
         {
-        $_SESSION['success'] = "Aset berhasil Diperbarui";
-        header('location: validasi-peminjaman-aset.php');
+            $query = "UPDATE tb_rfid SET nama_alat='$nama_alat', rfid_uid='$rfid_uid', deskripsi='$deskripsi', penanggung_jawab='$penanggung_jawab',peminjam='$peminjam', status_asset='$status_asset', keterangan='$keterangan' WHERE id='$id' ";
+            $query_run = mysqli_query($connection,$query);
+        
+            if($query_run)
+            {
+                if($query_run)  
+                {
+                $_SESSION['status'] = "Pindah aset berhasil, Harap tunggu konfirmasi";
+                $_SESSION['status_code'] = "success";
+                header('location: validasi-peminjaman-aset.php');
+                }
+                else
+                {
+                    $_SESSION['status'] = "Pindah aset gagal, Harap hubungi admin";
+                    $_SESSION['status_code'] = "error";
+                    header('location: formulir.php');
+                }
+            }
         }
         else
         {
-        $_SESSION['status'] = "Aset gagal Diperbarui";
-        header('location: validasi-peminjaman-aset.php');
+            $_SESSION['status'] ="Peminjaman aset gagal. Nama aset salah/tidak ditemukan. Harap cek ulang";
+            $_SESSION['status_code'] = "error";
+            header('location: formulir.php');
         }
-    }
 }
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////TOLAK KONFIRMASI PINJAM///////////////////////////////////
 if(isset($_POST['tolak_aset']))
@@ -392,25 +428,6 @@ if(isset($_POST['daftarasetanak_btn']))
             }
                      
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //Untuk modif data pada bayi
 if(isset($_POST['updatebtnassetbayi']))
