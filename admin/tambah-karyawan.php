@@ -13,13 +13,13 @@ include('database/dbconfig.php');
           <div class="card mt-5">
 
                 <div class="card-header text-center">
-                    <h4> Registrasi Dokter</h4>
+                    <h4> Registrasi Karyawan</h4>
                 </div>
 
                 <div class="card-body">
                     <div class="row justify-content-center">
                 
-                    <div class="col-lg-3 mb-3">
+                            <div class="col-lg-3 mb-3">
                                 <div class="card bg-primary text-white shadow">
                                     <div class="card-body">
                                     <a href="tambah-aset-barang.php" class="text-white">Peralatan Medis </a>
@@ -70,6 +70,7 @@ include('database/dbconfig.php');
                                     <div class="">
                                         <input type="hidden" name="rfid_uid" value="<?php if(isset($_GET['rfid_uid'])) {echo $_GET['rfid_uid'];} ?>" class="form-control">
                                     </div>
+
                                 <div class="col-md-4">
                                     <button type="SUBMIT" class="btn btn-primary">Scan RFID</button>
                                 </div>
@@ -132,32 +133,33 @@ include('database/dbconfig.php');
         </div>     
 
     <div class="form-group">
-        <label>Nama Dokter</label>
-        <input type="text" name="nama_dokter" class="form-control" placeholder="Masukkan Nama Dokter" required >
+        <label>Nama Karyawan</label>
+        <input type="text" name="nama_karyawan" class="form-control" placeholder="Masukkan Nama Karyawan" required >
     </div>
 
     <div class="form-group">
-        <label>ID Dokter</label>
-        <input type="text" name="id_dokter" class="form-control" placeholder="Masukkan ID Dokter" required>
+        <label>ID Karyawan</label>
+        <input type="text" name="id_pengenal" class="form-control" placeholder="Masukkan ID Karyawan" required>
     </div>
 
     <div class="form-group">
-        <label>Jenis Kelamin</label>
-        <input type="text" name="Jenis_kelamin_dokter" class="form-control" placeholder="Masukkan Jenis Kelamin" required>
+        <label>Usia</label>
+        <input type="text" name="usia" class="form-control" placeholder="Masukkan Jenis Kelamin" required>
+    </div>
+
+    <div class="form-group">
+        <label>Posisi</label>
+        <input type="text" name="posisi" class="form-control" placeholder="Masukkan Jenis Posisi" required>
     </div>
 
     <div class="form-group">
         <label>Alamat</label>
-        <input type="text" name="alamat_dokter" class="form-control" placeholder="Masukkan Alamat" required>
+        <input type="text" name="alamat" class="form-control" placeholder="Masukkan Alamat" required>
     </div>
 
     <div class="form-group">
-        <label>Spesisalis</label>
-        <input type="text" name="spesialis" class="form-control" placeholder="Masukkan Spesialis" required>
-    </div>
-
-    <div class="form-group">
-        <input type="hidden" name="status" class="form-control" value="perawatan" required>
+        <label>Status</label>
+        <input type="text" name="status" class="form-control" placeholder="Masukkan Status" required>
     </div>
 
 </div>
