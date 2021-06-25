@@ -1,23 +1,4 @@
 <div class="container-fluid">
-<?php
-  //Status berhasil ditambahkan
-    if(isset($_SESSION['success']) && $_SESSION['success'] !='')
-    {
-      echo '<h2>'.$_SESSION['success'].' </h2>';
-      unset($_SESSION['success']);
-    }
-
-    //Status gagal ditambahkan
-    if(isset($_SESSION['status']) && $_SESSION['status'] !='')
-    {
-      echo '<h2>'.$_SESSION['status'].' </h2>';
-      unset($_SESSION['status']);
-    }
-  ?>
-</div>
-
-
-<div class="container-fluid">
 
 <div class="card shadow mb-4">
   <div class="card-header py-3">
