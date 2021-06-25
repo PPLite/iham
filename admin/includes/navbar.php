@@ -57,6 +57,7 @@ include_once('code.php');
     </div>
   </div>
 </li>
+
 <!-- Peralatan Medis-->
 <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -71,7 +72,57 @@ include_once('code.php');
       <a class="collapse-item" href="validasi-peminjaman-aset.php">Konfirmasi Peminjaman </a>
       <a class="collapse-item" href="log-data-aset.php">Log Data Barang</a>
       <a class="collapse-item" href="pengaturan-aset-barang.php">Pengaturan Data Barang</a>
+    </div>
+  </div>
+</li>
+
+<!-- Dokter-->
+<li class="nav-item">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+    <i class="fas fa-fw fa-cog"></i>
+    <span>Dokter</span>
+  </a>
+  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+      <h6 class="collapse-header">Sub-menu:</h6>
+      <a class="collapse-item" href="daftar-bayi.php">Daftar Pasien Bayi</a>
+      <a class="collapse-item" href="log-data-bayi.php">Log Data Pasien</a>
+      <a class="collapse-item" href="formulir-bayi.php">Pindah Ruang</a>
+      <a class="collapse-item" href="konfirmasi-pindah-ruang.php">Konfirmasi Pindah Ruang</a>
+      <a class="collapse-item" href="pengaturan-aset-bayi.php">Pengaturan Data Pasien</a>
       
+    </div>
+  </div>
+</li>
+
+<!-- Perawat-->
+<li class="nav-item">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+    <i class="fas fa-fw fa-cog"></i>
+    <span>Perawat</span>
+  </a>
+  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+      <h6 class="collapse-header">Sub-menu:</h6>
+      <a class="collapse-item" href="daftar-bayi.php">Daftar Perawat</a>
+      <a class="collapse-item" href="log-data-bayi.php">Log Data Perawat</a>
+      <a class="collapse-item" href="pengaturan-aset-bayi.php">Pengaturan Data Perawat</a>
+    </div>
+  </div>
+</li>
+
+<!-- Perawat-->
+<li class="nav-item">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+    <i class="fas fa-fw fa-cog"></i>
+    <span>Karyawan</span>
+  </a>
+  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+      <h6 class="collapse-header">Sub-menu:</h6>
+      <a class="collapse-item" href="daftar-bayi.php">Daftar Karyawan</a>
+      <a class="collapse-item" href="log-data-bayi.php">Log Data Karyawan</a>
+      <a class="collapse-item" href="pengaturan-aset-bayi.php">Pengaturan Data Karyawan</a>
     </div>
   </div>
 </li>
