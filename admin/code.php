@@ -340,13 +340,15 @@ if(isset($_POST['tolak_aset']))
     {
         if($query_run)  
         {
-        $_SESSION['success'] = "Aset berhasil Diperbarui";
-        header('location: validasi-peminjaman-aset.php');
+            $_SESSION['status'] = "Peminjaman aset berhasil ditolak";
+            $_SESSION['status_code'] = "success";
+            header('location: validasi-peminjaman-aset.php');
         }
         else
         {
-        $_SESSION['status'] = "Aset gagal Diperbarui";
-        header('location: validasi-peminjaman-aset.php');
+            $_SESSION['status'] = "Peminjaman aset berhasil ditolak";
+            $_SESSION['status_code'] = "success";
+            header('location: validasi-peminjaman-aset.php');
         }
     }
 }
