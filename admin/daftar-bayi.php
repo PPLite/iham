@@ -22,7 +22,7 @@ include('database/dbconfig.php');
 <!---Buat ngambil data--->
     <?php
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
-    $query = "SELECT DATE_FORMAT(`waktu_masuk`, '%Y/%M/%d %H:%i') AS timestamp , rfid_uid, id_pengenal, nama_anak, nama_ibu, penanggung_jawab_bayi, alamat, status, keterangan FROM tb_stat_anak"; 
+    $query = "SELECT DATE_FORMAT(`waktu_masuk`, '%d/%m/%Y %H:%i') AS timestamp , rfid_uid, id_pengenal, nama_anak, nama_ibu, penanggung_jawab_bayi, alamat, status, keterangan FROM tb_stat_anak"; 
     $query_run = mysqli_query($connection, $query);
     ?>
 
