@@ -31,8 +31,8 @@ include('database/dbconfig.php');
                             <div class="col-lg-3 mb-3">
                                 <div class="card bg-success text-white shadow">
                                     <div class="card-body">
-                                    <a href="tambah-aset-bayi.php" class="text-white">Pasien Bayi</a>
-                                    <i class="fas fa-baby-carriage fa-2x text-gray-300 float-right"></i>
+                                    <a href="tambah-pasien.php" class="text-white">Pasien &nbsp;&nbsp;&nbsp;</a>
+                                    <i class="fas fa-procedures fa-2x text-gray-300 float-right"></i>
                                     </div>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@ include('database/dbconfig.php');
                             <div class="col-lg-2 mb-3">
                                 <div class="card bg-success text-white shadow">
                                     <div class="card-body">
-                                    <a href="tambah-dokter.php" class="text-white">Dokter</a>
+                                    <a href="tambah-dokter.php" class="text-white">Dokter &nbsp;&nbsp;&nbsp;</a>
                                     <i class="fas fa-user-md fa-2x text-gray-300 float-right"></i>
                                     </div>
                                 </div>
