@@ -144,7 +144,10 @@ include('database/dbconfig.php');
 
     <div class="form-group">
         <label>Jenis Kelamin</label>
-        <input type="text" name="Jenis_kelamin" class="form-control" placeholder="Masukkan Jenis Kelamin" required>
+            <select name="jenis_kelamin" class="form-control" id="jenis_kelamin">   
+                <option value="pria"> Pria </option>
+                <option value="wanita"> Wanita </option>
+            </select>
     </div>
 
     <div class="form-group">
@@ -153,17 +156,12 @@ include('database/dbconfig.php');
     </div>
 
     <div class="form-group">
-        <label>Status</label>
-        <input type="text" name="status" class="form-control" placeholder="Masukkan Status" required>
-    </div>
-
-    <div class="form-group">
-        <input type="hidden" name="status" class="form-control" value="perawatan" required>
+        <input type="hidden" name="status" class="form-control" value="masuk" required>
     </div>
 
 </div>
 <div class="modal-footer">
-    <button type="submit" name="daftarasetanak_btn" class="btn btn-primary">Simpan</button>
+    <button type="submit" name="daftarperawat_btn" class="btn btn-primary">Simpan</button>
 </div>
 </form>
             </div>

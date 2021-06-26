@@ -548,8 +548,115 @@ if(isset($_POST['daftardokter_btn']))
 
 /////////////////////////////////////////////////////////////////////////////////////
 
+////////////////TAMBAH Perawat //////////////////////////////////
+if(isset($_POST['daftarperawat_btn']))
 
+//jika sudah ditombol kemudian
+{
+    //input data
+    $rfid_uid = $_POST['rfid_uid'];
+    $nama_perawat = $_POST['nama_perawat'];
+    $id_perawat = $_POST['id_perawat'];
+    $jenis_kelamin = $_POST['jenis_kelamin'];
+    $alamat = $_POST['alamat'];
+    $status = $_POST['status'];
 
+    $cekperawat_query = "SELECT * FROM `tb_perawat` WHERE `rfid_uid` = '$rfid_uid'";
+    $cekperawat_query_run = mysqli_query($connection, $cekperawat_query);
+    if(mysqli_num_rows($cekperawat_query_run) > 0)
+        {
+            $_SESSION['status'] ="Registrasi Gagal. RFID Telah Terdaftar";
+            $_SESSION['status_code'] = "error";
+            header('location: tambah-perawat.php');
+        }
+            else
+            {
+                if(!preg_match("/^[a-e0-9]*$/", $rfid_uid))      
+                {
+                    $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Terlebih Dahulu";
+                    $_SESSION['status_code'] = "error";
+                    header('location: tambah-perawat.php');
+                }
+                else
+                {
+                    $query = "INSERT INTO tb_perawat (rfid_uid,nama_perawat,id_perawat,jenis_kelamin,alamat,status) VALUES ('$rfid_uid','$nama_perawat','$id_perawat','$jenis_kelamin','$alamat','$status')";
+                    $query_run = mysqli_query($connection,$query);
+                    if($query_run)
+                    {   
+                        if($query_run)
+                        {
+                            $_SESSION['status'] ="Data Dokter Berhasil Ditambahkan";
+                            $_SESSION['status_code'] = "success";
+                            header('location: daftar-perawat.php');
+                        }
+                        else
+                        {
+                            $_SESSION['status'] ="Kesalahan Internal. Registrasi Gagal";
+                            $_SESSION['status_code'] = "error";
+                            header('location: tambah-perawat.php');
+                        }
+                    }
+                }
+            }
+                     
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+////////////////TAMBAH Karyawan //////////////////////////////////
+if(isset($_POST['daftarkaryawan_btn']))
+
+//jika sudah ditombol kemudian
+{
+    //input data
+    $rfid_uid = $_POST['rfid_uid'];
+    $nama_karyawan = $_POST['nama_karyawan'];
+    $id_pengenal = $_POST['id_pengenal'];
+    $usia = $_POST['usia'];
+    $posisi = $_POST['posisi'];
+    $alamat = $_POST['alamat'];
+    $status = $_POST['status'];
+
+    $cekkaryawan_query = "SELECT * FROM `tb_non_medis` WHERE `rfid_uid` = '$rfid_uid'";
+    $cekkaryawan_query_run = mysqli_query($connection, $cekkaryawan_query);
+    if(mysqli_num_rows($cekkaryawan_query_run) > 0)
+        {
+            $_SESSION['status'] ="Registrasi Gagal. RFID Telah Terdaftar";
+            $_SESSION['status_code'] = "error";
+            header('location: tambah-karyawan.php');
+        }
+            else
+            {
+                if(!preg_match("/^[a-e0-9]*$/", $rfid_uid))      
+                {
+                    $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Terlebih Dahulu";
+                    $_SESSION['status_code'] = "error";
+                    header('location: tambah-karyawan.php');
+                }
+                else
+                {
+                    $query = "INSERT INTO tb_non_medis (rfid_uid,nama_karyawan,id_pengenal,usia,posisi,alamat,status) VALUES ('$rfid_uid','$nama_karyawan','$id_pengenal','$usia','$posisi','$alamat','$status')";
+                    $query_run = mysqli_query($connection,$query);
+                    if($query_run)
+                    {   
+                        if($query_run)
+                        {
+                            $_SESSION['status'] ="Data Dokter Berhasil Ditambahkan";
+                            $_SESSION['status_code'] = "success";
+                            header('location: daftar-karyawan.php');
+                        }
+                        else
+                        {
+                            $_SESSION['status'] ="Kesalahan Internal. Registrasi Gagal";
+                            $_SESSION['status_code'] = "error";
+                            header('location: tambah-karyawan.php');
+                        }
+                    }
+                }
+            }
+                     
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
 
 
 

@@ -158,13 +158,12 @@ include('database/dbconfig.php');
     </div>
 
     <div class="form-group">
-        <label>Status</label>
-        <input type="text" name="status" class="form-control" placeholder="Masukkan Status" required>
+        <input type="hidden" name="status" class="form-control" value="hadir">
     </div>
 
 </div>
 <div class="modal-footer">
-    <button type="submit" name="daftarasetanak_btn" class="btn btn-primary">Simpan</button>
+    <button type="submit" name="daftarkaryawan_btn" class="btn btn-primary">Simpan</button>
 </div>
 </form>
             </div>

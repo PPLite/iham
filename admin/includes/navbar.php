@@ -125,9 +125,9 @@ include_once('code.php');
   <div id="sidebarperawat" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Sub-menu:</h6>
-      <a class="collapse-item" href="daftar-bayi.php">Daftar Perawat</a>
-      <a class="collapse-item" href="log-data-bayi.php">Log Data Perawat</a>
-      <a class="collapse-item" href="pengaturan-aset-bayi.php">Pengaturan Data Perawat</a>
+      <a class="collapse-item" href="daftar-perawat.php">Daftar Perawat</a>
+      <a class="collapse-item" href="log-data-perawat.php">Log Data Perawat</a>
+      <a class="collapse-item" href="pengaturan-aset-perawat.php">Pengaturan Data Perawat</a>
     </div>
   </div>
 </li>
@@ -141,9 +141,9 @@ include_once('code.php');
   <div id="sidebarkaryawan" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Sub-menu:</h6>
-      <a class="collapse-item" href="daftar-bayi.php">Daftar Karyawan</a>
-      <a class="collapse-item" href="log-data-bayi.php">Log Data Karyawan</a>
-      <a class="collapse-item" href="pengaturan-aset-bayi.php">Pengaturan Data Karyawan</a>
+      <a class="collapse-item" href="daftar-karyawan.php">Daftar Karyawan</a>
+      <a class="collapse-item" href="log-data-karyawan.php">Log Data Karyawan</a>
+      <a class="collapse-item" href="pengaturan-aset-karyawan.php">Pengaturan Data Karyawan</a>
     </div>
   </div>
 </li>
