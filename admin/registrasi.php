@@ -27,7 +27,7 @@ include('database/dbconfig.php');
                                 </div>
                             </div>
 
-                            <div class="col-lg-3 mb-3">
+                            <div class="col-lg-2 mb-3">
                                 <div class="card bg-success text-white shadow">
                                     <div class="card-body">
                                     <a href="tambah-aset-bayi.php" class="text-white">Pasien</a>
@@ -69,7 +69,7 @@ include('database/dbconfig.php');
                                     <div class="">
                                         <input type="hidden" name="rfid_uid" value="<?php if(isset($_GET['rfid_uid'])) {echo $_GET['rfid_uid'];} ?>" class="form-control">
                                     </div>
-                                <div class="col-md-4">
+                                <div class="col-md-5">
                                     <button type="SUBMIT" class="btn btn-primary">Scan RFID</button>
                                 </div>
                             </div>
