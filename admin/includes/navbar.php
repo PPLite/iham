@@ -41,11 +41,11 @@ include_once('code.php');
 
 <!-- Pasien-->
 <li class="nav-item">
-  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#kolapsitem1" aria-expanded="true" aria-controls="kolapsitem1">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#sidebarbayi" aria-expanded="true" aria-controls="kolapsitem1">
     <i class="fas fa-fw fa-cog"></i>
     <span>Pasien Bayi</span>
   </a>
-  <div id="kolapsitem1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+  <div id="sidebarbayi" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Sub-menu:</h6>
       
@@ -60,11 +60,11 @@ include_once('code.php');
 
 <!-- Peralatan Medis-->
 <li class="nav-item">
-  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#sidebarmedis" aria-expanded="true" aria-controls="collapseTwo">
     <i class="fas fa-fw fa-cog"></i>
     <span>Peralatan Medis</span>
   </a>
-  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+  <div id="sidebarmedis" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Sub-menu:</h6>
       <a class="collapse-item" href="daftar-barang.php">Daftar Barang</a>
@@ -78,11 +78,11 @@ include_once('code.php');
 
 <!-- Dokter-->
 <li class="nav-item">
-  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#sidebardokter" aria-expanded="true" aria-controls="collapseTwo">
     <i class="fas fa-fw fa-cog"></i>
     <span>Dokter</span>
   </a>
-  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+  <div id="sidebardokter" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Sub-menu:</h6>
       <a class="collapse-item" href="daftar-bayi.php">Daftar Pasien Bayi</a>
@@ -95,13 +95,13 @@ include_once('code.php');
   </div>
 </li>
 
-<!-- Perawat-->
+<!-- perawat-->
 <li class="nav-item">
-  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#sidebarperawat" aria-expanded="true" aria-controls="collapseTwo">
     <i class="fas fa-fw fa-cog"></i>
     <span>Perawat</span>
   </a>
-  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+  <div id="sidebarperawat" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Sub-menu:</h6>
       <a class="collapse-item" href="daftar-bayi.php">Daftar Perawat</a>
@@ -113,11 +113,11 @@ include_once('code.php');
 
 <!-- Perawat-->
 <li class="nav-item">
-  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#sidebarkaryawan" aria-expanded="true" aria-controls="collapseTwo">
     <i class="fas fa-fw fa-cog"></i>
     <span>Karyawan</span>
   </a>
-  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+  <div id="sidebarkaryawan" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Sub-menu:</h6>
       <a class="collapse-item" href="daftar-bayi.php">Daftar Karyawan</a>
