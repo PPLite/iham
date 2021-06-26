@@ -13,7 +13,7 @@ include('database/dbconfig.php');
           <div class="card mt-5">
 
                 <div class="card-header text-center">
-                    <h4> Registrasi Pasien Bayi</h4>
+                    <h4> Registrasi Pasien Baru</h4>
                 </div>
 
                 <div class="card-body">
@@ -31,8 +31,8 @@ include('database/dbconfig.php');
                             <div class="col-lg-3 mb-3">
                                 <div class="card bg-success text-white shadow">
                                     <div class="card-body">
-                                    <a href="tambah-aset-bayi.php" class="text-white">Pasien Bayi</a>
-                                    <i class="fas fa-baby-carriage fa-2x text-gray-300 float-right"></i>
+                                    <a href="tambah-pasien.php" class="text-white">Pasien &nbsp;&nbsp;&nbsp;</a>
+                                    <i class="fas fa-procedures fa-2x text-gray-300 float-right"></i>
                                     </div>
                                 </div>
                             </div>
@@ -40,11 +40,12 @@ include('database/dbconfig.php');
                             <div class="col-lg-2 mb-3">
                                 <div class="card bg-success text-white shadow">
                                     <div class="card-body">
-                                    <a href="tambah-dokter.php" class="text-white">Dokter</a>
+                                    <a href="tambah-dokter.php" class="text-white">Dokter &nbsp;&nbsp;&nbsp;</a>
                                     <i class="fas fa-user-md fa-2x text-gray-300 float-right"></i>
                                     </div>
                                 </div>
                             </div>
+
 
                             <div class="col-lg-2 mb-3">
                                 <div class="card bg-success text-white shadow">
@@ -115,6 +116,7 @@ include('database/dbconfig.php');
     </div>
 </div>
 
+
 <div class="container">
     <div class="col-md-18">
         <div class="card mt-5">
@@ -129,7 +131,7 @@ include('database/dbconfig.php');
                         <div class="col-lg-3 mb-3">
                                     <div class="card bg-primary text-white shadow">
                                         <div class="card-body">
-                                        <a href="tambah-aset-barang.php" class="text-white">Pasien Dewasa</a>
+                                        <a href="#" class="text-white">Pasien Dewasa</a>
                                         <i class="fas fa-user-injured fa-2x text-gray-300 float-right"></i>
                                         </div>
                                     </div>
@@ -152,13 +154,17 @@ include('database/dbconfig.php');
     </div>
 </div>
 
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-7">
             <div class="card mt-5">
+
             <div class="card-header text-center">
-                    <h4>Registrasi Pasien Bayi</h4>
+                    <h4> Registrasi Pasien Dewasa</h4>
                 </div>
+
                     <div class="card-body">
 
 <form action="code.php" method="POST">
@@ -208,10 +214,8 @@ include('database/dbconfig.php');
     </div>
 </div
 
+
 <?php
-
-
-
 include('includes/scripts.php');
 include('includes/footer.php');
 ?>

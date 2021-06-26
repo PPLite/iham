@@ -131,7 +131,7 @@ include('database/dbconfig.php');
                         <div class="col-lg-3 mb-3">
                                     <div class="card bg-primary text-white shadow">
                                         <div class="card-body">
-                                        <a href="tambah-aset-barang.php" class="text-white">Pasien Dewasa</a>
+                                        <a href="tambah-pasien-dewasa.php" class="text-white">Pasien Dewasa</a>
                                         <i class="fas fa-user-injured fa-2x text-gray-300 float-right"></i>
                                         </div>
                                     </div>
