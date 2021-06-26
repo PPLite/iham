@@ -7,6 +7,9 @@ include('database/dbconfig.php');
 
 <div class="container">
     <div class="row justify-content-center">
+
+          <div class="card mt-6">
+
                 <div class="card-header text-center">
                     <h4>Pilih Aset yang akan Di Registrasi</h4>
                 </div>
@@ -105,6 +108,7 @@ include('database/dbconfig.php');
                         </div>
                     </form>
                 </div>
+            </div>
     </div>
 </div>
 
