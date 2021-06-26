@@ -61,8 +61,24 @@ include('database/dbconfig.php');
                                     </div>
                                 </div>
                             </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>
 
-                            <div class="card-body">
+
+<div class="container">
+    <div class="col-md-18">
+
+        <div class="card mt-5">
+
+                <div class="card-body">
+                    <div class="row justify-content-center">
+                    
+                    <div class="card-body">
                                 <form action="" method="GET">
                                 <div class="row">
                                     <div class="">
@@ -106,23 +122,8 @@ include('database/dbconfig.php');
                             ?>        
                             </div>
 
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-</div>
 
 
-<div class="container">
-    <div class="col-md-18">
-
-        <div class="card mt-5">
-
-                <div class="card-body">
-                    <div class="row justify-content-center">
-                                 Klik Disini
                     </div>
                 </div>
         </div>
