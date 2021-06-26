@@ -75,13 +75,6 @@ include('database/dbconfig.php');
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-18">
-
-          <div class="card mt-5">
-
-                <div class="card-header text-center">
-                    <h4>2. Scan Kode RFID</h4>
-                </div>
-
                 <div class="card-body">
                     <div class="row justify-content-center">
                             <div class="card-body">
