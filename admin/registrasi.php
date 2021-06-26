@@ -18,7 +18,7 @@ include('database/dbconfig.php');
                 <div class="card-body">
                     <div class="row justify-content-center">
                 
-                    <div class="col-lg-2 mb-3">
+                    <div class="col-lg-3 mb-3">
                                 <div class="card bg-primary text-white shadow">
                                     <div class="card-body">
                                     <a href="tambah-aset-barang.php" class="text-white">Peralatan Medis </a>
