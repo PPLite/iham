@@ -7,7 +7,6 @@ include('database/dbconfig.php');
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-18">
 
           <div class="card mt-5">
 
@@ -16,8 +15,9 @@ include('database/dbconfig.php');
                 </div>
 
                 <div class="card-body">
+                    <div class="row justify-content-center">
                 
-                            <div class="col-lg-3 mb-3">
+                    <div class="col-lg-3 mb-3">
                                 <div class="card bg-primary text-white shadow">
                                     <div class="card-body">
                                     <a href="tambah-aset-barang.php" class="text-white">Peralatan Medis </a>
@@ -105,10 +105,10 @@ include('database/dbconfig.php');
                             ?>        
                             </div>
                             </div>
+                        </div>
                     </form>
                 </div>
             </div>
-        </div>
     </div>
 </div>
 
