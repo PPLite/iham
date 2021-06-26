@@ -75,6 +75,8 @@ include('database/dbconfig.php');
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-18">
+
+          <div class="card mt-8">
                 <div class="card-body">
                     <div class="row justify-content-center">
                             <div class="card-body">
