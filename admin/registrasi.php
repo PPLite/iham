@@ -35,6 +35,19 @@ include('database/dbconfig.php');
                                 </div>
                             </div>
 
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                Dropdown button
+                                </button>
+                                <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Link 1</a>
+                                <a class="dropdown-item" href="#">Link 2</a>
+                                <a class="dropdown-item" href="#">Link 3</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Another link</a>
+                                </div>
+                            </div>
+
                             <div class="col-lg-2 mb-3">
                                 <div class="card bg-success text-white shadow">
                                     <div class="card-body">
