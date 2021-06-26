@@ -36,11 +36,10 @@ include('database/dbconfig.php');
                             </div>
 
                             <div class="dropdown col-lg-2 mb-3">
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                <button type="button" class="btn btn-primary dropdown-toggle fas fa-procedures fa-2x text-gray-300 float-right" data-toggle="dropdown">
                                 Dropdown button
                                 </button>
                                 <div class="dropdown-menu">
-                                <i class="fas fa-procedures fa-2x text-gray-300 float-right"></i>
                                 <a class="dropdown-item" href="#">Link 1</a>
                                 <a class="dropdown-item" href="#">Link 2</a>
                                 <a class="dropdown-item" href="#">Link 3</a>
