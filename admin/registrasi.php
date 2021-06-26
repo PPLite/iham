@@ -90,15 +90,13 @@ include('database/dbconfig.php');
                     </div>
 
                         <div class="row">
-                            <div class="col-md-12">
                                 <hr>
                                 <?php 
                                 if(isset($_GET['rfid_uid']))
                                     {
                                         $query = "SELECT * FROM `tb_reader_scan` order by id desc limit 1";
                                         $query_run = mysqli_query($connection, $query);
-                                        
-
+                            
                                     if(mysqli_num_rows($query_run) > 0)
                                     foreach($query_run as $row)
                                     ?>
@@ -120,7 +118,6 @@ include('database/dbconfig.php');
                                  }                                 
                             ?>        
                             </div>
-                    </div>
                 </div>
         </div>
 
