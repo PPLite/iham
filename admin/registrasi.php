@@ -35,7 +35,7 @@ include('database/dbconfig.php');
                                 </div>
                             </div>
 
-                            <div class="dropdown">
+                            <div class="dropdown col-lg-2 mb-3">
                                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                                 Dropdown button
                                 </button>
