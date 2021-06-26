@@ -35,8 +35,8 @@ include('database/dbconfig.php');
                                 </div>
                             </div>
 
-                            <p class="mb-0">px-5:</p>
-                            <a class="btn btn-lg px-5 btn-primary" href="#" role="button">USA <img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="30" alt="USA flag"></a>
+                            <p class="col-lg-2 mb-3"></p>
+                            <a class="btn btn-lg px-5 btn-primary" href="#" role="button">ASW <img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="30" alt="USA flag"></a>
 
                             <div class="col-lg-2 mb-3">
                                 <div class="card bg-success text-white shadow">
