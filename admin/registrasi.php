@@ -6,7 +6,6 @@ include('database/dbconfig.php');
 ?>
 
 <div class="container">
-    <div class="row justify-content-center">
         <div class="col-md-18">
 
           <div class="card mt-5">
@@ -63,8 +62,7 @@ include('database/dbconfig.php');
                                 </div>
                             </div>
 
-                        <div class="row">
-                        <div class="card-body">
+                            <div class="card-body">
                                 <form action="" method="GET">
                                 <div class="row">
                                     <div class="">
@@ -75,6 +73,7 @@ include('database/dbconfig.php');
                                 </div>
                             </div>
 
+                        <div class="row">
                             <div class="col-md-12">
                                 <hr>
                                 <?php 
@@ -112,7 +111,6 @@ include('database/dbconfig.php');
                 </div>
             </div>
         </div>
-    </div>
 </div>
 
 
