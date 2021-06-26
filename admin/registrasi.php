@@ -29,14 +29,36 @@ include('database/dbconfig.php');
                             <div class="col-lg-2 mb-3">
                                 <div class="card bg-success text-white shadow">
                                     <div class="card-body">
-                                    <a href="tambah-aset-bayi.php" class="text-white">Pasien</a>
+                                    <a class="dropbtn">Pasien</a>
                                     <i class="fas fa-procedures fa-2x text-gray-300 float-right"></i>
                                     </div>
                                 </div>
                             </div>
 
-                            <p class="col-lg-2 mb-3"></p>
-                            <a class="btn btn-lg px-5 btn-primary" href="#" role="button">ASW <img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="30" alt="USA flag"></a>
+                            <script>
+                                /* When the user clicks on the button, 
+                                toggle between hiding and showing the dropdown content */
+                                function myFunction() {
+                                document.getElementById("myDropdown").classList.toggle("show");
+                                }
+
+                                // Close the dropdown if the user clicks outside of it
+                                window.onclick = function(event) {
+                                if (!event.target.matches('.dropbtn')) {
+                                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                                    var i;
+                                    for (i = 0; i < dropdowns.length; i++) {
+                                    var openDropdown = dropdowns[i];
+                                    if (openDropdown.classList.contains('show')) {
+                                        openDropdown.classList.remove('show');
+                                    }
+                                    }
+                                }
+                                }
+                            </script>
+
+
+
 
                             <div class="col-lg-2 mb-3">
                                 <div class="card bg-success text-white shadow">
