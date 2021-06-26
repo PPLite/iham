@@ -115,6 +115,22 @@ include('database/dbconfig.php');
 </div>
 
 
+<div class="container">
+    <div class="col-md-18">
+
+        <div class="card mt-5">
+
+                <div class="card-body">
+                    <div class="row justify-content-center">
+                                 Klik Disini
+                    </div>
+                </div>
+        </div>
+
+    </div>
+</div>
+
+
 <!--------Library------>
 <?php
 include('includes/scripts.php');
