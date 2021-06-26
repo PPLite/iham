@@ -58,6 +58,29 @@ include_once('code.php');
   </div>
 </li>
 
+
+<!-- Pasien-->
+<li class="nav-item">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#sidebardewasa" aria-expanded="true" aria-controls="kolapsitem1">
+    <i class="fas fa-fw fa-cog"></i>
+    <span>Pasien Dewasa</span>
+  </a>
+  <div id="sidebardewasa" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+      <h6 class="collapse-header">Sub-menu:</h6>
+      
+      <a class="collapse-item" href="daftar-pasien.php">Daftar Pasien Dewasa</a>
+      <a class="collapse-item" href="#">Log Data Pasien</a>
+      <a class="collapse-item" href="#">Pindah Ruang</a>
+      <a class="collapse-item" href="#">Konfirmasi Pindah Ruang</a>
+      <a class="collapse-item" href="#">Pengaturan Data Pasien</a>
+    </div>
+  </div>
+</li>
+
+
+
+
 <!-- Peralatan Medis-->
 <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#sidebarmedis" aria-expanded="true" aria-controls="collapseTwo">

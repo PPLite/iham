@@ -431,6 +431,76 @@ if(isset($_POST['daftarasetanak_btn']))
                      
 }
 
+/////////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////TAMBAH Pasien Dewasa //////////////////////////////////
+if(isset($_POST['daftarpasiendewasa_btn']))
+
+//jika sudah ditombol kemudian
+{
+    //input data
+    $rfid_uid = $_POST['rfid_uid'];
+    $nama_pasien = $_POST['nama_pasien'];
+    $id_pengenal = $_POST['id_pengenal'];
+    $usia = $_POST['usia'];
+    $jenis_kelamin = $_POST['jenis_kelamin'];
+    $tinggi_badan = $_POST['tinggi_badan'];
+    $berat_badan = $_POST['berat_badan'];
+    $alamat = $_POST['alamat'];
+    $status = $_POST['status'];
+
+
+    $cekpasien_query = "SELECT * FROM tb_pasien_dewasa WHERE `status` IN ('masuk', 'checkin', 'perawatan', 'peringatan', 'validasi') AND rfid_uid = '$rfid_uid'";
+    $cekpasien_query_run = mysqli_query($connection, $cekpasien_query);
+    if(mysqli_num_rows($cekpasien_query_run) > 0)
+        {
+            $_SESSION['status'] ="Registrasi Gagal. RFID Telah Terdaftar";
+            $_SESSION['status_code'] = "error";
+            header('location: tambah-aset-bayi.php');
+        }
+            else
+            {
+                if(!preg_match("/^[a-e0-9]*$/", $rfid_uid))      
+                {
+                    $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Terlebih Dahulu";
+                    $_SESSION['status_code'] = "error";
+                    header('location: tambah-aset-bayi.php');
+                }
+                else
+                {
+                    $query = "INSERT INTO tb_pasien_dewasa (rfid_uid,nama_pasien,id_pengenal,usia,jenis_kelamin,tinggi_badan,berat_badan,alamat,status) VALUES ('$rfid_uid','$nama_pasien','$id_pengenal','$usia','$jenis_kelamin','$tinggi_badan','$berat_badan','$alamat','$status')";
+                    $query_run = mysqli_query($connection,$query);
+                    if($query_run)
+                    {   
+                        if($query_run)
+                        {
+                            $_SESSION['status'] ="Data Pasien Berhasil Ditambahkan";
+                            $_SESSION['status_code'] = "success";
+                            header('location: daftar-pasien.php');
+                        }
+                        else
+                        {
+                            $_SESSION['status'] ="Kesalahan Internal. Registrasi Gagal";
+                            $_SESSION['status_code'] = "error";
+                            header('location: tambah-aset-bayi.php');
+                        }
+                    }
+                }
+            }
+                     
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
 //Untuk modif data pada bayi
 if(isset($_POST['updatebtnassetbayi']))
 

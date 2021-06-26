@@ -176,23 +176,36 @@ include('database/dbconfig.php');
         </div>     
 
     <div class="form-group">
-        <label>No KTP/SIM</label>
-        <input type="text" name="id_pengenal" class="form-control" placeholder="Masukkan Nomor KTP/SIM Pasien" required >
+        <label>Nama Pasien</label>
+        <input type="text" name="nama_pasien" class="form-control" placeholder="Masukkan Nama Pasien" required>
     </div>
 
     <div class="form-group">
-        <label>Nama Anak</label>
-        <input type="text" name="nama_anak" class="form-control" placeholder="Masukkan Nama Anak" required>
+        <label>No Ktp/Sim</label>
+        <input type="text" name="id_pengenal" class="form-control" placeholder="Masukkan Nomor KTP / SIM" required>
     </div>
 
     <div class="form-group">
-        <label>Nama Ibu</label>
-        <input type="text" name="nama_ibu" class="form-control" placeholder="Masukkan Nama Ibu" required>
+        <label>Usia</label>
+        <input type="text" name="usia" class="form-control" placeholder="Masukkan Usia Pasien" required>
     </div>
 
     <div class="form-group">
-        <label>Penanggung Jawab</label>
-        <input type="text" name="penanggung_jawab_bayi" class="form-control" placeholder="Masukkan Penanggung Jawab" required>
+        <label>Jenis Kelamin</label>
+            <select name="jenis_kelamin" class="form-control" id="jenis_kelamin">   
+                <option value="pria"> Pria </option>
+                <option value="wanita"> Wanita </option>
+            </select>
+    </div>
+
+    <div class="form-group">
+        <label>Tinggi Badan</label>
+        <input type="text" name="tinggi_badan" class="form-control" placeholder="Masukkan Tinggi Badan" required>
+    </div>
+
+    <div class="form-group">
+        <label>Berat Badan</label>
+        <input type="text" name="berat_badan" class="form-control" placeholder="Masukkan Berat Badan" required>
     </div>
 
     <div class="form-group">
@@ -201,12 +214,12 @@ include('database/dbconfig.php');
     </div>
 
     <div class="form-group">
-        <input type="hidden" name="status" class="form-control" value="perawatan" required>
+        <input type="hidden" name="status" class="form-control" value="perawatan">
     </div>
 
 </div>
 <div class="modal-footer">
-    <button type="submit" name="daftarasetanak_btn" class="btn btn-primary">Simpan</button>
+    <button type="submit" name="daftarpasiendewasa_btn" class="btn btn-primary">Simpan</button>
 </div>
 </form>
             </div>
