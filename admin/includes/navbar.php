@@ -108,11 +108,9 @@ include_once('code.php');
   <div id="sidebardokter" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Sub-menu:</h6>
-      <a class="collapse-item" href="daftar-bayi.php">Daftar Pasien Bayi</a>
-      <a class="collapse-item" href="log-data-bayi.php">Log Data Pasien</a>
-      <a class="collapse-item" href="formulir-bayi.php">Pindah Ruang</a>
-      <a class="collapse-item" href="konfirmasi-pindah-ruang.php">Konfirmasi Pindah Ruang</a>
-      <a class="collapse-item" href="pengaturan-aset-bayi.php">Pengaturan Data Pasien</a>
+      <a class="collapse-item" href="daftar-dokter.php">Daftar Pasien Bayi</a>
+      <a class="collapse-item" href="log-data-dokter.php">Log Data Dokter</a>
+      <a class="collapse-item" href="pengaturan-data-dokter.php">Pengaturan Data Dokter</a>
       
     </div>
   </div>

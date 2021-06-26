@@ -121,6 +121,9 @@ include('database/dbconfig.php');
     <div class="row justify-content-center">
         <div class="col-md-7">
             <div class="card mt-5">
+            <div class="card-header text-center">
+                    <h4> Registrasi Dokter Baru</h4>
+                </div>
                     <div class="card-body">
 
 <form action="code.php" method="POST">
@@ -143,7 +146,10 @@ include('database/dbconfig.php');
 
     <div class="form-group">
         <label>Jenis Kelamin</label>
-        <input type="text" name="Jenis_kelamin_dokter" class="form-control" placeholder="Masukkan Jenis Kelamin" required>
+            <select name="jenis_kelamin_dokter" class="form-control" id="jenis_kelamin">   
+                <option value="pria"> Pria </option>
+                <option value="wanita"> Wanita </option>
+            </select>
     </div>
 
     <div class="form-group">
@@ -156,13 +162,9 @@ include('database/dbconfig.php');
         <input type="text" name="spesialis" class="form-control" placeholder="Masukkan Spesialis" required>
     </div>
 
-    <div class="form-group">
-        <input type="hidden" name="status" class="form-control" value="perawatan" required>
-    </div>
-
 </div>
 <div class="modal-footer">
-    <button type="submit" name="daftarasetanak_btn" class="btn btn-primary">Simpan</button>
+    <button type="submit" name="daftardokter_btn" class="btn btn-primary">Simpan</button>
 </div>
 </form>
             </div>

@@ -493,6 +493,60 @@ if(isset($_POST['daftarpasiendewasa_btn']))
 
 /////////////////////////////////////////////////////////////////////////////////////
 
+////////////////TAMBAH Dokter //////////////////////////////////
+if(isset($_POST['daftardokter_btn']))
+
+//jika sudah ditombol kemudian
+{
+    //input data
+    $rfid_uid = $_POST['rfid_uid'];
+    $nama_dokter = $_POST['nama_dokter'];
+    $id_dokter = $_POST['id_dokter'];
+    $jenis_kelamin_dokter = $_POST['jenis_kelamin_dokter'];
+    $alamat_dokter = $_POST['alamat_dokter'];
+    $spesialis = $_POST['spesialis'];
+
+    $cekdokter_query = "SELECT * FROM `tb_dokter` WHERE `rfid_uid` = '$rfid_uid'";
+    $cekdokter_query_run = mysqli_query($connection, $cekdokter_query);
+    if(mysqli_num_rows($cekdokter_query_run) > 0)
+        {
+            $_SESSION['status'] ="Registrasi Gagal. RFID Telah Terdaftar";
+            $_SESSION['status_code'] = "error";
+            header('location: tambah-dokter.php');
+        }
+            else
+            {
+                if(!preg_match("/^[a-e0-9]*$/", $rfid_uid))      
+                {
+                    $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Terlebih Dahulu";
+                    $_SESSION['status_code'] = "error";
+                    header('location: tambah-dokter.php');
+                }
+                else
+                {
+                    $query = "INSERT INTO tb_dokter (rfid_uid,nama_dokter,id_dokter,jenis_kelamin_dokter,alamat_dokter,spesialis) VALUES ('$rfid_uid','$nama_dokter','$id_dokter','$jenis_kelamin_dokter','$alamat_dokter','$spesialis')";
+                    $query_run = mysqli_query($connection,$query);
+                    if($query_run)
+                    {   
+                        if($query_run)
+                        {
+                            $_SESSION['status'] ="Data Dokter Berhasil Ditambahkan";
+                            $_SESSION['status_code'] = "success";
+                            header('location: daftar-dokter.php');
+                        }
+                        else
+                        {
+                            $_SESSION['status'] ="Kesalahan Internal. Registrasi Gagal";
+                            $_SESSION['status_code'] = "error";
+                            header('location: tambah-dokter.php');
+                        }
+                    }
+                }
+            }
+                     
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
 
 
 
