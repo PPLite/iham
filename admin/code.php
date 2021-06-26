@@ -2,7 +2,7 @@
 include_once('security.php');
 include_once('database/dbconfig.php');
 
-////////////////////////BAGIAN LOGIN/////////////////////////////////
+////////////////////////BAGIAN LOGIN//////////////////////////////////
 //fungsi akan aktif jika tombol login dipencet
 if(isset($_POST['login_btn']))
 {
