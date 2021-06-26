@@ -111,7 +111,7 @@ include_once('code.php');
   </div>
 </li>
 
-<!-- Perawat-->
+<!-- Karyawan?-->
 <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#sidebarkaryawan" aria-expanded="true" aria-controls="collapseTwo">
     <i class="fas fa-fw fa-cog"></i>
