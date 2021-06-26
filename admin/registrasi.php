@@ -6,6 +6,7 @@ include('database/dbconfig.php');
 ?>
 
 <div class="container">
+    <div class="row justify-content-center">
         <div class="col-md-18">
 
           <div class="card mt-5">
@@ -17,7 +18,7 @@ include('database/dbconfig.php');
                 <div class="card-body">
                     <div class="row justify-content-center">
                 
-                    <div class="col-lg-2 mb-3">
+                    <div class="col-lg-3 mb-3">
                                 <div class="card bg-primary text-white shadow">
                                     <div class="card-body">
                                     <a href="tambah-aset-barang.php" class="text-white">Peralatan Medis </a>
@@ -26,7 +27,7 @@ include('database/dbconfig.php');
                                 </div>
                             </div>
 
-                            <div class="col-lg-2 mb-3">
+                            <div class="col-lg-3 mb-3">
                                 <div class="card bg-success text-white shadow">
                                     <div class="card-body">
                                     <a href="tambah-aset-bayi.php" class="text-white">Pasien</a>
@@ -61,42 +62,28 @@ include('database/dbconfig.php');
                                     </div>
                                 </div>
                             </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-</div>
 
-
-<div class="container">
-    <div class="col-md-18">
-
-        <div class="card mt-5">
-
-                <div class="card-body">
-                    <div class="row justify-content-center">
-                        <form action="" method="GET">
-                            <div class="row">
-                                <div class="">
-                                    <input type="hidden" name="rfid_uid" value="<?php if(isset($_GET['rfid_uid'])) {echo $_GET['rfid_uid'];} ?>" class="form-control">
+                            <div class="card-body">
+                                <form action="" method="GET">
+                                <div class="row">
+                                    <div class="">
+                                        <input type="hidden" name="rfid_uid" value="<?php if(isset($_GET['rfid_uid'])) {echo $_GET['rfid_uid'];} ?>" class="form-control">
+                                    </div>
+                                <div class="col-md-4">
+                                    <button type="SUBMIT" class="btn btn-primary">Scan RFID</button>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <button type="SUBMIT" class="btn btn-primary">Scan RFID</button>
-                            </div>
-                        </form>
-                    </div>
 
                         <div class="row">
+                            <div class="col-md-12">
                                 <hr>
                                 <?php 
                                 if(isset($_GET['rfid_uid']))
                                     {
                                         $query = "SELECT * FROM `tb_reader_scan` order by id desc limit 1";
                                         $query_run = mysqli_query($connection, $query);
-                            
+                                        
+
                                     if(mysqli_num_rows($query_run) > 0)
                                     foreach($query_run as $row)
                                     ?>
@@ -118,9 +105,12 @@ include('database/dbconfig.php');
                                  }                                 
                             ?>        
                             </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
+            </div>
         </div>
-
     </div>
 </div>
 
