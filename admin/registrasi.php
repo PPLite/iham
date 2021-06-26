@@ -40,6 +40,7 @@ include('database/dbconfig.php');
                                 Dropdown button
                                 </button>
                                 <div class="dropdown-menu">
+                                <i class="fas fa-procedures fa-2x text-gray-300 float-right"></i>
                                 <a class="dropdown-item" href="#">Link 1</a>
                                 <a class="dropdown-item" href="#">Link 2</a>
                                 <a class="dropdown-item" href="#">Link 3</a>
