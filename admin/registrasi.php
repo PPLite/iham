@@ -18,7 +18,7 @@ include('database/dbconfig.php');
                 <div class="card-body">
                     <div class="row justify-content-center">
                 
-                    <div class="col-lg-3 mb-3">
+                    <div class="col-lg-2 mb-3">
                                 <div class="card bg-primary text-white shadow">
                                     <div class="card-body">
                                     <a href="tambah-aset-barang.php" class="text-white">Peralatan Medis </a>
@@ -27,11 +27,11 @@ include('database/dbconfig.php');
                                 </div>
                             </div>
 
-                            <div class="col-lg-3 mb-3">
+                            <div class="col-lg-2 mb-3">
                                 <div class="card bg-success text-white shadow">
                                     <div class="card-body">
-                                    <a href="tambah-aset-bayi.php" class="text-white">Pasien Bayi</a>
-                                    <i class="fas fa-baby-carriage fa-2x text-gray-300 float-right"></i>
+                                    <a href="tambah-aset-bayi.php" class="text-white">Pasien</a>
+                                    <i class="fas fa-procedures fa-2x text-gray-300 float-right"></i>
                                     </div>
                                 </div>
                             </div>
