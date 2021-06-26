@@ -77,18 +77,17 @@ include('database/dbconfig.php');
 
                 <div class="card-body">
                     <div class="row justify-content-center">
-                    
-                    <div class="card-body">
-                                <form action="" method="GET">
-                                <div class="row">
-                                    <div class="">
-                                        <input type="hidden" name="rfid_uid" value="<?php if(isset($_GET['rfid_uid'])) {echo $_GET['rfid_uid'];} ?>" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <button type="SUBMIT" class="btn btn-primary">Scan RFID</button>
+                        <form action="" method="GET">
+                            <div class="row">
+                                <div class="">
+                                    <input type="hidden" name="rfid_uid" value="<?php if(isset($_GET['rfid_uid'])) {echo $_GET['rfid_uid'];} ?>" class="form-control">
                                 </div>
                             </div>
+                            <div class="col-md-4">
+                                <button type="SUBMIT" class="btn btn-primary">Scan RFID</button>
+                            </div>
+                        </form>
+                    </div>
 
                         <div class="row">
                             <div class="col-md-12">
@@ -121,9 +120,6 @@ include('database/dbconfig.php');
                                  }                                 
                             ?>        
                             </div>
-
-
-
                     </div>
                 </div>
         </div>
