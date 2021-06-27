@@ -525,6 +525,79 @@ if(isset($_POST['daftardokter_btn']))
 
 /////////////////////////////////////////////////////////////////////////////////////
 
+//////////////////////////////////HAPUS DATA DOKTER//////////////////////////////////////////////
+if(isset($_POST['dokter']))
+{
+    //disini pakai $query=Delete_id, soalnya ya buat ngehapus data berdasarkan "ID" yang udah dipilih
+    $id = $_POST['hapus_id_dokter'];
+    $query = "DELETE FROM tb_dokter WHERE id='$id' ";
+    $query_run = mysqli_query($connection, $query);
+
+    if ($query_run)
+    {
+        $_SESSION['status'] = "Data berhasil di hapus";
+        $_SESSION['status_code'] = "success";
+        header('location: pengaturan-dokter.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Data gagal dihapus";
+        header('location: pengaturan-dokter.php');
+    }
+}
+////////////////////////////UPDATE DATA DOKTER//////////////////////////////////
+//Untuk modif data pada bayi
+if(isset($_POST['updatedokter']))
+
+$rfid_uid = $_POST['rfid_uid'];
+$nama_dokter = $_POST['nama_dokter'];
+$id_dokter = $_POST['id_dokter'];
+$jenis_kelamin_dokter = $_POST['jenis_kelamin_dokter'];
+$alamat_dokter = $_POST['alamat_dokter'];
+$spesialis = $_POST['spesialis'];
+
+//data apa aja yang diambil dan dimodif
+{
+    $id = $_POST['id'];
+    
+    $rfid_uid = $_POST['rfid_uid'];
+    $nama_perawat = $_POST['nama_perawat'];
+    $id_perawat = $_POST['id_perawat'];
+    $jenis_kelamin = $_POST['jenis_kelamin'];
+    $alamat = $_POST['alamat'];
+    $status = $_POST['status'];
+
+    $query = "UPDATE tb_perawat SET rfid_uid='$rfid_uid', nama_perawat ='$nama_perawat', id_perawat='$id_perawat', jenis_kelamin='$jenis_kelamin', alamat='$alamat', status='$status' WHERE id='$id' ";
+    $query_run = mysqli_query($connection,$query);
+
+
+    //Tampilan status jika dilakukan perubahan data
+    if($query_run)
+    {
+        $_SESSION['status'] ="Data berhasil diperbarui";
+        $_SESSION['status_code'] = "success";
+        header('location: pengaturan-perawat.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Data Gagal diperbarui";
+        $_SESSION['status_code'] = "error";
+        header('location: pengaturan-perawat.php');
+    }
+}
+////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
 ////////////////TAMBAH Perawat //////////////////////////////////
 if(isset($_POST['daftarperawat_btn']))
 
@@ -635,21 +708,6 @@ if(isset($_POST['updateperawat']))
     }
 }
 ////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ////////////////TAMBAH Karyawan //////////////////////////////////
 if(isset($_POST['daftarkaryawan_btn']))
