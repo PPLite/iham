@@ -580,6 +580,77 @@ if(isset($_POST['daftarperawat_btn']))
 
 /////////////////////////////////////////////////////////////////////////////////////
 
+/////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////HAPUS DATA PERAWAT//////////////////////////////////////////////
+if(isset($_POST['hapusperawat']))
+{
+    //disini pakai $query=Delete_id, soalnya ya buat ngehapus data berdasarkan "ID" yang udah dipilih
+    $id = $_POST['hapus_id_perawat'];
+    $query = "DELETE FROM tb_perawat WHERE id='$id' ";
+    $query_run = mysqli_query($connection, $query);
+
+    if ($query_run)
+    {
+        $_SESSION['status'] = "Data berhasil di hapus";
+        $_SESSION['status_code'] = "success";
+        header('location: pengaturan-perawat.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Data gagal dihapus";
+        header('location: pengaturan-perawat.php');
+    }
+}
+////////////////////////////UPDATE DATA PERAWAT//////////////////////////////////
+//Untuk modif data pada bayi
+if(isset($_POST['updateperawat']))
+
+//data apa aja yang diambil dan dimodif
+{
+    $id = $_POST['id'];
+    
+    $rfid_uid = $_POST['rfid_uid'];
+    $nama_perawat = $_POST['nama_perawat'];
+    $id_perawat = $_POST['id_perawat'];
+    $jenis_kelamin = $_POST['jenis_kelamin'];
+    $alamat = $_POST['alamat'];
+    $status = $_POST['status'];
+
+    $query = "UPDATE tb_perawat SET rfid_uid='$rfid_uid', nama_perawat ='$nama_perawat', id_perawat='$id_perawat', jenis_kelamin='$jenis_kelamin', alamat='$alamat', status='$status' WHERE id='$id' ";
+    $query_run = mysqli_query($connection,$query);
+
+
+    //Tampilan status jika dilakukan perubahan data
+    if($query_run)
+    {
+        $_SESSION['status'] ="Data berhasil diperbarui";
+        $_SESSION['status_code'] = "success";
+        header('location: pengaturan-perawat.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Data Gagal diperbarui";
+        $_SESSION['status_code'] = "error";
+        header('location: pengaturan-perawat.php');
+    }
+}
+////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ////////////////TAMBAH Karyawan //////////////////////////////////
 if(isset($_POST['daftarkaryawan_btn']))
 
