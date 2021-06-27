@@ -186,7 +186,7 @@ if(isset($_POST['daftaraset_btn']))
         }
             else
             {
-                if(!preg_match("/^[a-e0-9]*$/", $rfid_uid))      
+                if(!preg_match("/^[a-g0-9]*$/", $rfid_uid))      
                 {
                     $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Terlebih Dahulu";
                     $_SESSION['status_code'] = "error";
@@ -253,24 +253,6 @@ if(isset($_POST['updateasset']))
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ////////////////PINJAM ASET///////////////////////////////////
 if(isset($_POST['formpinjam']))
 
@@ -316,8 +298,6 @@ if(isset($_POST['formpinjam']))
             header('location: formulir.php');
         }
 }
-
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////TOLAK KONFIRMASI PINJAM///////////////////////////////////
@@ -375,8 +355,6 @@ if(isset($_POST['deleteasset']))
     }
 }
 
-
-
 ////////////////TAMBAH ASET BAYI (NEW) //////////////////////////////////
 if(isset($_POST['daftarasetanak_btn']))
 
@@ -401,7 +379,7 @@ if(isset($_POST['daftarasetanak_btn']))
         }
             else
             {
-                if(!preg_match("/^[a-e0-9]*$/", $rfid_uid))      
+                if(!preg_match("/^[a-g0-9]*$/", $rfid_uid))      
                 {
                     $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Terlebih Dahulu";
                     $_SESSION['status_code'] = "error";
@@ -433,7 +411,6 @@ if(isset($_POST['daftarasetanak_btn']))
 
 /////////////////////////////////////////////////////////////////////////////////////
 
-
 ////////////////TAMBAH Pasien Dewasa //////////////////////////////////
 if(isset($_POST['daftarpasiendewasa_btn']))
 
@@ -461,7 +438,7 @@ if(isset($_POST['daftarpasiendewasa_btn']))
         }
             else
             {
-                if(!preg_match("/^[a-e0-9]*$/", $rfid_uid))      
+                if(!preg_match("/^[a-g0-9]*$/", $rfid_uid))      
                 {
                     $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Terlebih Dahulu";
                     $_SESSION['status_code'] = "error";
@@ -516,7 +493,7 @@ if(isset($_POST['daftardokter_btn']))
         }
             else
             {
-                if(!preg_match("/^[a-e0-9]*$/", $rfid_uid))      
+                if(!preg_match("/^[a-g0-9]*$/", $rfid_uid))      
                 {
                     $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Terlebih Dahulu";
                     $_SESSION['status_code'] = "error";
@@ -571,7 +548,7 @@ if(isset($_POST['daftarperawat_btn']))
         }
             else
             {
-                if(!preg_match("/^[a-e0-9]*$/", $rfid_uid))      
+                if(!preg_match("/^[a-g0-9]*$/", $rfid_uid))      
                 {
                     $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Terlebih Dahulu";
                     $_SESSION['status_code'] = "error";
@@ -602,6 +579,7 @@ if(isset($_POST['daftarperawat_btn']))
 }
 
 /////////////////////////////////////////////////////////////////////////////////////
+
 ////////////////TAMBAH Karyawan //////////////////////////////////
 if(isset($_POST['daftarkaryawan_btn']))
 
@@ -626,7 +604,7 @@ if(isset($_POST['daftarkaryawan_btn']))
         }
             else
             {
-                if(!preg_match("/^[a-e0-9]*$/", $rfid_uid))      
+                if(!preg_match("/^[a-g0-9]*$/", $rfid_uid))      
                 {
                     $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Terlebih Dahulu";
                     $_SESSION['status_code'] = "error";
@@ -676,37 +654,41 @@ if(isset($_POST['hapuskaryawan']))
         header('location: pengaturan-karyawan.php');
     }
 }
+////////////////////////////UPDATE DATA KARYAWAN//////////////////////////////////
+//Untuk modif data pada bayi
+if(isset($_POST['updatekaryawan']))
+
+//data apa aja yang diambil dan dimodif
+{
+    $id = $_POST['id'];
+    
+    $rfid_uid = $_POST['rfid_uid'];
+    $nama_karyawan = $_POST['nama_karyawan'];
+    $id_pengenal = $_POST['id_pengenal'];
+    $usia = $_POST['usia'];
+    $posisi = $_POST['posisi'];
+    $alamat = $_POST['alamat'];
+    $status = $_POST['status'];
+
+    $query = "UPDATE tb_non_medis SET rfid_uid='$rfid_uid', nama_karyawan ='$nama_karyawan', id_pengenal='$id_pengenal', usia='$usia', posisi='$posisi', alamat='$alamat', status='$status' WHERE id='$id' ";
+    $query_run = mysqli_query($connection,$query);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //Tampilan status jika dilakukan perubahan data
+    if($query_run)
+    {
+        $_SESSION['status'] ="Data berhasil diperbarui";
+        $_SESSION['status_code'] = "success";
+        header('location: pengaturan-karyawan.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Data Gagal diperbarui";
+        $_SESSION['status_code'] = "error";
+        header('location: pengaturan-karyawan.php');
+    }
+}
+////////////////////////////////////////////////////////////////////////////
 
 //Untuk modif data pada bayi
 if(isset($_POST['updatebtnassetbayi']))
