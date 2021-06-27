@@ -135,7 +135,8 @@
             <div class="form-group">
                 <label>Status</label>
                 <select name="status" class="form-control" id="status" > 
-                  <option value="hadir"> Hadir </option>   
+                  <option value="masuk"> Masuk </option>
+                  <option value="Pulang"> Pulang </option>   
                   <option value="izin"> Izin </option>
                   <option value="keluar"> Keluar </option>
                 </select>

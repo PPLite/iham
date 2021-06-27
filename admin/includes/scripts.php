@@ -75,6 +75,54 @@ $(document).ready(function() {
 } );
 </script>
 
+<!---------------JAVASCRIPT UNTUK EDIT PERAWAT------------------->
+<script>
+$(document).ready(function () {
+    $('#tabelperawat').on('click','.tomboleditperawat', function() {
+
+        $('#editmodalperawat').modal('show');
+
+            $tr = $(this).closest('tr');
+
+            var data = $tr.children("td").map(function(){
+                return $(this).text();
+            }).get();
+
+            console.log(data);
+
+            $('#id').val(data[0]);
+            $('#rfid_uid').val(data[1]);
+            $('#nama_perawat').val(data[2]);
+            $('#id_perawat').val(data[3]);
+            $('#jenis_kelamin').val(data[4]);
+            $('#alamat').val(data[5]);
+            $('#status').val(data[6]);
+
+    });
+});
+</script>
+<!--------------------------------------------------------------->
+
+<!---------------JAVASCRIPT UNTUK HAPUS PERAWAT---------------->
+  <script>
+$(document).ready(function () {
+    $('#tabelperawat').on('click','.tombolhapusperawat', function() {
+
+        $('#deletemodalperawat').modal('show');
+
+            $tr = $(this).closest('tr');
+
+            var data = $tr.children("td").map(function(){
+                return $(this).text();
+            }).get();
+
+            console.log(data);
+
+            $('#hapus_id_perawat').val(data[0]);
+    });
+});
+</script>
+<!-------------------------------------------------------------------->
 
 <!---------------JAVASCRIPT UNTUK EDIT KARYAWAN------------------->
 <script>
@@ -125,6 +173,11 @@ $(document).ready(function () {
 });
 </script>
 <!-------------------------------------------------------------------->
+
+
+
+
+
 
 <!---------------JAVASCRIPT UNTUK EDIT PENGGUNA------------------->
 <script>

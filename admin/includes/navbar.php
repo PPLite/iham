@@ -127,7 +127,7 @@ include_once('code.php');
       <h6 class="collapse-header">Sub-menu:</h6>
       <a class="collapse-item" href="daftar-perawat.php">Daftar Perawat</a>
       <a class="collapse-item" href="log-data-perawat.php">Log Data Perawat</a>
-      <a class="collapse-item" href="pengaturan-aset-perawat.php">Pengaturan Data Perawat</a>
+      <a class="collapse-item" href="pengaturan-perawat.php">Pengaturan Data Perawat</a>
     </div>
   </div>
 </li>
