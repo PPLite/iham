@@ -655,8 +655,54 @@ if(isset($_POST['daftarkaryawan_btn']))
             }
                      
 }
-
 /////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////HAPUS DATA KARYAWAN//////////////////////////////////////////////
+if(isset($_POST['hapuskaryawan']))
+{
+    //disini pakai $query=Delete_id, soalnya ya buat ngehapus data berdasarkan "ID" yang udah dipilih
+    $id = $_POST['hapus_id_karyawan'];
+    $query = "DELETE FROM tb_non_medis WHERE id='$id' ";
+    $query_run = mysqli_query($connection, $query);
+
+    if ($query_run)
+    {
+        $_SESSION['status'] = "Data berhasil di hapus";
+        $_SESSION['status_code'] = "success";
+        header('location: pengaturan-karyawan.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Data gagal dihapus";
+        header('location: pengaturan-karyawan.php');
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -143,7 +143,7 @@ include_once('code.php');
       <h6 class="collapse-header">Sub-menu:</h6>
       <a class="collapse-item" href="daftar-karyawan.php">Daftar Karyawan</a>
       <a class="collapse-item" href="log-data-karyawan.php">Log Data Karyawan</a>
-      <a class="collapse-item" href="pengaturan-aset-karyawan.php">Pengaturan Data Karyawan</a>
+      <a class="collapse-item" href="pengaturan-karyawan.php">Pengaturan Data Karyawan</a>
     </div>
   </div>
 </li>
@@ -208,86 +208,89 @@ include_once('code.php');
             <i class="fa fa-bars"></i>
           </button>
 
-          
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-
-
-          <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
-            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
-              </a>
+<!-------- Mengambil Data Dokter yang terdaftar ----------------->
+<div class="topbar-divider d-none d-sm-block"></div>
 
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                <form class="form-inline mr-auto w-100 navbar-search">
-                  <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </li>
+<div class="container my-auto">
+<div class="copyright text-center my-auto">
+<a href="daftar-dokter.php"  style="text-decoration:none;" class="text-secondary">
+ Dokter         
+  <?php
+              $query = "SELECT id FROM tb_dokter ORDER BY id";
+              $query_run = mysqli_query($connection, $query);
+              $row = mysqli_num_rows($query_run);
+              echo '<h5 class="text-dark">'.$row.'</h5>';
+              ?>
+</a>
+</div>
+</div>
+<!-------- Mengambil Data Perawat yang terdaftar ----------------->
+<div class="topbar-divider d-none d-sm-block"></div>
+
+<div class="container my-auto">
+<div class="copyright text-center my-auto">
+<a href="daftar-perawat.php"  style="text-decoration:none;" class="text-secondary">
+ Perawat         
+  <?php
+              $query = "SELECT id FROM tb_perawat ORDER BY id";
+              $query_run = mysqli_query($connection, $query);
+              $row = mysqli_num_rows($query_run);
+              echo '<h5 class="text-warning">'.$row.'</h5>';
+              ?>
+</a>
+</div>
+</div>
+<!-------- Mengambil Data Staff yang terdaftar ----------------->
+<div class="topbar-divider d-none d-sm-block"></div>
+
+<div class="container my-auto">
+<div class="copyright text-center my-auto">
+<a href="daftar-karyawan.php"  style="text-decoration:none;" class="text-secondary">
+ Staff         
+  <?php
+              $query = "SELECT id FROM tb_non_medis ORDER BY id";
+              $query_run = mysqli_query($connection, $query);
+              $row = mysqli_num_rows($query_run);
+              echo '<h5 class="text-primary">'.$row.'</h5>';
+              ?>
+</a>
+</div>
+</div>
 
 <!-------- Mengambil Data Pasien yang terdaftar ----------------->
 <div class="topbar-divider d-none d-sm-block"></div>
 
 <div class="container my-auto">
 <div class="copyright text-center my-auto">
- Bayi         
-  <?php
-              $query = "SELECT id FROM tb_stat_anak ORDER BY id";
-              $query_run = mysqli_query($connection, $query);
-              $row = mysqli_num_rows($query_run);
-              echo '<h5>'.$row.'</h5>';
-              ?>
-</div>
-</div>
-
-<!-------- Mengambil Data Petugas Medis yang terdaftar ----------------->
-<div class="topbar-divider d-none d-sm-block"></div>
-
-<div class="container my-auto">
-<div class="copyright text-center my-auto">
+<a href="daftar-pasien.php"  style="text-decoration:none;" class="text-secondary">
   Pasien            
   <?php
-              $query = "SELECT id FROM tb_rfid ORDER BY id";
+              $query = "SELECT id FROM tb_pasien_dewasa ORDER BY id";
               $query_run = mysqli_query($connection, $query);
               $row = mysqli_num_rows($query_run);
               echo '<h5 class="text-danger">'.$row.'</h5>';
               ?>
+</a>
 </div>
 </div>
 
-
-<!-------- Mengambil Data Petugas Medis yang terdaftar ----------------->
+<!-------- Mengambil Data Bayi yang terdaftar ----------------->
 <div class="topbar-divider d-none d-sm-block"></div>
 
 <div class="container my-auto">
 <div class="copyright text-center my-auto">
-Staff           
+
+<a href="daftar-bayi.php"  style="text-decoration:none;" class="text-secondary">
+Bayi           
               <?php
-              $query = "SELECT id FROM register ORDER BY id";
+              $query = "SELECT id FROM tb_stat_anak ORDER BY id";
               $query_run = mysqli_query($connection, $query);
               $row = mysqli_num_rows($query_run);
               echo '<h5 class="text-success">'.$row.'</h5>';
               ?>
+</a>
 </div>
 </div>
 

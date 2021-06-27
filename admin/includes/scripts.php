@@ -75,6 +75,57 @@ $(document).ready(function() {
 } );
 </script>
 
+
+<!---------------JAVASCRIPT UNTUK EDIT KARYAWAN------------------->
+<script>
+$(document).ready(function () {
+    $('#tabelkaryawan').on('click','.tomboleditkaryawan', function() {
+
+        $('#editmodalkaryawan').modal('show');
+
+            $tr = $(this).closest('tr');
+
+            var data = $tr.children("td").map(function(){
+                return $(this).text();
+            }).get();
+
+            console.log(data);
+
+            $('#id').val(data[0]);
+            $('#rfid_uid').val(data[1]);
+            $('#nama_karyawan').val(data[2]);
+            $('#id_pengenal').val(data[3]);
+            $('#usia').val(data[4]);
+            $('#posisi').val(data[5]);
+            $('#alamat').val(data[6]);
+            $('#status').val(data[7]);
+
+    });
+});
+</script>
+<!--------------------------------------------------------------->
+
+<!---------------JAVASCRIPT UNTUK HAPUS KARYAWAN---------------->
+  <script>
+$(document).ready(function () {
+    $('#tabelkaryawan').on('click','.tombolhapuskaryawan', function() {
+
+        $('#deletemodalkaryawan').modal('show');
+
+            $tr = $(this).closest('tr');
+
+            var data = $tr.children("td").map(function(){
+                return $(this).text();
+            }).get();
+
+            console.log(data);
+
+            $('#hapus_id_karyawan').val(data[0]);
+    });
+});
+</script>
+<!-------------------------------------------------------------------->
+
 <!---------------JAVASCRIPT UNTUK EDIT PENGGUNA------------------->
 <script>
 $(document).ready(function () {
