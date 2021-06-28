@@ -141,7 +141,7 @@
 
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-            <button type="submit" name="updateperawat" class="btn btn-primary">Perbarui</button>
+            <button type="submit" name="updatekaryawan" class="btn btn-primary">Perbarui</button>
         </div>
       </form>
 
