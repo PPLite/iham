@@ -73,7 +73,7 @@ include_once('code.php');
       <a class="collapse-item" href="#">Log Data Pasien</a>
       <a class="collapse-item" href="#">Pindah Ruang</a>
       <a class="collapse-item" href="#">Konfirmasi Pindah Ruang</a>
-      <a class="collapse-item" href="#">Pengaturan Data Pasien</a>
+      <a class="collapse-item" href="pengaturan-pasien.php">Pengaturan Data Pasien</a>
     </div>
   </div>
 </li>

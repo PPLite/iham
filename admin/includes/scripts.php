@@ -103,6 +103,58 @@ $(document).ready(function () {
 </script>
 <!--------------------------------------------------------------->
 
+<!---------------JAVASCRIPT UNTUK HAPUS PASIEN DEWASA---------------->
+  <script>
+$(document).ready(function () {
+    $('#tabelpasien').on('click','.tombolhapuspasien', function() {
+
+        $('#deletemodalpasien').modal('show');
+
+            $tr = $(this).closest('tr');
+
+            var data = $tr.children("td").map(function(){
+                return $(this).text();
+            }).get();
+
+            console.log(data);
+
+            $('#hapus_id_pasien').val(data[0]);
+    });
+});
+</script>
+<!-------------------------------------------------------------------->
+
+<!---------------JAVASCRIPT UNTUK EDIT PASIEN DEWASA------------------->
+<script>
+$(document).ready(function () {
+    $('#tabelpasien').on('click','.tomboleditpasien', function() {
+
+        $('#editmodalpasien').modal('show');
+
+            $tr = $(this).closest('tr');
+
+            var data = $tr.children("td").map(function(){
+                return $(this).text();
+            }).get();
+
+            console.log(data);
+
+            $('#id').val(data[0]);
+            $('#rfid_uid').val(data[1]);
+            $('#nama_pasien').val(data[2]);
+            $('#id_pengenal').val(data[3]);
+            $('#usia').val(data[4]);
+            $('#jenis_kelamin').val(data[5]);
+            $('#tinggi_badan').val(data[6]);
+            $('#berat_badan').val(data[7]);
+            $('#alamat').val(data[8]);
+            $('#status').val(data[9]);
+
+    });
+});
+</script>
+<!--------------------------------------------------------------->
+
 <!---------------JAVASCRIPT UNTUK HAPUS PERAWAT---------------->
   <script>
 $(document).ready(function () {

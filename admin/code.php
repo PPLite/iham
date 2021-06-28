@@ -434,7 +434,7 @@ if(isset($_POST['daftarpasiendewasa_btn']))
         {
             $_SESSION['status'] ="Registrasi Gagal. RFID Telah Terdaftar";
             $_SESSION['status_code'] = "error";
-            header('location: tambah-aset-bayi.php');
+            header('location: tambah-pasien-dewasa.php');
         }
             else
             {
@@ -442,7 +442,7 @@ if(isset($_POST['daftarpasiendewasa_btn']))
                 {
                     $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Terlebih Dahulu";
                     $_SESSION['status_code'] = "error";
-                    header('location: tambah-aset-bayi.php');
+                    header('location: tambah-pasien-dewasa.php');
                 }
                 else
                 {
@@ -460,7 +460,7 @@ if(isset($_POST['daftarpasiendewasa_btn']))
                         {
                             $_SESSION['status'] ="Kesalahan Internal. Registrasi Gagal";
                             $_SESSION['status_code'] = "error";
-                            header('location: tambah-aset-bayi.php');
+                            header('location: tambah-pasien-dewasa.php');
                         }
                     }
                 }
@@ -469,6 +469,83 @@ if(isset($_POST['daftarpasiendewasa_btn']))
 }
 
 /////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////HAPUS DATA PASIEN//////////////////////////////////////////////
+if(isset($_POST['hapuspasien']))
+{
+    //disini pakai $query=Delete_id, soalnya ya buat ngehapus data berdasarkan "ID" yang udah dipilih
+    $id = $_POST['hapus_id_pasien'];
+    $query = "DELETE FROM tb_pasien_dewasa WHERE id='$id' ";
+    $query_run = mysqli_query($connection, $query);
+
+    if ($query_run)
+    {
+        $_SESSION['status'] = "Data berhasil di hapus";
+        $_SESSION['status_code'] = "success";
+        header('location: pengaturan-pasien.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Data gagal dihapus";
+        header('location: pengaturan-pasien.php');
+    }
+}
+////////////////////////////UPDATE DATA PASIEN//////////////////////////////////
+if(isset($_POST['updatepasien']))
+
+//data apa aja yang diambil dan dimodif
+    {
+        $id = $_POST['id'];
+        
+        $rfid_uid = $_POST['rfid_uid'];
+        $nama_pasien = $_POST['nama_pasien'];
+        $id_pengenal = $_POST['id_pengenal'];
+        $usia = $_POST['usia'];
+        $jenis_kelamin = $_POST['jenis_kelamin'];
+        $tinggi_badan = $_POST['tinggi_badan'];
+        $berat_badan = $_POST['berat_badan'];
+        $alamat = $_POST['alamat'];
+        $status = $_POST['status'];
+
+        $query = "UPDATE tb_pasien_dewasa SET rfid_uid='$rfid_uid', nama_pasien ='$nama_pasien', id_pengenal='$id_pengenal', usia ='$usia', jenis_kelamin='$jenis_kelamin', tinggi_badan='$tinggi_badan', berat_badan='$berat_badan', alamat='$alamat', status='$status'  WHERE id='$id' ";
+        $query_run = mysqli_query($connection,$query);
+
+
+        //Tampilan status jika dilakukan perubahan data
+        if($query_run)
+        {
+            $_SESSION['status'] ="Data berhasil diperbarui";
+            $_SESSION['status_code'] = "success";
+            header('location: pengaturan-pasien.php');
+        }
+        else
+        {
+            $_SESSION['status'] = "Data Gagal diperbarui";
+            $_SESSION['status_code'] = "error";
+            header('location: pengaturan-pasien.php');
+        }
+    }
+////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ////////////////TAMBAH Dokter //////////////////////////////////
 if(isset($_POST['daftardokter_btn']))
