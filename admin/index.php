@@ -21,10 +21,26 @@ include_once('database/dbconfig.php');
 <!-- Content Row -->
 <div class="row">
 
+<div class="col-xl-2 col-md-6 mb-4">
+        <div class="card shadow h-100 py-2">
+            <div class="card-body">
+            <a href=#modalregister data-toggle="modal">
+              <div style="text-align: center">
+                <span class="fa fa-user-plus fa-2x text-center text-success"></span>
+              </div>
+
+              <div style="text-align: center">
+                <div class=" text-m text-success" >Registrasi</div>
+              </div>
+            </a>
+            </div>
+        </div>
+    </div>
+
     <div class="col-xl-2 col-md-6 mb-4">
         <div class="card shadow h-100 py-2">
             <div class="card-body">
-
+            <a href=#modaldokter data-toggle="modal">
               <div style="text-align: center">
                 <span class="fa fa-user-md fa-2x text-center text-primary"></span>
               </div>
@@ -32,6 +48,7 @@ include_once('database/dbconfig.php');
               <div style="text-align: center">
                 <div class=" text-m text-primary" >Dokter</div>
               </div>
+            </a>
             </div>
         </div>
     </div>
@@ -56,6 +73,21 @@ include_once('database/dbconfig.php');
             <div class="card-body">
 
               <div style="text-align: center">
+                <span class="fa fa-user-alt fa-2x text-center text-warning"></span>
+              </div>
+
+              <div style="text-align: center">
+                <div class=" text-m text-warning" >Karyawan</div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-2 col-md-6 mb-4">
+        <div class="card shadow h-100 py-2">
+            <div class="card-body">
+
+              <div style="text-align: center">
                 <span class="fa fa-user-injured fa-2x text-center text-danger"></span>
               </div>
 
@@ -69,7 +101,6 @@ include_once('database/dbconfig.php');
     <div class="col-xl-2 col-md-6 mb-4">
         <div class="card shadow h-100 py-2">
             <div class="card-body">
-
               <div style="text-align: center">
                 <span class="fa fa-baby fa-2x text-center text-info"></span>
               </div>
@@ -114,7 +145,7 @@ include_once('database/dbconfig.php');
     <div class="col-xl-2 col-md-6 mb-4">
         <div class="card shadow h-100 py-2">
             <div class="card-body">
-
+              
               <div style="text-align: center">
                 <span class="fa fa-search-location fa-2x text-center text-dark"></span>
               </div>
@@ -138,7 +169,108 @@ include_once('database/dbconfig.php');
 </div>
 
 
+<!------------------------------FUNGSI MODAL REGISTRASI------------------------------------->
+<div class="modal fade" id="modalregister" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Menu Registrasi</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
 
+        <div class="modal-body">
+
+        <div class="row">
+
+          <div class="col-lg-4 mb-4">
+            <div class="card shadow h-100 py-2">
+                <div class="card-body">
+                  <div style="text-align: center">
+                    <span class="fa fa-user-plus fa-2x text-center text-success"></span>
+                  </div>
+
+                  <div style="text-align: center">
+                    <div class=" text-m text-success">Registrasi Dokter</div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+            <div class="card shadow h-100 py-2">
+                <div class="card-body">
+                <a href=#modaldokter data-toggle="modal">
+                  <div style="text-align: center">
+                    <span class="fa fa-user-md fa-2x text-center text-primary"></span>
+                  </div>
+
+                  <div style="text-align: center">
+                    <div class=" text-m text-primary" >Registrasi Pasien Dewasa</div>
+                  </div>
+                </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+            <div class="card shadow h-100 py-2">
+                <div class="card-body">
+
+                  <div style="text-align: center">
+                    <span class="fa fa-user-nurse fa-2x text-center text-success"></span>
+                  </div>
+
+                  <div style="text-align: center">
+                    <div class=" text-m text-success">Perawat</div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+            <div class="card shadow h-100 py-2">
+                <div class="card-body">
+
+                  <div style="text-align: center">
+                    <span class="fa fa-user-alt fa-2x text-center text-warning"></span>
+                  </div>
+
+                  <div style="text-align: center">
+                    <div class=" text-m text-warning" >Karyawan</div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+            <div class="card shadow h-100 py-2">
+                <div class="card-body">
+
+                  <div style="text-align: center">
+                    <span class="fa fa-user-injured fa-2x text-center text-danger"></span>
+                  </div>
+
+                  <div style="text-align: center">
+                    <div class=" text-m text-danger" >Pasien</div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+
+  </div>
+    
+
+      </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+        </div>
+
+    </div>
+  </div>
+</div>
 
 
 
