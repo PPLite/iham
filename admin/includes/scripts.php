@@ -124,62 +124,6 @@ $(document).ready(function () {
 </script>
 <!-------------------------------------------------------------------->
 
-<!---------------JAVASCRIPT UNTUK EDIT DOKTER------------------->
-<script>
-$(document).ready(function () {
-    $('#tabeldokter').on('click','.tomboleditdokter', function() {
-
-        $('#editmodaldokter').modal('show');
-
-            $tr = $(this).closest('tr');
-
-            var data = $tr.children("td").map(function(){
-                return $(this).text();
-            }).get();
-
-            console.log(data);
-
-            $('#id').val(data[0]);
-            $('#rfid_uid').val(data[1]);
-            $('#nama_dokter').val(data[2]);
-            $('#id_dokter').val(data[3]);
-            $('#jenis_kelamin_dokter').val(data[4]);
-            $('#alamat_dokter').val(data[5]);
-            $('#spesialis').val(data[6]);
-
-    });
-});
-</script>
-<!--------------------------------------------------------------->
-
-<!---------------JAVASCRIPT UNTUK HAPUS PERAWAT---------------->
-  <script>
-$(document).ready(function () {
-    $('#tabelperawat').on('click','.tombolhapusperawat', function() {
-
-        $('#deletemodalperawat').modal('show');
-
-            $tr = $(this).closest('tr');
-
-            var data = $tr.children("td").map(function(){
-                return $(this).text();
-            }).get();
-
-            console.log(data);
-
-            $('#hapus_id_perawat').val(data[0]);
-    });
-});
-</script>
-<!-------------------------------------------------------------------->
-
-
-
-
-
-
-
-
 <!---------------JAVASCRIPT UNTUK EDIT KARYAWAN------------------->
 <script>
 $(document).ready(function () {
