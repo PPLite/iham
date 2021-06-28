@@ -21,7 +21,7 @@ include('database/dbconfig.php')
 <!---Buat ngambil data--->
     <?php
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
-    $query = "SELECT * FROM tb_rfid WHERE `status_asset` IN (\"peringatan\",\"tersedia\",\"dipinjam\",\"habis\",\"rusak\",\"validasi\")"; 
+    $query = "SELECT DATE_FORMAT(`tanggal`, '%d/%m/%Y %H:%i') AS tanggal, id, nama_alat,rfid_uid,deskripsi,penanggung_jawab,peminjam,status_asset,keterangan FROM tb_rfid"; 
     $query_run = mysqli_query($connection, $query);
     ?>
 

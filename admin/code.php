@@ -525,6 +525,71 @@ if(isset($_POST['daftardokter_btn']))
 
 /////////////////////////////////////////////////////////////////////////////////////
 
+//////////////////////////////////HAPUS DATA DOKTER//////////////////////////////////////////////
+if(isset($_POST['hapusdokter']))
+{
+    //disini pakai $query=Delete_id, soalnya ya buat ngehapus data berdasarkan "ID" yang udah dipilih
+    $id = $_POST['hapus_id_dokter'];
+    $query = "DELETE FROM tb_dokter WHERE id='$id' ";
+    $query_run = mysqli_query($connection, $query);
+
+    if ($query_run)
+    {
+        $_SESSION['status'] = "Data berhasil di hapus";
+        $_SESSION['status_code'] = "success";
+        header('location: pengaturan-dokter.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Data gagal dihapus";
+        header('location: pengaturan-dokter.php');
+    }
+}
+////////////////////////////UPDATE DATA DOKTER//////////////////////////////////
+if(isset($_POST['updatedokter']))
+
+//data apa aja yang diambil dan dimodif
+    {
+        $id = $_POST['id'];
+        
+        $rfid_uid = $_POST['rfid_uid'];
+        $nama_dokter = $_POST['nama_dokter'];
+        $id_dokter = $_POST['id_dokter'];
+        $jenis_kelamin_dokter = $_POST['jenis_kelamin_dokter'];
+        $alamat_dokter = $_POST['alamat_dokter'];
+        $spesialis = $_POST['spesialis'];
+
+        $query = "UPDATE tb_dokter SET rfid_uid='$rfid_uid', nama_dokter ='$nama_dokter', id_dokter='$id_dokter', jenis_kelamin_dokter='$jenis_kelamin_dokter', alamat_dokter='$alamat_dokter', spesialis='$spesialis' WHERE id='$id' ";
+        $query_run = mysqli_query($connection,$query);
+
+
+        //Tampilan status jika dilakukan perubahan data
+        if($query_run)
+        {
+            $_SESSION['status'] ="Data berhasil diperbarui";
+            $_SESSION['status_code'] = "success";
+            header('location: pengaturan-dokter.php');
+        }
+        else
+        {
+            $_SESSION['status'] = "Data Gagal diperbarui";
+            $_SESSION['status_code'] = "error";
+            header('location: pengaturan-dokter.php');
+        }
+    }
+////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
 ////////////////TAMBAH Perawat //////////////////////////////////
 if(isset($_POST['daftarperawat_btn']))
 
@@ -636,29 +701,6 @@ if(isset($_POST['updateperawat']))
 }
 ////////////////////////////////////////////////////////////////////////////
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 6ae8b5c (logika crud perawat)
-=======
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> parent of 3b566ad (error?)
-=======
->>>>>>> parent of e8ffeeb (fix?)
 ////////////////TAMBAH Karyawan //////////////////////////////////
 if(isset($_POST['daftarkaryawan_btn']))
 
