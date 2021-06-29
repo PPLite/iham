@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+//Untuk mulai menghitung dari headernya (bagian atas sendiri)
+function get_time() {
+    $time = microtime();
+    $time = explode(' ', $time);
+    $time = $time[1] + $time[0];
+    return $time;
+}
+$start = get_time();
+?>
 
 <head>
 
