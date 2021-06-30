@@ -16,7 +16,7 @@
                                 <div class="card bg-primary text-white shadow">
                                     <div class="card-body">
                                     <a href="tambah-aset-barang.php" class="text-white">Registrasi Barang </a>
-                                    <i class="fas fa-archive fa-2x text-gray-300 float-right"></i>
+                                    <i class="fas fa- fa-2x text-gray-300 float-right"></i>
                                     </div>
                                 </div>
                             </div>

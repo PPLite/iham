@@ -23,7 +23,7 @@ include('database/dbconfig.php');
                                 <div class="card bg-primary text-white shadow">
                                     <div class="card-body">
                                     <a href="tambah-aset-barang.php" class="text-white">Peralatan Medis </a>
-                                    <i class="fas fa-archive fa-2x text-gray-300 float-right"></i>
+                                    <i class="fa fa-medkit fa-2x text-gray-300 float-right"></i>
                                     </div>
                                 </div>
                             </div>
