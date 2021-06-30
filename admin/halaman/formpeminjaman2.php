@@ -21,27 +21,27 @@
 
                     <div class="form-group">
                         <label>Kode Alat</label>
-                        <input type="text" name="id" id="id" class="form-control" placeholder="Pilih aset terlebih dahulu" required data-readonly>
+                        <input type="text" name="id" id="id" class="form-control" placeholder="Pilih aset terlebih dahulu" readonly>
                     </div>
 
                     <div class="form-group">
                         <label>RFID UID</label>
-                        <input type="text" name="rfid_uid" id="rfid_uid" class="form-control" placeholder="Pilih aset terlebih dahulu" required data-readonly>
+                        <input type="text" name="rfid_uid" id="rfid_uid" class="form-control" placeholder="Pilih aset terlebih dahulu" readonly>
                     </div>
 
                     <div class="form-group">
                         <label>Deskripsi</label>
-                        <input type="text" name="deskripsi" id="deskripsi" class="form-control" placeholder="Pilih aset terlebih dahulu" required data-readonly>
+                        <input type="text" name="deskripsi" id="deskripsi" class="form-control" placeholder="Pilih aset terlebih dahulu" readonly>
                     </div>
 
                     <div class="form-group">
                         <label>Penanggung Jawab</label>
-                        <input type="text" name="penanggung_jawab" id="penanggung_jawab" class="form-control" placeholder="Pilih aset terlebih dahulu" required data-readonly>
+                        <input type="text" name="penanggung_jawab" id="penanggung_jawab" class="form-control" placeholder="Pilih aset terlebih dahulu" readonly>
                     </div>
 
                     <div class="form-group">
                         <label>Status Aset Sekarang</label>
-                        <input type="text" name="status_asset" id="status_asset" class="form-control" placeholder="Pilih aset terlebih dahulu" required data-readonly>
+                        <input type="text" name="status_asset" id="status_asset" class="form-control" placeholder="Pilih aset terlebih dahulu" readonly>
                     </div>
 
                     <div class="form-group">
@@ -80,9 +80,9 @@
 
 
 <!-------------------Autocomplete. didalam $.noConflict() Biar gak tawuran------------->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" rel="Stylesheet"></link>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link href="css/jquery-ui.min.css" rel="Stylesheet"></link>
+    <script src="js/jquery-3.6.0.min.js" ></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script>
         $.noConflict();
             jQuery( document ).ready(function( $ ) {
