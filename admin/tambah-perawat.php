@@ -82,7 +82,7 @@ include('database/dbconfig.php');
                                 <?php 
                                 if(isset($_GET['rfid_uid']))
                                     {
-                                        $query = "SELECT * FROM `tb_reader_scan` order by id desc limit 1";
+                                        $query = "SELECT * FROM `tb_registrasi` order by id desc limit 1";
                                         $query_run = mysqli_query($connection, $query);
                                         
 
@@ -96,12 +96,12 @@ include('database/dbconfig.php');
                                             </div>
                                             <div class="form-group">
                                                 <label for="">Waktu Di Scan</label>
-                                                <input type="text" value="<?= $row["timestamp"]; ?>" class="form-control" disabled>
+                                                <input type="text" value="<?= $row["time_stamp"]; ?>" class="form-control" disabled>
                                             </div>
-                                            <div class="form-group">
+                                            <!--<div class="form-group">
                                                 <label for="">Di Scan oleh Reader</label>
                                                 <input type="text" value="<?= $row["reader_id"]; ?>" class="form-control" disabled>
-                                            </div>
+                                            </div>-->
                                         </div>
                                     <?php
                                  }                               
