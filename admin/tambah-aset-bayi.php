@@ -31,8 +31,8 @@ include('database/dbconfig.php');
                             <div class="col-lg-3 mb-3">
                                 <div class="card bg-success text-white shadow">
                                     <div class="card-body">
-                                    <a href="tambah-aset-bayi.php" class="text-white">Pasien Bayi</a>
-                                    <i class="fas fa-baby-carriage fa-2x text-gray-300 float-right"></i>
+                                    <a href="tambah-pasien.php" class="text-white">Pasien </a>
+                                    <i class="fas fa-procedures fa-2x text-gray-300 float-right"></i>
                                     </div>
                                 </div>
                             </div>
@@ -95,12 +95,14 @@ include('database/dbconfig.php');
                                             </div>
                                             <div class="form-group">
                                                 <label for="">Waktu Di Scan</label>
-                                                <input type="text" value="<?= $row["timestamp"]; ?>" class="form-control" disabled>
+                                                <input type="text" value="<?= $row["time_stamp"]; ?>" class="form-control" disabled>
                                             </div>
-                                            <!--<div class="form-group">
-                                                        <label for="">Di Scan oleh Reader</label>
-                                                        <input type="text" value="<?= $row["reader_id"]; ?>" class="form-control" disabled>
-                                                </div>-->
+                                            <?php
+                                            // IKLAN DULU. BUAT BERSIHI SPASI DAN DOSA-DOSA YANG PERNAH ADA
+                                            $karakterasal = $row["rfid_uid"];
+                                            $karakterakhir = str_replace(' ', '', $karakterasal);
+                                            //LANJUT
+                                            ?>
                                         </div>
                                     <?php
                                  }                               
@@ -166,7 +168,7 @@ include('database/dbconfig.php');
 <div class="modal-body">
 
         <div class="form-group">
-        <input type="hidden" name="rfid_uid" class="form-control" value="<?= $row["rfid_uid"]; ?>" placeholder="Masukkan kode UID" required data-readonly>
+        <input type="hidden" name="rfid_uid" class="form-control" value="<?php echo $karakterakhir ?>" placeholder="Masukkan kode UID" required data-readonly>
         </div>     
 
     <div class="form-group">

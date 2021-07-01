@@ -3,6 +3,8 @@ include('security.php');
 include('includes/header.php'); 
 include('includes/navbar.php');
 include('database/dbconfig.php');
+
+
 ?>
 
 <div class="container">
@@ -97,6 +99,12 @@ include('database/dbconfig.php');
                                                         <label for="">Waktu Di Scan</label>
                                                         <input type="text" value="<?= $row["time_stamp"]; ?>" class="form-control" disabled>
                                                     </div>
+                                                    <?php
+                                                    // IKLAN DULU. BUAT BERSIHI SPASI DAN DOSA-DOSA YANG PERNAH ADA
+                                                    $karakterasal = $row["rfid_uid"];
+                                                    $karakterakhir = str_replace(' ', '', $karakterasal);
+                                                    //LANJUT
+                                                    ?>
                                                 </div>
                                             <?php
                                             }
@@ -104,7 +112,7 @@ include('database/dbconfig.php');
                                             {
                                                 $row["rfid_uid"]="";
                                             }
-                                    }          
+                                    }         
                             ?>        
                             </div>
                             </div>
@@ -116,12 +124,7 @@ include('database/dbconfig.php');
     </div>
 </div>
 
-<?php
-// IKLAN DULU. BUAT BERSIHI SPASI DAN DOSA-DOSA YANG PERNAH ADA
-$karakterasal = $row["rfid_uid"];
-$karakterakhir = str_replace(' ', '', $karakterasal);
-//LANJUT
-?>
+
 
 
 <div class="container">
@@ -135,7 +138,7 @@ $karakterakhir = str_replace(' ', '', $karakterasal);
 <div class="modal-body">
 
         <div class="form-group">
-        <input type="text" name="rfid_uid" class="form-control check_rfid_barang" value="<?php echo $karakterakhir ?>" placeholder="Masukkan kode UID" required>
+        <input type="hidden" name="rfid_uid" class="form-control check_rfid_barang" value="<?php echo $karakterakhir ?>" placeholder="Masukkan kode UID" required>
         </div>     
 
         <div class="form-group">

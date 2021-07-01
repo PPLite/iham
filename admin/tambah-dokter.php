@@ -97,6 +97,12 @@ include('database/dbconfig.php');
                                                 <label for="">Waktu Di Scan</label>
                                                 <input type="text" value="<?= $row["time_stamp"]; ?>" class="form-control" disabled>
                                             </div>
+                                            <?php
+                                                    // IKLAN DULU. BUAT BERSIHI SPASI DAN DOSA-DOSA YANG PERNAH ADA
+                                                    $karakterasal = $row["rfid_uid"];
+                                                    $karakterakhir = str_replace(' ', '', $karakterasal);
+                                                    //LANJUT
+                                                    ?>
                                         </div>
                                     <?php
                                  }                               
@@ -127,7 +133,7 @@ include('database/dbconfig.php');
 <div class="modal-body">
 
         <div class="form-group">
-        <input type="text" name="rfid_uid" class="form-control" value="<?= $row["rfid_uid"]; ?>" placeholder="Masukkan kode UID" required data-readonly>
+        <input type="hidden" name="rfid_uid" class="form-control" value="<?php echo $karakterakhir ?>" placeholder="Masukkan kode UID" required data-readonly>
         </div>     
 
     <div class="form-group">

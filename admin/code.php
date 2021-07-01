@@ -435,7 +435,7 @@ if(isset($_POST['daftarasetanak_btn']))
                         {
                             $_SESSION['status'] ="Data Pasien Berhasil Ditambahkan";
                             $_SESSION['status_code'] = "success";
-                            header('location: tambah-aset-bayi.php');
+                            header('location: daftar-bayi.php');
                         }
                         else
                         {

@@ -96,7 +96,7 @@ include('database/dbconfig.php');
                                             </div>
                                             <div class="form-group">
                                                 <label for="">Waktu Di Scan</label>
-                                                <input type="text" value="<?= $row["timestamp"]; ?>" class="form-control" disabled>
+                                                <input type="text" value="<?= $row["time_stamp"]; ?>" class="form-control" disabled>
                                             </div>
                                             <!--<div class="form-group">
                                                 <label for="">Di Scan oleh Reader</label>
