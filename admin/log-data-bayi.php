@@ -40,7 +40,7 @@ include('database/dbconfig.php');
     <?php
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
     $query = "SELECT COUNT(rfid_uid) AS jumlah, rfid_uid, id_pengenal, nama_anak, nama_ibu, penanggung_jawab_bayi, alamat, status, timestamp
-              FROM tb_scanner1_assetbayi
+              FROM tb_hasil_pasienbayi
               GROUP BY nama_anak
               ORDER BY `timestamp` DESC 
     "; 
@@ -121,7 +121,7 @@ include('database/dbconfig.php');
 <?php
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
     $query = "SELECT COUNT(rfid_uid) AS jumlah, rfid_uid, id_pengenal, nama_anak, nama_ibu, penanggung_jawab_bayi, alamat, status, timestamp
-              FROM tb_scanner2_assetbayi
+              FROM tb_hasil2_pasienbayi
               GROUP BY nama_anak
               ORDER BY `timestamp` DESC 
     "; 
