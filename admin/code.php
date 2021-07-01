@@ -186,7 +186,7 @@ if(isset($_POST['daftaraset_btn']))
         }
             else
             {
-                if(!preg_match("/^[a-g0-9]*$/", $rfid_uid))      
+                if(!preg_match("/^[a-g0-9A-G]*$/", $rfid_uid))      
                 {
                     $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Terlebih Dahulu";
                     $_SESSION['status_code'] = "error";
@@ -419,7 +419,7 @@ if(isset($_POST['daftarasetanak_btn']))
         }
             else
             {
-                if(!preg_match("/^[a-g0-9]*$/", $rfid_uid))      
+                if(!preg_match("/^[a-g0-9A-G]*$/", $rfid_uid))      
                 {
                     $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Terlebih Dahulu";
                     $_SESSION['status_code'] = "error";
@@ -478,7 +478,7 @@ if(isset($_POST['daftarpasiendewasa_btn']))
         }
             else
             {
-                if(!preg_match("/^[a-g0-9]*$/", $rfid_uid))      
+                if(!preg_match("/^[a-g0-9A-G]*$/", $rfid_uid))      
                 {
                     $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Terlebih Dahulu";
                     $_SESSION['status_code'] = "error";
@@ -590,7 +590,7 @@ if(isset($_POST['daftardokter_btn']))
         }
             else
             {
-                if(!preg_match("/^[a-g0-9]*$/", $rfid_uid))      
+                if(!preg_match("/^[a-g0-9A-G]*$/", $rfid_uid))      
                 {
                     $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Terlebih Dahulu";
                     $_SESSION['status_code'] = "error";
@@ -699,7 +699,7 @@ if(isset($_POST['daftarperawat_btn']))
         }
             else
             {
-                if(!preg_match("/^[a-g0-9]*$/", $rfid_uid))      
+                if(!preg_match("/^[a-g0-9A-G]*$/", $rfid_uid))      
                 {
                     $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Terlebih Dahulu";
                     $_SESSION['status_code'] = "error";
@@ -811,7 +811,7 @@ if(isset($_POST['daftarkaryawan_btn']))
         }
             else
             {
-                if(!preg_match("/^[a-g0-9]*$/", $rfid_uid))      
+                if(!preg_match("/^[a-g0-9A-G]*$/", $rfid_uid))      
                 {
                     $_SESSION['status'] ="Registrasi Gagal. Lakukan Scan RFID Terlebih Dahulu";
                     $_SESSION['status_code'] = "error";

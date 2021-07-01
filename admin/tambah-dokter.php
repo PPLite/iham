@@ -97,10 +97,6 @@ include('database/dbconfig.php');
                                                 <label for="">Waktu Di Scan</label>
                                                 <input type="text" value="<?= $row["time_stamp"]; ?>" class="form-control" disabled>
                                             </div>
-                                            <!--<div class="form-group">
-                                                <label for="">Di Scan oleh Reader</label>
-                                                <input type="text" value="<?= $row["reader_id"]; ?>" class="form-control" disabled>
-                                            </div>-->
                                         </div>
                                     <?php
                                  }                               
@@ -131,7 +127,7 @@ include('database/dbconfig.php');
 <div class="modal-body">
 
         <div class="form-group">
-        <input type="hidden" name="rfid_uid" class="form-control" value="<?= $row["rfid_uid"]; ?>" placeholder="Masukkan kode UID" required data-readonly>
+        <input type="text" name="rfid_uid" class="form-control" value="<?= $row["rfid_uid"]; ?>" placeholder="Masukkan kode UID" required data-readonly>
         </div>     
 
     <div class="form-group">
