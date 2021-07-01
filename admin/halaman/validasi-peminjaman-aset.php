@@ -55,7 +55,7 @@
             <td><?php echo $row['keterangan']; ?></td>
             <td>
             <!--MODAL UNTUK EDIT/UBAH ASSET (DI TABEL) -->
-            <button type="button" class="btn btn-success editbtnasset">Terima</button>
+            <button type="button" class="btn btn-success terimavalidasiaset">Terima</button>
             </td>
 
             <td>
@@ -78,7 +78,7 @@
 </div>
 </div>
 
-<!------------------------------FUNGSI UNTUK HAPUS (MODAL)------------------------------------->
+<!------------------------------FUNGSI UNTUK TOLAK VALIDASI------------------------------------->
 
 <div class="modal fade" id="tolakvalidasiasetmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -108,9 +108,48 @@
 
       </div>
         <div class="modal-footer">
-
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batalkan</button>
             <button type="submit" name="tolak_aset" class="btn btn-danger">Tolak</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batalkan</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+<!------------------------------FUNGSI UNTUK  VALIDASI------------------------------------->
+
+<div class="modal fade" id="validasiasetmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Terima Validasi</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="code.php" method="POST">
+
+        <div class="modal-body">
+
+        <input type="hidden" name="validasi_aset" id="validasi_aset">
+
+            <input type="hidden" name="id" id="id_v">
+            <input type="hidden" name="rfid_uid" id="rfid_uid_v">
+            <input type="hidden" name="nama_alat" id="nama_alat_v">
+            <input type="hidden" name="deskripsi" id="deskripsi_v">
+            <input type="hidden" name="penanggung_jawab" id="penanggung_jawab_v">
+            <input type="hidden" name="status_asset" id="status_asset_v">
+            <input type="hidden" name="peminjam" id="peminjam_v">
+            <input type="hidden" name="keterangan" id="keterangan_v">
+
+        <h5> Apakah anda yakin untuk Menerima Peminjaman/Pemindahan Asset ini?</h5>
+
+      </div>
+        <div class="modal-footer">
+            <button type="submit" name="terima_aset" class="btn btn-success">Terima</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batalkan</button>
         </div>
       </form>
 

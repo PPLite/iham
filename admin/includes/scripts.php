@@ -430,7 +430,7 @@ $(document).ready(function () {
   height: 100%;
 }
 </style>
-<!----------SCRIPT buat Validasi Aset (barang) ------------->
+<!----------SCRIPT TOLAK VALIDASI ASET (barang) ------------->
 <script>
 $(document).ready(function () {
     $('#validasiaset').on('click','.tolakvalidasiaset', function() {
@@ -455,6 +455,48 @@ $(document).ready(function () {
     });
 });
 </script>
+
+<!----------SCRIPT Terima VALIDASI ASET (barang) ------------->
+<script>
+$(document).ready(function () {
+    $('#validasiaset').on('click','.terimavalidasiaset', function() {
+
+        $('#validasiasetmodal').modal('show');
+
+            $tr = $(this).closest('tr');
+
+            var data = $tr.children("td").map(function(){
+                return $(this).text();
+            }).get();
+
+            console.log(data);
+            $('#id_v').val(data[0]);
+            $('#rfid_uid_v').val(data[1]);
+            $('#nama_alat_v').val(data[2]);
+            $('#deskripsi_v').val(data[3]);
+            $('#penanggung_jawab_v').val(data[4]);
+            $('#status_asset_v').val(data[5]);
+            $('#peminjam_v').val(data[6]);
+            $('#keterangan_v').val(data[7]);
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!---------------BUAT CEK EMAIL APA SUDAH TERDAFTAR APA BELUM------------------->
 <script>

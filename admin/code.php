@@ -326,8 +326,48 @@ if(isset($_POST['tolak_aset']))
         }
         else
         {
-            $_SESSION['status'] = "Peminjaman aset berhasil ditolak";
+            $_SESSION['status'] = "Terjadi Keasalahan internal. Harap hubungi Admin";
+            $_SESSION['status_code'] = "error";
+            header('location: validasi-peminjaman-aset.php');
+        }
+    }
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////TERIMA KONFIRMASI PINJAM///////////////////////////////////
+if(isset($_POST['terima_aset']))
+
+//jika sudah ditombol kemudian
+{
+    $nama_alat = $_POST['nama_alat'];
+    $id = $_POST['id'];
+    $rfid_uid = $_POST['rfid_uid'];
+    $deskripsi = $_POST['deskripsi'];
+    $penanggung_jawab = $_POST['penanggung_jawab'];
+    $peminjam = $_POST['peminjam'];
+    $status_asset = $_POST['status_asset'];
+    $keterangan = $_POST['keterangan']; 
+    $query = "UPDATE tb_rfid  
+    SET status_asset = CASE  
+    WHEN status_asset = 'konfirmasi_pinjam' THEN 'dipinjam' 
+    WHEN status_asset = 'konfirmasi_pindah' THEN 'dipindah' 
+    ELSE status_asset
+    END
+    WHERE id='$id' ";
+    $query_run = mysqli_query($connection,$query);
+
+    if($query_run)
+    {
+        if($query_run)  
+        {
+            $_SESSION['status'] = "Peminjaman aset berhasil diterima";
             $_SESSION['status_code'] = "success";
+            header('location: validasi-peminjaman-aset.php');
+        }
+        else
+        {
+            $_SESSION['status'] = "Terjadi Keasalahan internal. Harap hubungi Admin";
+            $_SESSION['status_code'] = "error";
             header('location: validasi-peminjaman-aset.php');
         }
     }
@@ -635,17 +675,6 @@ if(isset($_POST['updatedokter']))
         }
     }
 ////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
 
 ////////////////TAMBAH Perawat //////////////////////////////////
 if(isset($_POST['daftarperawat_btn']))
