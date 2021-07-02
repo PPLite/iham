@@ -1,4 +1,3 @@
-- init: . ${GITPOD_REPO_ROOT}/install.sh
 image:
   file: .gitpod.dockerfile
 ports:
