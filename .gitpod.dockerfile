@@ -1,9 +1,7 @@
-FROM gitpod/workspace-mysql
+FROM gitpod/workspace-mysql:latest
 
-RUN sudo apt-get update -q \
-    && sudo apt-get install -yq \
-        php-soap \
-        nmap \
-        ufw
+# optional: use a custom apache config.
+COPY apache.conf /etc/apache2/apache2.conf
 
-RUN sudo ufw allow 2525
+# optional: change document root folder. It's relative to your git working copy.
+ENV APACHE_DOCROOT_IN_REPO="."
