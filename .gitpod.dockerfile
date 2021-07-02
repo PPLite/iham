@@ -1,3 +1,9 @@
-FROM gitpod/workspace-full
+FROM gitpod/workspace-mysql
 
-RUN sudo apt-get update && sudo apt-get install -y tool  && sudo rm -rf /var/lib/apt/lists/*
+RUN sudo apt-get update -q \
+    && sudo apt-get install -yq \
+        php-soap \
+        nmap \
+        ufw
+
+RUN sudo ufw allow 2525
