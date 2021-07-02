@@ -6,25 +6,6 @@ include('database/dbconfig.php');
 ?>
 
 <div class="container-fluid">
-<?php
-  //Status berhasil ditambahkan
-    if(isset($_SESSION['success']) && $_SESSION['success'] !='')
-    {
-      echo '<h2>'.$_SESSION['success'].' </h2>';
-      unset($_SESSION['success']);
-    }
-
-    //Status gagal ditambahkan
-    if(isset($_SESSION['status']) && $_SESSION['status'] !='')
-    {
-      echo '<h2>'.$_SESSION['status'].' </h2>';
-      unset($_SESSION['status']);
-    }
-  ?>
-</div>
-
-
-<div class="container-fluid">
 
 <div class="card shadow mb-4">
   <div class="card-header py-3">
@@ -39,11 +20,7 @@ include('database/dbconfig.php');
 <!---Buat ngambil data--->
     <?php
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
-    $query = "SELECT COUNT(rfid_uid) AS jumlah, rfid_uid, id_pengenal, nama_anak, nama_ibu, penanggung_jawab_bayi, alamat, status, timestamp
-              FROM tb_hasil_pasienbayi
-              GROUP BY nama_anak
-              ORDER BY `timestamp` DESC 
-    "; 
+    $query = "SELECT * FROM tb_hasil_pasienbayi"; 
     $query_run = mysqli_query($connection, $query);
     ?>
 
