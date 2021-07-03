@@ -6,7 +6,8 @@ include('database/dbconfig.php')
 ?>
 
 <!----SUMMON CAK MARKOV-->
-<script src="js/markov.js">
+<script src="js/markov.js"></script
+<script>
 
 var markov = new Markov();
 
@@ -39,14 +40,7 @@ markov.train(3);
 
 var text = markov.generate();
 var states = markov.getStates();
-
-
-
-
-
-
-
-</script
+</script>
 
 
 
