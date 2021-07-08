@@ -148,6 +148,24 @@ include_once('code.php');
   </div>
 </li>
 
+
+<!-- Karyawan?-->
+<li class="nav-item">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#sidebarpengadaan" aria-expanded="true" aria-controls="collapseTwo">
+    <i class="fas fa-fw fa-cog"></i>
+    <span>Pengadaan Barang</span>
+  </a>
+  <div id="sidebarpengadaan" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+      <h6 class="collapse-header">Sub-menu:</h6>
+      <a class="collapse-item" href="pengadaan-kriteria.php">Kriteria Pengadaan</a>
+      <a class="collapse-item" href="pengadaan-peserta.php">Peserta Pengadaan</a>
+      <a class="collapse-item" href="pengadaan-ranking.php">Penilaian Peserta</a>
+      <a class="collapse-item" href="pengadaan-hasil.php">Hasil Perhitungann</a>
+    </div>
+  </div>
+</li>
+
 <li class="nav-item">
   <a class="nav-link" href="pengaturan-pengguna.php">
     <i class="fas fa-fw fa-chart-area"></i>
