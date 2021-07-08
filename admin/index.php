@@ -823,12 +823,12 @@ include_once('database/dbconfig.php');
   </div>
 </div>
 
-<!------------------------------FUNGSI MODAL BAYI------------------------------------->
+<!------------------------------FUNGSI MODAL BaARANG------------------------------------->
 <div class="modal fade" id="modalbarang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Menu Bayi</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Menu Peralatan Medis</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -841,7 +841,7 @@ include_once('database/dbconfig.php');
           <div class="col-lg-4 mb-4">
             <div class="card shadow h-100 py-2">
                 <div class="card-body">
-                <a href=daftar-bayi.php style="text-decoration:none;">
+                <a href=daftar-barang.php style="text-decoration:none;">
                   <div style="text-align: center" >
                     <span class="fa fa-notes-medical fa-2x text-center text-primary"></span>
                   </div>
@@ -857,7 +857,7 @@ include_once('database/dbconfig.php');
         <div class="col-lg-4 mb-4">
             <div class="card shadow h-100 py-2">
                 <div class="card-body">
-                <a href=log-data-bayi.php style="text-decoration:none;">
+                <a href=formulir.php style="text-decoration:none;">
                   <div style="text-align: center">
                     <span class="fa fa-clipboard-list fa-2x text-center text-warning"></span>
                   </div>
@@ -873,7 +873,7 @@ include_once('database/dbconfig.php');
         <div class="col-lg-4 mb-4">
             <div class="card shadow h-100 py-2">
                 <div class="card-body">
-                <a href=konfirmasi-pindah-ruang.php style="text-decoration:none;">
+                <a href=validasi-peminjaman-aset.php style="text-decoration:none;">
                   <div style="text-align: center">
                     <span class="fa fa-clipboard-check fa-2x text-center text-secondary"></span>
                   </div>
@@ -889,7 +889,7 @@ include_once('database/dbconfig.php');
         <div class="col-lg-4 mb-4">
             <div class="card shadow h-100 py-2">
                 <div class="card-body">
-                  <a href=pengaturan-aset-bayi.php style="text-decoration:none;">
+                  <a href=log-data-aset.php style="text-decoration:none;">
                   <div style="text-align: center">
                     <span class="fa fa-history fa-2x text-center text-info"></span>
                   </div>
@@ -905,7 +905,7 @@ include_once('database/dbconfig.php');
         <div class="col-lg-4 mb-4">
             <div class="card shadow h-100 py-2">
                 <div class="card-body">
-                  <a href=pengaturan-aset-bayi.php style="text-decoration:none;">
+                  <a href=pengaturan-aset-barang.php style="text-decoration:none;">
                   <div style="text-align: center">
                     <span class="fa fa-cogs fa-2x text-center text-success"></span>
                   </div>
