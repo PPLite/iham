@@ -136,6 +136,22 @@ include_once('database/dbconfig.php');
     <div class="col-xl-2 col-md-6 mb-4">
         <div class="card shadow h-100 py-2">
             <div class="card-body">
+            <a href=#modalpengadaan data-toggle="modal" style="text-decoration:none;">
+              <div style="text-align: center">
+                <span class="fas fa-boxes fa-2x text-center text-dark"></span>
+              </div>
+
+              <div style="text-align: center">
+                <div class=" text-m text-dark" >Pengadaan Peralatan Medis</div>
+              </div>
+            </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-2 col-md-6 mb-4">
+        <div class="card shadow h-100 py-2">
+            <div class="card-body">
             <a href=pesan-ruang.php style="text-decoration:none;">
               <div style="text-align: center">
                 <span class="fa fa-procedures fa-2x text-center text-dark"></span>
@@ -825,6 +841,113 @@ include_once('database/dbconfig.php');
 
 <!------------------------------FUNGSI MODAL BaARANG------------------------------------->
 <div class="modal fade" id="modalbarang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Menu Peralatan Medis</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+        <div class="modal-body">
+
+        <div class="row">
+
+          <div class="col-lg-4 mb-4">
+            <div class="card shadow h-100 py-2">
+                <div class="card-body">
+                <a href=daftar-barang.php style="text-decoration:none;">
+                  <div style="text-align: center" >
+                    <span class="fa fa-notes-medical fa-2x text-center text-primary"></span>
+                  </div>
+
+                  <div style="text-align: center">
+                    <div class=" text-m text-dark">Daftar Barang</div>
+                  </div>
+                  </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+            <div class="card shadow h-100 py-2">
+                <div class="card-body">
+                <a href=formulir.php style="text-decoration:none;">
+                  <div style="text-align: center">
+                    <span class="fa fa-clipboard-list fa-2x text-center text-warning"></span>
+                  </div>
+
+                  <div style="text-align: center">
+                    <div class=" text-m text-dark" >Peminjaman Barang  </div>
+                  </div>
+                </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+            <div class="card shadow h-100 py-2">
+                <div class="card-body">
+                <a href=validasi-peminjaman-aset.php style="text-decoration:none;">
+                  <div style="text-align: center">
+                    <span class="fa fa-clipboard-check fa-2x text-center text-secondary"></span>
+                  </div>
+
+                  <div style="text-align: center">
+                    <div class=" text-m text-dark" > Konfirmasi Peminjaman </div>
+                  </div>
+                </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+            <div class="card shadow h-100 py-2">
+                <div class="card-body">
+                  <a href=log-data-aset.php style="text-decoration:none;">
+                  <div style="text-align: center">
+                    <span class="fa fa-history fa-2x text-center text-info"></span>
+                  </div>
+
+                  <div style="text-align: center">
+                    <div class=" text-m text-dark">Log Data Barang</div>
+                  </div>
+                  </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+            <div class="card shadow h-100 py-2">
+                <div class="card-body">
+                  <a href=pengaturan-aset-barang.php style="text-decoration:none;">
+                  <div style="text-align: center">
+                    <span class="fa fa-cogs fa-2x text-center text-success"></span>
+                  </div>
+
+                  <div style="text-align: center">
+                    <div class=" text-m text-dark">Pengaturan Data Barang</div>
+                  </div>
+                  </a>
+                </div>
+            </div>
+        </div>
+
+  </div>
+    
+      </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!------------------------------FUNGSI MODAL SISTEM KEPUTUSAN PENGADAAN BARANG------------------------------------->
+<div class="modal fade" id="modalpengadaan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
