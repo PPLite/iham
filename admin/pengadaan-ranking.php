@@ -14,6 +14,14 @@ include('includes/navbar.php');
     </h6>
   </div>
 
+    <!-- Buat nambah tombol kriteria baru -->
+    <div class="card-header py-4">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahvendormodal">
+              Tambah Penilaian Baru
+            </button>
+  </div>
+  <!-- akhir tombol kriteria -->
+
 <div class="card-body">
 
     <div class="table-responsive">
@@ -26,7 +34,6 @@ include('includes/navbar.php');
                     <div class="panel-body widget-shadow">
                         <table class="table table-bordered"> <thead>
 
-                            <th>No</th> 
                             <th>No Vendor</th> 
                             <th>Nama Vendor</th> 
                              
@@ -42,10 +49,11 @@ include('includes/navbar.php');
                             ?>
                             
                             <th>Aksi</th>
+                            <th>Aksi</th>
                             </thead>
                             <tbody>
                                 <?php
-                                $no = 1;
+                                //$no = 1;
                                 $no_vendor = "";
                                 while ($data = mysqli_fetch_array($result)) {
                                     if($no_vendor == $data['no_vendor']){
@@ -55,20 +63,22 @@ include('includes/navbar.php');
                                         $result3 = mysqli_query($connection, $query3);
                                 ?>
                                         <tr>
-                                        <td><?php echo $no++; ?></td>
                                         <td><?php echo $data ['no_vendor']; ?></td>
                                         <td><?php echo $data ['nama_peserta']; ?></td>
+
                                 <?php 
                                         while ($dt2 = mysqli_fetch_array($result3)){
                                             echo '<td>'.$dt2 ['nilai'].'</td>';
                                         } 
                                 ?>
-                                        <td>
-                                        <a href="ubah_data_rangking.php?kode=<?php echo $data ['id_peringkat']; ?>" >
-                                        <button type="button" class="btn btn-primary btn-flat "><i class="fa fa-edit" aria-hidden="true"></i></button></a>
-                                        <a href="../crud/hapus_rangking.php?id=<?php echo $data['no_vendor'] ?>" onclick="return confirm('Anda Yakin Menghapus Data ini ?')">
-                                            <button type="button" class="btn btn-warning btn-flat "><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
-                                        </td></tr>
+
+                                            <td>
+                                                tes
+                                            </td>
+                                            <td>
+                                                tes2
+                                            </td>
+                                    </tr>
                                      
                                 <?php 
                                     } 
@@ -79,15 +89,11 @@ include('includes/navbar.php');
                                 ?>
 
                                         </tbody>
-                                        </table> 
-                                        <div>
-                                            <!-- Standard button -->
-                                            <a href="form_tambah_rangking.php" type="button" class="btn btn-success">Tambah Data</a>
-                                        </div>
-                                        </div>
-                                        </div>
-                                        </div>
-                                        </div>
+                                    </table> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
     </div>
   </div>
 </div>
