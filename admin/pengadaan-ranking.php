@@ -1,13 +1,9 @@
-<?php
-include('database/dbconfig.php');
-include('security.php');
-include('includes/header.php');
-include('includes/navbar.php');
-?>
-<a href="#" class="btn btn-danger">
-    <i class="fas fa-flag"></i>
-</a>
-<!--  -->
+`<?php
+    include('database/dbconfig.php');
+    include('security.php');
+    include('includes/header.php');
+    include('includes/navbar.php');
+    ?>
 
 <div class="container-fluid">
     <div class="card shadow mb-4">
@@ -43,6 +39,7 @@ include('includes/navbar.php');
                                         <?php
                                         $query = "select * from tb_peringkat ";
                                         $result = mysqli_query($connection, $query);
+
                                         $query2 = "select * from tb_kriteria";
                                         $result2 = mysqli_query($connection, $query2);
                                         while ($dt1 = mysqli_fetch_array($result2)) {
@@ -65,27 +62,28 @@ include('includes/navbar.php');
                                                 $result3 = mysqli_query($connection, $query3);
                                         ?>
                                                 <tr>
+                                                    <!-- <td><?php //echo $no++; 
+                                                                ?></td> -->
                                                     <td><?php echo $data['no_vendor']; ?></td>
                                                     <td><?php echo $data['nama_peserta']; ?></td>
-
                                                     <?php
                                                     while ($dt2 = mysqli_fetch_array($result3)) {
                                                         echo '<td>' . $dt2['nilai'] . '</td>';
                                                     }
                                                     ?>
                                                     <td>
-                                                        <a href="ubah_data_rangking.php?kode=<?php echo $data['id_peringkat']; ?>">
+                                                        <a href="crud/ubah_data_rangking.php?kode=<?php echo $data['id_peringkat']; ?>">
                                                             <button type="button" class="btn btn-primary btn-flat "><i class="fa fa-edit" aria-hidden="true"></i></button></a>
                                                     </td>
                                                     <td>
-                                                    <a href="../crud/hapus_rangking.php?id=<?php echo $data['no_vendor'] ?>" onclick="return confirm('Anda Yakin Menghapus Data ini ?')">
+                                                        <a href="crud/hapus_rangking.php?id=<?php echo $data['no_vendor'] ?>" onclick="return confirm('Anda Yakin Menghapus Data ini ?')">
                                                             <button type="button" class="btn btn-danger btn-flat "><i class="far fa-trash-alt" aria-hidden="true"></i></button></a>
                                                     </td>
                                                 </tr>
 
                                         <?php
                                             }
-                                            $nisn = $data['no_vendor'];
+                                            $no_vendor = $data['no_vendor'];
                                         }
 
                                         ?>
@@ -100,62 +98,61 @@ include('includes/navbar.php');
         </div>
     </div>
 
-</div>
-<!-- /.container-fluid -->
+    <!-- /.container-fluid -->
 
-<!-------------------------------------MODAL BUAT TAMBAH RANKING-----------------------  -->
-<div class="modal fade" id="modaltambahranking" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Penilaian</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form action="code-topsis.php" method="POST">
+    <!-------------------------------------MODAL BUAT TAMBAH RANKING-----------------------  -->
+    <div class="modal fade" id="modaltambahranking" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tambah Penilaian</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="code-topsis.php" method="POST">
 
-                <div class="modal-body">
-                    <P class="h5 mb-0 text-gray-800" style="text-align: center">Form Penilaian Vendor </P>
-                    <P class="h6 mb-0 text-gray-800" style="text-align: center">Isi Penilaian dengan Angka 1 hingga 5 </P>
-                    <br>
-                    <div class="form-group">
-                        <label for="">Nama Vendor :</label>
-                        <select class="form-control" id="vendor" name="vendor">
-                            <?php
-                            $query = "select * from tb_peserta ";
-                            $result = mysqli_query($connection, $query);
-                            while ($data = mysqli_fetch_array($result)) {
-                            ?>
-                                <option value="<?php echo $data['vendor'] ?>">
-                                    <?php echo $data['vendor'] ?>
-                                </option>
-                            <?php } ?>
-                        </select>
-                    </div>
+                    <div class="modal-body">
+                        <P class="h5 mb-0 text-gray-800" style="text-align: center">Form Penilaian Vendor </P>
+                        <P class="h6 mb-0 text-gray-800" style="text-align: center">Isi Penilaian dengan Angka 1 hingga 5 </P>
+                        <br>
+                        <div class="form-group">
+                            <label for="">Nama Vendor :</label>
+                            <select class="form-control" id="vendor" name="vendor">
+                                <?php
+                                $query = "select * from tb_peserta ";
+                                $result = mysqli_query($connection, $query);
+                                while ($data = mysqli_fetch_array($result)) {
+                                ?>
+                                    <option value="<?php echo $data['vendor'] ?>">
+                                        <?php echo $data['vendor'] ?>
+                                    </option>
+                                <?php } ?>
+                            </select>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="">No vendor :</label>
-                        <select class="form-control" id="no_vendor" name="no_vendor" style="display:none">
-                            <?php
-                            $query = "select * from tb_peserta ";
-                            $result = mysqli_query($connection, $query);
-                            while ($data = mysqli_fetch_array($result)) {
-                            ?>
-                                <option value="<?php echo $data['no_vendor'] ?>">
-                                    <?php echo $data['no_vendor'] ?>
-                                </option>
-                            <?php } ?>
-                        </select>
-                    </div>
+                        <div class="form-group">
+                            <label for="">No vendor :</label>
+                            <select class="form-control" id="no_vendor" name="no_vendor" style="display:none">
+                                <?php
+                                $query = "select * from tb_peserta ";
+                                $result = mysqli_query($connection, $query);
+                                while ($data = mysqli_fetch_array($result)) {
+                                ?>
+                                    <option value="<?php echo $data['no_vendor'] ?>">
+                                        <?php echo $data['no_vendor'] ?>
+                                    </option>
+                                <?php } ?>
+                            </select>
+                        </div>
 
-                    <?php
-                    $query1 = mysqli_query($connection, "select * from tb_kriteria");
-                    while ($data = mysqli_fetch_array($query1)) {
-                        echo '<div class="form-group">';
-                        echo '<label for="">' . $data['nama_kriteria'] . '</label>';
-                        $stripped = str_replace(' ', '', $data['nama_kriteria']);
-                        echo '<input    type="number"
+                        <?php
+                        $query1 = mysqli_query($connection, "select * from tb_kriteria");
+                        while ($data = mysqli_fetch_array($query1)) {
+                            echo '<div class="form-group">';
+                            echo '<label for="">' . $data['nama_kriteria'] . '</label>';
+                            $stripped = str_replace(' ', '', $data['nama_kriteria']);
+                            echo '<input    type="number"
                                 min="1" 
                                 max="5" 
                                 class="form-control" 
@@ -164,40 +161,23 @@ include('includes/navbar.php');
                                 placeholder="' . $data['keterangan'] . '"
                                 required="true"
                         >';
-                        echo "</div>";
-                    }
-                    ?>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                    <button type="submit" name="tambahranking" class="btn btn-success">Tambah</button>
-                </div>
-            </form>
+                            echo "</div>";
+                        }
+                        ?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                        <button type="submit" name="tambahranking" class="btn btn-success">Tambah</button>
+                    </div>
+                </form>
 
+            </div>
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <?php
 include('includes/scripts.php');
 include('includes/scripts-topsis.php');
 include('includes/footer.php');
-?>
+?>`
