@@ -16,7 +16,7 @@ include('includes/navbar.php');
 
     <!-- Buat nambah tombol kriteria baru -->
     <div class="card-header py-4">
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahvendormodal">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahpenilaianmodal">
               Tambah Penilaian Baru
             </button>
   </div>
@@ -100,6 +100,38 @@ include('includes/navbar.php');
 
 </div>
 <!-- /.container-fluid -->
+
+<!--  -->
+<div class="container-fluid">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <div class="card-body">
+
+
+
+            <?Php
+$sql="SELECT no_vendor,vendor FROM tb_peserta"; 
+echo "<select name=no_vendor value=''>Nomor Vendor</option>";
+foreach ($connection->query($sql) as $row){
+echo "<option value=$row[no_vendor]>$row[vendor]</option>"; //Value(nilai) yang bakal disimpen [no_vendor] dan yg ditampilin yaitu [vendor]
+}
+ echo "</select>";
+
+            ?>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->
+
+
+
+
+
 
 <?php
 include('includes/scripts.php');
