@@ -13,7 +13,13 @@ include('includes/navbar.php');
     <h6 class="m-0 font-weight-bold text-primary">Tabel Kriteria Pengadaan Barang
     </h6>
   </div>
-
+  <!-- Buat nambah tombol kriteria baru -->
+  <div class="card-header py-4">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahkriteriamodal">
+              Tambah Kriteria Baru
+            </button>
+  </div>
+  <!-- akhir tombol kriteria -->
 <div class="card-body">
 
     <div class="table-responsive">
@@ -71,7 +77,77 @@ include('includes/navbar.php');
 </div>
 
 </div>
-<!-- /.container-fluid -->
+
+
+<!-- MODAL Tambah Kriteria-->
+<div class="modal fade" id="tambahkriteriamodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Hapus Data Karyawan</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+    <form action="crud-topsis/tambah_kriteria.php" method="post" role="form">
+        <div class="modal-body">
+        
+        <input type="hidden" value="Benefit" id="tipe_kriteria">
+
+            <div class="form-group"> 
+                <label for="">Nama Kriteria :</label> 
+                <input type="text" class="form-control" id="nama_Kriteria" name="nama_kriteria" placeholder="Isikan Kriteria, Contoh = 'Kualitas Produk' " required="">
+            </div> 
+
+            <!-- Buat milih tipe kriteria
+                Jika Benefit = Nilai tertinggi semakin baik
+                Jika Cost = Nilai tertinggi semakin buruk
+                Berpengaruh di hasil kodingan. namun masih belum dibutuhkan
+            -->
+            <!-- 
+                <div class="form-group">
+                <label for="">Tipe Kriteria:</label>
+                <select class="form-control" id="tipe_kriteria"name="tipe_kriteria" >
+                    <option value="Cost" id="tipe_kriteria">Cost</option>
+                    <option value="Benefit" id="tipe_kriteria">Benefit</option>
+                </select>
+            </div> -->
+
+            <div class="form-group"> 
+                <label for="">Bobot :</label> 
+                <input type="text" class="form-control" id="bobot" name="bobot" placeholder="Isikan Bobot nilai" required="">
+            </div>
+            
+            <button type="submit" name="submit" class="btn btn-success">Tambah</button>      
+            <type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+        </div>
+    </form> 
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

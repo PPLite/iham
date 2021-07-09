@@ -174,9 +174,6 @@ include('database/dbconfig.php');
 </div
 
 <?php
-
-
-
 include('includes/scripts.php');
 include('includes/footer.php');
 ?>
