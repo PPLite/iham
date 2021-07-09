@@ -35,8 +35,8 @@ include('includes/navbar.php');
             <th style="display:none;">ID Kriteria</th> 
             <th>Nama Kriteria</th>
             <th>Bobot</th>
-            <th>Hapus</th>
             <th>Edit</th>
+            <th>Hapus</th>
           </tr>
         </thead>
         <tbody>
@@ -53,10 +53,10 @@ include('includes/navbar.php');
             <td><?php echo $data ['bobot']; ?></td>
             <td>
             <!--MODAL UNTUK EDIT/UBAH ASSET (DI TABEL) -->
-            <button type="button" class="btn btn-success editkriteria">Ubah</button>
+            <button type="button" class="btn btn-success tomboleditkriteria">Ubah</button>
             </td>
             <td>
-            <button type="button" class="btn btn-danger hapuskriteria">Hapus</button>
+            <button type="button" class="btn btn-danger tombolhapuskriteria">Hapus</button>
             </td>
             </td>     
           <?php
@@ -95,7 +95,7 @@ include('includes/navbar.php');
 
             <div class="form-group"> 
                 <label for="">Nama Kriteria :</label> 
-                <input type="text" class="form-control" id="nama_Kriteria" name="nama_kriteria" placeholder="Isikan Kriteria, Contoh = 'Kualitas Produk' " required="">
+                <input type="text" class="form-control" id="nama_kriteria" name="nama_kriteria" placeholder="Isikan Kriteria, Contoh = 'Kualitas Produk' " required="">
             </div> 
 
             <!-- Buat milih tipe kriteria
@@ -116,9 +116,8 @@ include('includes/navbar.php');
                 <label for="">Bobot :</label> 
                 <input type="text" class="form-control" id="bobot" name="bobot" placeholder="Isikan Bobot nilai (angka 1-100)" required="">
             </div>
-            
-            <button type="submit" name="tomboltambahkriteria" class="btn btn-success">Tambah</button>      
             <type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+            <button type="submit" name="tambahkriteria" class="btn btn-success">Tambah</button>      
         </div>
     </form> 
 
@@ -126,12 +125,12 @@ include('includes/navbar.php');
   </div>
 </div>
 
-<!-- MODAL Tambah Edit Kriteria-->
+<!------------------------ MODAL  Edit Kriteria----------------------->
 <div class="modal fade" id="modaleditkriteria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Hapus Data Karyawan</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Edit Kriteria</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -139,27 +138,61 @@ include('includes/navbar.php');
 
     <form action="code-topsis.php" method="post" role="form">
         <div class="modal-body">
-        <input type="text" id="id_kriteria" name="id_kriteria">
-        <input type="hidden" id="tipe_kriteria" name="tipe_kriteria" value="Benefit" >
+        <input type="hidden" id="edit_tipe_kriteria" name="tipe_kriteria" value="Benefit">
+        <input type="hidden" id="edit_id_kriteria" name="id_kriteria"">
 
             <div class="form-group"> 
-                <label for="">Nama Kriteria :</label> 
-                <input type="text" class="form-control" id="nama_Kriteria" name="nama_kriteria" placeholder="Isikan Kriteria, Contoh = 'Kualitas Produk' " required="">
+                <label >Nama Kriteria :</label> 
+                <input type="text" class="form-control" id="edit_nama_kriteria" name="nama_kriteria" placeholder="Isikan Kriteria, Contoh = 'Kualitas Produk' " required="">
             </div> 
 
             <div class="form-group"> 
                 <label for="">Bobot :</label> 
-                <input type="text" class="form-control" id="bobot" name="bobot" placeholder="Isikan Bobot nilai" required="">
+                <input type="text" class="form-control" id="edit_bobot_kriteria" name="bobot" placeholder="Isikan Bobot nilai" required="">
             </div>
-            
-            <button type="submit" name="tomboltambahkriteria" class="btn btn-success">Tambah</button>      
             <type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+            <button type="submit" name="editkriteria" class="btn btn-success">Ubah</button>      
         </div>
     </form> 
 
     </div>
   </div>
 </div>
+
+<!------------------------------MODAL HAPUS KRITERIA------------------------------------->
+
+<div class="modal fade" id="modalhapuskriteria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Hapus Kriteria</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="code-topsis.php" method="POST">
+
+        <div class="modal-body">
+
+        <input type="hidden" name="hapus_id_kriteria" id="hapus_id_kriteria">
+
+        <h5> Apakah anda yakin untuk menghapus data kriteria ini?</h5>
+        <h6>  Data yang sudah terhapus tidak dapat dikembalikan</h6>
+
+      </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+            <button type="submit" name="hapuskriteria" class="btn btn-danger">Hapus</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+
+
 
 <?php
 include('includes/scripts.php');

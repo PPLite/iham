@@ -1,7 +1,7 @@
 <!---------------JAVASCRIPT UNTUK EDIT KRITERIA------------------->
 <script>
 $(document).ready(function () {
-    $('#tabelkriteria').on('click', '.editkriteria', function() {
+    $('#tabelkriteria').on('click', '.tomboleditkriteria', function() {
 
         $('#modaleditkriteria').modal('show');
 
@@ -13,21 +13,20 @@ $(document).ready(function () {
 
             console.log(data);
 
-            $('#id_kriteria').val(data[0]);
-            $('#nama_Kriteria').val(data[1]);
-            $('#tipe_kriteria').val(data[2]);
-            $('#bobot').val(data[3]);
+            $('#edit_id_kriteria').val(data[0]);
+            $('#edit_nama_kriteria').val(data[1]);
+            $('#edit_bobot_kriteria').val(data[2]);
     });
 });
 </script>
 <!--------------------------------------------------------------->
 
-<!---------------JAVASCRIPT UNTUK HAPUS ASSET (BAYI)------------------->
+<!---------------JAVASCRIPT UNTUK HAPUS KRITERIA------------------->
 <script>
 $(document).ready(function () {
-    $('#tabelasetbayi').on('click','.deletebtnassetbayi', function() {
+    $('#tabelkriteria').on('click','.tombolhapuskriteria', function() {
 
-        $('#deletemodalassetbayi').modal('show');
+        $('#modalhapuskriteria').modal('show');
 
             $tr = $(this).closest('tr');
 
@@ -37,7 +36,7 @@ $(document).ready(function () {
 
             console.log(data);
 
-            $('#hapus_id_asset_bayi').val(data[0]);
+            $('#hapus_id_kriteria').val(data[0]);
     });
 });
 </script>
