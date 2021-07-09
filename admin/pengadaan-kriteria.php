@@ -116,8 +116,10 @@ include('includes/navbar.php');
                 <label for="">Bobot :</label> 
                 <input type="text" class="form-control" id="bobot" name="bobot" placeholder="Isikan Bobot nilai (angka 1-100)" required="">
             </div>
-            <type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-            <button type="submit" name="tambahkriteria" class="btn btn-success">Tambah</button>      
+            <div class=modal-footer>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+            <button type="submit" name="tambahkriteria" class="btn btn-success">Tambah</button>
+            </div>      
         </div>
     </form> 
 
@@ -150,8 +152,11 @@ include('includes/navbar.php');
                 <label for="">Bobot :</label> 
                 <input type="text" class="form-control" id="edit_bobot_kriteria" name="bobot" placeholder="Isikan Bobot nilai" required="">
             </div>
-            <type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-            <button type="submit" name="editkriteria" class="btn btn-success">Ubah</button>      
+            <div class=modal-footer>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+            <button type="submit" name="editkriteria" class="btn btn-success">Ubah</button>
+            </div>      
+
         </div>
     </form> 
 
@@ -181,7 +186,7 @@ include('includes/navbar.php');
 
       </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
             <button type="submit" name="hapuskriteria" class="btn btn-danger">Hapus</button>
         </div>
       </form>

@@ -40,3 +40,45 @@ $(document).ready(function () {
     });
 });
 </script>
+<!---------------JAVASCRIPT UNTUK EDIT VENDOR------------------->
+<script>
+$(document).ready(function () {
+    $('#tabelvendor').on('click', '.tomboleditvendor', function() {
+
+        $('#modaleditvendor').modal('show');
+
+            $tr = $(this).closest('tr');
+
+            var data = $tr.children("td").map(function(){
+                return $(this).text();
+            }).get();
+
+            console.log(data);
+
+            $('#edit_no_vendor').val(data[0]);
+            $('#edit_vendor').val(data[1]);
+            $('#edit_alamat').val(data[2]);
+    });
+});
+</script>
+<!--------------------------------------------------------------->
+
+<!---------------JAVASCRIPT UNTUK HAPUS VENDOR------------------->
+<script>
+$(document).ready(function () {
+    $('#tabelvendor').on('click','.tombolhapusvendor', function() {
+
+        $('#modalhapusvendor').modal('show');
+
+            $tr = $(this).closest('tr');
+
+            var data = $tr.children("td").map(function(){
+                return $(this).text();
+            }).get();
+
+            console.log(data);
+
+            $('#hapus_no_vendor').val(data[0]);
+    });
+});
+</script>

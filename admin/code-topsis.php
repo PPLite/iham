@@ -100,8 +100,71 @@ if(isset($_POST['hapuskriteria']))
         header('location: pengadaan-kriteria.php');
     }
 }
+///////////////////BUAT TAMBAH PESERTA PENGADAAN/VENDOR BARU///////////////////////////////
+if (isset($_POST['tambahvendor'])) 
+{
+    $vendor= $_POST ['vendor'];
+    $alamat= $_POST ['alamat'];
 
+        $query = "INSERT INTO tb_peserta (vendor,alamat) VALUES('$vendor','$alamat')";
+        $result = mysqli_query($connection, $query);
+        if 
+        ($result) 
+        {
+            $_SESSION['status'] ="Registrasi Vendor Berhasil";
+            $_SESSION['status_code'] = "success";
+            header('location: pengadaan-peserta.php');
+        } 
+        else 
+        {
+            $_SESSION['status'] ="Registrasi Gagal. Terjadi kesalahan Internal";
+            $_SESSION['status_code'] = "error";
+            header('location: pengadaan-peserta.php');
+        }
+}
 
+///////////////////////////////////////TOMBOL EDIT VENDOR////////////////////////////////
+if (isset($_POST['editvendor'])) 
+{  
+    $no_vendor= $_POST ['no_vendor'];
+    $vendor= $_POST ['vendor'];
+    $alamat= $_POST ['alamat'];
+
+    $query = "UPDATE tb_peserta SET vendor='$vendor',alamat='$alamat' WHERE no_vendor='$no_vendor'";
+    $result = mysqli_query($connection, $query);
+    if 
+    ($result) 
+    {
+        $_SESSION['status'] ="Ubah Vendor Berhasil";
+        $_SESSION['status_code'] = "success";
+        header('location: pengadaan-peserta.php');
+    } 
+    else 
+    {
+        $_SESSION['status'] ="Registrasi Gagal. Terjadi kesalahan Internal";
+        $_SESSION['status_code'] = "error";
+        header('location: pengadaan-peserta.php');
+    }
+}
+///////////////////////////////////////TOMBOL HAPUS VENDOR////////////////////////////////
+if(isset($_POST['hapusvendor']))
+{
+    $no_vendor = $_POST['hapus_no_vendor'];
+    $query = "DELETE FROM tb_peserta WHERE no_vendor='$no_vendor' ";
+    $query_run = mysqli_query($connection, $query);
+
+    if ($query_run)
+    {
+        $_SESSION['status'] = "Data berhasil di hapus";
+        $_SESSION['status_code'] = "success";
+        header('location: pengadaan-peserta.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Data gagal dihapus";
+        header('location: pengadaan-peserta.php');
+    }
+}
 
 
 
