@@ -27,23 +27,23 @@ if (isset($_POST['tambahkriteria']))
             }
             else
             {
-            $query = "INSERT INTO tb_kriteria (nama_kriteria,tipe_kriteria,bobot) VALUES('$nama_kriteria','$tipe_kriteria','$bobot')";
-            $result = mysqli_query($connection, $query);
-            if 
-            ($result) 
-            {
-                $_SESSION['status'] ="Tambah Kriteria Berhasil";
-                $_SESSION['status_code'] = "success";
-                header('location: pengadaan-kriteria.php');
-            } 
-            else 
-            {
-                $_SESSION['status'] ="Registrasi Gagal. Terjadi kesalahan Internal";
-                $_SESSION['status_code'] = "error";
-                header('location: pengadaan-kriteria.php');
+                $query = "INSERT INTO tb_kriteria (nama_kriteria,tipe_kriteria,bobot) VALUES('$nama_kriteria','$tipe_kriteria','$bobot')";
+                $result = mysqli_query($connection, $query);
+                if 
+                ($result) 
+                {
+                    $_SESSION['status'] ="Tambah Kriteria Berhasil";
+                    $_SESSION['status_code'] = "success";
+                    header('location: pengadaan-kriteria.php');
+                } 
+                else 
+                {
+                    $_SESSION['status'] ="Registrasi Gagal. Terjadi kesalahan Internal";
+                    $_SESSION['status_code'] = "error";
+                    header('location: pengadaan-kriteria.php');
+                }
             }
         }
-    }
 }
 
 ///////////////////////////////////////TOMBOL EDIT KRITERIA////////////////////////////////
@@ -173,27 +173,37 @@ if (isset($_POST['tambahranking']))
     $no_vendor = $_POST ['no_vendor'];
     $vendor = $_POST ['vendor'];
  
-
-    $query1 = mysqli_query($connection,"select * from tb_kriteria");
-    while ($data = mysqli_fetch_array($query1)) 
+    $ranking_query = "SELECT * FROM tb_peringkat WHERE `nama_peserta` = '$vendor' ";
+    $cekranking_query_run = mysqli_query($connection, $ranking_query);
+    if(mysqli_num_rows($cekranking_query_run) > 0)
     {
-        $stripped = str_replace(' ', '', $data['nama_kriteria']);
-        $query = "INSERT INTO tb_peringkat VALUES(null,'$no_vendor','$vendor','".$data['nama_kriteria']."','".$_POST[$stripped]."')";
-        $result = mysqli_query($connection,$query);
-    }
-    
-
-    if ($result)     
-    {
-        $_SESSION['status'] = "Data berhasil di hapus";
-        $_SESSION['status_code'] = "success";
+        $_SESSION['status'] ="Registrasi Gagal. Vendor sudah dinilai";
+        $_SESSION['status_code'] = "error";
         header('location: pengadaan-ranking.php');
     }
     else
     {
-        $_SESSION['status'] = "Data gagal dihapus";
-        $_SESSION['status_code'] = "error";
-        header('location: pengadaan-ranking.php');
+        $query1 = mysqli_query($connection,"select * from tb_kriteria");
+        while ($data = mysqli_fetch_array($query1)) 
+        {
+            $stripped = str_replace(' ', '', $data['nama_kriteria']);
+            $query = "INSERT INTO tb_peringkat VALUES(null,'$no_vendor','$vendor','".$data['nama_kriteria']."','".$_POST[$stripped]."')";
+            $result = mysqli_query($connection,$query);
+        }
+        
+
+        if ($result)     
+        {
+            $_SESSION['status'] = "Data berhasil di hapus";
+            $_SESSION['status_code'] = "success";
+            header('location: pengadaan-ranking.php');
+        }
+        else
+        {
+            $_SESSION['status'] = "Data gagal dihapus";
+            $_SESSION['status_code'] = "error";
+            header('location: pengadaan-ranking.php');
+        }
     }
 }
 

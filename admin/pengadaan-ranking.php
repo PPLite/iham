@@ -32,7 +32,8 @@ include('includes/navbar.php');
             <div class="main-page">
                 <div class="tables">
                     <div class="panel-body widget-shadow">
-                        <table class="table table-bordered"> <thead>
+                        <table class="table table-bordered"> 
+                            <thead>
 
                             <th>No Vendor</th> 
                             <th>Nama Vendor</th> 
@@ -133,8 +134,8 @@ include('includes/navbar.php');
         </div>
 
     <div class="form-group"> 
-        <label for="">no vendor :</label> 
-        <select disabled="readonly" class="form-control" id="no_vendor" name="no_vendor" >
+        <label for="">No vendor :</label> 
+        <select class="form-control" id="no_vendor" name="no_vendor" style="display:none" >
             <?php
             $query = "select * from tb_peserta ";
             $result = mysqli_query($connection, $query);
