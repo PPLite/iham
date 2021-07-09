@@ -16,7 +16,7 @@ include('includes/navbar.php');
 
     <!-- Buat nambah tombol kriteria baru -->
     <div class="card-header py-4">
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahpenilaianmodal">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modaltambahranking">
               Tambah Penilaian Baru
             </button>
   </div>
@@ -88,12 +88,12 @@ include('includes/navbar.php');
                                 
                                 ?>
 
-                                        </tbody>
-                                    </table> 
-                                </div>
-                            </div>
-                        </div>
+                            </tbody>
+                        </table> 
                     </div>
+                </div>
+            </div>
+        </div>
     </div>
   </div>
 </div>
@@ -101,32 +101,93 @@ include('includes/navbar.php');
 </div>
 <!-- /.container-fluid -->
 
-<!--  -->
-<div class="container-fluid">
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <div class="card-body">
+<!-------------------------------------MODAL BUAT TAMBAH RANKING-----------------------  -->
+<div class="modal fade" id="modaltambahranking" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tambah Penilaian</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="code-topsis.php" method="POST">
 
-
-
-            <?Php
-$sql="SELECT no_vendor,vendor FROM tb_peserta"; 
-echo "<select name=no_vendor value=''>Nomor Vendor</option>";
-foreach ($connection->query($sql) as $row){
-echo "<option value=$row[no_vendor]>$row[vendor]</option>"; //Value(nilai) yang bakal disimpen [no_vendor] dan yg ditampilin yaitu [vendor]
-}
- echo "</select>";
-
-            ?>
-
-
-
-
-            </div>
+        <div class="modal-body">
+    <P class="h5 mb-0 text-gray-800" style="text-align: center">Form Penilaian Vendor </P>
+    <P class="h6 mb-0 text-gray-800" style="text-align: center">Isi Penilaian dengan Angka 1 hingga 5 </P>
+<br>
+        <div class="form-group"> 
+            <label for="">Nama Vendor :</label> 
+            <select class="form-control" id="vendor" name="vendor">
+                <?php
+                $query = "select * from tb_peserta ";
+                $result = mysqli_query($connection, $query);
+                while ($data = mysqli_fetch_array($result)) {
+                    ?>
+                    <option value="<?php echo $data ['vendor'] ?>">
+                        <?php echo $data ['vendor'] ?> 
+                    </option>
+                <?php } ?>
+            </select>                                       
         </div>
+
+    <div class="form-group"> 
+        <label for="">no vendor :</label> 
+        <select disabled="readonly" class="form-control" id="no_vendor" name="no_vendor" >
+            <?php
+            $query = "select * from tb_peserta ";
+            $result = mysqli_query($connection, $query);
+            while ($data = mysqli_fetch_array($result)) {
+                ?>
+                <option value="<?php echo $data ['no_vendor'] ?>">
+                    <?php echo $data ['no_vendor'] ?> 
+                </option>
+            <?php } ?>
+        </select>                                       
+    </div> 
+
+        <?php
+            $query1 = mysqli_query($connection,"select * from tb_kriteria");
+            while ($data = mysqli_fetch_array($query1)) {
+                echo '<div class="form-group">';
+                echo '<label for="">'.$data['nama_kriteria'].'</label>';
+                $stripped = str_replace(' ', '', $data['nama_kriteria']); 
+                echo '<input    type="number"
+                                min="1" 
+                                max="5" 
+                                class="form-control" 
+                                id="nilai" 
+                                name="'.$stripped.'" 
+                                placeholder="'.$data['keterangan'].'"
+                                required="true"
+                        >';
+                echo "</div>"; 
+            }
+        ?>
+      </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+            <button type="submit" name="tambahranking" class="btn btn-success">Tambah</button>
+        </div>
+      </form>
+
     </div>
+  </div>
 </div>
-<!-- /.container-fluid -->
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -135,6 +196,7 @@ echo "<option value=$row[no_vendor]>$row[vendor]</option>"; //Value(nilai) yang 
 
 <?php
 include('includes/scripts.php');
+include('includes/scripts-topsis.php');
 include('includes/footer.php');
 ?>
 

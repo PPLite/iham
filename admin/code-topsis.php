@@ -162,11 +162,40 @@ if(isset($_POST['hapusvendor']))
     else
     {
         $_SESSION['status'] = "Data gagal dihapus";
+        $_SESSION['status_code'] = "error";
         header('location: pengadaan-peserta.php');
     }
 }
+///////////////////BUAT TAMBAH PENILAIAN VENDOR///////////////////////////////
+if (isset($_POST['tambahranking'])) 
+{
 
+    $no_vendor = $_POST ['no_vendor'];
+    $vendor = $_POST ['vendor'];
+ 
 
+    $query1 = mysqli_query($connection,"select * from tb_kriteria");
+    while ($data = mysqli_fetch_array($query1)) 
+    {
+        $stripped = str_replace(' ', '', $data['nama_kriteria']);
+        $query = "INSERT INTO tb_peringkat VALUES(null,'$no_vendor','$vendor','".$data['nama_kriteria']."','".$_POST[$stripped]."')";
+        $result = mysqli_query($connection,$query);
+    }
+    
+
+    if ($result)     
+    {
+        $_SESSION['status'] = "Data berhasil di hapus";
+        $_SESSION['status_code'] = "success";
+        header('location: pengadaan-ranking.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Data gagal dihapus";
+        $_SESSION['status_code'] = "error";
+        header('location: pengadaan-ranking.php');
+    }
+}
 
 
 

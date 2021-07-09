@@ -151,8 +151,8 @@ include('includes/navbar.php');
     </div>
   </div>
 </div>
-<!------------------------------MODAL HAPUS VENDOR------------------------------------->
 
+<!------------------------------MODAL HAPUS VENDOR------------------------------------->
 <div class="modal fade" id="modalhapusvendor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

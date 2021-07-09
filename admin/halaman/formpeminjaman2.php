@@ -107,5 +107,5 @@
             });
             
             // Code that uses other library's $ can follow here.
-            </script>
+    </script>
             

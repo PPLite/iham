@@ -82,3 +82,20 @@ $(document).ready(function () {
     });
 });
 </script>
+
+<!-------------------------JAVASCRIPT BUAT AUTOFILL NAMA VENDOR--------------->
+<!-------------------Autocomplete. didalam $.noConflict() Biar gak tawuran------------->
+<script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        $.noConflict();
+        jQuery( document ).ready(function( $ ) {
+        // Code that uses jQuery's $ can follow here.
+            $(document).ready(function(){
+                $("select#vendor").change(function(){
+                    var selectedCountry = $(this).prop('selectedIndex');
+                    $("select#no_vendor").prop('selectedIndex',selectedCountry);
+                });
+            });
+        });
+        // Code that uses other library's $ can follow here.
+    </script>
