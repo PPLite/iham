@@ -961,64 +961,32 @@ include_once('database/dbconfig.php');
 
         <div class="row">
 
-          <div class="col-lg-4 mb-4">
-            <div class="card shadow h-100 py-2">
-                <div class="card-body">
-                <a href=daftar-barang.php style="text-decoration:none;">
-                  <div style="text-align: center" >
-                    <span class="fa fa-notes-medical fa-2x text-center text-primary"></span>
-                  </div>
-
-                  <div style="text-align: center">
-                    <div class=" text-m text-dark">Daftar Barang</div>
-                  </div>
-                  </a>
-                </div>
-            </div>
-        </div>
-
         <div class="col-lg-4 mb-4">
             <div class="card shadow h-100 py-2">
                 <div class="card-body">
-                <a href=formulir.php style="text-decoration:none;">
+                <a href=pengadaan-kriteria.php style="text-decoration:none;">
                   <div style="text-align: center">
                     <span class="fa fa-clipboard-list fa-2x text-center text-warning"></span>
                   </div>
 
                   <div style="text-align: center">
-                    <div class=" text-m text-dark" >Peminjaman Barang  </div>
+                    <div class=" text-m text-dark" > Kriteria Pengadaan Barang </div>
                   </div>
                 </a>
                 </div>
             </div>
         </div>
 
-        <div class="col-lg-4 mb-4">
+          <div class="col-lg-4 mb-4">
             <div class="card shadow h-100 py-2">
                 <div class="card-body">
-                <a href=validasi-peminjaman-aset.php style="text-decoration:none;">
-                  <div style="text-align: center">
-                    <span class="fa fa-clipboard-check fa-2x text-center text-secondary"></span>
+                <a href=pengadaan-peserta.php style="text-decoration:none;">
+                  <div style="text-align: center" >
+                    <span class="fas fa-users fa-2x text-center text-primary"></span>
                   </div>
 
                   <div style="text-align: center">
-                    <div class=" text-m text-dark" > Konfirmasi Peminjaman </div>
-                  </div>
-                </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 mb-4">
-            <div class="card shadow h-100 py-2">
-                <div class="card-body">
-                  <a href=log-data-aset.php style="text-decoration:none;">
-                  <div style="text-align: center">
-                    <span class="fa fa-history fa-2x text-center text-info"></span>
-                  </div>
-
-                  <div style="text-align: center">
-                    <div class=" text-m text-dark">Log Data Barang</div>
+                    <div class=" text-m text-dark">Vendor Pengadaan barang</div>
                   </div>
                   </a>
                 </div>
@@ -1028,13 +996,29 @@ include_once('database/dbconfig.php');
         <div class="col-lg-4 mb-4">
             <div class="card shadow h-100 py-2">
                 <div class="card-body">
-                  <a href=pengaturan-aset-barang.php style="text-decoration:none;">
+                <a href=pengadaan-ranking.php style="text-decoration:none;">
                   <div style="text-align: center">
-                    <span class="fa fa-cogs fa-2x text-center text-success"></span>
+                    <span class="fa fa-clipboard-check fa-2x text-center text-secondary"></span>
                   </div>
 
                   <div style="text-align: center">
-                    <div class=" text-m text-dark">Pengaturan Data Barang</div>
+                    <div class=" text-m text-dark" > Penilaian Vendor </div>
+                  </div>
+                </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+            <div class="card shadow h-100 py-2">
+                <div class="card-body">
+                  <a href=pengadaan-hasil.php style="text-decoration:none;">
+                  <div style="text-align: center">
+                    <span class="fas fa-paste fa-2x text-center text-info"></span>
+                  </div>
+
+                  <div style="text-align: center">
+                    <div class=" text-m text-dark"> Hasil Perhitungan</div>
                   </div>
                   </a>
                 </div>
