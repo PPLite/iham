@@ -206,8 +206,3 @@ if (isset($_POST['tambahranking']))
         }
     }
 }
-
-
-
-
-?>
