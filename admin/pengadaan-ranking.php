@@ -3,9 +3,6 @@ include('database/dbconfig.php');
 include('security.php'); 
 include('includes/header.php'); 
 include('includes/navbar.php');
-
-$query = "select * from tb_peringkat ";
-$result = mysqli_query($connection, $query);
 ?>
 
 <!--  -->
@@ -26,17 +23,16 @@ $result = mysqli_query($connection, $query);
         <div id="page-wrapper">
             <div class="main-page">
                 <div class="tables">
-                    <h2 class="title1">Tabel Data Rangking</h2>
                     <div class="panel-body widget-shadow">
-
-                        <h4>Data Rangking</h4>
                         <table class="table table-bordered"> <thead>
 
                             <th>No</th> 
                             <th>No Vendor</th> 
-                            <th>Alternatif</th> 
+                            <th>Nama Vendor</th> 
                              
-                            <?php 
+                            <?php         
+                                $query = "select * from tb_peringkat ";
+                                $result = mysqli_query($connection, $query); 
                                 $query2 = "select * from tb_kriteria";
                                 $result2 = mysqli_query($connection, $query2);
                                 while($dt1 = mysqli_fetch_array($result2)){
@@ -92,20 +88,6 @@ $result = mysqli_query($connection, $query);
                                         </div>
                                         </div>
                                         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
   </div>
 </div>

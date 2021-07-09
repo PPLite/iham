@@ -17,7 +17,6 @@ include('includes/navbar.php');
 <div class="card-body">
 
     <div class="table-responsive">
-
 <!---Buat ngambil data--->
     <?php
     //dari database, dipilih semua (bintang = semuanya) dari tabel "tb_rfid"
@@ -52,7 +51,7 @@ include('includes/navbar.php');
             <button type="button" class="btn btn-success tomboleditpeserta">Ubah</button>
             </td>
             <td>
-            <button type="button" class="btn btn-danger tombolhapuspeserta  ">Hapus</button>
+            <button type="button" class="btn btn-danger tombolhapuspeserta">Hapus</button>
             </td>
             </td>     
 
