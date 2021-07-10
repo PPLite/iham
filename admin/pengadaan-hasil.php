@@ -364,22 +364,6 @@ $result = mysqli_query($connection, $query);
                                 </table>
                             </div>
                             <!-------------------------------------------------AKHIR Tabel Peringkat------------------------------------------------------->
-                            <div>
-                                <!-- Standard button -->
-                                <form method="POST" action="form_rangking_topsis.php">
-                                    <input type="submit" name="input" class="btn btn-primary">
-                                    <button type="button" class="btn btn-primary">view laporan</button>
-                                </form>
-                                <?php
-
-                                if (isset($_POST['input'])) {
-                                    $query1 = mysqli_query($connection, "delete from tb_finis where Banding='TOPSIS'");
-                                    for ($i = 0; $i < count(${$kriterialist[$i]}); $i++) {
-                                        $query = mysqli_query($connection, "insert into tb_finis values('','" . $nama[$i] . "','" . $V[$i] . "','" . $Peringkat[$i] . "','TOPSIS')");
-                                    }
-                                }
-                                ?>
-                            </div>
                         </div>
                     </div>
                 </div>
