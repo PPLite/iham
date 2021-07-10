@@ -35,6 +35,7 @@ include('includes/navbar.php');
               <th style="display:none;">ID Kriteria</th>
               <th>Nama Kriteria</th>
               <th>Bobot</th>
+              <th>Keterangan</th>
               <th>Edit</th>
               <th>Hapus</th>
             </tr>
@@ -51,6 +52,7 @@ include('includes/navbar.php');
                     <td><?php //echo $data ['tipe_kriteria']; ?></td> 
                   -->
                   <td><?php echo $data['bobot']; ?></td>
+                  <td><?php echo $data['keterangan']; ?></td>
                   <td>
                     <!--MODAL UNTUK EDIT/UBAH ASSET (DI TABEL) -->
                     <button type="button" class="btn btn-success tomboleditkriteria">Ubah</button>
@@ -116,6 +118,12 @@ include('includes/navbar.php');
             <label for="">Bobot :</label>
             <input type="text" class="form-control" id="bobot" name="bobot" placeholder="Isikan Bobot nilai (angka 1-100)" required="">
           </div>
+
+          <div class="form-group">
+            <label for="">Keterangan :</label>
+            <input type="text" class="form-control" id="bobot" name="bobot" placeholder="Masukkan Keterangan Pendukung Kriteria" required="">
+          </div>
+
           <div class=modal-footer>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
             <button type="submit" name="tambahkriteria" class="btn btn-success">Tambah</button>
@@ -152,6 +160,12 @@ include('includes/navbar.php');
           <label for="">Bobot :</label>
           <input type="text" class="form-control" id="edit_bobot_kriteria" name="bobot" placeholder="Isikan Bobot nilai" required="">
         </div>
+
+        <div class="form-group">
+          <label for="">Keterangan :</label>
+          <input type="text" class="form-control" id="edit_keterangan_kriteria" name="keterangan" placeholder="Isikan Keterangan dari Kriteria" required="">
+        </div>
+
         <div class=modal-footer>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
           <button type="submit" name="editkriteria" class="btn btn-success">Ubah</button>

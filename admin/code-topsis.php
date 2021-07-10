@@ -41,13 +41,14 @@ if (isset($_POST['editkriteria'])) {
     $nama_kriteria = $_POST['nama_kriteria'];
     $tipe_kriteria = $_POST['tipe_kriteria'];
     $bobot = $_POST['bobot'];
+    $keterangan =  $_POST['keterangan'];
 
     if (!preg_match("/^[0-9]*$/", $bobot)) {
         $_SESSION['status'] = "Registrasi Gagal. Bobot harus berupa angka";
         $_SESSION['status_code'] = "error";
         header('location: pengadaan-kriteria.php');
     } else {
-        $query = "UPDATE tb_kriteria SET nama_kriteria='$nama_kriteria', tipe_kriteria='$tipe_kriteria', bobot='$bobot' WHERE id_kriteria = '$id_kriteria'";
+        $query = "UPDATE tb_kriteria SET nama_kriteria='$nama_kriteria', tipe_kriteria='$tipe_kriteria', bobot='$bobot', keterangan='$keterangan' WHERE id_kriteria = '$id_kriteria'";
         $result = mysqli_query($connection, $query);
         if ($result) {
             $_SESSION['status'] = "Ubah Kriteria Berhasil";
@@ -178,14 +179,9 @@ if (isset($_POST['hapusperingkat'])) {
     }
 }
 ///////////////////////////////////////TOMBOL EDIT PERINGKAT////////////////////////////////
-
-
 if (isset($_POST['editranking'])) {
     $id_peringkat = $_POST ['id_peringkat'];
     
-
-
-
     $query1 = mysqli_query($connection,"select * from tb_kriteria");
     while ($data = mysqli_fetch_array($query1)) {
         $stripped = str_replace(' ', '', $data['nama_kriteria']);
@@ -200,6 +196,21 @@ if (isset($_POST['editranking'])) {
     } 
     else {
         $_SESSION['status'] = "Data gagal diubah";
+        $_SESSION['status_code'] = "error";
+        header('location: pengadaan-ranking.php');
+    }
+}
+///////////////////////////////////////TOMBOL SEMUA HAPUS PERINGKAT////////////////////////////////
+if (isset($_POST['hapusemuaperingkat'])) {
+    $query = "TRUNCATE TABLE tb_peringkat ";
+    $query_run = mysqli_query($connection, $query);
+
+    if ($query_run) {
+        $_SESSION['status'] = "Data berhasil di hapus";
+        $_SESSION['status_code'] = "success";
+        header('location: pengadaan-ranking.php');
+    } else {
+        $_SESSION['status'] = "Data gagal dihapus";
         $_SESSION['status_code'] = "error";
         header('location: pengadaan-ranking.php');
     }

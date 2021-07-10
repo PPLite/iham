@@ -16,6 +16,7 @@ $(document).ready(function () {
             $('#edit_id_kriteria').val(data[0]);
             $('#edit_nama_kriteria').val(data[1]);
             $('#edit_bobot_kriteria').val(data[2]);
+            $('#edit_keterangan_kriteria').val(data[3]);
     });
 });
 </script>

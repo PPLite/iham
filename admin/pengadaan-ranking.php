@@ -17,6 +17,9 @@ include('includes/navbar.php');
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modaltambahranking">
                 Tambah Penilaian Baru
             </button>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalhapusemuaperingkat">
+                Hapus Semua Penilaian
+            </button>
         </div>
         <!-- akhir tombol kriteria -->
 
@@ -179,7 +182,7 @@ include('includes/navbar.php');
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Hapus Data Dokter</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Hapus Data Peringkat</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -196,6 +199,33 @@ include('includes/navbar.php');
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                     <button type="submit" name="hapusperingkat" class="btn btn-danger">Hapus</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!------------------------------FUNGSI UNTUK HAPUS SEMUA RANKING------------------------------------->
+<div class="modal fade" id="modalhapusemuaperingkat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Hapus Semua Data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="code-topsis.php" method="POST">
+
+                <div class="modal-body">
+                   <h5> Apakah anda yakin untuk menghapus Seluruh Data Penilaian Ini?</h5>
+                    <h6> Data yang sudah terhapus tidak dapat dikembalikan</h6>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                    <button type="submit" name="hapusemuaperingkat" class="btn btn-danger">Hapus</button>
                 </div>
             </form>
 
