@@ -83,8 +83,8 @@ $(document).ready(function () {
 });
 </script>
 
-<!-------------------------JAVASCRIPT BUAT AUTOFILL NAMA VENDOR--------------->
-<!-------------------Autocomplete. didalam $.noConflict() Biar gak tawuran------------->
+<!-------------------------JAVASCRIPT BUAT AUTOFILL NAMA VENDOR---------------------->
+<!-----------------Autocomplete. didalam $.noConflict() Biar gak tawuran------------->
 <script src="js/jquery-1.11.1.min.js"></script>
     <script>
         $.noConflict();
@@ -99,3 +99,23 @@ $(document).ready(function () {
         });
         // Code that uses other library's $ can follow here.
     </script>
+
+<!---------------JAVASCRIPT UNTUK HAPUS RANKING VENDOR------------------->
+<script>
+$(document).ready(function () {
+    $('#tabelperingkat').on('click','.tombolhapusperingkat', function() {
+
+        $('#modalhapusperingkat').modal('show');
+
+            $tr = $(this).closest('tr');
+
+            var data = $tr.children("td").map(function(){
+                return $(this).text();
+            }).get();
+
+            console.log(data);
+
+            $('#hapus_peringkat_no_vendor').val(data[0]);
+    });
+});
+</script>

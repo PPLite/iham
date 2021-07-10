@@ -194,7 +194,7 @@ if (isset($_POST['tambahranking']))
 
         if ($result)     
         {
-            $_SESSION['status'] = "Data berhasil di hapus";
+            $_SESSION['status'] = "Penilaian berhasil ditambahkan";
             $_SESSION['status_code'] = "success";
             header('location: pengadaan-ranking.php');
         }
@@ -204,5 +204,25 @@ if (isset($_POST['tambahranking']))
             $_SESSION['status_code'] = "error";
             header('location: pengadaan-ranking.php');
         }
+    }
+}
+///////////////////////////////////////TOMBOL HAPUS PERINGKAT////////////////////////////////
+if(isset($_POST['hapusperingkat']))
+{
+    $no_vendor = $_POST['hapus_peringkat_no_vendor'];
+    $query = "DELETE FROM tb_peringkat WHERE no_vendor='$no_vendor' ";
+    $query_run = mysqli_query($connection, $query);
+
+    if ($query_run)
+    {
+        $_SESSION['status'] = "Data berhasil di hapus";
+        $_SESSION['status_code'] = "success";
+        header('location: pengadaan-ranking.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Data gagal dihapus";
+        $_SESSION['status_code'] = "error";
+        header('location: pengadaan-ranking.php');
     }
 }

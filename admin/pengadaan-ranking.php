@@ -1,4 +1,4 @@
-`<?php
+<?php
     include('database/dbconfig.php');
     include('security.php');
     include('includes/header.php');
@@ -30,7 +30,7 @@
                     <div class="main-page">
                         <div class="tables">
                             <div class="panel-body widget-shadow">
-                                <table class="table table-bordered">
+                                <table class="table table-bordered" id="tabelperingkat">
                                     <thead>
 
                                         <th>No Vendor</th>
@@ -76,8 +76,7 @@
                                                             <button type="button" class="btn btn-primary btn-flat "><i class="fa fa-edit" aria-hidden="true"></i></button></a>
                                                     </td>
                                                     <td>
-                                                        <a href="crud/hapus_rangking.php?id=<?php echo $data['no_vendor'] ?>" onclick="return confirm('Anda Yakin Menghapus Data ini ?')">
-                                                            <button type="button" class="btn btn-danger btn-flat "><i class="far fa-trash-alt" aria-hidden="true"></i></button></a>
+                                                        <button type="button" class="btn btn-danger btn-flat tombolhapusperingkat"><i class="far fa-trash-alt">
                                                     </td>
                                                 </tr>
 
@@ -132,7 +131,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="">No vendor :</label>
+                            
                             <select class="form-control" id="no_vendor" name="no_vendor" style="display:none">
                                 <?php
                                 $query = "select * from tb_peserta ";
@@ -175,7 +174,36 @@
         </div>
     </div>
 </div>
+<!------------------------------FUNGSI UNTUK HAPUS (MODAL)------------------------------------->
 
+<div class="modal fade" id="modalhapusperingkat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Hapus Data Dokter</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="code-topsis.php" method="POST">
+
+        <div class="modal-body">
+
+        <input type="TEXT" name="hapus_peringkat_no_vendor" id="hapus_peringkat_no_vendor">
+
+        <h5> Apakah anda yakin untuk menghapus data Peringkat ini?</h5>
+        <h6>  Data yang sudah terhapus tidak dapat dikembalikan</h6>
+
+      </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+            <button type="submit" name="hapusperingkat" class="btn btn-danger">Hapus</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
 <?php
 include('includes/scripts.php');
 include('includes/scripts-topsis.php');
