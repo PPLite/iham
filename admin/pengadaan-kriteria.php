@@ -47,8 +47,9 @@ include('includes/navbar.php');
                 <tr>
                   <td style="display:none;"><?php echo $data['id_kriteria']; ?></td>
                   <td><?php echo $data['nama_kriteria']; ?></td>
-                  <!-- <td><?php //echo $data ['tipe_kriteria']; 
-                            ?></td> -->
+                  <!-- 
+                    <td><?php //echo $data ['tipe_kriteria']; ?></td> 
+                  -->
                   <td><?php echo $data['bobot']; ?></td>
                   <td>
                     <!--MODAL UNTUK EDIT/UBAH ASSET (DI TABEL) -->

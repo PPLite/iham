@@ -119,3 +119,26 @@ $(document).ready(function () {
     });
 });
 </script>
+<!---------------JAVASCRIPT UNTUK EDIT PENILAIAN VENDOR------------------->
+<script>
+$(document).ready(function () {
+    $('#tabelperingkat').on('click', '.tomboleditperingkatvendor', function() {
+
+        $('#modaleditperingkatvendor').modal('show');
+
+            $tr = $(this).closest('tr');
+
+            var data = $tr.children("td").map(function(){
+                return $(this).text();
+            }).get();
+
+            console.log(data);
+
+            $('#edit_no_vendor').val(data[0]);
+            $('#id_peringkat').val(data[1]);
+            $('#edit_nama_vendor').val(data[2]);
+
+    });
+});
+</script>
+<!--------------------------------------------------------------->
