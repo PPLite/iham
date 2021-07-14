@@ -190,7 +190,7 @@ $result = mysqli_query($connection, $query);
                                         <th>No Vendor</th>
                                         <?php
                                         for ($i = 0; $i < count($kriterialist); $i++) {
-                                            echo "<th>K" . ($i + 1) . "</th>";
+                                            echo "<th>Kriteria " . ($i + 1) . "</th>";
                                         }
                                         ?>
                                     </thead>
@@ -224,7 +224,7 @@ $result = mysqli_query($connection, $query);
                                         <th>No Vendor</th>
                                         <?php
                                         for ($i = 0; $i < count($kriterialist); $i++) {
-                                            echo "<th>K" . ($i + 1) . "</th>";
+                                            echo "<th>Kriteria " . ($i + 1) . "</th>";
                                         }
                                         ?>
                                     </thead>
@@ -262,38 +262,10 @@ $result = mysqli_query($connection, $query);
                                         <?php
                                         for ($i = 0; $i < count($kriterialist); $i++) {
                                             echo "<tr>
-                                      <th>K" . ($i + 1) . "</th>
+                                      <th>Kriteria " . ($i + 1) . "</th>
                                       <td>" . number_format((float)$YPOS[$i], 5, '.', '') . "</td>
                                       <td>" . number_format((float)$YNEG[$i], 5, '.', '') . "</td>
                                       </tr>";
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!--------------------------------------------AKHIR TABEL NORMALISASI TERBOBOT------------------------------------------------------->
-
-                            <!-- Semacam pembatas-->
-                            <BR>
-                            <!-- akhir pembatas -->
-
-                            <!-------------------------------------------------Jarak Solusi dan Nilai Preferensi------------------------------------------------------->
-                            <h4>Jarak solusi dan nilai preferensi</h4>
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <th>No Vendor</th>
-                                        <th>D+</th>
-                                        <th>D-</th>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        for ($i = 0; $i < $c; $i++) {
-                                            echo "<tr>
-                                  <th>$nama[$i]</th>
-                                  <td>" . number_format((float)${'hasilD' . $i . 'Pos'}, 5, '.', '') . "</td>
-                                  <td>" . number_format((float)${'hasilD' . $i . 'Neg'}, 5, '.', '') . "</td>
-                                  </tr>";
                                         }
                                         ?>
                                     </tbody>

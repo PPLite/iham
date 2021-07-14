@@ -121,7 +121,7 @@ include('includes/navbar.php');
 
           <div class="form-group">
             <label for="">Keterangan :</label>
-            <input type="text" class="form-control" id="bobot" name="bobot" placeholder="Masukkan Keterangan Pendukung Kriteria" required="">
+            <input type="text" class="form-control" id="keterangan" name="keterangan" placeholder="Masukkan Keterangan Pendukung Kriteria" required="">
           </div>
 
           <div class=modal-footer>

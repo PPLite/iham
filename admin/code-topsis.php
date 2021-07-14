@@ -7,6 +7,7 @@ if (isset($_POST['tambahkriteria'])) {
     $nama_kriteria = $_POST['nama_kriteria'];
     $tipe_kriteria = $_POST['tipe_kriteria'];
     $bobot = $_POST['bobot'];
+    $keterangan = $_POST['keterangan'];
 
     $kriteria_query = "SELECT * FROM tb_kriteria WHERE `nama_kriteria` = '$nama_kriteria' ";
     $cekriteria_query_run = mysqli_query($connection, $kriteria_query);
@@ -20,7 +21,7 @@ if (isset($_POST['tambahkriteria'])) {
             $_SESSION['status_code'] = "error";
             header('location: pengadaan-kriteria.php');
         } else {
-            $query = "INSERT INTO tb_kriteria (nama_kriteria,tipe_kriteria,bobot) VALUES('$nama_kriteria','$tipe_kriteria','$bobot')";
+            $query = "INSERT INTO tb_kriteria (nama_kriteria,tipe_kriteria,bobot,keterangan) VALUES('$nama_kriteria','$tipe_kriteria','$bobot','$keterangan')";
             $result = mysqli_query($connection, $query);
             if ($result) {
                 $_SESSION['status'] = "Tambah Kriteria Berhasil";
