@@ -53,8 +53,7 @@
 <!----------Halaman tabel dan pencarian data dalam tabelL---------------->
 <script>
 $(document).ready(function () {
-    $('#dataaset, #tabelpengguna, #tabelasetbayi, #tabelstatuscan').DataTable();
-
+    $('#dataaset, #tabelpengguna, #tabelasetbayi, #tabelstatuscan, #tabelhasiltopsis, #tabelnilaipreferensi').DataTable();
 });
 </script>
 <!----------------------------------------------------------------------->

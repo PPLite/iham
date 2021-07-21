@@ -280,7 +280,7 @@ $result = mysqli_query($connection, $query);
                             <!------------------------------------------------- Nilai Preferensi------------------------------------------------------->
                             <h4>Nilai Prevensi</h4>
                             <div class="table-responsive">
-                                <table class="table table-bordered">
+                                <table class="table table-bordered" id="tabelnilaipreferensi" width="100%" cellspacing="0">
                                     <thead>
                                         <th>No Vendor</th>
                                         <th>V</th>
@@ -316,7 +316,7 @@ $result = mysqli_query($connection, $query);
                             <!------------------------------------------------- Tabel Peringkat------------------------------------------------------->
                             <h4>Peringkat</h4>
                             <div class="table-responsive">
-                                <table class="table table-bordered">
+                                <table class="table table-bordered" id="tabelhasiltopsis" width="100%" cellspacing="0">
                                     <thead>
                                         <th>No Vendor</th>
                                         <th>Hasil</th>
@@ -348,6 +348,7 @@ $result = mysqli_query($connection, $query);
 <!-- /.container-fluid -->
 
 <?php
+include('includes/scripts.php');
 include('includes/scripts.php');
 include('includes/footer.php');
 ?>
