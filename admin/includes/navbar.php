@@ -35,14 +35,14 @@ include_once('code.php');
 <!-- Item  -->
 <li class="nav-item">
   <a class="nav-link" href="registrasi.php">
-    <i class="fas fa-fw fa-chart-area"></i>
+    <i class="fas fa-portrait"></i>
     <span>Registrasi</span></a>
 </li>
 
 <!-- Pasien-->
 <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#sidebarbayi" aria-expanded="true" aria-controls="kolapsitem1">
-    <i class="fas fa-fw fa-cog"></i>
+    <i class="fas fa-baby-carriage"></i>
     <span>Pasien Bayi</span>
   </a>
   <div id="sidebarbayi" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -62,7 +62,7 @@ include_once('code.php');
 <!-- Pasien-->
 <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#sidebardewasa" aria-expanded="true" aria-controls="kolapsitem1">
-    <i class="fas fa-fw fa-cog"></i>
+    <i class="fas fa-procedures"></i>
     <span>Pasien Dewasa</span>
   </a>
   <div id="sidebardewasa" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -84,7 +84,7 @@ include_once('code.php');
 <!-- Peralatan Medis-->
 <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#sidebarmedis" aria-expanded="true" aria-controls="collapseTwo">
-    <i class="fas fa-fw fa-cog"></i>
+    <i class="fas fa-briefcase-medical"></i>
     <span>Peralatan Medis</span>
   </a>
   <div id="sidebarmedis" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -102,7 +102,7 @@ include_once('code.php');
 <!-- Dokter-->
 <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#sidebardokter" aria-expanded="true" aria-controls="collapseTwo">
-    <i class="fas fa-fw fa-cog"></i>
+    <i class="fas fa-user-md"></i>
     <span>Dokter</span>
   </a>
   <div id="sidebardokter" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -119,7 +119,7 @@ include_once('code.php');
 <!-- perawat-->
 <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#sidebarperawat" aria-expanded="true" aria-controls="collapseTwo">
-    <i class="fas fa-fw fa-cog"></i>
+    <i class="fas fa-user-nurse"></i>
     <span>Perawat</span>
   </a>
   <div id="sidebarperawat" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -135,7 +135,7 @@ include_once('code.php');
 <!-- Karyawan?-->
 <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#sidebarkaryawan" aria-expanded="true" aria-controls="collapseTwo">
-    <i class="fas fa-fw fa-cog"></i>
+    <i class="fas fa-user fa"></i>
     <span>Karyawan</span>
   </a>
   <div id="sidebarkaryawan" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -149,10 +149,10 @@ include_once('code.php');
 </li>
 
 
-<!-- Karyawan?-->
+<!-- Pengadaan barang?-->
 <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#sidebarpengadaan" aria-expanded="true" aria-controls="collapseTwo">
-    <i class="fas fa-fw fa-cog"></i>
+    <i class="fas fa-boxes"></i>
     <span>Pengadaan Barang</span>
   </a>
   <div id="sidebarpengadaan" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">

@@ -18,49 +18,49 @@ include('database/dbconfig.php');
                 <div class="row justify-content-center">
 
                     <div class="col-lg-3 mb-3">
-                        <div class="card bg-primary text-white shadow">
-                            <div class="card-body">
-                                <a href="tambah-aset-barang.php" class="text-white">Peralatan Medis </a>
-                                <i class="fa fa-medkit fa-2x text-gray-300 float-right"></i>
+                            <div class="card bg-success text-white shadow">
+                                <div class="card-body">
+                                    <a href="tambah-aset-barang.php" class="text-white">Peralatan Medis </a>
+                                    <i class="fa fa-medkit fa-2x text-gray-300 float-right"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-lg-3 mb-3">
-                        <div class="card bg-success text-white shadow">
-                            <div class="card-body">
-                                <a href="tambah-pasien.php" class="text-white">Pasien &nbsp;&nbsp;&nbsp;</a>
-                                <i class="fas fa-procedures fa-2x text-gray-300 float-right"></i>
+                        <div class="col-lg-3 mb-3">
+                            <div class="card bg-success text-white shadow">
+                                <div class="card-body">
+                                    <a href="tambah-pasien.php" class="text-white">Pasien &nbsp;&nbsp;&nbsp;</a>
+                                    <i class="fas fa-procedures fa-2x text-gray-300 float-right"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-lg-2 mb-3">
-                        <div class="card bg-success text-white shadow">
-                            <div class="card-body">
-                                <a href="tambah-dokter.php" class="text-white">Dokter &nbsp;&nbsp;&nbsp;</a>
-                                <i class="fas fa-user-md fa-2x text-gray-300 float-right"></i>
+                        <div class="col-lg-2 mb-3">
+                            <div class="card bg-success text-white shadow">
+                                <div class="card-body">
+                                    <a href="tambah-dokter.php" class="text-white">Dokter &nbsp;&nbsp;&nbsp;</a>
+                                    <i class="fas fa-user-md fa-2x text-gray-300 float-right"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-lg-2 mb-3">
-                        <div class="card bg-success text-white shadow">
-                            <div class="card-body">
-                                <a href="tambah-perawat.php" class="text-white">Perawat</a>
-                                <i class="fas fa-user-nurse fa-2x text-gray-300 float-right"></i>
+                        <div class="col-lg-2 mb-3">
+                            <div class="card bg-success text-white shadow">
+                                <div class="card-body">
+                                    <a href="tambah-perawat.php" class="text-white">Perawat</a>
+                                    <i class="fas fa-user-nurse fa-2x text-gray-300 float-right"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-lg-2 mb-3">
-                        <div class="card bg-success text-white shadow">
-                            <div class="card-body">
-                                <a href="tambah-karyawan.php" class="text-white">Karyawan</a>
-                                <i class="fas fa-user fa-2x text-gray-300 float-right"></i>
+                        <div class="col-lg-2 mb-3">
+                            <div class="card bg-success text-white shadow">
+                                <div class="card-body">
+                                    <a href="tambah-karyawan.php" class="text-white">Karyawan</a>
+                                    <i class="fas fa-user fa-2x text-gray-300 float-right"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
                     <div class="card-body">
                         <form action="" method="GET">
@@ -70,7 +70,7 @@ include('database/dbconfig.php');
                                                                                     echo $_GET['rfid_uid'];
                                                                                 } ?>" class="form-control">
                                 </div>
-                                <div class="col-md-5">
+                                <div class="col-md-7 align-self-end ml-auto">
                                     <button type="SUBMIT" class="btn btn-primary">Scan RFID</button>
                                 </div>
                             </div>

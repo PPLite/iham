@@ -20,7 +20,7 @@ include('database/dbconfig.php');
                     <div class="row justify-content-center">
 
                         <div class="col-lg-3 mb-3">
-                            <div class="card bg-primary text-white shadow">
+                            <div class="card bg-success text-white shadow">
                                 <div class="card-body">
                                     <a href="tambah-aset-barang.php" class="text-white">Peralatan Medis </a>
                                     <i class="fa fa-medkit fa-2x text-gray-300 float-right"></i>
@@ -73,7 +73,7 @@ include('database/dbconfig.php');
                                                                                     } ?>" class="form-control">
                                     </div>
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-7 align-self-end ml-auto">
                                         <button type="SUBMIT" class="btn btn-primary">Scan RFID</button>
                                     </div>
                                 </div>

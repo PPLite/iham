@@ -7,7 +7,7 @@ include_once('database/dbconfig.php');
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
-  <P class="h3 mb-0 text-gray-800">IHAM Dashboard </P>
+  <P class="h3 mb-0 text-gray-800">INTEGRATED HOSPITAL ASSET MANAGEMENT </P>
   <P class="h5 mb-0 text-gray-800">Rumah Sakit Ibu Dan Anak </P>
   <P class="h7 mb-0 text-gray-800">Jl. Arif Rahmad Hakim. No 39. Sukolilo Surabaya </P>
 
