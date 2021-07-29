@@ -50,7 +50,7 @@
 
                     <div class="form-group">
                         <label>Dipindahkan Ke</label>
-                        <input type="text" name="tujuan" id="tujuan" class="form-control" placeholder="Nama Peminjam" required>
+                        <input type="text" name="tujuan" id="tujuan" class="form-control" placeholder="Pilih Ruangan Pemindahan" required>
                     </div>
 
                     <div class="form-group">
@@ -61,8 +61,8 @@
                     <div class="form-group">
                                 <label>Status</label>
                                 <select name="status_asset" class="form-control" id="status_asset" >   
-                                <option value="konfirmasi_pinjam"> Dipinjam </option>
                                 <option value="konfirmasi_pindah"> Dipindah </option>
+                                <!--<option value="konfirmasi_keluar"> Keluar </option>-->
                                 </select>
                         </div>
                     </div>
