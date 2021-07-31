@@ -35,7 +35,7 @@ include('../database/dbconfig.php');
 			<div class="card-body">
 				<head>
 					<link rel="stylesheet/less" type="text/css" href="styles/plan.less">
-						<img src="vendors/bg.png" alt="Nature" class="responsive">
+						<img src="vendors/bg_3.png" width= "10%" height="50%" class="responsive">
 							<?php 
 								try
 								{
@@ -65,8 +65,6 @@ include('../database/dbconfig.php');
 						$ts2 = strtotime($row_2['timestamp']); 
 						$time_diff  = $ts1 - $ts2;
 						$time_diff2 = $ts2 - $ts1;
-						echo $time_diff. "\n";
-						echo $time_diff2. "\n";
 						$object = array (0);
 						$posX =0;
 
@@ -79,24 +77,20 @@ include('../database/dbconfig.php');
 							else{
 								$object = array(1,3);
 								$posX = array(-30,100);
+								
 							}
 						}
 						if($time_diff < -5 && $time_diff2 > 5){
 							$object = array(1);
 							$posX = -30;
-						//	echo "<h2>" . $object[0]. "</h2>";
-						//	echo "<h2>" . $posX. "</h2>";
 						}
 						if($time_diff > 5 && $time_diff2 < -5){
 							$object= array(3);
 							$posX = 100;
 						}
 
-						//echo $object. "\n";
 						// List Object in Spesific area
 						foreach($object as $j){
-							echo $j. "\n";
-							echo $posX. "\n";
 							if($j == 1){
 								$same = 0;
 								$new_Y = 0;
@@ -175,8 +169,6 @@ include('../database/dbconfig.php');
 								
 							}
 							else {
-								//echo "<h2> area:" . $j. "</h2>";
-								//echo "<h2> posisiX:" . $posX. "</h2>";
 								$same = 0;
 								$new_Y = 0;
 								foreach($area_3 as $a_3){
@@ -258,10 +250,6 @@ include('../database/dbconfig.php');
 						
 						$reset_all = $t_1 + $t_2 + $t_3;
 						$min_v = $reset_all/3;
-						echo $reset_all. "\n";
-						echo $t_1. "\n";
-						echo $t_2. "\n";
-						echo $t_3. "\n";
 
 						// Filter area 1
 						if( $reset_all >= 10){

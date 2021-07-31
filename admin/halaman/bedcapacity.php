@@ -106,9 +106,6 @@
           <div class="cards">
             <h5>Data Pasien</h5>
             <div class="card-body">
-              <form>
-                
-              </form>
               <form method=POST>
                   <input type="submit" value="GO" name="GO">
               </form>
@@ -287,11 +284,11 @@
       $param1 = 1; $param2= 1;
 	    if(isset($_POST['GO']))
     	{
-        $a = "C:/Program Files/Python37/python.exe  D:/xampp/htdocs/admin/recommentdation/mkdir.py '$param1''$param2'";
-        $output = shell_exec($a);
-        echo $output;
+        $a = "python3  D:/xampp/htdocs/admin/recommentdation/mkdir.py";
+        $output = shell_exec('success');
+        var_dump ($output);
         #shell_exec("python /admin/recommentdation/mkdir.py");
-        echo 'success';
+        #echo $output;
     	}
         ?>
     <!--Javascript-->
