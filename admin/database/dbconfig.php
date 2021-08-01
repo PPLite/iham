@@ -1,6 +1,6 @@
 <?php
 
-$server_name = "localhost";
+$server_name = "34.101.186.73";
 $db_username = "mjdr3247_admin";
 $db_password = "semogacepatlulus2021";
 $db_name = "mjdr3247_adminpanel";
