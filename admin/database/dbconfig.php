@@ -1,7 +1,7 @@
 <?php
 
 
-$server_name = "34.101.186.73";
+$server_name = "localhost";
 $db_username = "mjdr3247_admin";
 $db_password = "semogacepatlulus2021";
 $db_name = "mjdr3247_adminpanel";
