@@ -299,42 +299,6 @@ include('../database/dbconfig.php');
 
 						}
 
-						// Filter area 2
-						//if($t_2 >= 5 || $reset_all >= 10){
-
-						//		$delete_2 = "DELETE FROM tb_area_2 WHERE total <= 10";
-						//		$del_2 = mysqli_query($connection, $delete_2);
-						//		$data = "INSERT INTO tb_area_2 (rfid_uid,nama_anak,total,posX, posY)
-						//			VALUES ('00000000000', ' ','  ', ' ' , ' ')";
-						//		$up_2= mysqli_query($connection,$data);
-						//	//}
-							
-						//	foreach($obj_2 as $x_2){
-						//		$new_r   = 0;
-						//		$id_new  = $x_2['rfid_uid'];
-						//		$data_r  = "UPDATE tb_area_2 SET total = '$new_r' WHERE total > 10";
-						//		$run_r   = mysqli_query($connection,$data_r);
-						//	}
-						//}
-
-
-						// Filter area 3
-						//if($t_3 >= 5 || $reset_all >= 10){
-						//		$delete_3 = "DELETE FROM tb_area_3 WHERE total <= $min_v";
-						//		$del_3 = mysqli_query($connection, $delete_3);
-						//		$data = "INSERT INTO tb_area_3 (rfid_uid,nama_anak,total,posX, posY)
-						//			VALUES ('00000000000', ' ','  ', ' ' , ' ')";
-						//		$up_3= mysqli_query($connection,$data);
-						//	//}
-							
-						//	foreach($obj_3 as $x_3){
-						//		$new_r   = 0;
-						//		$id_new  = $x_3['rfid_uid'];
-						//		$data_r  = "UPDATE tb_area_3 SET total = '$new_r' WHERE total > $min_v";
-						//		$run_r   = mysqli_query($connection,$data_r);
-						//	}
-						//}
-
 						//tampilan objek pada peta di setiap area
 						$kotak = 10;
 						$width = 5;
@@ -372,12 +336,7 @@ include('../database/dbconfig.php');
 							}
 
 						}
-						//Filter object
-						//$total_all = $obj_1['tot_all'] + 1;
-						
-						//filter object loss
-						//$tot_read = $area_1['tot_all'] +1;
-						//$read_all= "INSERT INTO tb_area_1 (tot_all) VALUES ('$tot_read')";
+
 						}
 						?>
 					</div>
