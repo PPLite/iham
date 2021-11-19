@@ -90,14 +90,14 @@ include('../database/dbconfig.php');
 						}
 
 						// List Object in Spesific area
-						foreach($object as $j){
+						foreach($object as $j){ // Update data objek di setiap area 
 							if($j == 1){
 								$same = 0;
 								$new_Y = 0;
 								foreach($area_1 as $a_1){
 									$id   = $row['rfid_uid'];
 									$posY = $a_1['posY'];
-									if($id == $a_1['rfid_uid']){
+									if($id == $a_1['rfid_uid']){ // jika terdeteksi objek yang sama masih berada di area yang sama seperti pembacaan sebelumnya
 										$new_tot = $a_1['total'] + 1;
 										$new_Y = $a_1['posY'] ;
 										$data= "UPDATE tb_area_1 SET 
@@ -109,13 +109,13 @@ include('../database/dbconfig.php');
 										break;
 									}
 									else{
-										$total = $a_1['total'];
+										$total = $a_1['total']; // jika objek yang terdeteksi belum pernah ada di area tersebut
 										$new_Y = $a_1['posY'];
 									}
 									
 								}
 								
-								if($same == 0){
+								if($same == 0){ // Update pengiriman data objek yang belum pernah ada di area tersebut
 									$id   = $row['rfid_uid'];
 									$name = $row['nama_anak'];
 									$new_tot = 1;
@@ -124,7 +124,7 @@ include('../database/dbconfig.php');
 									VALUES ('$id', '$name',' $new_tot', '$posX' , '$Ynew')";
 									$run_1 = mysqli_query($connection, $data);
 
-									$delete = " DELETE FROM tb_area_1 WHERE total = '0'
+									$delete = " DELETE FROM tb_area_1 WHERE total = '0' // menghapus baris data di database yang kosong
 									LIMIT 1 ";
 									$del_1 = mysqli_query($connection, $delete);
 								}					
@@ -252,15 +252,15 @@ include('../database/dbconfig.php');
 						$min_v = $reset_all/3;
 
 						// Filter area 1
-						if( $reset_all >= 10){
+						if( $reset_all >= 10){ // jika jumlah object sudah melebihi batas min total objek di seluruh area
 							// Area 1
-								$delete_1 = "DELETE FROM tb_area_1 WHERE total <= $min_v";
+								$delete_1 = "DELETE FROM tb_area_1 WHERE total <= $min_v"; // instruksi delete data objek yang berada di bawah batas total pembacaan(diidentifikasi bahwa objek sudah berpindah)
 								$del_1 = mysqli_query($connection, $delete_1);
 								$data = "INSERT INTO tb_area_1 (rfid_uid,nama_anak,total,posX, posY)
 									VALUES ('00000000000', ' ','  ', ' ' , ' ')";
 							        $up_1= mysqli_query($connection,$data);
 						
-							foreach($obj_1 as $x_1){
+							foreach($obj_1 as $x_1){ // instruksi untuk renew total pembacaan objek yang melebihi batas minimal pembacaan
 								$new_r   = 0;
 								$id_new  = $x_1['rfid_uid'];
 								$data_r  = "UPDATE tb_area_1 SET total = '$new_r' WHERE total > $min_v";
